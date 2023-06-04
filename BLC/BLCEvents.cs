@@ -25,7 +25,8 @@ Get_Client_fees_By_OWNER_ID_Adv,
 Sales_Sum,
 Expenses_Sum,
 GetGrandProfit,
-Edit_Package
+Edit_Package,
+Get_Package_By_OWNER_ID_Adv
 }
 #endregion
 

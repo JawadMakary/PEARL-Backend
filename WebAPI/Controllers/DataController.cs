@@ -598,15 +598,15 @@ return oResult_Get_Fees_By_OWNER_ID;
 #endregion
 }
 #endregion
-#region Get_Package_By_OWNER_ID
+#region Get_Package_By_OWNER_ID_Adv
 [HttpPost]
-[Route("Get_Package_By_OWNER_ID")]
-public Result_Get_Package_By_OWNER_ID Get_Package_By_OWNER_ID(Params_Get_Package_By_OWNER_ID i_Params_Get_Package_By_OWNER_ID)
+[Route("Get_Package_By_OWNER_ID_Adv")]
+public Result_Get_Package_By_OWNER_ID_Adv Get_Package_By_OWNER_ID_Adv(Params_Get_Package_By_OWNER_ID i_Params_Get_Package_By_OWNER_ID)
 {
 #region Declaration And Initialization Section.
 List<Package>  oReturnValue = new List<Package> ();
 string i_Ticket = string.Empty;
-Result_Get_Package_By_OWNER_ID oResult_Get_Package_By_OWNER_ID = new Result_Get_Package_By_OWNER_ID();
+Result_Get_Package_By_OWNER_ID_Adv oResult_Get_Package_By_OWNER_ID_Adv = new Result_Get_Package_By_OWNER_ID_Adv();
 #endregion
 #region Body Section.
 try
@@ -658,26 +658,26 @@ oBLCInitializer.Messages_FilePath = ConfigurationManager.AppSettings["BLC_MESSAG
 using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
 {
 oBLC.Monitor_API_Calls();
-oReturnValue = oBLC.Get_Package_By_OWNER_ID(i_Params_Get_Package_By_OWNER_ID);
-oResult_Get_Package_By_OWNER_ID.My_Result = oReturnValue;
-oResult_Get_Package_By_OWNER_ID.My_Params_Get_Package_By_OWNER_ID = i_Params_Get_Package_By_OWNER_ID;
+oReturnValue = oBLC.Get_Package_By_OWNER_ID_Adv(i_Params_Get_Package_By_OWNER_ID);
+oResult_Get_Package_By_OWNER_ID_Adv.My_Result = oReturnValue;
+oResult_Get_Package_By_OWNER_ID_Adv.My_Params_Get_Package_By_OWNER_ID = i_Params_Get_Package_By_OWNER_ID;
 }
 }
 catch(Exception ex)
 {
 if (ex.GetType().FullName != "BLC.BLCException")
 {
-oResult_Get_Package_By_OWNER_ID.ExceptionMsg = string.Format("Get_Package_By_OWNER_ID : {0}", ex.Message);
+oResult_Get_Package_By_OWNER_ID_Adv.ExceptionMsg = string.Format("Get_Package_By_OWNER_ID_Adv : {0}", ex.Message);
 }
 else
 {
-oResult_Get_Package_By_OWNER_ID.ExceptionMsg = ex.Message;
-oResult_Get_Package_By_OWNER_ID.ExceptionCode = ((BLCException)ex).Code;
+oResult_Get_Package_By_OWNER_ID_Adv.ExceptionMsg = ex.Message;
+oResult_Get_Package_By_OWNER_ID_Adv.ExceptionCode = ((BLCException)ex).Code;
 }
 }
 #endregion
 #region Return Section
-return oResult_Get_Package_By_OWNER_ID;
+return oResult_Get_Package_By_OWNER_ID_Adv;
 #endregion
 }
 #endregion
@@ -1158,8 +1158,8 @@ public Params_Get_Fees_By_OWNER_ID My_Params_Get_Fees_By_OWNER_ID { get; set; }
 #endregion
 }
 #endregion
-#region Result_Get_Package_By_OWNER_ID
-public partial class Result_Get_Package_By_OWNER_ID : Action_Result
+#region Result_Get_Package_By_OWNER_ID_Adv
+public partial class Result_Get_Package_By_OWNER_ID_Adv : Action_Result
 {
 #region Properties.
 public List<Package>  My_Result { get; set; }
