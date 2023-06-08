@@ -18,6 +18,7 @@ Get_Client_By_CLIENT_ID,
 Get_User_By_Where,
 Get_Fees_By_OWNER_ID,
 Get_Currency_By_CURRENCY_ID,
+Get_Currency_By_OWNER_ID,
 Edit_Fees,
 Get_Staff_fees_By_OWNER_ID_Adv,
 Get_Supplier_fees_By_OWNER_ID_Adv,
@@ -26,7 +27,19 @@ Sales_Sum,
 Expenses_Sum,
 GetGrandProfit,
 Edit_Package,
-Get_Package_By_OWNER_ID_Adv
+Get_Package_By_OWNER_ID_Adv,
+Get_Session_By_OWNER_ID_Adv,
+Edit_Session,
+Delete_Session,
+Get_Fees_By_OWNER_ID_Adv,
+Get_Fees_By_CURRENCY_ID,
+CheckClientPaymentStatus,
+CalculateStaffBalance,
+Get_Client_By_OWNER_ID_Adv,
+Get_Staff_By_OWNER_ID_Adv,
+UP_CHECK_USER_EXISTENCE,
+UpdatePassword,
+Login
 }
 #endregion
 

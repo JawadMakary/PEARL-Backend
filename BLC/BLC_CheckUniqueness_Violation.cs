@@ -23,6 +23,38 @@ namespace BLC
 {
 public partial class BLC
 {
+#region Check_Address_Uniqueness_Violation
+public bool Check_Address_Uniqueness_Violation(Address i_Address)
+{
+#region Declaration And Initialization Section.
+bool Is_Exists = false;
+var oQuery = from oItem_Row in _AppContext.Get_Address_By_OWNER_ID(this.OwnerID)
+select oItem_Row;
+#endregion
+#region Body Section.
+// Creating New Record
+if (i_Address.ADDRESS_ID == -1)
+{
+oQuery = from oItem_Row in _AppContext.Get_Address_By_OWNER_ID(this.OwnerID)
+where ((oItem_Row.PERSON_ID == i_Address.PERSON_ID) && (oItem_Row.ADDRESS_TYPE_CODE == i_Address.ADDRESS_TYPE_CODE))
+select oItem_Row;
+}
+else // Editing Already Existing Record.
+{
+oQuery = from oItem_Row in _AppContext.Get_Address_By_OWNER_ID(this.OwnerID)
+where ((oItem_Row.PERSON_ID == i_Address.PERSON_ID) && (oItem_Row.ADDRESS_TYPE_CODE == i_Address.ADDRESS_TYPE_CODE)) && (oItem_Row.ADDRESS_ID != i_Address.ADDRESS_ID)
+select oItem_Row;
+}
+if (oQuery.Count() > 0)
+{
+Is_Exists = true;
+}
+#endregion
+#region Return Section
+return Is_Exists;
+#endregion
+}
+#endregion
 #region Check_Contact_Uniqueness_Violation
 public bool Check_Contact_Uniqueness_Violation(Contact i_Contact)
 {
@@ -171,38 +203,6 @@ else // Editing Already Existing Record.
 {
 oQuery = from oItem_Row in _AppContext.Get_Loc_l4_By_OWNER_ID(this.OwnerID)
 where ((oItem_Row.LOC_L3_ID == i_Loc_l4.LOC_L3_ID) && (oItem_Row.CODE == i_Loc_l4.CODE)) && (oItem_Row.LOC_L4_ID != i_Loc_l4.LOC_L4_ID)
-select oItem_Row;
-}
-if (oQuery.Count() > 0)
-{
-Is_Exists = true;
-}
-#endregion
-#region Return Section
-return Is_Exists;
-#endregion
-}
-#endregion
-#region Check_Address_Uniqueness_Violation
-public bool Check_Address_Uniqueness_Violation(Address i_Address)
-{
-#region Declaration And Initialization Section.
-bool Is_Exists = false;
-var oQuery = from oItem_Row in _AppContext.Get_Address_By_OWNER_ID(this.OwnerID)
-select oItem_Row;
-#endregion
-#region Body Section.
-// Creating New Record
-if (i_Address.ADDRESS_ID == -1)
-{
-oQuery = from oItem_Row in _AppContext.Get_Address_By_OWNER_ID(this.OwnerID)
-where ((oItem_Row.PERSON_ID == i_Address.PERSON_ID) && (oItem_Row.ADDRESS_TYPE_CODE == i_Address.ADDRESS_TYPE_CODE))
-select oItem_Row;
-}
-else // Editing Already Existing Record.
-{
-oQuery = from oItem_Row in _AppContext.Get_Address_By_OWNER_ID(this.OwnerID)
-where ((oItem_Row.PERSON_ID == i_Address.PERSON_ID) && (oItem_Row.ADDRESS_TYPE_CODE == i_Address.ADDRESS_TYPE_CODE)) && (oItem_Row.ADDRESS_ID != i_Address.ADDRESS_ID)
 select oItem_Row;
 }
 if (oQuery.Count() > 0)

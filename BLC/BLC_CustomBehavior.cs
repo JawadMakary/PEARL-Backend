@@ -1,3 +1,4 @@
+using DALC;
 using JWT;
 using JWT.Algorithms;
 using JWT.Builder;
@@ -19,7 +20,7 @@ namespace BLC
         MLF,
         LFM,
         LMF
-    }    
+    }
     #endregion
     public partial class BLC
     {
@@ -31,7 +32,7 @@ namespace BLC
         #region Setup
         #region EditSetup
         #region EditSetup
-      
+
 
 
         public void EditSetup(SetupEntry i_SetupEntry)
@@ -185,7 +186,7 @@ namespace BLC
                         (
                         from oItem in _AppContext.UP_GET_USER_BY_CREDENTIALS
                                     (
-                                        1, 
+                                        1,
                                         i_Params_Authenticate.USER_NAME,
                                         oMiniCryptoHelper.Encrypt(i_Params_Authenticate.PASSWORD)
                                     )
@@ -195,7 +196,7 @@ namespace BLC
             if (oQuery.Count() == 1)
             {
 
-                var oResult = oQuery.First();               
+                var oResult = oQuery.First();
                 #region Check if this User is Active [Even if provided valid credentials]
                 if (oResult.IS_ACTIVE == false)
                 {
@@ -414,14 +415,133 @@ namespace BLC
         {
             int? SUM = 0;
             _AppContext.GETGRANDPROFIT(i_Params_GetGrandProfit.OWNER_ID, i_Params_GetGrandProfit.CURRENCY_ID,
-                i_Params_GetGrandProfit.SUM_POS, i_Params_GetGrandProfit.SUM_NEG ,ref SUM);
+                i_Params_GetGrandProfit.SUM_POS, i_Params_GetGrandProfit.SUM_NEG, ref SUM);
             if (SUM == null)
                 throw new ArgumentOutOfRangeException("Parameter index is out of range.");
             return SUM ?? 0;
         }
 
         #endregion
+
+
+
+
+        #region CheckClientPaymentStatus
+        public int CheckClientPaymentStatus(Params_CheckClientPaymentStatus i_Params_CheckClientPaymentStatus)
+        {
+            int? remainingAmount = 0;
+
+            _AppContext.CheckClientPaymentStatus(
+                i_Params_CheckClientPaymentStatus.ClientID,
+                 i_Params_CheckClientPaymentStatus.CurrencyID,
+                ref remainingAmount,
+                i_Params_CheckClientPaymentStatus.OwnerID
+            );
+
+            if (remainingAmount == null)
+                throw new ArgumentOutOfRangeException("Parameter index is out of range.");
+
+            return remainingAmount ?? 0;
+        }
+
+
+
+        #endregion
+
+        #region CalculateStaffBalance
+        public int CalculateStaffBalance(Params_CalculateStaffBalance i_Params_CalculateStaffBalance)
+        {
+            int? BALANCE = 0;
+
+            _AppContext.CalculateStaffBalance(
+                i_Params_CalculateStaffBalance.StaffID,
+                ref BALANCE,
+                i_Params_CalculateStaffBalance.OwnerID,
+                 i_Params_CalculateStaffBalance.CurrencyID
+            );
+
+
+            if (BALANCE == null)
+                throw new ArgumentOutOfRangeException("Parameter index is out of range.");
+
+            return BALANCE ?? 0;
+        }
+
+
+
+        #endregion
+
+
+        #region CheckUserExists
+        public bool UP_CHECK_USER_EXISTENCE(Params_UP_CHECK_USER_EXISTENCE i_Params_UP_CHECK_USER_EXISTENCE)
+        {
+            bool? exists=true;
+
+            _AppContext.UP_CHECK_USER_EXISTENCE(
+               (int?)i_Params_UP_CHECK_USER_EXISTENCE.OwnerID,
+               i_Params_UP_CHECK_USER_EXISTENCE.Username,
+               ref exists
+
+            );
+
+
+            return (bool)exists;
+        }
+        //Int32? OWNER_ID, string USERNAME,ref bool? EXISTS
+
+
+
+        #endregion
+        #region UpdatePassword
+
+        public void UpdatePassword(Params_UpdatePassword i_Params_UpdatePassword)
+        {
+            bool? exists = true;
+            /// UpdatePassword
+            _AppContext.UpdatePassword(
+              i_Params_UpdatePassword.OwnerID,
+               i_Params_UpdatePassword.Username,
+               i_Params_UpdatePassword.updatedpassword
+
+
+            );
+
+
+        }
+
+
+
+        #endregion
+
+        #region login
+
+        public int LoginFct(Params_LoginFct i_Params_LoginFct)
+        {
+            int? res = 0;
+
+            _AppContext.LoginFct(
+               i_Params_LoginFct.OwnerID,
+               i_Params_LoginFct.Username,
+               i_Params_LoginFct.password,
+
+               ref res
+
+            );
+
+
+            if (res == null)
+                throw new ArgumentOutOfRangeException("Parameter index is out of range.");
+
+            return res ?? 0;
+        }
+
+
+
+        #endregion
+
+
     }
+
 
     #region Business Entities
     #region Setup
@@ -468,10 +588,10 @@ namespace BLC
         public BLC.Enum_Language Language { get; set; }
         public Int32? OwnerID { get; set; }
         public string Ticket { get; set; }
-        public string USER_TYPE_CODE { get; set; }        
+        public string USER_TYPE_CODE { get; set; }
         #endregion
     }
-  
+
     public partial class Params_Auto_Prepare_Ticket
     {
         #region Properties.
@@ -480,7 +600,7 @@ namespace BLC
     }
     #endregion
     #region salesSum
- 
+
 
     #endregion
     #region Authentication
@@ -509,7 +629,7 @@ namespace BLC
         public long? OWNER_ID { get; set; }
         public Int32? CURRENCY_ID { get; set; }
 
-       
+
 
         #endregion
     }
@@ -527,6 +647,48 @@ namespace BLC
         #endregion
     }
 
+    public partial class Params_CheckClientPaymentStatus
+    {
+        public long? OwnerID { get; set; }
+        public Int32? ClientID { get; set; }
+
+
+        public Int32? CurrencyID { get; set; }
+
+
+
+    }
+
+    public partial class Params_CalculateStaffBalance
+    {
+        public long? OwnerID { get; set; }
+        public Int32? StaffID { get; set; }
+
+
+        public Int32? CurrencyID { get; set; }
+    }
+    public partial class Params_UP_CHECK_USER_EXISTENCE
+    {
+        public long? OwnerID { get; set; }
+        public string Username { get; set; }
+     
+
+    }
+    public partial class Params_UpdatePassword
+    {
+        public long? OwnerID { get; set; }
+        public string Username { get; set; }
+
+        public string updatedpassword { get; set; }
+
+
+    }
+
+    public partial class Params_LoginFct
+    {
+        public int? OwnerID { get; set; }
+        public string Username { get; set; }
+
+        public string password { get; set; }
+    }
 }
-
-

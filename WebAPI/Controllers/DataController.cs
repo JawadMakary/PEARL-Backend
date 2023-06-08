@@ -49,6 +49,241 @@ return Is_Valid;
 #endregion
 }
 #endregion
+#region CalculateStaffBalance
+[HttpPost]
+[Route("CalculateStaffBalance")]
+public Result_CalculateStaffBalance CalculateStaffBalance(Params_CalculateStaffBalance i_Params_CalculateStaffBalance)
+{
+#region Declaration And Initialization Section.
+Int32 oReturnValue = 0;
+string i_Ticket = string.Empty;
+Result_CalculateStaffBalance oResult_CalculateStaffBalance = new Result_CalculateStaffBalance();
+#endregion
+#region Body Section.
+try
+{
+
+// Ticket Checking
+//-------------------
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] != null)
+{
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] == "1")
+{
+if
+(
+(
+(HttpContext.Request.Query["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Query["Ticket"].ToString() != "")
+)
+||
+(
+(HttpContext.Request.Headers["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Headers["Ticket"].ToString() != "")
+)
+)
+{
+i_Ticket = string.IsNullOrEmpty(HttpContext.Request.Query["Ticket"])  ? "": HttpContext.Request.Query["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+i_Ticket = HttpContext.Request.Headers["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+throw new Exception("Missing Ticket");
+}
+}
+}
+else
+{
+throw new Exception("Invalid Ticket");
+}
+}
+}
+//-------------------
+
+BLC.BLC oBLC_Default = new BLC.BLC();
+BLCInitializer oBLCInitializer = oBLC_Default.Prepare_BLCInitializer(i_Ticket,BLC.BLC.Enum_API_Method.CalculateStaffBalance);
+using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
+{
+oBLC.Monitor_API_Calls();
+oReturnValue = oBLC.CalculateStaffBalance(i_Params_CalculateStaffBalance);
+oResult_CalculateStaffBalance.My_Result = oReturnValue;
+oResult_CalculateStaffBalance.My_Params_CalculateStaffBalance = i_Params_CalculateStaffBalance;
+}
+}
+catch(Exception ex)
+{
+if (ex.GetType().FullName != "BLC.BLCException")
+{
+oResult_CalculateStaffBalance.ExceptionMsg = string.Format("CalculateStaffBalance : {0}", ex.Message);
+}
+else
+{
+oResult_CalculateStaffBalance.ExceptionMsg = ex.Message;
+oResult_CalculateStaffBalance.ExceptionCode = ((BLCException)ex).Code;
+}
+}
+#endregion
+#region Return Section
+return oResult_CalculateStaffBalance;
+#endregion
+}
+#endregion
+#region CheckClientPaymentStatus
+[HttpPost]
+[Route("CheckClientPaymentStatus")]
+public Result_CheckClientPaymentStatus CheckClientPaymentStatus(Params_CheckClientPaymentStatus i_Params_CheckClientPaymentStatus)
+{
+#region Declaration And Initialization Section.
+Int32 oReturnValue = 0;
+string i_Ticket = string.Empty;
+Result_CheckClientPaymentStatus oResult_CheckClientPaymentStatus = new Result_CheckClientPaymentStatus();
+#endregion
+#region Body Section.
+try
+{
+
+// Ticket Checking
+//-------------------
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] != null)
+{
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] == "1")
+{
+if
+(
+(
+(HttpContext.Request.Query["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Query["Ticket"].ToString() != "")
+)
+||
+(
+(HttpContext.Request.Headers["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Headers["Ticket"].ToString() != "")
+)
+)
+{
+i_Ticket = string.IsNullOrEmpty(HttpContext.Request.Query["Ticket"])  ? "": HttpContext.Request.Query["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+i_Ticket = HttpContext.Request.Headers["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+throw new Exception("Missing Ticket");
+}
+}
+}
+else
+{
+throw new Exception("Invalid Ticket");
+}
+}
+}
+//-------------------
+
+BLC.BLC oBLC_Default = new BLC.BLC();
+BLCInitializer oBLCInitializer = oBLC_Default.Prepare_BLCInitializer(i_Ticket,BLC.BLC.Enum_API_Method.CheckClientPaymentStatus);
+using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
+{
+oBLC.Monitor_API_Calls();
+oReturnValue = oBLC.CheckClientPaymentStatus(i_Params_CheckClientPaymentStatus);
+oResult_CheckClientPaymentStatus.My_Result = oReturnValue;
+oResult_CheckClientPaymentStatus.My_Params_CheckClientPaymentStatus = i_Params_CheckClientPaymentStatus;
+}
+}
+catch(Exception ex)
+{
+if (ex.GetType().FullName != "BLC.BLCException")
+{
+oResult_CheckClientPaymentStatus.ExceptionMsg = string.Format("CheckClientPaymentStatus : {0}", ex.Message);
+}
+else
+{
+oResult_CheckClientPaymentStatus.ExceptionMsg = ex.Message;
+oResult_CheckClientPaymentStatus.ExceptionCode = ((BLCException)ex).Code;
+}
+}
+#endregion
+#region Return Section
+return oResult_CheckClientPaymentStatus;
+#endregion
+}
+#endregion
+#region Delete_Session
+[HttpPost]
+[Route("Delete_Session")]
+public Result_Delete_Session Delete_Session(Params_Delete_Session i_Params_Delete_Session)
+{
+#region Declaration And Initialization Section.
+string i_Ticket = string.Empty;
+Result_Delete_Session oResult_Delete_Session = new Result_Delete_Session();
+#endregion
+#region Body Section.
+try
+{
+
+// Ticket Checking
+//-------------------
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] != null)
+{
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] == "1")
+{
+if
+(
+(
+(HttpContext.Request.Query["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Query["Ticket"].ToString() != "")
+)
+||
+(
+(HttpContext.Request.Headers["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Headers["Ticket"].ToString() != "")
+)
+)
+{
+i_Ticket = string.IsNullOrEmpty(HttpContext.Request.Query["Ticket"])  ? "": HttpContext.Request.Query["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+i_Ticket = HttpContext.Request.Headers["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+throw new Exception("Missing Ticket");
+}
+}
+}
+else
+{
+throw new Exception("Invalid Ticket");
+}
+}
+}
+//-------------------
+
+BLC.BLC oBLC_Default = new BLC.BLC();
+BLCInitializer oBLCInitializer = oBLC_Default.Prepare_BLCInitializer(i_Ticket,BLC.BLC.Enum_API_Method.Delete_Session);
+using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
+{
+oBLC.Monitor_API_Calls();
+oBLC.Delete_Session(i_Params_Delete_Session);
+oResult_Delete_Session.My_Params_Delete_Session = i_Params_Delete_Session;
+}
+}
+catch(Exception ex)
+{
+if (ex.GetType().FullName != "BLC.BLCException")
+{
+oResult_Delete_Session.ExceptionMsg = string.Format("Delete_Session : {0}", ex.Message);
+}
+else
+{
+oResult_Delete_Session.ExceptionMsg = ex.Message;
+oResult_Delete_Session.ExceptionCode = ((BLCException)ex).Code;
+}
+}
+#endregion
+#region Return Section
+return oResult_Delete_Session;
+#endregion
+}
+#endregion
 #region Edit_Fees
 [HttpPost]
 [Route("Edit_Fees")]
@@ -200,6 +435,83 @@ oResult_Edit_Package.ExceptionCode = ((BLCException)ex).Code;
 #endregion
 #region Return Section
 return oResult_Edit_Package;
+#endregion
+}
+#endregion
+#region Edit_Session
+[HttpPost]
+[Route("Edit_Session")]
+public Result_Edit_Session Edit_Session(Session i_Session)
+{
+#region Declaration And Initialization Section.
+string i_Ticket = string.Empty;
+Result_Edit_Session oResult_Edit_Session = new Result_Edit_Session();
+#endregion
+#region Body Section.
+try
+{
+
+// Ticket Checking
+//-------------------
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] != null)
+{
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] == "1")
+{
+if
+(
+(
+(HttpContext.Request.Query["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Query["Ticket"].ToString() != "")
+)
+||
+(
+(HttpContext.Request.Headers["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Headers["Ticket"].ToString() != "")
+)
+)
+{
+i_Ticket = string.IsNullOrEmpty(HttpContext.Request.Query["Ticket"])  ? "": HttpContext.Request.Query["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+i_Ticket = HttpContext.Request.Headers["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+throw new Exception("Missing Ticket");
+}
+}
+}
+else
+{
+throw new Exception("Invalid Ticket");
+}
+}
+}
+//-------------------
+
+BLC.BLC oBLC_Default = new BLC.BLC();
+BLCInitializer oBLCInitializer = oBLC_Default.Prepare_BLCInitializer(i_Ticket,BLC.BLC.Enum_API_Method.Edit_Session);
+using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
+{
+oBLC.Monitor_API_Calls();
+oBLC.Edit_Session(i_Session);
+oResult_Edit_Session.My_Session = i_Session;
+}
+}
+catch(Exception ex)
+{
+if (ex.GetType().FullName != "BLC.BLCException")
+{
+oResult_Edit_Session.ExceptionMsg = string.Format("Edit_Session : {0}", ex.Message);
+}
+else
+{
+oResult_Edit_Session.ExceptionMsg = ex.Message;
+oResult_Edit_Session.ExceptionCode = ((BLCException)ex).Code;
+}
+}
+#endregion
+#region Return Section
+return oResult_Edit_Session;
 #endregion
 }
 #endregion
@@ -361,6 +673,85 @@ return oResult_Get_Client_By_CLIENT_ID;
 #endregion
 }
 #endregion
+#region Get_Client_By_OWNER_ID_Adv
+[HttpPost]
+[Route("Get_Client_By_OWNER_ID_Adv")]
+public Result_Get_Client_By_OWNER_ID_Adv Get_Client_By_OWNER_ID_Adv(Params_Get_Client_By_OWNER_ID i_Params_Get_Client_By_OWNER_ID)
+{
+#region Declaration And Initialization Section.
+List<Client>  oReturnValue = new List<Client> ();
+string i_Ticket = string.Empty;
+Result_Get_Client_By_OWNER_ID_Adv oResult_Get_Client_By_OWNER_ID_Adv = new Result_Get_Client_By_OWNER_ID_Adv();
+#endregion
+#region Body Section.
+try
+{
+
+// Ticket Checking
+//-------------------
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] != null)
+{
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] == "1")
+{
+if
+(
+(
+(HttpContext.Request.Query["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Query["Ticket"].ToString() != "")
+)
+||
+(
+(HttpContext.Request.Headers["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Headers["Ticket"].ToString() != "")
+)
+)
+{
+i_Ticket = string.IsNullOrEmpty(HttpContext.Request.Query["Ticket"])  ? "": HttpContext.Request.Query["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+i_Ticket = HttpContext.Request.Headers["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+throw new Exception("Missing Ticket");
+}
+}
+}
+else
+{
+throw new Exception("Invalid Ticket");
+}
+}
+}
+//-------------------
+
+BLC.BLC oBLC_Default = new BLC.BLC();
+BLCInitializer oBLCInitializer = oBLC_Default.Prepare_BLCInitializer(i_Ticket,BLC.BLC.Enum_API_Method.Get_Client_By_OWNER_ID_Adv);
+using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
+{
+oBLC.Monitor_API_Calls();
+oReturnValue = oBLC.Get_Client_By_OWNER_ID_Adv(i_Params_Get_Client_By_OWNER_ID);
+oResult_Get_Client_By_OWNER_ID_Adv.My_Result = oReturnValue;
+oResult_Get_Client_By_OWNER_ID_Adv.My_Params_Get_Client_By_OWNER_ID = i_Params_Get_Client_By_OWNER_ID;
+}
+}
+catch(Exception ex)
+{
+if (ex.GetType().FullName != "BLC.BLCException")
+{
+oResult_Get_Client_By_OWNER_ID_Adv.ExceptionMsg = string.Format("Get_Client_By_OWNER_ID_Adv : {0}", ex.Message);
+}
+else
+{
+oResult_Get_Client_By_OWNER_ID_Adv.ExceptionMsg = ex.Message;
+oResult_Get_Client_By_OWNER_ID_Adv.ExceptionCode = ((BLCException)ex).Code;
+}
+}
+#endregion
+#region Return Section
+return oResult_Get_Client_By_OWNER_ID_Adv;
+#endregion
+}
+#endregion
 #region Get_Client_fees_By_OWNER_ID_Adv
 [HttpPost]
 [Route("Get_Client_fees_By_OWNER_ID_Adv")]
@@ -519,6 +910,164 @@ return oResult_Get_Currency_By_CURRENCY_ID;
 #endregion
 }
 #endregion
+#region Get_Currency_By_OWNER_ID
+[HttpPost]
+[Route("Get_Currency_By_OWNER_ID")]
+public Result_Get_Currency_By_OWNER_ID Get_Currency_By_OWNER_ID(Params_Get_Currency_By_OWNER_ID i_Params_Get_Currency_By_OWNER_ID)
+{
+#region Declaration And Initialization Section.
+List<Currency>  oReturnValue = new List<Currency> ();
+string i_Ticket = string.Empty;
+Result_Get_Currency_By_OWNER_ID oResult_Get_Currency_By_OWNER_ID = new Result_Get_Currency_By_OWNER_ID();
+#endregion
+#region Body Section.
+try
+{
+
+// Ticket Checking
+//-------------------
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] != null)
+{
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] == "1")
+{
+if
+(
+(
+(HttpContext.Request.Query["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Query["Ticket"].ToString() != "")
+)
+||
+(
+(HttpContext.Request.Headers["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Headers["Ticket"].ToString() != "")
+)
+)
+{
+i_Ticket = string.IsNullOrEmpty(HttpContext.Request.Query["Ticket"])  ? "": HttpContext.Request.Query["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+i_Ticket = HttpContext.Request.Headers["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+throw new Exception("Missing Ticket");
+}
+}
+}
+else
+{
+throw new Exception("Invalid Ticket");
+}
+}
+}
+//-------------------
+
+BLC.BLC oBLC_Default = new BLC.BLC();
+BLCInitializer oBLCInitializer = oBLC_Default.Prepare_BLCInitializer(i_Ticket,BLC.BLC.Enum_API_Method.Get_Currency_By_OWNER_ID);
+using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
+{
+oBLC.Monitor_API_Calls();
+oReturnValue = oBLC.Get_Currency_By_OWNER_ID(i_Params_Get_Currency_By_OWNER_ID);
+oResult_Get_Currency_By_OWNER_ID.My_Result = oReturnValue;
+oResult_Get_Currency_By_OWNER_ID.My_Params_Get_Currency_By_OWNER_ID = i_Params_Get_Currency_By_OWNER_ID;
+}
+}
+catch(Exception ex)
+{
+if (ex.GetType().FullName != "BLC.BLCException")
+{
+oResult_Get_Currency_By_OWNER_ID.ExceptionMsg = string.Format("Get_Currency_By_OWNER_ID : {0}", ex.Message);
+}
+else
+{
+oResult_Get_Currency_By_OWNER_ID.ExceptionMsg = ex.Message;
+oResult_Get_Currency_By_OWNER_ID.ExceptionCode = ((BLCException)ex).Code;
+}
+}
+#endregion
+#region Return Section
+return oResult_Get_Currency_By_OWNER_ID;
+#endregion
+}
+#endregion
+#region Get_Fees_By_CURRENCY_ID
+[HttpPost]
+[Route("Get_Fees_By_CURRENCY_ID")]
+public Result_Get_Fees_By_CURRENCY_ID Get_Fees_By_CURRENCY_ID(Params_Get_Fees_By_CURRENCY_ID i_Params_Get_Fees_By_CURRENCY_ID)
+{
+#region Declaration And Initialization Section.
+List<Fees>  oReturnValue = new List<Fees> ();
+string i_Ticket = string.Empty;
+Result_Get_Fees_By_CURRENCY_ID oResult_Get_Fees_By_CURRENCY_ID = new Result_Get_Fees_By_CURRENCY_ID();
+#endregion
+#region Body Section.
+try
+{
+
+// Ticket Checking
+//-------------------
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] != null)
+{
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] == "1")
+{
+if
+(
+(
+(HttpContext.Request.Query["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Query["Ticket"].ToString() != "")
+)
+||
+(
+(HttpContext.Request.Headers["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Headers["Ticket"].ToString() != "")
+)
+)
+{
+i_Ticket = string.IsNullOrEmpty(HttpContext.Request.Query["Ticket"])  ? "": HttpContext.Request.Query["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+i_Ticket = HttpContext.Request.Headers["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+throw new Exception("Missing Ticket");
+}
+}
+}
+else
+{
+throw new Exception("Invalid Ticket");
+}
+}
+}
+//-------------------
+
+BLC.BLC oBLC_Default = new BLC.BLC();
+BLCInitializer oBLCInitializer = oBLC_Default.Prepare_BLCInitializer(i_Ticket,BLC.BLC.Enum_API_Method.Get_Fees_By_CURRENCY_ID);
+using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
+{
+oBLC.Monitor_API_Calls();
+oReturnValue = oBLC.Get_Fees_By_CURRENCY_ID(i_Params_Get_Fees_By_CURRENCY_ID);
+oResult_Get_Fees_By_CURRENCY_ID.My_Result = oReturnValue;
+oResult_Get_Fees_By_CURRENCY_ID.My_Params_Get_Fees_By_CURRENCY_ID = i_Params_Get_Fees_By_CURRENCY_ID;
+}
+}
+catch(Exception ex)
+{
+if (ex.GetType().FullName != "BLC.BLCException")
+{
+oResult_Get_Fees_By_CURRENCY_ID.ExceptionMsg = string.Format("Get_Fees_By_CURRENCY_ID : {0}", ex.Message);
+}
+else
+{
+oResult_Get_Fees_By_CURRENCY_ID.ExceptionMsg = ex.Message;
+oResult_Get_Fees_By_CURRENCY_ID.ExceptionCode = ((BLCException)ex).Code;
+}
+}
+#endregion
+#region Return Section
+return oResult_Get_Fees_By_CURRENCY_ID;
+#endregion
+}
+#endregion
 #region Get_Fees_By_OWNER_ID
 [HttpPost]
 [Route("Get_Fees_By_OWNER_ID")]
@@ -598,6 +1147,85 @@ return oResult_Get_Fees_By_OWNER_ID;
 #endregion
 }
 #endregion
+#region Get_Fees_By_OWNER_ID_Adv
+[HttpPost]
+[Route("Get_Fees_By_OWNER_ID_Adv")]
+public Result_Get_Fees_By_OWNER_ID_Adv Get_Fees_By_OWNER_ID_Adv(Params_Get_Fees_By_OWNER_ID i_Params_Get_Fees_By_OWNER_ID)
+{
+#region Declaration And Initialization Section.
+List<Fees>  oReturnValue = new List<Fees> ();
+string i_Ticket = string.Empty;
+Result_Get_Fees_By_OWNER_ID_Adv oResult_Get_Fees_By_OWNER_ID_Adv = new Result_Get_Fees_By_OWNER_ID_Adv();
+#endregion
+#region Body Section.
+try
+{
+
+// Ticket Checking
+//-------------------
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] != null)
+{
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] == "1")
+{
+if
+(
+(
+(HttpContext.Request.Query["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Query["Ticket"].ToString() != "")
+)
+||
+(
+(HttpContext.Request.Headers["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Headers["Ticket"].ToString() != "")
+)
+)
+{
+i_Ticket = string.IsNullOrEmpty(HttpContext.Request.Query["Ticket"])  ? "": HttpContext.Request.Query["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+i_Ticket = HttpContext.Request.Headers["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+throw new Exception("Missing Ticket");
+}
+}
+}
+else
+{
+throw new Exception("Invalid Ticket");
+}
+}
+}
+//-------------------
+
+BLC.BLC oBLC_Default = new BLC.BLC();
+BLCInitializer oBLCInitializer = oBLC_Default.Prepare_BLCInitializer(i_Ticket,BLC.BLC.Enum_API_Method.Get_Fees_By_OWNER_ID_Adv);
+using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
+{
+oBLC.Monitor_API_Calls();
+oReturnValue = oBLC.Get_Fees_By_OWNER_ID_Adv(i_Params_Get_Fees_By_OWNER_ID);
+oResult_Get_Fees_By_OWNER_ID_Adv.My_Result = oReturnValue;
+oResult_Get_Fees_By_OWNER_ID_Adv.My_Params_Get_Fees_By_OWNER_ID = i_Params_Get_Fees_By_OWNER_ID;
+}
+}
+catch(Exception ex)
+{
+if (ex.GetType().FullName != "BLC.BLCException")
+{
+oResult_Get_Fees_By_OWNER_ID_Adv.ExceptionMsg = string.Format("Get_Fees_By_OWNER_ID_Adv : {0}", ex.Message);
+}
+else
+{
+oResult_Get_Fees_By_OWNER_ID_Adv.ExceptionMsg = ex.Message;
+oResult_Get_Fees_By_OWNER_ID_Adv.ExceptionCode = ((BLCException)ex).Code;
+}
+}
+#endregion
+#region Return Section
+return oResult_Get_Fees_By_OWNER_ID_Adv;
+#endregion
+}
+#endregion
 #region Get_Package_By_OWNER_ID_Adv
 [HttpPost]
 [Route("Get_Package_By_OWNER_ID_Adv")]
@@ -650,11 +1278,7 @@ throw new Exception("Invalid Ticket");
 //-------------------
 
 BLC.BLC oBLC_Default = new BLC.BLC();
-BLCInitializer oBLCInitializer = new BLCInitializer();
-oBLCInitializer.UserID           = Convert.ToInt64(oBLC_Default.ResolveTicket(i_Ticket)["USER_ID"]);
-oBLCInitializer.OwnerID          = Convert.ToInt32(oBLC_Default.ResolveTicket(i_Ticket)["OWNER_ID"]);
-oBLCInitializer.ConnectionString = ConfigurationManager.AppSettings["CONN_STR"];
-oBLCInitializer.Messages_FilePath = ConfigurationManager.AppSettings["BLC_MESSAGES"];
+BLCInitializer oBLCInitializer = oBLC_Default.Prepare_BLCInitializer(i_Ticket,BLC.BLC.Enum_API_Method.Get_Package_By_OWNER_ID_Adv);
 using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
 {
 oBLC.Monitor_API_Calls();
@@ -678,6 +1302,164 @@ oResult_Get_Package_By_OWNER_ID_Adv.ExceptionCode = ((BLCException)ex).Code;
 #endregion
 #region Return Section
 return oResult_Get_Package_By_OWNER_ID_Adv;
+#endregion
+}
+#endregion
+#region Get_Session_By_OWNER_ID_Adv
+[HttpPost]
+[Route("Get_Session_By_OWNER_ID_Adv")]
+public Result_Get_Session_By_OWNER_ID_Adv Get_Session_By_OWNER_ID_Adv(Params_Get_Session_By_OWNER_ID i_Params_Get_Session_By_OWNER_ID)
+{
+#region Declaration And Initialization Section.
+List<Session>  oReturnValue = new List<Session> ();
+string i_Ticket = string.Empty;
+Result_Get_Session_By_OWNER_ID_Adv oResult_Get_Session_By_OWNER_ID_Adv = new Result_Get_Session_By_OWNER_ID_Adv();
+#endregion
+#region Body Section.
+try
+{
+
+// Ticket Checking
+//-------------------
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] != null)
+{
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] == "1")
+{
+if
+(
+(
+(HttpContext.Request.Query["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Query["Ticket"].ToString() != "")
+)
+||
+(
+(HttpContext.Request.Headers["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Headers["Ticket"].ToString() != "")
+)
+)
+{
+i_Ticket = string.IsNullOrEmpty(HttpContext.Request.Query["Ticket"])  ? "": HttpContext.Request.Query["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+i_Ticket = HttpContext.Request.Headers["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+throw new Exception("Missing Ticket");
+}
+}
+}
+else
+{
+throw new Exception("Invalid Ticket");
+}
+}
+}
+//-------------------
+
+BLC.BLC oBLC_Default = new BLC.BLC();
+BLCInitializer oBLCInitializer = oBLC_Default.Prepare_BLCInitializer(i_Ticket,BLC.BLC.Enum_API_Method.Get_Session_By_OWNER_ID_Adv);
+using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
+{
+oBLC.Monitor_API_Calls();
+oReturnValue = oBLC.Get_Session_By_OWNER_ID_Adv(i_Params_Get_Session_By_OWNER_ID);
+oResult_Get_Session_By_OWNER_ID_Adv.My_Result = oReturnValue;
+oResult_Get_Session_By_OWNER_ID_Adv.My_Params_Get_Session_By_OWNER_ID = i_Params_Get_Session_By_OWNER_ID;
+}
+}
+catch(Exception ex)
+{
+if (ex.GetType().FullName != "BLC.BLCException")
+{
+oResult_Get_Session_By_OWNER_ID_Adv.ExceptionMsg = string.Format("Get_Session_By_OWNER_ID_Adv : {0}", ex.Message);
+}
+else
+{
+oResult_Get_Session_By_OWNER_ID_Adv.ExceptionMsg = ex.Message;
+oResult_Get_Session_By_OWNER_ID_Adv.ExceptionCode = ((BLCException)ex).Code;
+}
+}
+#endregion
+#region Return Section
+return oResult_Get_Session_By_OWNER_ID_Adv;
+#endregion
+}
+#endregion
+#region Get_Staff_By_OWNER_ID_Adv
+[HttpPost]
+[Route("Get_Staff_By_OWNER_ID_Adv")]
+public Result_Get_Staff_By_OWNER_ID_Adv Get_Staff_By_OWNER_ID_Adv(Params_Get_Staff_By_OWNER_ID i_Params_Get_Staff_By_OWNER_ID)
+{
+#region Declaration And Initialization Section.
+List<Staff>  oReturnValue = new List<Staff> ();
+string i_Ticket = string.Empty;
+Result_Get_Staff_By_OWNER_ID_Adv oResult_Get_Staff_By_OWNER_ID_Adv = new Result_Get_Staff_By_OWNER_ID_Adv();
+#endregion
+#region Body Section.
+try
+{
+
+// Ticket Checking
+//-------------------
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] != null)
+{
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] == "1")
+{
+if
+(
+(
+(HttpContext.Request.Query["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Query["Ticket"].ToString() != "")
+)
+||
+(
+(HttpContext.Request.Headers["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Headers["Ticket"].ToString() != "")
+)
+)
+{
+i_Ticket = string.IsNullOrEmpty(HttpContext.Request.Query["Ticket"])  ? "": HttpContext.Request.Query["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+i_Ticket = HttpContext.Request.Headers["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+throw new Exception("Missing Ticket");
+}
+}
+}
+else
+{
+throw new Exception("Invalid Ticket");
+}
+}
+}
+//-------------------
+
+BLC.BLC oBLC_Default = new BLC.BLC();
+BLCInitializer oBLCInitializer = oBLC_Default.Prepare_BLCInitializer(i_Ticket,BLC.BLC.Enum_API_Method.Get_Staff_By_OWNER_ID_Adv);
+using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
+{
+oBLC.Monitor_API_Calls();
+oReturnValue = oBLC.Get_Staff_By_OWNER_ID_Adv(i_Params_Get_Staff_By_OWNER_ID);
+oResult_Get_Staff_By_OWNER_ID_Adv.My_Result = oReturnValue;
+oResult_Get_Staff_By_OWNER_ID_Adv.My_Params_Get_Staff_By_OWNER_ID = i_Params_Get_Staff_By_OWNER_ID;
+}
+}
+catch(Exception ex)
+{
+if (ex.GetType().FullName != "BLC.BLCException")
+{
+oResult_Get_Staff_By_OWNER_ID_Adv.ExceptionMsg = string.Format("Get_Staff_By_OWNER_ID_Adv : {0}", ex.Message);
+}
+else
+{
+oResult_Get_Staff_By_OWNER_ID_Adv.ExceptionMsg = ex.Message;
+oResult_Get_Staff_By_OWNER_ID_Adv.ExceptionCode = ((BLCException)ex).Code;
+}
+}
+#endregion
+#region Return Section
+return oResult_Get_Staff_By_OWNER_ID_Adv;
 #endregion
 }
 #endregion
@@ -997,6 +1779,89 @@ return oResult_GetGrandProfit;
 #endregion
 }
 #endregion
+#region LoginFct
+[HttpPost]
+[Route("LoginFct")]
+public Result_LoginFct LoginFct(Params_LoginFct i_Params_LoginFct)
+{
+#region Declaration And Initialization Section.
+Int32 oReturnValue = 0;
+string i_Ticket = string.Empty;
+Result_LoginFct oResult_LoginFct = new Result_LoginFct();
+#endregion
+#region Body Section.
+try
+{
+
+// Ticket Checking
+//-------------------
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] != null)
+{
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] == "1")
+{
+if
+(
+(
+(HttpContext.Request.Query["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Query["Ticket"].ToString() != "")
+)
+||
+(
+(HttpContext.Request.Headers["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Headers["Ticket"].ToString() != "")
+)
+)
+{
+i_Ticket = string.IsNullOrEmpty(HttpContext.Request.Query["Ticket"])  ? "": HttpContext.Request.Query["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+i_Ticket = HttpContext.Request.Headers["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+throw new Exception("Missing Ticket");
+}
+}
+}
+else
+{
+throw new Exception("Invalid Ticket");
+}
+}
+}
+//-------------------
+
+BLC.BLC oBLC_Default = new BLC.BLC();
+BLCInitializer oBLCInitializer = new BLCInitializer();
+oBLCInitializer.UserID           = Convert.ToInt64(oBLC_Default.ResolveTicket(i_Ticket)["USER_ID"]);
+oBLCInitializer.OwnerID          = Convert.ToInt32(oBLC_Default.ResolveTicket(i_Ticket)["OWNER_ID"]);
+oBLCInitializer.ConnectionString = ConfigurationManager.AppSettings["CONN_STR"];
+oBLCInitializer.Messages_FilePath = ConfigurationManager.AppSettings["BLC_MESSAGES"];
+using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
+{
+oBLC.Monitor_API_Calls();
+oReturnValue = oBLC.LoginFct(i_Params_LoginFct);
+oResult_LoginFct.My_Result = oReturnValue;
+oResult_LoginFct.My_Params_LoginFct = i_Params_LoginFct;
+}
+}
+catch(Exception ex)
+{
+if (ex.GetType().FullName != "BLC.BLCException")
+{
+oResult_LoginFct.ExceptionMsg = string.Format("LoginFct : {0}", ex.Message);
+}
+else
+{
+oResult_LoginFct.ExceptionMsg = ex.Message;
+oResult_LoginFct.ExceptionCode = ((BLCException)ex).Code;
+}
+}
+#endregion
+#region Return Section
+return oResult_LoginFct;
+#endregion
+}
+#endregion
 #region Sales_Sum
 [HttpPost]
 [Route("Sales_Sum")]
@@ -1076,6 +1941,162 @@ return oResult_Sales_Sum;
 #endregion
 }
 #endregion
+#region UP_CHECK_USER_EXISTENCE
+[HttpPost]
+[Route("UP_CHECK_USER_EXISTENCE")]
+public Result_UP_CHECK_USER_EXISTENCE UP_CHECK_USER_EXISTENCE(Params_UP_CHECK_USER_EXISTENCE i_Params_UP_CHECK_USER_EXISTENCE)
+{
+#region Declaration And Initialization Section.
+Boolean oReturnValue = false;
+string i_Ticket = string.Empty;
+Result_UP_CHECK_USER_EXISTENCE oResult_UP_CHECK_USER_EXISTENCE = new Result_UP_CHECK_USER_EXISTENCE();
+#endregion
+#region Body Section.
+try
+{
+
+// Ticket Checking
+//-------------------
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] != null)
+{
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] == "1")
+{
+if
+(
+(
+(HttpContext.Request.Query["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Query["Ticket"].ToString() != "")
+)
+||
+(
+(HttpContext.Request.Headers["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Headers["Ticket"].ToString() != "")
+)
+)
+{
+i_Ticket = string.IsNullOrEmpty(HttpContext.Request.Query["Ticket"])  ? "": HttpContext.Request.Query["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+i_Ticket = HttpContext.Request.Headers["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+throw new Exception("Missing Ticket");
+}
+}
+}
+else
+{
+throw new Exception("Invalid Ticket");
+}
+}
+}
+//-------------------
+
+BLC.BLC oBLC_Default = new BLC.BLC();
+BLCInitializer oBLCInitializer = oBLC_Default.Prepare_BLCInitializer(i_Ticket,BLC.BLC.Enum_API_Method.UP_CHECK_USER_EXISTENCE);
+using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
+{
+oBLC.Monitor_API_Calls();
+oReturnValue = oBLC.UP_CHECK_USER_EXISTENCE(i_Params_UP_CHECK_USER_EXISTENCE);
+oResult_UP_CHECK_USER_EXISTENCE.My_Result = oReturnValue;
+oResult_UP_CHECK_USER_EXISTENCE.My_Params_UP_CHECK_USER_EXISTENCE = i_Params_UP_CHECK_USER_EXISTENCE;
+}
+}
+catch(Exception ex)
+{
+if (ex.GetType().FullName != "BLC.BLCException")
+{
+oResult_UP_CHECK_USER_EXISTENCE.ExceptionMsg = string.Format("UP_CHECK_USER_EXISTENCE : {0}", ex.Message);
+}
+else
+{
+oResult_UP_CHECK_USER_EXISTENCE.ExceptionMsg = ex.Message;
+oResult_UP_CHECK_USER_EXISTENCE.ExceptionCode = ((BLCException)ex).Code;
+}
+}
+#endregion
+#region Return Section
+return oResult_UP_CHECK_USER_EXISTENCE;
+#endregion
+}
+#endregion
+#region UpdatePassword
+[HttpPost]
+[Route("UpdatePassword")]
+public Result_UpdatePassword UpdatePassword(Params_UpdatePassword i_Params_UpdatePassword)
+{
+#region Declaration And Initialization Section.
+string i_Ticket = string.Empty;
+Result_UpdatePassword oResult_UpdatePassword = new Result_UpdatePassword();
+#endregion
+#region Body Section.
+try
+{
+
+// Ticket Checking
+//-------------------
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] != null)
+{
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] == "1")
+{
+if
+(
+(
+(HttpContext.Request.Query["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Query["Ticket"].ToString() != "")
+)
+||
+(
+(HttpContext.Request.Headers["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Headers["Ticket"].ToString() != "")
+)
+)
+{
+i_Ticket = string.IsNullOrEmpty(HttpContext.Request.Query["Ticket"])  ? "": HttpContext.Request.Query["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+i_Ticket = HttpContext.Request.Headers["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+throw new Exception("Missing Ticket");
+}
+}
+}
+else
+{
+throw new Exception("Invalid Ticket");
+}
+}
+}
+//-------------------
+
+BLC.BLC oBLC_Default = new BLC.BLC();
+BLCInitializer oBLCInitializer = oBLC_Default.Prepare_BLCInitializer(i_Ticket,BLC.BLC.Enum_API_Method.UpdatePassword);
+using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
+{
+oBLC.Monitor_API_Calls();
+oBLC.UpdatePassword(i_Params_UpdatePassword);
+oResult_UpdatePassword.My_Params_UpdatePassword = i_Params_UpdatePassword;
+}
+}
+catch(Exception ex)
+{
+if (ex.GetType().FullName != "BLC.BLCException")
+{
+oResult_UpdatePassword.ExceptionMsg = string.Format("UpdatePassword : {0}", ex.Message);
+}
+else
+{
+oResult_UpdatePassword.ExceptionMsg = ex.Message;
+oResult_UpdatePassword.ExceptionCode = ((BLCException)ex).Code;
+}
+}
+#endregion
+#region Return Section
+return oResult_UpdatePassword;
+#endregion
+}
+#endregion
 }
 
 #region Action_Result
@@ -1097,6 +2118,32 @@ this.ExceptionMsg = string.Empty;
 #endregion
 }
 #endregion
+#region Result_CalculateStaffBalance
+public partial class Result_CalculateStaffBalance : Action_Result
+{
+#region Properties.
+public Int32 My_Result { get; set; }
+public Params_CalculateStaffBalance My_Params_CalculateStaffBalance { get; set; }
+#endregion
+}
+#endregion
+#region Result_CheckClientPaymentStatus
+public partial class Result_CheckClientPaymentStatus : Action_Result
+{
+#region Properties.
+public Int32 My_Result { get; set; }
+public Params_CheckClientPaymentStatus My_Params_CheckClientPaymentStatus { get; set; }
+#endregion
+}
+#endregion
+#region Result_Delete_Session
+public partial class Result_Delete_Session : Action_Result
+{
+#region Properties.
+public Params_Delete_Session My_Params_Delete_Session { get; set; }
+#endregion
+}
+#endregion
 #region Result_Edit_Fees
 public partial class Result_Edit_Fees : Action_Result
 {
@@ -1110,6 +2157,14 @@ public partial class Result_Edit_Package : Action_Result
 {
 #region Properties.
 public Package My_Package { get; set; }
+#endregion
+}
+#endregion
+#region Result_Edit_Session
+public partial class Result_Edit_Session : Action_Result
+{
+#region Properties.
+public Session My_Session { get; set; }
 #endregion
 }
 #endregion
@@ -1131,6 +2186,15 @@ public Params_Get_Client_By_CLIENT_ID My_Params_Get_Client_By_CLIENT_ID { get; s
 #endregion
 }
 #endregion
+#region Result_Get_Client_By_OWNER_ID_Adv
+public partial class Result_Get_Client_By_OWNER_ID_Adv : Action_Result
+{
+#region Properties.
+public List<Client>  My_Result { get; set; }
+public Params_Get_Client_By_OWNER_ID My_Params_Get_Client_By_OWNER_ID { get; set; }
+#endregion
+}
+#endregion
 #region Result_Get_Client_fees_By_OWNER_ID_Adv
 public partial class Result_Get_Client_fees_By_OWNER_ID_Adv : Action_Result
 {
@@ -1149,8 +2213,35 @@ public Params_Get_Currency_By_CURRENCY_ID My_Params_Get_Currency_By_CURRENCY_ID 
 #endregion
 }
 #endregion
+#region Result_Get_Currency_By_OWNER_ID
+public partial class Result_Get_Currency_By_OWNER_ID : Action_Result
+{
+#region Properties.
+public List<Currency>  My_Result { get; set; }
+public Params_Get_Currency_By_OWNER_ID My_Params_Get_Currency_By_OWNER_ID { get; set; }
+#endregion
+}
+#endregion
+#region Result_Get_Fees_By_CURRENCY_ID
+public partial class Result_Get_Fees_By_CURRENCY_ID : Action_Result
+{
+#region Properties.
+public List<Fees>  My_Result { get; set; }
+public Params_Get_Fees_By_CURRENCY_ID My_Params_Get_Fees_By_CURRENCY_ID { get; set; }
+#endregion
+}
+#endregion
 #region Result_Get_Fees_By_OWNER_ID
 public partial class Result_Get_Fees_By_OWNER_ID : Action_Result
+{
+#region Properties.
+public List<Fees>  My_Result { get; set; }
+public Params_Get_Fees_By_OWNER_ID My_Params_Get_Fees_By_OWNER_ID { get; set; }
+#endregion
+}
+#endregion
+#region Result_Get_Fees_By_OWNER_ID_Adv
+public partial class Result_Get_Fees_By_OWNER_ID_Adv : Action_Result
 {
 #region Properties.
 public List<Fees>  My_Result { get; set; }
@@ -1164,6 +2255,24 @@ public partial class Result_Get_Package_By_OWNER_ID_Adv : Action_Result
 #region Properties.
 public List<Package>  My_Result { get; set; }
 public Params_Get_Package_By_OWNER_ID My_Params_Get_Package_By_OWNER_ID { get; set; }
+#endregion
+}
+#endregion
+#region Result_Get_Session_By_OWNER_ID_Adv
+public partial class Result_Get_Session_By_OWNER_ID_Adv : Action_Result
+{
+#region Properties.
+public List<Session>  My_Result { get; set; }
+public Params_Get_Session_By_OWNER_ID My_Params_Get_Session_By_OWNER_ID { get; set; }
+#endregion
+}
+#endregion
+#region Result_Get_Staff_By_OWNER_ID_Adv
+public partial class Result_Get_Staff_By_OWNER_ID_Adv : Action_Result
+{
+#region Properties.
+public List<Staff>  My_Result { get; set; }
+public Params_Get_Staff_By_OWNER_ID My_Params_Get_Staff_By_OWNER_ID { get; set; }
 #endregion
 }
 #endregion
@@ -1203,12 +2312,38 @@ public Params_GetGrandProfit My_Params_GetGrandProfit { get; set; }
 #endregion
 }
 #endregion
+#region Result_LoginFct
+public partial class Result_LoginFct : Action_Result
+{
+#region Properties.
+public Int32 My_Result { get; set; }
+public Params_LoginFct My_Params_LoginFct { get; set; }
+#endregion
+}
+#endregion
 #region Result_Sales_Sum
 public partial class Result_Sales_Sum : Action_Result
 {
 #region Properties.
 public Int32 My_Result { get; set; }
 public Params_Sales_Sum My_Params_Sales_Sum { get; set; }
+#endregion
+}
+#endregion
+#region Result_UP_CHECK_USER_EXISTENCE
+public partial class Result_UP_CHECK_USER_EXISTENCE : Action_Result
+{
+#region Properties.
+public Boolean My_Result { get; set; }
+public Params_UP_CHECK_USER_EXISTENCE My_Params_UP_CHECK_USER_EXISTENCE { get; set; }
+#endregion
+}
+#endregion
+#region Result_UpdatePassword
+public partial class Result_UpdatePassword : Action_Result
+{
+#region Properties.
+public Params_UpdatePassword My_Params_UpdatePassword { get; set; }
 #endregion
 }
 #endregion
