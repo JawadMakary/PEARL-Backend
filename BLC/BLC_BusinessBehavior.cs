@@ -189,8 +189,91 @@ oScope.Complete();
 if (OnPostEvent_General != null){OnPostEvent_General("Edit_Bloodtype_WithStaff");}
 }
 #endregion
-#region Edit_Bloodtype_WithRelatedData(Bloodtype i_Bloodtype,List<Client> i_List_Client,List<Staff> i_List_Staff)
-public void Edit_Bloodtype_WithRelatedData(Bloodtype i_Bloodtype,List<Client> i_List_Client,List<Staff> i_List_Staff)
+#region Reset_Supplier_By_Bloodtype
+public void Reset_Supplier_By_Bloodtype(Bloodtype i_Bloodtype, List<Supplier> i_Supplier_List)
+{
+#region Declaration And Initialization Section.
+Params_Delete_Supplier_By_BLOODTYPE_ID oParams_Delete_Supplier_By_BLOODTYPE_ID = new Params_Delete_Supplier_By_BLOODTYPE_ID();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Reset_Supplier_By_Bloodtype");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Delete Existing Supplier
+//---------------------------------
+oParams_Delete_Supplier_By_BLOODTYPE_ID.BLOODTYPE_ID = i_Bloodtype.BLOODTYPE_ID;
+Delete_Supplier_By_BLOODTYPE_ID(oParams_Delete_Supplier_By_BLOODTYPE_ID);
+//---------------------------------
+// Edit Supplier
+//---------------------------------
+Edit_Bloodtype_WithSupplier(i_Bloodtype, i_Supplier_List);
+//---------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Reset_Supplier_By_Bloodtype");}
+}
+#endregion
+#region Reset_Supplier_By_Bloodtype
+public void Reset_Supplier_By_Bloodtype(Bloodtype i_Bloodtype, List<Supplier> i_Supplier_List_To_Delete,List<Supplier> i_Supplier_List_To_Create)
+{
+#region Declaration And Initialization Section.
+Params_Delete_Supplier oParams_Delete_Supplier = new Params_Delete_Supplier();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Reset_Supplier_By_Bloodtype");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Delete Specified Items 
+//---------------------------------
+ if (i_Supplier_List_To_Delete != null)
+{
+foreach (var oRow in i_Supplier_List_To_Delete)
+{
+oParams_Delete_Supplier.SUPPLIER_ID = oRow.SUPPLIER_ID;
+Delete_Supplier(oParams_Delete_Supplier);
+}
+}
+//---------------------------------
+// Edit Supplier
+//---------------------------------
+Edit_Bloodtype_WithSupplier(i_Bloodtype, i_Supplier_List_To_Create);
+//---------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Reset_Supplier_By_Bloodtype");}
+}
+#endregion
+#region Edit_Bloodtype_With_Supplier(Bloodtype i_Bloodtype,List<Supplier> i_SupplierList)
+public void Edit_Bloodtype_WithSupplier(Bloodtype i_Bloodtype,List<Supplier> i_List_Supplier)
+{
+#region Declaration And Initialization Section.
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Bloodtype_WithSupplier");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Business Operation.
+//-------------------------------
+Edit_Bloodtype(i_Bloodtype);
+if (i_List_Supplier != null)
+{
+foreach(Supplier oSupplier in i_List_Supplier)
+{
+oSupplier.BLOODTYPE_ID = i_Bloodtype.BLOODTYPE_ID;
+Edit_Supplier(oSupplier);
+}
+}
+//-------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Bloodtype_WithSupplier");}
+}
+#endregion
+#region Edit_Bloodtype_WithRelatedData(Bloodtype i_Bloodtype,List<Client> i_List_Client,List<Staff> i_List_Staff,List<Supplier> i_List_Supplier)
+public void Edit_Bloodtype_WithRelatedData(Bloodtype i_Bloodtype,List<Client> i_List_Client,List<Staff> i_List_Staff,List<Supplier> i_List_Supplier)
 {
 #region Declaration And Initialization Section.
 #endregion
@@ -217,6 +300,14 @@ oStaff.BLOODTYPE_ID = i_Bloodtype.BLOODTYPE_ID;
 Edit_Staff(oStaff);
 }
 }
+if (i_List_Supplier != null)
+{
+foreach(Supplier oSupplier in i_List_Supplier)
+{
+oSupplier.BLOODTYPE_ID = i_Bloodtype.BLOODTYPE_ID;
+Edit_Supplier(oSupplier);
+}
+}
 //-------------------------------
 oScope.Complete();
 }
@@ -231,6 +322,7 @@ public void Delete_Bloodtype_With_Children(Bloodtype i_Bloodtype)
 Params_Delete_Bloodtype oParams_Delete_Bloodtype = new Params_Delete_Bloodtype();
 Params_Delete_Client_By_BLOODTYPE_ID oParams_Delete_Client_By_BLOODTYPE_ID = new Params_Delete_Client_By_BLOODTYPE_ID();
 Params_Delete_Staff_By_BLOODTYPE_ID oParams_Delete_Staff_By_BLOODTYPE_ID = new Params_Delete_Staff_By_BLOODTYPE_ID();
+Params_Delete_Supplier_By_BLOODTYPE_ID oParams_Delete_Supplier_By_BLOODTYPE_ID = new Params_Delete_Supplier_By_BLOODTYPE_ID();
 #endregion
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Bloodtype_With_Children");}
  #region Body Section.
@@ -241,6 +333,8 @@ oParams_Delete_Client_By_BLOODTYPE_ID.BLOODTYPE_ID = i_Bloodtype.BLOODTYPE_ID;
 Delete_Client_By_BLOODTYPE_ID(oParams_Delete_Client_By_BLOODTYPE_ID);
 oParams_Delete_Staff_By_BLOODTYPE_ID.BLOODTYPE_ID = i_Bloodtype.BLOODTYPE_ID;
 Delete_Staff_By_BLOODTYPE_ID(oParams_Delete_Staff_By_BLOODTYPE_ID);
+oParams_Delete_Supplier_By_BLOODTYPE_ID.BLOODTYPE_ID = i_Bloodtype.BLOODTYPE_ID;
+Delete_Supplier_By_BLOODTYPE_ID(oParams_Delete_Supplier_By_BLOODTYPE_ID);
 //-------------------------
 
 //-------------------------
@@ -1035,330 +1129,6 @@ oScope.Complete();
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Delete_Currency_With_Children");}
-}
-#endregion
-#region Reset_Client_fees_By_Fees
-public void Reset_Client_fees_By_Fees(Fees i_Fees, List<Client_fees> i_Client_fees_List)
-{
-#region Declaration And Initialization Section.
-Params_Delete_Client_fees_By_FEES_ID oParams_Delete_Client_fees_By_FEES_ID = new Params_Delete_Client_fees_By_FEES_ID();
-#endregion
-if (OnPreEvent_General != null){OnPreEvent_General("Reset_Client_fees_By_Fees");}
-#region Body Section.
-using (TransactionScope oScope = new TransactionScope())
-{
-// Delete Existing Client_fees
-//---------------------------------
-oParams_Delete_Client_fees_By_FEES_ID.FEES_ID = i_Fees.FEES_ID;
-Delete_Client_fees_By_FEES_ID(oParams_Delete_Client_fees_By_FEES_ID);
-//---------------------------------
-// Edit Client_fees
-//---------------------------------
-Edit_Fees_WithClient_fees(i_Fees, i_Client_fees_List);
-//---------------------------------
-oScope.Complete();
-}
-#endregion
-if (OnPostEvent_General != null){OnPostEvent_General("Reset_Client_fees_By_Fees");}
-}
-#endregion
-#region Reset_Client_fees_By_Fees
-public void Reset_Client_fees_By_Fees(Fees i_Fees, List<Client_fees> i_Client_fees_List_To_Delete,List<Client_fees> i_Client_fees_List_To_Create)
-{
-#region Declaration And Initialization Section.
-Params_Delete_Client_fees oParams_Delete_Client_fees = new Params_Delete_Client_fees();
-#endregion
-if (OnPreEvent_General != null){OnPreEvent_General("Reset_Client_fees_By_Fees");}
-#region Body Section.
-using (TransactionScope oScope = new TransactionScope())
-{
-// Delete Specified Items 
-//---------------------------------
- if (i_Client_fees_List_To_Delete != null)
-{
-foreach (var oRow in i_Client_fees_List_To_Delete)
-{
-oParams_Delete_Client_fees.CLIENT_FEES_ID = oRow.CLIENT_FEES_ID;
-Delete_Client_fees(oParams_Delete_Client_fees);
-}
-}
-//---------------------------------
-// Edit Client_fees
-//---------------------------------
-Edit_Fees_WithClient_fees(i_Fees, i_Client_fees_List_To_Create);
-//---------------------------------
-oScope.Complete();
-}
-#endregion
-if (OnPostEvent_General != null){OnPostEvent_General("Reset_Client_fees_By_Fees");}
-}
-#endregion
-#region Edit_Fees_With_Client_fees(Fees i_Fees,List<Client_fees> i_Client_feesList)
-public void Edit_Fees_WithClient_fees(Fees i_Fees,List<Client_fees> i_List_Client_fees)
-{
-#region Declaration And Initialization Section.
-#endregion
-if (OnPreEvent_General != null){OnPreEvent_General("Edit_Fees_WithClient_fees");}
-#region Body Section.
-using (TransactionScope oScope = new TransactionScope())
-{
-// Business Operation.
-//-------------------------------
-Edit_Fees(i_Fees);
-if (i_List_Client_fees != null)
-{
-foreach(Client_fees oClient_fees in i_List_Client_fees)
-{
-oClient_fees.FEES_ID = i_Fees.FEES_ID;
-Edit_Client_fees(oClient_fees);
-}
-}
-//-------------------------------
-oScope.Complete();
-}
-#endregion
-if (OnPostEvent_General != null){OnPostEvent_General("Edit_Fees_WithClient_fees");}
-}
-#endregion
-#region Reset_Staff_fees_By_Fees
-public void Reset_Staff_fees_By_Fees(Fees i_Fees, List<Staff_fees> i_Staff_fees_List)
-{
-#region Declaration And Initialization Section.
-Params_Delete_Staff_fees_By_FEES_ID oParams_Delete_Staff_fees_By_FEES_ID = new Params_Delete_Staff_fees_By_FEES_ID();
-#endregion
-if (OnPreEvent_General != null){OnPreEvent_General("Reset_Staff_fees_By_Fees");}
-#region Body Section.
-using (TransactionScope oScope = new TransactionScope())
-{
-// Delete Existing Staff_fees
-//---------------------------------
-oParams_Delete_Staff_fees_By_FEES_ID.FEES_ID = i_Fees.FEES_ID;
-Delete_Staff_fees_By_FEES_ID(oParams_Delete_Staff_fees_By_FEES_ID);
-//---------------------------------
-// Edit Staff_fees
-//---------------------------------
-Edit_Fees_WithStaff_fees(i_Fees, i_Staff_fees_List);
-//---------------------------------
-oScope.Complete();
-}
-#endregion
-if (OnPostEvent_General != null){OnPostEvent_General("Reset_Staff_fees_By_Fees");}
-}
-#endregion
-#region Reset_Staff_fees_By_Fees
-public void Reset_Staff_fees_By_Fees(Fees i_Fees, List<Staff_fees> i_Staff_fees_List_To_Delete,List<Staff_fees> i_Staff_fees_List_To_Create)
-{
-#region Declaration And Initialization Section.
-Params_Delete_Staff_fees oParams_Delete_Staff_fees = new Params_Delete_Staff_fees();
-#endregion
-if (OnPreEvent_General != null){OnPreEvent_General("Reset_Staff_fees_By_Fees");}
-#region Body Section.
-using (TransactionScope oScope = new TransactionScope())
-{
-// Delete Specified Items 
-//---------------------------------
- if (i_Staff_fees_List_To_Delete != null)
-{
-foreach (var oRow in i_Staff_fees_List_To_Delete)
-{
-oParams_Delete_Staff_fees.STAFF_FEES_ID = oRow.STAFF_FEES_ID;
-Delete_Staff_fees(oParams_Delete_Staff_fees);
-}
-}
-//---------------------------------
-// Edit Staff_fees
-//---------------------------------
-Edit_Fees_WithStaff_fees(i_Fees, i_Staff_fees_List_To_Create);
-//---------------------------------
-oScope.Complete();
-}
-#endregion
-if (OnPostEvent_General != null){OnPostEvent_General("Reset_Staff_fees_By_Fees");}
-}
-#endregion
-#region Edit_Fees_With_Staff_fees(Fees i_Fees,List<Staff_fees> i_Staff_feesList)
-public void Edit_Fees_WithStaff_fees(Fees i_Fees,List<Staff_fees> i_List_Staff_fees)
-{
-#region Declaration And Initialization Section.
-#endregion
-if (OnPreEvent_General != null){OnPreEvent_General("Edit_Fees_WithStaff_fees");}
-#region Body Section.
-using (TransactionScope oScope = new TransactionScope())
-{
-// Business Operation.
-//-------------------------------
-Edit_Fees(i_Fees);
-if (i_List_Staff_fees != null)
-{
-foreach(Staff_fees oStaff_fees in i_List_Staff_fees)
-{
-oStaff_fees.FEES_ID = i_Fees.FEES_ID;
-Edit_Staff_fees(oStaff_fees);
-}
-}
-//-------------------------------
-oScope.Complete();
-}
-#endregion
-if (OnPostEvent_General != null){OnPostEvent_General("Edit_Fees_WithStaff_fees");}
-}
-#endregion
-#region Reset_Supplier_fees_By_Fees
-public void Reset_Supplier_fees_By_Fees(Fees i_Fees, List<Supplier_fees> i_Supplier_fees_List)
-{
-#region Declaration And Initialization Section.
-Params_Delete_Supplier_fees_By_FEES_ID oParams_Delete_Supplier_fees_By_FEES_ID = new Params_Delete_Supplier_fees_By_FEES_ID();
-#endregion
-if (OnPreEvent_General != null){OnPreEvent_General("Reset_Supplier_fees_By_Fees");}
-#region Body Section.
-using (TransactionScope oScope = new TransactionScope())
-{
-// Delete Existing Supplier_fees
-//---------------------------------
-oParams_Delete_Supplier_fees_By_FEES_ID.FEES_ID = i_Fees.FEES_ID;
-Delete_Supplier_fees_By_FEES_ID(oParams_Delete_Supplier_fees_By_FEES_ID);
-//---------------------------------
-// Edit Supplier_fees
-//---------------------------------
-Edit_Fees_WithSupplier_fees(i_Fees, i_Supplier_fees_List);
-//---------------------------------
-oScope.Complete();
-}
-#endregion
-if (OnPostEvent_General != null){OnPostEvent_General("Reset_Supplier_fees_By_Fees");}
-}
-#endregion
-#region Reset_Supplier_fees_By_Fees
-public void Reset_Supplier_fees_By_Fees(Fees i_Fees, List<Supplier_fees> i_Supplier_fees_List_To_Delete,List<Supplier_fees> i_Supplier_fees_List_To_Create)
-{
-#region Declaration And Initialization Section.
-Params_Delete_Supplier_fees oParams_Delete_Supplier_fees = new Params_Delete_Supplier_fees();
-#endregion
-if (OnPreEvent_General != null){OnPreEvent_General("Reset_Supplier_fees_By_Fees");}
-#region Body Section.
-using (TransactionScope oScope = new TransactionScope())
-{
-// Delete Specified Items 
-//---------------------------------
- if (i_Supplier_fees_List_To_Delete != null)
-{
-foreach (var oRow in i_Supplier_fees_List_To_Delete)
-{
-oParams_Delete_Supplier_fees.SUPPLIER_FEES_ID = oRow.SUPPLIER_FEES_ID;
-Delete_Supplier_fees(oParams_Delete_Supplier_fees);
-}
-}
-//---------------------------------
-// Edit Supplier_fees
-//---------------------------------
-Edit_Fees_WithSupplier_fees(i_Fees, i_Supplier_fees_List_To_Create);
-//---------------------------------
-oScope.Complete();
-}
-#endregion
-if (OnPostEvent_General != null){OnPostEvent_General("Reset_Supplier_fees_By_Fees");}
-}
-#endregion
-#region Edit_Fees_With_Supplier_fees(Fees i_Fees,List<Supplier_fees> i_Supplier_feesList)
-public void Edit_Fees_WithSupplier_fees(Fees i_Fees,List<Supplier_fees> i_List_Supplier_fees)
-{
-#region Declaration And Initialization Section.
-#endregion
-if (OnPreEvent_General != null){OnPreEvent_General("Edit_Fees_WithSupplier_fees");}
-#region Body Section.
-using (TransactionScope oScope = new TransactionScope())
-{
-// Business Operation.
-//-------------------------------
-Edit_Fees(i_Fees);
-if (i_List_Supplier_fees != null)
-{
-foreach(Supplier_fees oSupplier_fees in i_List_Supplier_fees)
-{
-oSupplier_fees.FEES_ID = i_Fees.FEES_ID;
-Edit_Supplier_fees(oSupplier_fees);
-}
-}
-//-------------------------------
-oScope.Complete();
-}
-#endregion
-if (OnPostEvent_General != null){OnPostEvent_General("Edit_Fees_WithSupplier_fees");}
-}
-#endregion
-#region Edit_Fees_WithRelatedData(Fees i_Fees,List<Client_fees> i_List_Client_fees,List<Staff_fees> i_List_Staff_fees,List<Supplier_fees> i_List_Supplier_fees)
-public void Edit_Fees_WithRelatedData(Fees i_Fees,List<Client_fees> i_List_Client_fees,List<Staff_fees> i_List_Staff_fees,List<Supplier_fees> i_List_Supplier_fees)
-{
-#region Declaration And Initialization Section.
-#endregion
-if (OnPreEvent_General != null){OnPreEvent_General("Edit_Fees_WithRelatedData");}
-#region Body Section.
-using (TransactionScope oScope = new TransactionScope())
-{
-// Business Operation.
-//-------------------------------
-Edit_Fees(i_Fees);
-if (i_List_Client_fees != null)
-{
-foreach(Client_fees oClient_fees in i_List_Client_fees)
-{
-oClient_fees.FEES_ID = i_Fees.FEES_ID;
-Edit_Client_fees(oClient_fees);
-}
-}
-if (i_List_Staff_fees != null)
-{
-foreach(Staff_fees oStaff_fees in i_List_Staff_fees)
-{
-oStaff_fees.FEES_ID = i_Fees.FEES_ID;
-Edit_Staff_fees(oStaff_fees);
-}
-}
-if (i_List_Supplier_fees != null)
-{
-foreach(Supplier_fees oSupplier_fees in i_List_Supplier_fees)
-{
-oSupplier_fees.FEES_ID = i_Fees.FEES_ID;
-Edit_Supplier_fees(oSupplier_fees);
-}
-}
-//-------------------------------
-oScope.Complete();
-}
-#endregion
-if (OnPostEvent_General != null){OnPostEvent_General("Edit_Fees_WithRelatedData");}
-}
-#endregion
-#region Delete_Fees_With_Children(Fees i_Fees)
-public void Delete_Fees_With_Children(Fees i_Fees)
-{
- #region Declaration And Initialization Section.
-Params_Delete_Fees oParams_Delete_Fees = new Params_Delete_Fees();
-Params_Delete_Client_fees_By_FEES_ID oParams_Delete_Client_fees_By_FEES_ID = new Params_Delete_Client_fees_By_FEES_ID();
-Params_Delete_Staff_fees_By_FEES_ID oParams_Delete_Staff_fees_By_FEES_ID = new Params_Delete_Staff_fees_By_FEES_ID();
-Params_Delete_Supplier_fees_By_FEES_ID oParams_Delete_Supplier_fees_By_FEES_ID = new Params_Delete_Supplier_fees_By_FEES_ID();
-#endregion
-if (OnPreEvent_General != null){OnPreEvent_General("Delete_Fees_With_Children");}
- #region Body Section.
-using (TransactionScope oScope = new TransactionScope())
-{
-//-------------------------
-oParams_Delete_Client_fees_By_FEES_ID.FEES_ID = i_Fees.FEES_ID;
-Delete_Client_fees_By_FEES_ID(oParams_Delete_Client_fees_By_FEES_ID);
-oParams_Delete_Staff_fees_By_FEES_ID.FEES_ID = i_Fees.FEES_ID;
-Delete_Staff_fees_By_FEES_ID(oParams_Delete_Staff_fees_By_FEES_ID);
-oParams_Delete_Supplier_fees_By_FEES_ID.FEES_ID = i_Fees.FEES_ID;
-Delete_Supplier_fees_By_FEES_ID(oParams_Delete_Supplier_fees_By_FEES_ID);
-//-------------------------
-
-//-------------------------
-oParams_Delete_Fees.FEES_ID = i_Fees.FEES_ID;
-Delete_Fees(oParams_Delete_Fees);
-//-------------------------
-oScope.Complete();
-}
-#endregion
-if (OnPostEvent_General != null){OnPostEvent_General("Delete_Fees_With_Children");}
 }
 #endregion
 #region Reset_Address_By_Loc_l1

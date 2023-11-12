@@ -54,14 +54,13 @@ public partial class Client_fees
 public Int32? CLIENT_FEES_ID {get;set;}
 public Int32? CLIENT_ID {get;set;}
 public string CLIENT_FEES_DESCRIPTION {get;set;}
-public Int32? FEES_ID {get;set;}
 public long? ENTRY_USER_ID {get;set;}
 public string ENTRY_DATE {get;set;}
 public Int32? OWNER_ID {get;set;}
 public Int32? CURRENCY_ID {get;set;}
 public Int32? PACKAGE_ID {get;set;}
+public Int32? CLIENT_FEES_AMOUNT {get;set;}
 public Client My_Client {get;set;}
-public Fees My_Fees {get;set;}
 public Currency My_Currency {get;set;}
 public Package My_Package {get;set;}
 }
@@ -177,8 +176,10 @@ public long? ENTRY_USER_ID {get;set;}
 public string ENTRY_DATE {get;set;}
 public Int32? OWNER_ID {get;set;}
 public Int32? PACKAGE_SESSIONS_NB {get;set;}
-public string PACKAGE_STARTING_DATE {get;set;}
+public string PACKAGE_TYPE {get;set;}
 public string PACKAGE_ENDING_DATE {get;set;}
+public string PACKAGE_TIMELINE {get;set;}
+public string PACKAGE_STARTING_DATE {get;set;}
 public Currency My_Currency {get;set;}
 }
 public partial class Person
@@ -231,13 +232,12 @@ public partial class Staff_fees
 public Int32? STAFF_FEES_ID {get;set;}
 public Int32? STAFF_ID {get;set;}
 public string STAFF_FEES_DESCRIPTION {get;set;}
-public Int32? FEES_ID {get;set;}
 public long? ENTRY_USER_ID {get;set;}
 public string ENTRY_DATE {get;set;}
 public Int32? OWNER_ID {get;set;}
 public Int32? CURRENCY_ID {get;set;}
+public Int32? STAFF_FEES_AMOUNT {get;set;}
 public Staff My_Staff {get;set;}
-public Fees My_Fees {get;set;}
 public Currency My_Currency {get;set;}
 }
 public partial class Supplier
@@ -249,19 +249,21 @@ public string SUPPLIER_MAIL {get;set;}
 public long? ENTRY_USER_ID {get;set;}
 public string ENTRY_DATE {get;set;}
 public Int32? OWNER_ID {get;set;}
+public string SUPPLIER_DOB {get;set;}
+public Int32? BLOODTYPE_ID {get;set;}
+public Bloodtype My_Bloodtype {get;set;}
 }
 public partial class Supplier_fees
 {
 public Int32? SUPPLIER_FEES_ID {get;set;}
 public Int32? SUPPLIER_ID {get;set;}
 public string SUPPLIER_FEES_DESCRIPTION {get;set;}
-public Int32? FEES_ID {get;set;}
 public long? ENTRY_USER_ID {get;set;}
 public string ENTRY_DATE {get;set;}
 public Int32? OWNER_ID {get;set;}
 public Int32? CURRENCY_ID {get;set;}
+public Int32? SUPPLIER_FEES_AMOUNT {get;set;}
 public Supplier My_Supplier {get;set;}
-public Fees My_Fees {get;set;}
 public Currency My_Currency {get;set;}
 }
 public partial class User
@@ -372,7 +374,6 @@ List<Client> Get_Client_By_OWNER_ID ( Int32? OWNER_ID);
 List<Client> Get_Client_By_BLOODTYPE_ID ( Int32? BLOODTYPE_ID);
 List<Client_fees> Get_Client_fees_By_OWNER_ID ( Int32? OWNER_ID);
 List<Client_fees> Get_Client_fees_By_CLIENT_ID ( Int32? CLIENT_ID);
-List<Client_fees> Get_Client_fees_By_FEES_ID ( Int32? FEES_ID);
 List<Client_fees> Get_Client_fees_By_CURRENCY_ID ( Int32? CURRENCY_ID);
 List<Client_fees> Get_Client_fees_By_PACKAGE_ID ( Int32? PACKAGE_ID);
 List<Contact> Get_Contact_By_PERSON_ID ( long? PERSON_ID);
@@ -403,12 +404,11 @@ List<Staff> Get_Staff_By_OWNER_ID ( Int32? OWNER_ID);
 List<Staff> Get_Staff_By_BLOODTYPE_ID ( Int32? BLOODTYPE_ID);
 List<Staff_fees> Get_Staff_fees_By_OWNER_ID ( Int32? OWNER_ID);
 List<Staff_fees> Get_Staff_fees_By_STAFF_ID ( Int32? STAFF_ID);
-List<Staff_fees> Get_Staff_fees_By_FEES_ID ( Int32? FEES_ID);
 List<Staff_fees> Get_Staff_fees_By_CURRENCY_ID ( Int32? CURRENCY_ID);
 List<Supplier> Get_Supplier_By_OWNER_ID ( Int32? OWNER_ID);
+List<Supplier> Get_Supplier_By_BLOODTYPE_ID ( Int32? BLOODTYPE_ID);
 List<Supplier_fees> Get_Supplier_fees_By_OWNER_ID ( Int32? OWNER_ID);
 List<Supplier_fees> Get_Supplier_fees_By_SUPPLIER_ID ( Int32? SUPPLIER_ID);
-List<Supplier_fees> Get_Supplier_fees_By_FEES_ID ( Int32? FEES_ID);
 List<Supplier_fees> Get_Supplier_fees_By_CURRENCY_ID ( Int32? CURRENCY_ID);
 List<User> Get_User_By_OWNER_ID ( Int32? OWNER_ID);
 List<User> Get_User_By_USERNAME ( string USERNAME);
@@ -424,7 +424,6 @@ List<Client> Get_Client_By_OWNER_ID_Adv ( Int32? OWNER_ID);
 List<Client> Get_Client_By_BLOODTYPE_ID_Adv ( Int32? BLOODTYPE_ID);
 List<Client_fees> Get_Client_fees_By_OWNER_ID_Adv ( Int32? OWNER_ID);
 List<Client_fees> Get_Client_fees_By_CLIENT_ID_Adv ( Int32? CLIENT_ID);
-List<Client_fees> Get_Client_fees_By_FEES_ID_Adv ( Int32? FEES_ID);
 List<Client_fees> Get_Client_fees_By_CURRENCY_ID_Adv ( Int32? CURRENCY_ID);
 List<Client_fees> Get_Client_fees_By_PACKAGE_ID_Adv ( Int32? PACKAGE_ID);
 List<Contact> Get_Contact_By_PERSON_ID_Adv ( long? PERSON_ID);
@@ -455,12 +454,11 @@ List<Staff> Get_Staff_By_OWNER_ID_Adv ( Int32? OWNER_ID);
 List<Staff> Get_Staff_By_BLOODTYPE_ID_Adv ( Int32? BLOODTYPE_ID);
 List<Staff_fees> Get_Staff_fees_By_OWNER_ID_Adv ( Int32? OWNER_ID);
 List<Staff_fees> Get_Staff_fees_By_STAFF_ID_Adv ( Int32? STAFF_ID);
-List<Staff_fees> Get_Staff_fees_By_FEES_ID_Adv ( Int32? FEES_ID);
 List<Staff_fees> Get_Staff_fees_By_CURRENCY_ID_Adv ( Int32? CURRENCY_ID);
 List<Supplier> Get_Supplier_By_OWNER_ID_Adv ( Int32? OWNER_ID);
+List<Supplier> Get_Supplier_By_BLOODTYPE_ID_Adv ( Int32? BLOODTYPE_ID);
 List<Supplier_fees> Get_Supplier_fees_By_OWNER_ID_Adv ( Int32? OWNER_ID);
 List<Supplier_fees> Get_Supplier_fees_By_SUPPLIER_ID_Adv ( Int32? SUPPLIER_ID);
-List<Supplier_fees> Get_Supplier_fees_By_FEES_ID_Adv ( Int32? FEES_ID);
 List<Supplier_fees> Get_Supplier_fees_By_CURRENCY_ID_Adv ( Int32? CURRENCY_ID);
 List<User> Get_User_By_OWNER_ID_Adv ( Int32? OWNER_ID);
 List<User> Get_User_By_USERNAME_Adv ( string USERNAME);
@@ -471,7 +469,6 @@ List<Address> Get_Address_By_LOC_L3_ID_List ( List<long?> LOC_L3_ID_LIST);
 List<Address> Get_Address_By_LOC_L4_ID_List ( List<long?> LOC_L4_ID_LIST);
 List<Client> Get_Client_By_BLOODTYPE_ID_List ( List<Int32?> BLOODTYPE_ID_LIST);
 List<Client_fees> Get_Client_fees_By_CLIENT_ID_List ( List<Int32?> CLIENT_ID_LIST);
-List<Client_fees> Get_Client_fees_By_FEES_ID_List ( List<Int32?> FEES_ID_LIST);
 List<Client_fees> Get_Client_fees_By_CURRENCY_ID_List ( List<Int32?> CURRENCY_ID_LIST);
 List<Client_fees> Get_Client_fees_By_PACKAGE_ID_List ( List<Int32?> PACKAGE_ID_LIST);
 List<Contact> Get_Contact_By_PERSON_ID_List ( List<long?> PERSON_ID_LIST);
@@ -484,10 +481,9 @@ List<Session> Get_Session_By_PACKAGE_ID_List ( List<Int32?> PACKAGE_ID_LIST);
 List<Session> Get_Session_By_CLIENT_FEES_ID_List ( List<Int32?> CLIENT_FEES_ID_LIST);
 List<Staff> Get_Staff_By_BLOODTYPE_ID_List ( List<Int32?> BLOODTYPE_ID_LIST);
 List<Staff_fees> Get_Staff_fees_By_STAFF_ID_List ( List<Int32?> STAFF_ID_LIST);
-List<Staff_fees> Get_Staff_fees_By_FEES_ID_List ( List<Int32?> FEES_ID_LIST);
 List<Staff_fees> Get_Staff_fees_By_CURRENCY_ID_List ( List<Int32?> CURRENCY_ID_LIST);
+List<Supplier> Get_Supplier_By_BLOODTYPE_ID_List ( List<Int32?> BLOODTYPE_ID_LIST);
 List<Supplier_fees> Get_Supplier_fees_By_SUPPLIER_ID_List ( List<Int32?> SUPPLIER_ID_LIST);
-List<Supplier_fees> Get_Supplier_fees_By_FEES_ID_List ( List<Int32?> FEES_ID_LIST);
 List<Supplier_fees> Get_Supplier_fees_By_CURRENCY_ID_List ( List<Int32?> CURRENCY_ID_LIST);
 List<Address> Get_Address_By_PERSON_ID_List_Adv ( List<long?> PERSON_ID_LIST);
 List<Address> Get_Address_By_LOC_L1_ID_List_Adv ( List<long?> LOC_L1_ID_LIST);
@@ -496,7 +492,6 @@ List<Address> Get_Address_By_LOC_L3_ID_List_Adv ( List<long?> LOC_L3_ID_LIST);
 List<Address> Get_Address_By_LOC_L4_ID_List_Adv ( List<long?> LOC_L4_ID_LIST);
 List<Client> Get_Client_By_BLOODTYPE_ID_List_Adv ( List<Int32?> BLOODTYPE_ID_LIST);
 List<Client_fees> Get_Client_fees_By_CLIENT_ID_List_Adv ( List<Int32?> CLIENT_ID_LIST);
-List<Client_fees> Get_Client_fees_By_FEES_ID_List_Adv ( List<Int32?> FEES_ID_LIST);
 List<Client_fees> Get_Client_fees_By_CURRENCY_ID_List_Adv ( List<Int32?> CURRENCY_ID_LIST);
 List<Client_fees> Get_Client_fees_By_PACKAGE_ID_List_Adv ( List<Int32?> PACKAGE_ID_LIST);
 List<Contact> Get_Contact_By_PERSON_ID_List_Adv ( List<long?> PERSON_ID_LIST);
@@ -509,10 +504,9 @@ List<Session> Get_Session_By_PACKAGE_ID_List_Adv ( List<Int32?> PACKAGE_ID_LIST)
 List<Session> Get_Session_By_CLIENT_FEES_ID_List_Adv ( List<Int32?> CLIENT_FEES_ID_LIST);
 List<Staff> Get_Staff_By_BLOODTYPE_ID_List_Adv ( List<Int32?> BLOODTYPE_ID_LIST);
 List<Staff_fees> Get_Staff_fees_By_STAFF_ID_List_Adv ( List<Int32?> STAFF_ID_LIST);
-List<Staff_fees> Get_Staff_fees_By_FEES_ID_List_Adv ( List<Int32?> FEES_ID_LIST);
 List<Staff_fees> Get_Staff_fees_By_CURRENCY_ID_List_Adv ( List<Int32?> CURRENCY_ID_LIST);
+List<Supplier> Get_Supplier_By_BLOODTYPE_ID_List_Adv ( List<Int32?> BLOODTYPE_ID_LIST);
 List<Supplier_fees> Get_Supplier_fees_By_SUPPLIER_ID_List_Adv ( List<Int32?> SUPPLIER_ID_LIST);
-List<Supplier_fees> Get_Supplier_fees_By_FEES_ID_List_Adv ( List<Int32?> FEES_ID_LIST);
 List<Supplier_fees> Get_Supplier_fees_By_CURRENCY_ID_List_Adv ( List<Int32?> CURRENCY_ID_LIST);
 List<Address> Get_Address_By_Criteria ( string ADDRESS_TYPE_CODE, string STREET, string BUILDING, string FLOOR, string POBOX, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Address> Get_Address_By_Where ( string ADDRESS_TYPE_CODE, string STREET, string BUILDING, string FLOOR, string POBOX, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
@@ -550,10 +544,10 @@ List<Owner> Get_Owner_By_Criteria ( string CODE, string DESCRIPTION, Int32? OWNE
 List<Owner> Get_Owner_By_Where ( string CODE, string DESCRIPTION, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Owner> Get_Owner_By_Criteria_V2 ( string CODE, string MAINTENANCE_DUE_DATE, string DESCRIPTION, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Owner> Get_Owner_By_Where_V2 ( string CODE, string MAINTENANCE_DUE_DATE, string DESCRIPTION, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Package> Get_Package_By_Criteria ( string PACKAGE_NAME, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Package> Get_Package_By_Where ( string PACKAGE_NAME, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Package> Get_Package_By_Criteria_V2 ( string PACKAGE_NAME, string PACKAGE_STARTING_DATE, string PACKAGE_ENDING_DATE, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Package> Get_Package_By_Where_V2 ( string PACKAGE_NAME, string PACKAGE_STARTING_DATE, string PACKAGE_ENDING_DATE, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Package> Get_Package_By_Criteria ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_TIMELINE, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Package> Get_Package_By_Where ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_TIMELINE, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Package> Get_Package_By_Criteria_V2 ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_ENDING_DATE, string PACKAGE_TIMELINE, string PACKAGE_STARTING_DATE, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Package> Get_Package_By_Where_V2 ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_ENDING_DATE, string PACKAGE_TIMELINE, string PACKAGE_STARTING_DATE, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Person> Get_Person_By_Criteria ( string FIRST_NAME, string LAST_NAME, string FATHER_NAME, string MOTHER_NAME, string TITLE_CODE, string GENDER_CODE, string RELIGION_CODE, string DESCRIPTION, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Person> Get_Person_By_Where ( string FIRST_NAME, string LAST_NAME, string FATHER_NAME, string MOTHER_NAME, string TITLE_CODE, string GENDER_CODE, string RELIGION_CODE, string DESCRIPTION, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Person> Get_Person_By_Criteria_V2 ( string FIRST_NAME, string LAST_NAME, string FATHER_NAME, string MOTHER_NAME, string TITLE_CODE, string GENDER_CODE, string RELIGION_CODE, string BIRTH_DATE, string DESCRIPTION, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
@@ -570,6 +564,8 @@ List<Staff_fees> Get_Staff_fees_By_Criteria ( string STAFF_FEES_DESCRIPTION, Int
 List<Staff_fees> Get_Staff_fees_By_Where ( string STAFF_FEES_DESCRIPTION, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Supplier> Get_Supplier_By_Criteria ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Supplier> Get_Supplier_By_Where ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Supplier> Get_Supplier_By_Criteria_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Supplier> Get_Supplier_By_Where_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Supplier_fees> Get_Supplier_fees_By_Criteria ( string SUPPLIER_FEES_DESCRIPTION, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Supplier_fees> Get_Supplier_fees_By_Where ( string SUPPLIER_FEES_DESCRIPTION, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<User> Get_User_By_Criteria ( string USERNAME, string PASSWORD, string USER_TYPE_CODE, string USER_EMAIL, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
@@ -606,10 +602,10 @@ List<Method_run> Get_Method_run_By_Criteria_Adv ( string METHOD_NAME, string INP
 List<Method_run> Get_Method_run_By_Where_Adv ( string METHOD_NAME, string INPUT_PARAM, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Method_run> Get_Method_run_By_Criteria_Adv_V2 ( string METHOD_NAME, string RUN_DATE, string INPUT_PARAM, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Method_run> Get_Method_run_By_Where_Adv_V2 ( string METHOD_NAME, string RUN_DATE, string INPUT_PARAM, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Package> Get_Package_By_Criteria_Adv ( string PACKAGE_NAME, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Package> Get_Package_By_Where_Adv ( string PACKAGE_NAME, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Package> Get_Package_By_Criteria_Adv_V2 ( string PACKAGE_NAME, string PACKAGE_STARTING_DATE, string PACKAGE_ENDING_DATE, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Package> Get_Package_By_Where_Adv_V2 ( string PACKAGE_NAME, string PACKAGE_STARTING_DATE, string PACKAGE_ENDING_DATE, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Package> Get_Package_By_Criteria_Adv ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_TIMELINE, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Package> Get_Package_By_Where_Adv ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_TIMELINE, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Package> Get_Package_By_Criteria_Adv_V2 ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_ENDING_DATE, string PACKAGE_TIMELINE, string PACKAGE_STARTING_DATE, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Package> Get_Package_By_Where_Adv_V2 ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_ENDING_DATE, string PACKAGE_TIMELINE, string PACKAGE_STARTING_DATE, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Person> Get_Person_By_Criteria_Adv ( string FIRST_NAME, string LAST_NAME, string FATHER_NAME, string MOTHER_NAME, string TITLE_CODE, string GENDER_CODE, string RELIGION_CODE, string DESCRIPTION, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Person> Get_Person_By_Where_Adv ( string FIRST_NAME, string LAST_NAME, string FATHER_NAME, string MOTHER_NAME, string TITLE_CODE, string GENDER_CODE, string RELIGION_CODE, string DESCRIPTION, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Person> Get_Person_By_Criteria_Adv_V2 ( string FIRST_NAME, string LAST_NAME, string FATHER_NAME, string MOTHER_NAME, string TITLE_CODE, string GENDER_CODE, string RELIGION_CODE, string BIRTH_DATE, string DESCRIPTION, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
@@ -626,6 +622,8 @@ List<Staff_fees> Get_Staff_fees_By_Criteria_Adv ( string STAFF_FEES_DESCRIPTION,
 List<Staff_fees> Get_Staff_fees_By_Where_Adv ( string STAFF_FEES_DESCRIPTION, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Supplier> Get_Supplier_By_Criteria_Adv ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Supplier> Get_Supplier_By_Where_Adv ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Supplier> Get_Supplier_By_Criteria_Adv_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Supplier> Get_Supplier_By_Where_Adv_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Supplier_fees> Get_Supplier_fees_By_Criteria_Adv ( string SUPPLIER_FEES_DESCRIPTION, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Supplier_fees> Get_Supplier_fees_By_Where_Adv ( string SUPPLIER_FEES_DESCRIPTION, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<User> Get_User_By_Criteria_Adv ( string USERNAME, string PASSWORD, string USER_TYPE_CODE, string USER_EMAIL, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
@@ -638,8 +636,8 @@ List<Client> Get_Client_By_Criteria_InList ( string CLIENT_NAME, string CLIENT_P
 List<Client> Get_Client_By_Where_InList ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Client> Get_Client_By_Criteria_InList_V2 ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Client> Get_Client_By_Where_InList_V2 ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Client_fees> Get_Client_fees_By_Criteria_InList ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> FEES_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Client_fees> Get_Client_fees_By_Where_InList ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> FEES_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Client_fees> Get_Client_fees_By_Criteria_InList ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Client_fees> Get_Client_fees_By_Where_InList ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Contact> Get_Contact_By_Criteria_InList ( string CONTACT_TYPE_CODE, string CONTACT, string DESCRIPTION, List<long?> PERSON_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Contact> Get_Contact_By_Where_InList ( string CONTACT_TYPE_CODE, string CONTACT, string DESCRIPTION, List<long?> PERSON_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Fees> Get_Fees_By_Criteria_InList ( string FEES_DESCRIPTION, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
@@ -652,10 +650,10 @@ List<Loc_l3> Get_Loc_l3_By_Criteria_InList ( string CODE, string DESCRIPTION, Li
 List<Loc_l3> Get_Loc_l3_By_Where_InList ( string CODE, string DESCRIPTION, List<long?> LOC_L2_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Loc_l4> Get_Loc_l4_By_Criteria_InList ( string CODE, string DESCRIPTION, List<long?> LOC_L3_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Loc_l4> Get_Loc_l4_By_Where_InList ( string CODE, string DESCRIPTION, List<long?> LOC_L3_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Package> Get_Package_By_Criteria_InList ( string PACKAGE_NAME, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Package> Get_Package_By_Where_InList ( string PACKAGE_NAME, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Package> Get_Package_By_Criteria_InList_V2 ( string PACKAGE_NAME, string PACKAGE_STARTING_DATE, string PACKAGE_ENDING_DATE, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Package> Get_Package_By_Where_InList_V2 ( string PACKAGE_NAME, string PACKAGE_STARTING_DATE, string PACKAGE_ENDING_DATE, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Package> Get_Package_By_Criteria_InList ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_TIMELINE, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Package> Get_Package_By_Where_InList ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_TIMELINE, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Package> Get_Package_By_Criteria_InList_V2 ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_ENDING_DATE, string PACKAGE_TIMELINE, string PACKAGE_STARTING_DATE, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Package> Get_Package_By_Where_InList_V2 ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_ENDING_DATE, string PACKAGE_TIMELINE, string PACKAGE_STARTING_DATE, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Session> Get_Session_By_Criteria_InList ( string DESCRIPTION, List<Int32?> PACKAGE_ID_LIST, List<Int32?> CLIENT_FEES_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Session> Get_Session_By_Where_InList ( string DESCRIPTION, List<Int32?> PACKAGE_ID_LIST, List<Int32?> CLIENT_FEES_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Session> Get_Session_By_Criteria_InList_V2 ( string SESSION_STARTING_DATE, string SESSION_ENDING_DATE, string DESCRIPTION, List<Int32?> PACKAGE_ID_LIST, List<Int32?> CLIENT_FEES_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
@@ -664,10 +662,14 @@ List<Staff> Get_Staff_By_Criteria_InList ( string STAFF_NAME, string STAFF_PH_NB
 List<Staff> Get_Staff_By_Where_InList ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Staff> Get_Staff_By_Criteria_InList_V2 ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Staff> Get_Staff_By_Where_InList_V2 ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Staff_fees> Get_Staff_fees_By_Criteria_InList ( string STAFF_FEES_DESCRIPTION, List<Int32?> STAFF_ID_LIST, List<Int32?> FEES_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Staff_fees> Get_Staff_fees_By_Where_InList ( string STAFF_FEES_DESCRIPTION, List<Int32?> STAFF_ID_LIST, List<Int32?> FEES_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Supplier_fees> Get_Supplier_fees_By_Criteria_InList ( string SUPPLIER_FEES_DESCRIPTION, List<Int32?> SUPPLIER_ID_LIST, List<Int32?> FEES_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Supplier_fees> Get_Supplier_fees_By_Where_InList ( string SUPPLIER_FEES_DESCRIPTION, List<Int32?> SUPPLIER_ID_LIST, List<Int32?> FEES_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Staff_fees> Get_Staff_fees_By_Criteria_InList ( string STAFF_FEES_DESCRIPTION, List<Int32?> STAFF_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Staff_fees> Get_Staff_fees_By_Where_InList ( string STAFF_FEES_DESCRIPTION, List<Int32?> STAFF_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Supplier> Get_Supplier_By_Criteria_InList ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Supplier> Get_Supplier_By_Where_InList ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Supplier> Get_Supplier_By_Criteria_InList_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Supplier> Get_Supplier_By_Where_InList_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Supplier_fees> Get_Supplier_fees_By_Criteria_InList ( string SUPPLIER_FEES_DESCRIPTION, List<Int32?> SUPPLIER_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Supplier_fees> Get_Supplier_fees_By_Where_InList ( string SUPPLIER_FEES_DESCRIPTION, List<Int32?> SUPPLIER_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Address> Get_Address_By_Criteria_InList_Adv ( string ADDRESS_TYPE_CODE, string STREET, string BUILDING, string FLOOR, string POBOX, List<long?> PERSON_ID_LIST, List<long?> LOC_L1_ID_LIST, List<long?> LOC_L2_ID_LIST, List<long?> LOC_L3_ID_LIST, List<long?> LOC_L4_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Address> Get_Address_By_Where_InList_Adv ( string ADDRESS_TYPE_CODE, string STREET, string BUILDING, string FLOOR, string POBOX, List<long?> PERSON_ID_LIST, List<long?> LOC_L1_ID_LIST, List<long?> LOC_L2_ID_LIST, List<long?> LOC_L3_ID_LIST, List<long?> LOC_L4_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Address> Get_Address_By_Criteria_InList_Adv_V2 ( string ADDRESS_TYPE_CODE, string STREET, string BUILDING, string FLOOR, string POBOX, string VALID_DATE_START, string VALID_DATE_END, List<long?> PERSON_ID_LIST, List<long?> LOC_L1_ID_LIST, List<long?> LOC_L2_ID_LIST, List<long?> LOC_L3_ID_LIST, List<long?> LOC_L4_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
@@ -676,8 +678,8 @@ List<Client> Get_Client_By_Criteria_InList_Adv ( string CLIENT_NAME, string CLIE
 List<Client> Get_Client_By_Where_InList_Adv ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Client> Get_Client_By_Criteria_InList_Adv_V2 ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Client> Get_Client_By_Where_InList_Adv_V2 ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Client_fees> Get_Client_fees_By_Criteria_InList_Adv ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> FEES_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Client_fees> Get_Client_fees_By_Where_InList_Adv ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> FEES_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Client_fees> Get_Client_fees_By_Criteria_InList_Adv ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Client_fees> Get_Client_fees_By_Where_InList_Adv ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Contact> Get_Contact_By_Criteria_InList_Adv ( string CONTACT_TYPE_CODE, string CONTACT, string DESCRIPTION, List<long?> PERSON_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Contact> Get_Contact_By_Where_InList_Adv ( string CONTACT_TYPE_CODE, string CONTACT, string DESCRIPTION, List<long?> PERSON_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Fees> Get_Fees_By_Criteria_InList_Adv ( string FEES_DESCRIPTION, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
@@ -690,10 +692,10 @@ List<Loc_l3> Get_Loc_l3_By_Criteria_InList_Adv ( string CODE, string DESCRIPTION
 List<Loc_l3> Get_Loc_l3_By_Where_InList_Adv ( string CODE, string DESCRIPTION, List<long?> LOC_L2_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Loc_l4> Get_Loc_l4_By_Criteria_InList_Adv ( string CODE, string DESCRIPTION, List<long?> LOC_L3_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Loc_l4> Get_Loc_l4_By_Where_InList_Adv ( string CODE, string DESCRIPTION, List<long?> LOC_L3_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Package> Get_Package_By_Criteria_InList_Adv ( string PACKAGE_NAME, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Package> Get_Package_By_Where_InList_Adv ( string PACKAGE_NAME, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Package> Get_Package_By_Criteria_InList_Adv_V2 ( string PACKAGE_NAME, string PACKAGE_STARTING_DATE, string PACKAGE_ENDING_DATE, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Package> Get_Package_By_Where_InList_Adv_V2 ( string PACKAGE_NAME, string PACKAGE_STARTING_DATE, string PACKAGE_ENDING_DATE, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Package> Get_Package_By_Criteria_InList_Adv ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_TIMELINE, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Package> Get_Package_By_Where_InList_Adv ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_TIMELINE, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Package> Get_Package_By_Criteria_InList_Adv_V2 ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_ENDING_DATE, string PACKAGE_TIMELINE, string PACKAGE_STARTING_DATE, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Package> Get_Package_By_Where_InList_Adv_V2 ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_ENDING_DATE, string PACKAGE_TIMELINE, string PACKAGE_STARTING_DATE, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Session> Get_Session_By_Criteria_InList_Adv ( string DESCRIPTION, List<Int32?> PACKAGE_ID_LIST, List<Int32?> CLIENT_FEES_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Session> Get_Session_By_Where_InList_Adv ( string DESCRIPTION, List<Int32?> PACKAGE_ID_LIST, List<Int32?> CLIENT_FEES_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Session> Get_Session_By_Criteria_InList_Adv_V2 ( string SESSION_STARTING_DATE, string SESSION_ENDING_DATE, string DESCRIPTION, List<Int32?> PACKAGE_ID_LIST, List<Int32?> CLIENT_FEES_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
@@ -702,10 +704,14 @@ List<Staff> Get_Staff_By_Criteria_InList_Adv ( string STAFF_NAME, string STAFF_P
 List<Staff> Get_Staff_By_Where_InList_Adv ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Staff> Get_Staff_By_Criteria_InList_Adv_V2 ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Staff> Get_Staff_By_Where_InList_Adv_V2 ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Staff_fees> Get_Staff_fees_By_Criteria_InList_Adv ( string STAFF_FEES_DESCRIPTION, List<Int32?> STAFF_ID_LIST, List<Int32?> FEES_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Staff_fees> Get_Staff_fees_By_Where_InList_Adv ( string STAFF_FEES_DESCRIPTION, List<Int32?> STAFF_ID_LIST, List<Int32?> FEES_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Supplier_fees> Get_Supplier_fees_By_Criteria_InList_Adv ( string SUPPLIER_FEES_DESCRIPTION, List<Int32?> SUPPLIER_ID_LIST, List<Int32?> FEES_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Supplier_fees> Get_Supplier_fees_By_Where_InList_Adv ( string SUPPLIER_FEES_DESCRIPTION, List<Int32?> SUPPLIER_ID_LIST, List<Int32?> FEES_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Staff_fees> Get_Staff_fees_By_Criteria_InList_Adv ( string STAFF_FEES_DESCRIPTION, List<Int32?> STAFF_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Staff_fees> Get_Staff_fees_By_Where_InList_Adv ( string STAFF_FEES_DESCRIPTION, List<Int32?> STAFF_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Supplier> Get_Supplier_By_Criteria_InList_Adv ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Supplier> Get_Supplier_By_Where_InList_Adv ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Supplier> Get_Supplier_By_Criteria_InList_Adv_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Supplier> Get_Supplier_By_Where_InList_Adv_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Supplier_fees> Get_Supplier_fees_By_Criteria_InList_Adv ( string SUPPLIER_FEES_DESCRIPTION, List<Int32?> SUPPLIER_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Supplier_fees> Get_Supplier_fees_By_Where_InList_Adv ( string SUPPLIER_FEES_DESCRIPTION, List<Int32?> SUPPLIER_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 void Delete_Address ( long? ADDRESS_ID);
 void Delete_Bloodtype ( Int32? BLOODTYPE_ID);
 void Delete_Client ( Int32? CLIENT_ID);
@@ -739,7 +745,6 @@ void Delete_Client_By_OWNER_ID ( Int32? OWNER_ID);
 void Delete_Client_By_BLOODTYPE_ID ( Int32? BLOODTYPE_ID);
 void Delete_Client_fees_By_OWNER_ID ( Int32? OWNER_ID);
 void Delete_Client_fees_By_CLIENT_ID ( Int32? CLIENT_ID);
-void Delete_Client_fees_By_FEES_ID ( Int32? FEES_ID);
 void Delete_Client_fees_By_CURRENCY_ID ( Int32? CURRENCY_ID);
 void Delete_Client_fees_By_PACKAGE_ID ( Int32? PACKAGE_ID);
 void Delete_Contact_By_PERSON_ID ( long? PERSON_ID);
@@ -770,19 +775,18 @@ void Delete_Staff_By_OWNER_ID ( Int32? OWNER_ID);
 void Delete_Staff_By_BLOODTYPE_ID ( Int32? BLOODTYPE_ID);
 void Delete_Staff_fees_By_OWNER_ID ( Int32? OWNER_ID);
 void Delete_Staff_fees_By_STAFF_ID ( Int32? STAFF_ID);
-void Delete_Staff_fees_By_FEES_ID ( Int32? FEES_ID);
 void Delete_Staff_fees_By_CURRENCY_ID ( Int32? CURRENCY_ID);
 void Delete_Supplier_By_OWNER_ID ( Int32? OWNER_ID);
+void Delete_Supplier_By_BLOODTYPE_ID ( Int32? BLOODTYPE_ID);
 void Delete_Supplier_fees_By_OWNER_ID ( Int32? OWNER_ID);
 void Delete_Supplier_fees_By_SUPPLIER_ID ( Int32? SUPPLIER_ID);
-void Delete_Supplier_fees_By_FEES_ID ( Int32? FEES_ID);
 void Delete_Supplier_fees_By_CURRENCY_ID ( Int32? CURRENCY_ID);
 void Delete_User_By_OWNER_ID ( Int32? OWNER_ID);
 void Delete_User_By_USERNAME ( string USERNAME);
 long? Edit_Address ( long? ADDRESS_ID, long? PERSON_ID, string ADDRESS_TYPE_CODE, long? LOC_L1_ID, long? LOC_L2_ID, long? LOC_L3_ID, long? LOC_L4_ID, string STREET, string BUILDING, string FLOOR, string POBOX, string VALID_DATE_START, string VALID_DATE_END, string NOTES, string ENTRY_DATE, long? ENTRY_USER_ID, Int32? OWNER_ID);
 Int32? Edit_Bloodtype ( Int32? BLOODTYPE_ID, string BLOODTYPE_SYMBOL, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID);
 Int32? Edit_Client ( Int32? CLIENT_ID, string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_DOB, Int32? BLOODTYPE_ID, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID);
-Int32? Edit_Client_fees ( Int32? CLIENT_FEES_ID, Int32? CLIENT_ID, string CLIENT_FEES_DESCRIPTION, Int32? FEES_ID, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, Int32? CURRENCY_ID, Int32? PACKAGE_ID);
+Int32? Edit_Client_fees ( Int32? CLIENT_FEES_ID, Int32? CLIENT_ID, string CLIENT_FEES_DESCRIPTION, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, Int32? CURRENCY_ID, Int32? PACKAGE_ID, Int32? CLIENT_FEES_AMOUNT);
 Int32? Edit_Contact ( Int32? CONTACT_ID, long? PERSON_ID, string CONTACT_TYPE_CODE, string CONTACT, string DESCRIPTION, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID);
 Int32? Edit_Currency ( Int32? CURRENCY_ID, string CURRENCY_TYPE, string CURRENCY_SYMBOL, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID);
 Int32? Edit_Fees ( Int32? FEES_ID, string FEES_DESCRIPTION, Int32? FEES_AMOUNT, Int32? CURRENCY_ID, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, string FEES_ORIGIN_DATE);
@@ -792,16 +796,16 @@ long? Edit_Loc_l3 ( long? LOC_L3_ID, string CODE, string DESCRIPTION, long? LOC_
 long? Edit_Loc_l4 ( long? LOC_L4_ID, string CODE, string DESCRIPTION, long? LOC_L3_ID, string NOTES, string ENTRY_DATE, long? ENTRY_USER_ID, Int32? OWNER_ID);
 long? Edit_Method_run ( long? METHOD_RUN_ID, string METHOD_NAME, string RUN_DATE, Int32? RUN_HOUR, Int32? RUN_MINUTE, Int32? RUN_SECOND, bool? IS_CACHED, Int32? EXECUTION_TIME, string INPUT_PARAM, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID);
 Int32? Edit_Owner ( Int32? OWNER_ID, string CODE, string MAINTENANCE_DUE_DATE, string DESCRIPTION, string ENTRY_DATE);
-Int32? Edit_Package ( Int32? PACKAGE_ID, string PACKAGE_NAME, Int32? PACKAGE_PRICE, Int32? CURRENCY_ID, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, Int32? PACKAGE_SESSIONS_NB, string PACKAGE_STARTING_DATE, string PACKAGE_ENDING_DATE);
+Int32? Edit_Package ( Int32? PACKAGE_ID, string PACKAGE_NAME, Int32? PACKAGE_PRICE, Int32? CURRENCY_ID, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, Int32? PACKAGE_SESSIONS_NB, string PACKAGE_TYPE, string PACKAGE_ENDING_DATE, string PACKAGE_TIMELINE, string PACKAGE_STARTING_DATE);
 long? Edit_Person ( long? PERSON_ID, string FIRST_NAME, string LAST_NAME, string FATHER_NAME, string MOTHER_NAME, string TITLE_CODE, string GENDER_CODE, string RELIGION_CODE, string BIRTH_DATE, bool? IS_BLOCKED, string DESCRIPTION, Int32? OWNER_ID, long? ENTRY_USER_ID, string ENTRY_DATE);
 Int32? Edit_Session ( Int32? SESSION_ID, string SESSION_STARTING_DATE, string SESSION_ENDING_DATE, Int32? SESSION_ATTENDED, Int32? PACKAGE_ID, Int32? CLIENT_FEES_ID, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, string DESCRIPTION);
 Int32? Edit_Staff ( Int32? STAFF_ID, string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_DOB, Int32? BLOODTYPE_ID, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID);
-Int32? Edit_Staff_fees ( Int32? STAFF_FEES_ID, Int32? STAFF_ID, string STAFF_FEES_DESCRIPTION, Int32? FEES_ID, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, Int32? CURRENCY_ID);
-Int32? Edit_Supplier ( Int32? SUPPLIER_ID, string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID);
-Int32? Edit_Supplier_fees ( Int32? SUPPLIER_FEES_ID, Int32? SUPPLIER_ID, string SUPPLIER_FEES_DESCRIPTION, Int32? FEES_ID, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, Int32? CURRENCY_ID);
+Int32? Edit_Staff_fees ( Int32? STAFF_FEES_ID, Int32? STAFF_ID, string STAFF_FEES_DESCRIPTION, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, Int32? CURRENCY_ID, Int32? STAFF_FEES_AMOUNT);
+Int32? Edit_Supplier ( Int32? SUPPLIER_ID, string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, string SUPPLIER_DOB, Int32? BLOODTYPE_ID);
+Int32? Edit_Supplier_fees ( Int32? SUPPLIER_FEES_ID, Int32? SUPPLIER_ID, string SUPPLIER_FEES_DESCRIPTION, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, Int32? CURRENCY_ID, Int32? SUPPLIER_FEES_AMOUNT);
 long? Edit_User ( long? USER_ID, Int32? OWNER_ID, string USERNAME, string PASSWORD, string USER_TYPE_CODE, bool? IS_ACTIVE, string ENTRY_DATE, string USER_EMAIL);
 List<dynamic> CalculateStaffBalance ( Int32? STAFF_ID,ref  Int32? BALANCE, long? OWNER_ID, Int32? CURRENCY_ID);
-List<dynamic> CheckClientPaymentStatus ( Int32? CLIENT_ID, Int32? CURRENCY_ID,ref  Int32? REMAINING_AMOUNT, long? OWNER_ID);
+List<dynamic> CheckClientPaymentStatus ( Int32? CLIENT_ID,ref  Int32? BALANCE, long? OWNER_ID, Int32? CURRENCY_ID);
 List<dynamic> CheckIfUserExists ( string Username, string UserEmail);
 List<dynamic> EXPENSES_SUM ( long? OWNER_ID, Int32? CURRENCY_ID,ref  Int32? SUM);
 List<dynamic> GET_DISTINCT_SETUP_TBL ( Int32? OWNER_ID);

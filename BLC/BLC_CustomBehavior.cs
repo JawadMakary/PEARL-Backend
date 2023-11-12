@@ -433,10 +433,10 @@ namespace BLC
 
             _AppContext.CheckClientPaymentStatus(
                 i_Params_CheckClientPaymentStatus.ClientID,
-                 i_Params_CheckClientPaymentStatus.CurrencyID,
                 ref remainingAmount,
-                i_Params_CheckClientPaymentStatus.OwnerID
-            );
+                 i_Params_CheckClientPaymentStatus.OwnerID,
+                i_Params_CheckClientPaymentStatus.CurrencyID
+            ); 
 
             if (remainingAmount == null)
                 throw new ArgumentOutOfRangeException("Parameter index is out of range.");
@@ -502,11 +502,7 @@ namespace BLC
               i_Params_UpdatePassword.OwnerID,
                i_Params_UpdatePassword.Username,
                i_Params_UpdatePassword.updatedpassword
-
-
             );
-
-
         }
 
 

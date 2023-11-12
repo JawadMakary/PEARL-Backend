@@ -319,12 +319,10 @@ if (R != null){
 oTools.CopyPropValues_FromDataRecord(R, o);
 o.My_Client = new Client();
 o.My_Client.CLIENT_ID = GV<Int32>(R["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(R["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(R["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(R["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(R["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(R["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(R["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(R["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(R["T_CLIENT_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(R["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(R["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(R["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(R["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(R["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(R["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(R["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(R["T_FEES_FEES_ORIGIN_DATE"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(R["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(R["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(R["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(R["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(R["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(R["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
-o.My_Package.PACKAGE_ID = GV<Int32>(R["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(R["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(R["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(R["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(R["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(R["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(R["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(R["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(R["T_PACKAGE_PACKAGE_STARTING_DATE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(R["T_PACKAGE_PACKAGE_ENDING_DATE"]);
+o.My_Package.PACKAGE_ID = GV<Int32>(R["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(R["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(R["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(R["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(R["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(R["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(R["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(R["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(R["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(R["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(R["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(R["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 }
 return o;
 }
@@ -470,9 +468,9 @@ var R = Q.FirstOrDefault();
 if (R != null){
 oTools.CopyPropValues_FromDataRecord(R, o);
 o.My_Package = new Package();
-o.My_Package.PACKAGE_ID = GV<Int32>(R["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(R["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(R["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(R["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(R["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(R["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(R["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(R["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(R["T_PACKAGE_PACKAGE_STARTING_DATE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(R["T_PACKAGE_PACKAGE_ENDING_DATE"]);
+o.My_Package.PACKAGE_ID = GV<Int32>(R["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(R["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(R["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(R["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(R["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(R["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(R["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(R["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(R["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(R["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(R["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(R["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Client_fees = new Client_fees();
-o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(R["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(R["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(R["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.FEES_ID = GV<Int32>(R["T_CLIENT_FEES_FEES_ID"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(R["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(R["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(R["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(R["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(R["T_CLIENT_FEES_PACKAGE_ID"]);
+o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(R["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(R["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(R["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(R["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(R["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(R["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(R["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(R["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(R["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);
 }
 return o;
 }
@@ -501,8 +499,6 @@ if (R != null){
 oTools.CopyPropValues_FromDataRecord(R, o);
 o.My_Staff = new Staff();
 o.My_Staff.STAFF_ID = GV<Int32>(R["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(R["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(R["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(R["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(R["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(R["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(R["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(R["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(R["T_STAFF_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(R["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(R["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(R["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(R["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(R["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(R["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(R["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(R["T_FEES_FEES_ORIGIN_DATE"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(R["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(R["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(R["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(R["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(R["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(R["T_CURRENCY_OWNER_ID"]);
 }
@@ -517,6 +513,8 @@ IEnumerable<IDataRecord> Q = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_SUPPLIER_ID
 var R = Q.FirstOrDefault();
 if (R != null){
 oTools.CopyPropValues_FromDataRecord(R, o);
+o.My_Bloodtype = new Bloodtype();
+o.My_Bloodtype.BLOODTYPE_ID = GV<Int32>(R["T_BLOODTYPE_BLOODTYPE_ID"]);o.My_Bloodtype.BLOODTYPE_SYMBOL = GV<String>(R["T_BLOODTYPE_BLOODTYPE_SYMBOL"]);o.My_Bloodtype.ENTRY_USER_ID = GV<Int64>(R["T_BLOODTYPE_ENTRY_USER_ID"]);o.My_Bloodtype.ENTRY_DATE = GV<String>(R["T_BLOODTYPE_ENTRY_DATE"]);o.My_Bloodtype.OWNER_ID = GV<Int32>(R["T_BLOODTYPE_OWNER_ID"]);
 }
 return o;
 }
@@ -530,9 +528,7 @@ var R = Q.FirstOrDefault();
 if (R != null){
 oTools.CopyPropValues_FromDataRecord(R, o);
 o.My_Supplier = new Supplier();
-o.My_Supplier.SUPPLIER_ID = GV<Int32>(R["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(R["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(R["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(R["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(R["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(R["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(R["T_SUPPLIER_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(R["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(R["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(R["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(R["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(R["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(R["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(R["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(R["T_FEES_FEES_ORIGIN_DATE"]);
+o.My_Supplier.SUPPLIER_ID = GV<Int32>(R["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(R["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(R["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(R["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(R["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(R["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(R["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(R["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(R["T_SUPPLIER_BLOODTYPE_ID"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(R["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(R["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(R["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(R["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(R["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(R["T_CURRENCY_OWNER_ID"]);
 }
@@ -909,12 +905,10 @@ Client_fees o = new Client_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
 o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
-o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 oList.Add(o);
 }
 }
@@ -1082,9 +1076,9 @@ if (R != null) {foreach (var X in R) {
 Session o = new Session();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Package = new Package();
-o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Client_fees = new Client_fees();
-o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.FEES_ID = GV<Int32>(X["T_CLIENT_FEES_FEES_ID"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);
+o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);
 oList.Add(o);
 }
 }
@@ -1117,8 +1111,6 @@ Staff_fees o = new Staff_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Staff = new Staff();
 o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -1135,6 +1127,8 @@ IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_SUPPLIER_ID
 if (R != null) {foreach (var X in R) {
 Supplier o = new Supplier();
 oTools.CopyPropValues_FromDataRecord(X, o);
+o.My_Bloodtype = new Bloodtype();
+o.My_Bloodtype.BLOODTYPE_ID = GV<Int32>(X["T_BLOODTYPE_BLOODTYPE_ID"]);o.My_Bloodtype.BLOODTYPE_SYMBOL = GV<String>(X["T_BLOODTYPE_BLOODTYPE_SYMBOL"]);o.My_Bloodtype.ENTRY_USER_ID = GV<Int64>(X["T_BLOODTYPE_ENTRY_USER_ID"]);o.My_Bloodtype.ENTRY_DATE = GV<String>(X["T_BLOODTYPE_ENTRY_DATE"]);o.My_Bloodtype.OWNER_ID = GV<Int32>(X["T_BLOODTYPE_OWNER_ID"]);
 oList.Add(o);
 }
 }
@@ -1150,9 +1144,7 @@ if (R != null) {foreach (var X in R) {
 Supplier_fees o = new Supplier_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Supplier = new Supplier();
-o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
+o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(X["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(X["T_SUPPLIER_BLOODTYPE_ID"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -1334,20 +1326,6 @@ List<Client_fees> oList = new List<Client_fees>();
 dynamic p = new ExpandoObject();
 p.CLIENT_ID = CLIENT_ID;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_FEES_BY_CLIENT_ID", p);
-if (R != null) {foreach (var X in R) {
-Client_fees o = new Client_fees();
-oTools.CopyPropValues_FromDataRecord(X, o);
-oList.Add(o);
-}
-}
-return oList;
-}
-public List<Client_fees> Get_Client_fees_By_FEES_ID ( Int32? FEES_ID)
-{
-List<Client_fees> oList = new List<Client_fees>();
-dynamic p = new ExpandoObject();
-p.FEES_ID = FEES_ID;
-IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_FEES_BY_FEES_ID", p);
 if (R != null) {foreach (var X in R) {
 Client_fees o = new Client_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
@@ -1776,20 +1754,6 @@ oList.Add(o);
 }
 return oList;
 }
-public List<Staff_fees> Get_Staff_fees_By_FEES_ID ( Int32? FEES_ID)
-{
-List<Staff_fees> oList = new List<Staff_fees>();
-dynamic p = new ExpandoObject();
-p.FEES_ID = FEES_ID;
-IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_STAFF_FEES_BY_FEES_ID", p);
-if (R != null) {foreach (var X in R) {
-Staff_fees o = new Staff_fees();
-oTools.CopyPropValues_FromDataRecord(X, o);
-oList.Add(o);
-}
-}
-return oList;
-}
 public List<Staff_fees> Get_Staff_fees_By_CURRENCY_ID ( Int32? CURRENCY_ID)
 {
 List<Staff_fees> oList = new List<Staff_fees>();
@@ -1818,6 +1782,20 @@ oList.Add(o);
 }
 return oList;
 }
+public List<Supplier> Get_Supplier_By_BLOODTYPE_ID ( Int32? BLOODTYPE_ID)
+{
+List<Supplier> oList = new List<Supplier>();
+dynamic p = new ExpandoObject();
+p.BLOODTYPE_ID = BLOODTYPE_ID;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_BLOODTYPE_ID", p);
+if (R != null) {foreach (var X in R) {
+Supplier o = new Supplier();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+return oList;
+}
 public List<Supplier_fees> Get_Supplier_fees_By_OWNER_ID ( Int32? OWNER_ID)
 {
 List<Supplier_fees> oList = new List<Supplier_fees>();
@@ -1838,20 +1816,6 @@ List<Supplier_fees> oList = new List<Supplier_fees>();
 dynamic p = new ExpandoObject();
 p.SUPPLIER_ID = SUPPLIER_ID;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_FEES_BY_SUPPLIER_ID", p);
-if (R != null) {foreach (var X in R) {
-Supplier_fees o = new Supplier_fees();
-oTools.CopyPropValues_FromDataRecord(X, o);
-oList.Add(o);
-}
-}
-return oList;
-}
-public List<Supplier_fees> Get_Supplier_fees_By_FEES_ID ( Int32? FEES_ID)
-{
-List<Supplier_fees> oList = new List<Supplier_fees>();
-dynamic p = new ExpandoObject();
-p.FEES_ID = FEES_ID;
-IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_FEES_BY_FEES_ID", p);
 if (R != null) {foreach (var X in R) {
 Supplier_fees o = new Supplier_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
@@ -2127,12 +2091,10 @@ Client_fees o = new Client_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
 o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
-o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 oList.Add(o);
 }
 }
@@ -2149,34 +2111,10 @@ Client_fees o = new Client_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
 o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
-o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);
-oList.Add(o);
-}
-}
-return oList;
-}
-public List<Client_fees> Get_Client_fees_By_FEES_ID_Adv ( Int32? FEES_ID)
-{
-List<Client_fees> oList = new List<Client_fees>();
-dynamic p = new ExpandoObject();
-p.FEES_ID = FEES_ID;
-IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_FEES_BY_FEES_ID_ADV", p);
-if (R != null) {foreach (var X in R) {
-Client_fees o = new Client_fees();
-oTools.CopyPropValues_FromDataRecord(X, o);
-o.My_Client = new Client();
-o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
-o.My_Currency = new Currency();
-o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
-o.My_Package = new Package();
-o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 oList.Add(o);
 }
 }
@@ -2193,12 +2131,10 @@ Client_fees o = new Client_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
 o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
-o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 oList.Add(o);
 }
 }
@@ -2215,12 +2151,10 @@ Client_fees o = new Client_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
 o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
-o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 oList.Add(o);
 }
 }
@@ -2562,9 +2496,9 @@ if (R != null) {foreach (var X in R) {
 Session o = new Session();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Package = new Package();
-o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Client_fees = new Client_fees();
-o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.FEES_ID = GV<Int32>(X["T_CLIENT_FEES_FEES_ID"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);
+o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);
 oList.Add(o);
 }
 }
@@ -2580,9 +2514,9 @@ if (R != null) {foreach (var X in R) {
 Session o = new Session();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Package = new Package();
-o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Client_fees = new Client_fees();
-o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.FEES_ID = GV<Int32>(X["T_CLIENT_FEES_FEES_ID"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);
+o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);
 oList.Add(o);
 }
 }
@@ -2598,9 +2532,9 @@ if (R != null) {foreach (var X in R) {
 Session o = new Session();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Package = new Package();
-o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Client_fees = new Client_fees();
-o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.FEES_ID = GV<Int32>(X["T_CLIENT_FEES_FEES_ID"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);
+o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);
 oList.Add(o);
 }
 }
@@ -2649,8 +2583,6 @@ Staff_fees o = new Staff_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Staff = new Staff();
 o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -2669,28 +2601,6 @@ Staff_fees o = new Staff_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Staff = new Staff();
 o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
-o.My_Currency = new Currency();
-o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
-oList.Add(o);
-}
-}
-return oList;
-}
-public List<Staff_fees> Get_Staff_fees_By_FEES_ID_Adv ( Int32? FEES_ID)
-{
-List<Staff_fees> oList = new List<Staff_fees>();
-dynamic p = new ExpandoObject();
-p.FEES_ID = FEES_ID;
-IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_STAFF_FEES_BY_FEES_ID_ADV", p);
-if (R != null) {foreach (var X in R) {
-Staff_fees o = new Staff_fees();
-oTools.CopyPropValues_FromDataRecord(X, o);
-o.My_Staff = new Staff();
-o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -2709,8 +2619,6 @@ Staff_fees o = new Staff_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Staff = new Staff();
 o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -2727,6 +2635,24 @@ IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_OWNER_ID_AD
 if (R != null) {foreach (var X in R) {
 Supplier o = new Supplier();
 oTools.CopyPropValues_FromDataRecord(X, o);
+o.My_Bloodtype = new Bloodtype();
+o.My_Bloodtype.BLOODTYPE_ID = GV<Int32>(X["T_BLOODTYPE_BLOODTYPE_ID"]);o.My_Bloodtype.BLOODTYPE_SYMBOL = GV<String>(X["T_BLOODTYPE_BLOODTYPE_SYMBOL"]);o.My_Bloodtype.ENTRY_USER_ID = GV<Int64>(X["T_BLOODTYPE_ENTRY_USER_ID"]);o.My_Bloodtype.ENTRY_DATE = GV<String>(X["T_BLOODTYPE_ENTRY_DATE"]);o.My_Bloodtype.OWNER_ID = GV<Int32>(X["T_BLOODTYPE_OWNER_ID"]);
+oList.Add(o);
+}
+}
+return oList;
+}
+public List<Supplier> Get_Supplier_By_BLOODTYPE_ID_Adv ( Int32? BLOODTYPE_ID)
+{
+List<Supplier> oList = new List<Supplier>();
+dynamic p = new ExpandoObject();
+p.BLOODTYPE_ID = BLOODTYPE_ID;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_BLOODTYPE_ID_ADV", p);
+if (R != null) {foreach (var X in R) {
+Supplier o = new Supplier();
+oTools.CopyPropValues_FromDataRecord(X, o);
+o.My_Bloodtype = new Bloodtype();
+o.My_Bloodtype.BLOODTYPE_ID = GV<Int32>(X["T_BLOODTYPE_BLOODTYPE_ID"]);o.My_Bloodtype.BLOODTYPE_SYMBOL = GV<String>(X["T_BLOODTYPE_BLOODTYPE_SYMBOL"]);o.My_Bloodtype.ENTRY_USER_ID = GV<Int64>(X["T_BLOODTYPE_ENTRY_USER_ID"]);o.My_Bloodtype.ENTRY_DATE = GV<String>(X["T_BLOODTYPE_ENTRY_DATE"]);o.My_Bloodtype.OWNER_ID = GV<Int32>(X["T_BLOODTYPE_OWNER_ID"]);
 oList.Add(o);
 }
 }
@@ -2742,9 +2668,7 @@ if (R != null) {foreach (var X in R) {
 Supplier_fees o = new Supplier_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Supplier = new Supplier();
-o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
+o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(X["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(X["T_SUPPLIER_BLOODTYPE_ID"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -2762,29 +2686,7 @@ if (R != null) {foreach (var X in R) {
 Supplier_fees o = new Supplier_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Supplier = new Supplier();
-o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
-o.My_Currency = new Currency();
-o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
-oList.Add(o);
-}
-}
-return oList;
-}
-public List<Supplier_fees> Get_Supplier_fees_By_FEES_ID_Adv ( Int32? FEES_ID)
-{
-List<Supplier_fees> oList = new List<Supplier_fees>();
-dynamic p = new ExpandoObject();
-p.FEES_ID = FEES_ID;
-IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_FEES_BY_FEES_ID_ADV", p);
-if (R != null) {foreach (var X in R) {
-Supplier_fees o = new Supplier_fees();
-oTools.CopyPropValues_FromDataRecord(X, o);
-o.My_Supplier = new Supplier();
-o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
+o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(X["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(X["T_SUPPLIER_BLOODTYPE_ID"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -2802,9 +2704,7 @@ if (R != null) {foreach (var X in R) {
 Supplier_fees o = new Supplier_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Supplier = new Supplier();
-o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
+o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(X["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(X["T_SUPPLIER_BLOODTYPE_ID"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -2930,20 +2830,6 @@ List<Client_fees> oList = new List<Client_fees>();
 dynamic p = new ExpandoObject();
 p.CLIENT_ID_LIST = string.Join(",", CLIENT_ID_LIST.ToArray());
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_FEES_BY_CLIENT_ID_LIST", p);
-if (R != null) {foreach (var X in R) {
-Client_fees o = new Client_fees();
-oTools.CopyPropValues_FromDataRecord(X, o);
-oList.Add(o);
-}
-}
-return oList;
-}
-public List<Client_fees> Get_Client_fees_By_FEES_ID_List ( List<Int32?> FEES_ID_LIST)
-{
-List<Client_fees> oList = new List<Client_fees>();
-dynamic p = new ExpandoObject();
-p.FEES_ID_LIST = string.Join(",", FEES_ID_LIST.ToArray());
-IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_FEES_BY_FEES_ID_LIST", p);
 if (R != null) {foreach (var X in R) {
 Client_fees o = new Client_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
@@ -3120,20 +3006,6 @@ oList.Add(o);
 }
 return oList;
 }
-public List<Staff_fees> Get_Staff_fees_By_FEES_ID_List ( List<Int32?> FEES_ID_LIST)
-{
-List<Staff_fees> oList = new List<Staff_fees>();
-dynamic p = new ExpandoObject();
-p.FEES_ID_LIST = string.Join(",", FEES_ID_LIST.ToArray());
-IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_STAFF_FEES_BY_FEES_ID_LIST", p);
-if (R != null) {foreach (var X in R) {
-Staff_fees o = new Staff_fees();
-oTools.CopyPropValues_FromDataRecord(X, o);
-oList.Add(o);
-}
-}
-return oList;
-}
 public List<Staff_fees> Get_Staff_fees_By_CURRENCY_ID_List ( List<Int32?> CURRENCY_ID_LIST)
 {
 List<Staff_fees> oList = new List<Staff_fees>();
@@ -3148,26 +3020,26 @@ oList.Add(o);
 }
 return oList;
 }
-public List<Supplier_fees> Get_Supplier_fees_By_SUPPLIER_ID_List ( List<Int32?> SUPPLIER_ID_LIST)
+public List<Supplier> Get_Supplier_By_BLOODTYPE_ID_List ( List<Int32?> BLOODTYPE_ID_LIST)
 {
-List<Supplier_fees> oList = new List<Supplier_fees>();
+List<Supplier> oList = new List<Supplier>();
 dynamic p = new ExpandoObject();
-p.SUPPLIER_ID_LIST = string.Join(",", SUPPLIER_ID_LIST.ToArray());
-IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_FEES_BY_SUPPLIER_ID_LIST", p);
+p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray());
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_BLOODTYPE_ID_LIST", p);
 if (R != null) {foreach (var X in R) {
-Supplier_fees o = new Supplier_fees();
+Supplier o = new Supplier();
 oTools.CopyPropValues_FromDataRecord(X, o);
 oList.Add(o);
 }
 }
 return oList;
 }
-public List<Supplier_fees> Get_Supplier_fees_By_FEES_ID_List ( List<Int32?> FEES_ID_LIST)
+public List<Supplier_fees> Get_Supplier_fees_By_SUPPLIER_ID_List ( List<Int32?> SUPPLIER_ID_LIST)
 {
 List<Supplier_fees> oList = new List<Supplier_fees>();
 dynamic p = new ExpandoObject();
-p.FEES_ID_LIST = string.Join(",", FEES_ID_LIST.ToArray());
-IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_FEES_BY_FEES_ID_LIST", p);
+p.SUPPLIER_ID_LIST = string.Join(",", SUPPLIER_ID_LIST.ToArray());
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_FEES_BY_SUPPLIER_ID_LIST", p);
 if (R != null) {foreach (var X in R) {
 Supplier_fees o = new Supplier_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
@@ -3337,34 +3209,10 @@ Client_fees o = new Client_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
 o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
-o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);
-oList.Add(o);
-}
-}
-return oList;
-}
-public List<Client_fees> Get_Client_fees_By_FEES_ID_List_Adv ( List<Int32?> FEES_ID_LIST)
-{
-List<Client_fees> oList = new List<Client_fees>();
-dynamic p = new ExpandoObject();
-p.FEES_ID_LIST = string.Join(",", FEES_ID_LIST.ToArray());
-IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_FEES_BY_FEES_ID_LIST_ADV", p);
-if (R != null) {foreach (var X in R) {
-Client_fees o = new Client_fees();
-oTools.CopyPropValues_FromDataRecord(X, o);
-o.My_Client = new Client();
-o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
-o.My_Currency = new Currency();
-o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
-o.My_Package = new Package();
-o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 oList.Add(o);
 }
 }
@@ -3381,12 +3229,10 @@ Client_fees o = new Client_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
 o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
-o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 oList.Add(o);
 }
 }
@@ -3403,12 +3249,10 @@ Client_fees o = new Client_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
 o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
-o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 oList.Add(o);
 }
 }
@@ -3520,9 +3364,9 @@ if (R != null) {foreach (var X in R) {
 Session o = new Session();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Package = new Package();
-o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Client_fees = new Client_fees();
-o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.FEES_ID = GV<Int32>(X["T_CLIENT_FEES_FEES_ID"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);
+o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);
 oList.Add(o);
 }
 }
@@ -3538,9 +3382,9 @@ if (R != null) {foreach (var X in R) {
 Session o = new Session();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Package = new Package();
-o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Client_fees = new Client_fees();
-o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.FEES_ID = GV<Int32>(X["T_CLIENT_FEES_FEES_ID"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);
+o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);
 oList.Add(o);
 }
 }
@@ -3573,28 +3417,6 @@ Staff_fees o = new Staff_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Staff = new Staff();
 o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
-o.My_Currency = new Currency();
-o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
-oList.Add(o);
-}
-}
-return oList;
-}
-public List<Staff_fees> Get_Staff_fees_By_FEES_ID_List_Adv ( List<Int32?> FEES_ID_LIST)
-{
-List<Staff_fees> oList = new List<Staff_fees>();
-dynamic p = new ExpandoObject();
-p.FEES_ID_LIST = string.Join(",", FEES_ID_LIST.ToArray());
-IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_STAFF_FEES_BY_FEES_ID_LIST_ADV", p);
-if (R != null) {foreach (var X in R) {
-Staff_fees o = new Staff_fees();
-oTools.CopyPropValues_FromDataRecord(X, o);
-o.My_Staff = new Staff();
-o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -3613,10 +3435,24 @@ Staff_fees o = new Staff_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Staff = new Staff();
 o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
+oList.Add(o);
+}
+}
+return oList;
+}
+public List<Supplier> Get_Supplier_By_BLOODTYPE_ID_List_Adv ( List<Int32?> BLOODTYPE_ID_LIST)
+{
+List<Supplier> oList = new List<Supplier>();
+dynamic p = new ExpandoObject();
+p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray());
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_BLOODTYPE_ID_LIST_ADV", p);
+if (R != null) {foreach (var X in R) {
+Supplier o = new Supplier();
+oTools.CopyPropValues_FromDataRecord(X, o);
+o.My_Bloodtype = new Bloodtype();
+o.My_Bloodtype.BLOODTYPE_ID = GV<Int32>(X["T_BLOODTYPE_BLOODTYPE_ID"]);o.My_Bloodtype.BLOODTYPE_SYMBOL = GV<String>(X["T_BLOODTYPE_BLOODTYPE_SYMBOL"]);o.My_Bloodtype.ENTRY_USER_ID = GV<Int64>(X["T_BLOODTYPE_ENTRY_USER_ID"]);o.My_Bloodtype.ENTRY_DATE = GV<String>(X["T_BLOODTYPE_ENTRY_DATE"]);o.My_Bloodtype.OWNER_ID = GV<Int32>(X["T_BLOODTYPE_OWNER_ID"]);
 oList.Add(o);
 }
 }
@@ -3632,29 +3468,7 @@ if (R != null) {foreach (var X in R) {
 Supplier_fees o = new Supplier_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Supplier = new Supplier();
-o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
-o.My_Currency = new Currency();
-o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
-oList.Add(o);
-}
-}
-return oList;
-}
-public List<Supplier_fees> Get_Supplier_fees_By_FEES_ID_List_Adv ( List<Int32?> FEES_ID_LIST)
-{
-List<Supplier_fees> oList = new List<Supplier_fees>();
-dynamic p = new ExpandoObject();
-p.FEES_ID_LIST = string.Join(",", FEES_ID_LIST.ToArray());
-IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_FEES_BY_FEES_ID_LIST_ADV", p);
-if (R != null) {foreach (var X in R) {
-Supplier_fees o = new Supplier_fees();
-oTools.CopyPropValues_FromDataRecord(X, o);
-o.My_Supplier = new Supplier();
-o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
+o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(X["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(X["T_SUPPLIER_BLOODTYPE_ID"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -3672,9 +3486,7 @@ if (R != null) {foreach (var X in R) {
 Supplier_fees o = new Supplier_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Supplier = new Supplier();
-o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
+o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(X["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(X["T_SUPPLIER_BLOODTYPE_ID"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -4222,11 +4034,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Package> Get_Package_By_Criteria ( string PACKAGE_NAME, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Package> Get_Package_By_Criteria ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_TIMELINE, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Package> oList = new List<Package>();
 dynamic p = new ExpandoObject();
-p.PACKAGE_NAME = PACKAGE_NAME; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.PACKAGE_NAME = PACKAGE_NAME; p.PACKAGE_TYPE = PACKAGE_TYPE; p.PACKAGE_TIMELINE = PACKAGE_TIMELINE; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_PACKAGE_BY_CRITERIA", p);
 if (R != null) {foreach (var X in R) {
 Package o = new Package();
@@ -4237,11 +4049,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Package> Get_Package_By_Where ( string PACKAGE_NAME, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Package> Get_Package_By_Where ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_TIMELINE, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Package> oList = new List<Package>();
 dynamic p = new ExpandoObject();
-p.PACKAGE_NAME = PACKAGE_NAME; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.PACKAGE_NAME = PACKAGE_NAME; p.PACKAGE_TYPE = PACKAGE_TYPE; p.PACKAGE_TIMELINE = PACKAGE_TIMELINE; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_PACKAGE_BY_WHERE", p);
 if (R != null) {foreach (var X in R) {
 Package o = new Package();
@@ -4252,11 +4064,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Package> Get_Package_By_Criteria_V2 ( string PACKAGE_NAME, string PACKAGE_STARTING_DATE, string PACKAGE_ENDING_DATE, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Package> Get_Package_By_Criteria_V2 ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_ENDING_DATE, string PACKAGE_TIMELINE, string PACKAGE_STARTING_DATE, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Package> oList = new List<Package>();
 dynamic p = new ExpandoObject();
-p.PACKAGE_NAME = PACKAGE_NAME; p.PACKAGE_STARTING_DATE = PACKAGE_STARTING_DATE; p.PACKAGE_ENDING_DATE = PACKAGE_ENDING_DATE; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.PACKAGE_NAME = PACKAGE_NAME; p.PACKAGE_TYPE = PACKAGE_TYPE; p.PACKAGE_ENDING_DATE = PACKAGE_ENDING_DATE; p.PACKAGE_TIMELINE = PACKAGE_TIMELINE; p.PACKAGE_STARTING_DATE = PACKAGE_STARTING_DATE; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_PACKAGE_BY_CRITERIA_V2", p);
 if (R != null) {foreach (var X in R) {
 Package o = new Package();
@@ -4267,11 +4079,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Package> Get_Package_By_Where_V2 ( string PACKAGE_NAME, string PACKAGE_STARTING_DATE, string PACKAGE_ENDING_DATE, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Package> Get_Package_By_Where_V2 ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_ENDING_DATE, string PACKAGE_TIMELINE, string PACKAGE_STARTING_DATE, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Package> oList = new List<Package>();
 dynamic p = new ExpandoObject();
-p.PACKAGE_NAME = PACKAGE_NAME; p.PACKAGE_STARTING_DATE = PACKAGE_STARTING_DATE; p.PACKAGE_ENDING_DATE = PACKAGE_ENDING_DATE; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.PACKAGE_NAME = PACKAGE_NAME; p.PACKAGE_TYPE = PACKAGE_TYPE; p.PACKAGE_ENDING_DATE = PACKAGE_ENDING_DATE; p.PACKAGE_TIMELINE = PACKAGE_TIMELINE; p.PACKAGE_STARTING_DATE = PACKAGE_STARTING_DATE; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_PACKAGE_BY_WHERE_V2", p);
 if (R != null) {foreach (var X in R) {
 Package o = new Package();
@@ -4513,6 +4325,36 @@ List<Supplier> oList = new List<Supplier>();
 dynamic p = new ExpandoObject();
 p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_WHERE", p);
+if (R != null) {foreach (var X in R) {
+Supplier o = new Supplier();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+TOTAL_COUNT = p.TOTAL_COUNT;
+return oList;
+}
+public List<Supplier> Get_Supplier_By_Criteria_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+{
+List<Supplier> oList = new List<Supplier>();
+dynamic p = new ExpandoObject();
+p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_DOB = SUPPLIER_DOB; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_CRITERIA_V2", p);
+if (R != null) {foreach (var X in R) {
+Supplier o = new Supplier();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+TOTAL_COUNT = p.TOTAL_COUNT;
+return oList;
+}
+public List<Supplier> Get_Supplier_By_Where_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+{
+List<Supplier> oList = new List<Supplier>();
+dynamic p = new ExpandoObject();
+p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_DOB = SUPPLIER_DOB; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_WHERE_V2", p);
 if (R != null) {foreach (var X in R) {
 Supplier o = new Supplier();
 oTools.CopyPropValues_FromDataRecord(X, o);
@@ -4767,12 +4609,10 @@ Client_fees o = new Client_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
 o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
-o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 oList.Add(o);
 }
 }
@@ -4790,12 +4630,10 @@ Client_fees o = new Client_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
 o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
-o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 oList.Add(o);
 }
 }
@@ -5122,11 +4960,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Package> Get_Package_By_Criteria_Adv ( string PACKAGE_NAME, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Package> Get_Package_By_Criteria_Adv ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_TIMELINE, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Package> oList = new List<Package>();
 dynamic p = new ExpandoObject();
-p.PACKAGE_NAME = PACKAGE_NAME; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.PACKAGE_NAME = PACKAGE_NAME; p.PACKAGE_TYPE = PACKAGE_TYPE; p.PACKAGE_TIMELINE = PACKAGE_TIMELINE; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_PACKAGE_BY_CRITERIA_ADV", p);
 if (R != null) {foreach (var X in R) {
 Package o = new Package();
@@ -5139,11 +4977,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Package> Get_Package_By_Where_Adv ( string PACKAGE_NAME, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Package> Get_Package_By_Where_Adv ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_TIMELINE, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Package> oList = new List<Package>();
 dynamic p = new ExpandoObject();
-p.PACKAGE_NAME = PACKAGE_NAME; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.PACKAGE_NAME = PACKAGE_NAME; p.PACKAGE_TYPE = PACKAGE_TYPE; p.PACKAGE_TIMELINE = PACKAGE_TIMELINE; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_PACKAGE_BY_WHERE_ADV", p);
 if (R != null) {foreach (var X in R) {
 Package o = new Package();
@@ -5156,11 +4994,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Package> Get_Package_By_Criteria_Adv_V2 ( string PACKAGE_NAME, string PACKAGE_STARTING_DATE, string PACKAGE_ENDING_DATE, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Package> Get_Package_By_Criteria_Adv_V2 ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_ENDING_DATE, string PACKAGE_TIMELINE, string PACKAGE_STARTING_DATE, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Package> oList = new List<Package>();
 dynamic p = new ExpandoObject();
-p.PACKAGE_NAME = PACKAGE_NAME; p.PACKAGE_STARTING_DATE = PACKAGE_STARTING_DATE; p.PACKAGE_ENDING_DATE = PACKAGE_ENDING_DATE; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.PACKAGE_NAME = PACKAGE_NAME; p.PACKAGE_TYPE = PACKAGE_TYPE; p.PACKAGE_ENDING_DATE = PACKAGE_ENDING_DATE; p.PACKAGE_TIMELINE = PACKAGE_TIMELINE; p.PACKAGE_STARTING_DATE = PACKAGE_STARTING_DATE; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_PACKAGE_BY_CRITERIA_ADV_V2", p);
 if (R != null) {foreach (var X in R) {
 Package o = new Package();
@@ -5171,11 +5009,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Package> Get_Package_By_Where_Adv_V2 ( string PACKAGE_NAME, string PACKAGE_STARTING_DATE, string PACKAGE_ENDING_DATE, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Package> Get_Package_By_Where_Adv_V2 ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_ENDING_DATE, string PACKAGE_TIMELINE, string PACKAGE_STARTING_DATE, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Package> oList = new List<Package>();
 dynamic p = new ExpandoObject();
-p.PACKAGE_NAME = PACKAGE_NAME; p.PACKAGE_STARTING_DATE = PACKAGE_STARTING_DATE; p.PACKAGE_ENDING_DATE = PACKAGE_ENDING_DATE; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.PACKAGE_NAME = PACKAGE_NAME; p.PACKAGE_TYPE = PACKAGE_TYPE; p.PACKAGE_ENDING_DATE = PACKAGE_ENDING_DATE; p.PACKAGE_TIMELINE = PACKAGE_TIMELINE; p.PACKAGE_STARTING_DATE = PACKAGE_STARTING_DATE; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_PACKAGE_BY_WHERE_ADV_V2", p);
 if (R != null) {foreach (var X in R) {
 Package o = new Package();
@@ -5256,9 +5094,9 @@ if (R != null) {foreach (var X in R) {
 Session o = new Session();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Package = new Package();
-o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Client_fees = new Client_fees();
-o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.FEES_ID = GV<Int32>(X["T_CLIENT_FEES_FEES_ID"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);
+o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);
 oList.Add(o);
 }
 }
@@ -5275,9 +5113,9 @@ if (R != null) {foreach (var X in R) {
 Session o = new Session();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Package = new Package();
-o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Client_fees = new Client_fees();
-o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.FEES_ID = GV<Int32>(X["T_CLIENT_FEES_FEES_ID"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);
+o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);
 oList.Add(o);
 }
 }
@@ -5389,8 +5227,6 @@ Staff_fees o = new Staff_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Staff = new Staff();
 o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -5410,8 +5246,6 @@ Staff_fees o = new Staff_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Staff = new Staff();
 o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -5429,6 +5263,8 @@ IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_CRITERIA_AD
 if (R != null) {foreach (var X in R) {
 Supplier o = new Supplier();
 oTools.CopyPropValues_FromDataRecord(X, o);
+o.My_Bloodtype = new Bloodtype();
+o.My_Bloodtype.BLOODTYPE_ID = GV<Int32>(X["T_BLOODTYPE_BLOODTYPE_ID"]);o.My_Bloodtype.BLOODTYPE_SYMBOL = GV<String>(X["T_BLOODTYPE_BLOODTYPE_SYMBOL"]);o.My_Bloodtype.ENTRY_USER_ID = GV<Int64>(X["T_BLOODTYPE_ENTRY_USER_ID"]);o.My_Bloodtype.ENTRY_DATE = GV<String>(X["T_BLOODTYPE_ENTRY_DATE"]);o.My_Bloodtype.OWNER_ID = GV<Int32>(X["T_BLOODTYPE_OWNER_ID"]);
 oList.Add(o);
 }
 }
@@ -5441,6 +5277,38 @@ List<Supplier> oList = new List<Supplier>();
 dynamic p = new ExpandoObject();
 p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_WHERE_ADV", p);
+if (R != null) {foreach (var X in R) {
+Supplier o = new Supplier();
+oTools.CopyPropValues_FromDataRecord(X, o);
+o.My_Bloodtype = new Bloodtype();
+o.My_Bloodtype.BLOODTYPE_ID = GV<Int32>(X["T_BLOODTYPE_BLOODTYPE_ID"]);o.My_Bloodtype.BLOODTYPE_SYMBOL = GV<String>(X["T_BLOODTYPE_BLOODTYPE_SYMBOL"]);o.My_Bloodtype.ENTRY_USER_ID = GV<Int64>(X["T_BLOODTYPE_ENTRY_USER_ID"]);o.My_Bloodtype.ENTRY_DATE = GV<String>(X["T_BLOODTYPE_ENTRY_DATE"]);o.My_Bloodtype.OWNER_ID = GV<Int32>(X["T_BLOODTYPE_OWNER_ID"]);
+oList.Add(o);
+}
+}
+TOTAL_COUNT = p.TOTAL_COUNT;
+return oList;
+}
+public List<Supplier> Get_Supplier_By_Criteria_Adv_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+{
+List<Supplier> oList = new List<Supplier>();
+dynamic p = new ExpandoObject();
+p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_DOB = SUPPLIER_DOB; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_CRITERIA_ADV_V2", p);
+if (R != null) {foreach (var X in R) {
+Supplier o = new Supplier();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+TOTAL_COUNT = p.TOTAL_COUNT;
+return oList;
+}
+public List<Supplier> Get_Supplier_By_Where_Adv_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+{
+List<Supplier> oList = new List<Supplier>();
+dynamic p = new ExpandoObject();
+p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_DOB = SUPPLIER_DOB; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_WHERE_ADV_V2", p);
 if (R != null) {foreach (var X in R) {
 Supplier o = new Supplier();
 oTools.CopyPropValues_FromDataRecord(X, o);
@@ -5460,9 +5328,7 @@ if (R != null) {foreach (var X in R) {
 Supplier_fees o = new Supplier_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Supplier = new Supplier();
-o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
+o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(X["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(X["T_SUPPLIER_BLOODTYPE_ID"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -5481,9 +5347,7 @@ if (R != null) {foreach (var X in R) {
 Supplier_fees o = new Supplier_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Supplier = new Supplier();
-o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
+o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(X["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(X["T_SUPPLIER_BLOODTYPE_ID"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -5642,11 +5506,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Client_fees> Get_Client_fees_By_Criteria_InList ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> FEES_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Client_fees> Get_Client_fees_By_Criteria_InList ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Client_fees> oList = new List<Client_fees>();
 dynamic p = new ExpandoObject();
-p.CLIENT_FEES_DESCRIPTION = CLIENT_FEES_DESCRIPTION; p.CLIENT_ID_LIST = string.Join(",", CLIENT_ID_LIST.ToArray()); p.FEES_ID_LIST = string.Join(",", FEES_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.PACKAGE_ID_LIST = string.Join(",", PACKAGE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.CLIENT_FEES_DESCRIPTION = CLIENT_FEES_DESCRIPTION; p.CLIENT_ID_LIST = string.Join(",", CLIENT_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.PACKAGE_ID_LIST = string.Join(",", PACKAGE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_FEES_BY_CRITERIA_IN_LIST", p);
 if (R != null) {foreach (var X in R) {
 Client_fees o = new Client_fees();
@@ -5657,11 +5521,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Client_fees> Get_Client_fees_By_Where_InList ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> FEES_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Client_fees> Get_Client_fees_By_Where_InList ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Client_fees> oList = new List<Client_fees>();
 dynamic p = new ExpandoObject();
-p.CLIENT_FEES_DESCRIPTION = CLIENT_FEES_DESCRIPTION; p.CLIENT_ID_LIST = string.Join(",", CLIENT_ID_LIST.ToArray()); p.FEES_ID_LIST = string.Join(",", FEES_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.PACKAGE_ID_LIST = string.Join(",", PACKAGE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.CLIENT_FEES_DESCRIPTION = CLIENT_FEES_DESCRIPTION; p.CLIENT_ID_LIST = string.Join(",", CLIENT_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.PACKAGE_ID_LIST = string.Join(",", PACKAGE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_FEES_BY_WHERE_IN_LIST", p);
 if (R != null) {foreach (var X in R) {
 Client_fees o = new Client_fees();
@@ -5852,11 +5716,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Package> Get_Package_By_Criteria_InList ( string PACKAGE_NAME, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Package> Get_Package_By_Criteria_InList ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_TIMELINE, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Package> oList = new List<Package>();
 dynamic p = new ExpandoObject();
-p.PACKAGE_NAME = PACKAGE_NAME; p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.PACKAGE_NAME = PACKAGE_NAME; p.PACKAGE_TYPE = PACKAGE_TYPE; p.PACKAGE_TIMELINE = PACKAGE_TIMELINE; p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_PACKAGE_BY_CRITERIA_IN_LIST", p);
 if (R != null) {foreach (var X in R) {
 Package o = new Package();
@@ -5867,11 +5731,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Package> Get_Package_By_Where_InList ( string PACKAGE_NAME, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Package> Get_Package_By_Where_InList ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_TIMELINE, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Package> oList = new List<Package>();
 dynamic p = new ExpandoObject();
-p.PACKAGE_NAME = PACKAGE_NAME; p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.PACKAGE_NAME = PACKAGE_NAME; p.PACKAGE_TYPE = PACKAGE_TYPE; p.PACKAGE_TIMELINE = PACKAGE_TIMELINE; p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_PACKAGE_BY_WHERE_IN_LIST", p);
 if (R != null) {foreach (var X in R) {
 Package o = new Package();
@@ -5882,11 +5746,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Package> Get_Package_By_Criteria_InList_V2 ( string PACKAGE_NAME, string PACKAGE_STARTING_DATE, string PACKAGE_ENDING_DATE, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Package> Get_Package_By_Criteria_InList_V2 ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_ENDING_DATE, string PACKAGE_TIMELINE, string PACKAGE_STARTING_DATE, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Package> oList = new List<Package>();
 dynamic p = new ExpandoObject();
-p.PACKAGE_NAME = PACKAGE_NAME; p.PACKAGE_STARTING_DATE = PACKAGE_STARTING_DATE; p.PACKAGE_ENDING_DATE = PACKAGE_ENDING_DATE; p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.PACKAGE_NAME = PACKAGE_NAME; p.PACKAGE_TYPE = PACKAGE_TYPE; p.PACKAGE_ENDING_DATE = PACKAGE_ENDING_DATE; p.PACKAGE_TIMELINE = PACKAGE_TIMELINE; p.PACKAGE_STARTING_DATE = PACKAGE_STARTING_DATE; p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_PACKAGE_BY_CRITERIA_IN_LIST_V2", p);
 if (R != null) {foreach (var X in R) {
 Package o = new Package();
@@ -5897,11 +5761,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Package> Get_Package_By_Where_InList_V2 ( string PACKAGE_NAME, string PACKAGE_STARTING_DATE, string PACKAGE_ENDING_DATE, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Package> Get_Package_By_Where_InList_V2 ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_ENDING_DATE, string PACKAGE_TIMELINE, string PACKAGE_STARTING_DATE, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Package> oList = new List<Package>();
 dynamic p = new ExpandoObject();
-p.PACKAGE_NAME = PACKAGE_NAME; p.PACKAGE_STARTING_DATE = PACKAGE_STARTING_DATE; p.PACKAGE_ENDING_DATE = PACKAGE_ENDING_DATE; p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.PACKAGE_NAME = PACKAGE_NAME; p.PACKAGE_TYPE = PACKAGE_TYPE; p.PACKAGE_ENDING_DATE = PACKAGE_ENDING_DATE; p.PACKAGE_TIMELINE = PACKAGE_TIMELINE; p.PACKAGE_STARTING_DATE = PACKAGE_STARTING_DATE; p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_PACKAGE_BY_WHERE_IN_LIST_V2", p);
 if (R != null) {foreach (var X in R) {
 Package o = new Package();
@@ -6032,11 +5896,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Staff_fees> Get_Staff_fees_By_Criteria_InList ( string STAFF_FEES_DESCRIPTION, List<Int32?> STAFF_ID_LIST, List<Int32?> FEES_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Staff_fees> Get_Staff_fees_By_Criteria_InList ( string STAFF_FEES_DESCRIPTION, List<Int32?> STAFF_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Staff_fees> oList = new List<Staff_fees>();
 dynamic p = new ExpandoObject();
-p.STAFF_FEES_DESCRIPTION = STAFF_FEES_DESCRIPTION; p.STAFF_ID_LIST = string.Join(",", STAFF_ID_LIST.ToArray()); p.FEES_ID_LIST = string.Join(",", FEES_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.STAFF_FEES_DESCRIPTION = STAFF_FEES_DESCRIPTION; p.STAFF_ID_LIST = string.Join(",", STAFF_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_STAFF_FEES_BY_CRITERIA_IN_LIST", p);
 if (R != null) {foreach (var X in R) {
 Staff_fees o = new Staff_fees();
@@ -6047,11 +5911,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Staff_fees> Get_Staff_fees_By_Where_InList ( string STAFF_FEES_DESCRIPTION, List<Int32?> STAFF_ID_LIST, List<Int32?> FEES_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Staff_fees> Get_Staff_fees_By_Where_InList ( string STAFF_FEES_DESCRIPTION, List<Int32?> STAFF_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Staff_fees> oList = new List<Staff_fees>();
 dynamic p = new ExpandoObject();
-p.STAFF_FEES_DESCRIPTION = STAFF_FEES_DESCRIPTION; p.STAFF_ID_LIST = string.Join(",", STAFF_ID_LIST.ToArray()); p.FEES_ID_LIST = string.Join(",", FEES_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.STAFF_FEES_DESCRIPTION = STAFF_FEES_DESCRIPTION; p.STAFF_ID_LIST = string.Join(",", STAFF_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_STAFF_FEES_BY_WHERE_IN_LIST", p);
 if (R != null) {foreach (var X in R) {
 Staff_fees o = new Staff_fees();
@@ -6062,11 +5926,71 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Supplier_fees> Get_Supplier_fees_By_Criteria_InList ( string SUPPLIER_FEES_DESCRIPTION, List<Int32?> SUPPLIER_ID_LIST, List<Int32?> FEES_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Supplier> Get_Supplier_By_Criteria_InList ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+{
+List<Supplier> oList = new List<Supplier>();
+dynamic p = new ExpandoObject();
+p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_CRITERIA_IN_LIST", p);
+if (R != null) {foreach (var X in R) {
+Supplier o = new Supplier();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+TOTAL_COUNT = p.TOTAL_COUNT;
+return oList;
+}
+public List<Supplier> Get_Supplier_By_Where_InList ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+{
+List<Supplier> oList = new List<Supplier>();
+dynamic p = new ExpandoObject();
+p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_WHERE_IN_LIST", p);
+if (R != null) {foreach (var X in R) {
+Supplier o = new Supplier();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+TOTAL_COUNT = p.TOTAL_COUNT;
+return oList;
+}
+public List<Supplier> Get_Supplier_By_Criteria_InList_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+{
+List<Supplier> oList = new List<Supplier>();
+dynamic p = new ExpandoObject();
+p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_DOB = SUPPLIER_DOB; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_CRITERIA_IN_LIST_V2", p);
+if (R != null) {foreach (var X in R) {
+Supplier o = new Supplier();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+TOTAL_COUNT = p.TOTAL_COUNT;
+return oList;
+}
+public List<Supplier> Get_Supplier_By_Where_InList_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+{
+List<Supplier> oList = new List<Supplier>();
+dynamic p = new ExpandoObject();
+p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_DOB = SUPPLIER_DOB; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_WHERE_IN_LIST_V2", p);
+if (R != null) {foreach (var X in R) {
+Supplier o = new Supplier();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+TOTAL_COUNT = p.TOTAL_COUNT;
+return oList;
+}
+public List<Supplier_fees> Get_Supplier_fees_By_Criteria_InList ( string SUPPLIER_FEES_DESCRIPTION, List<Int32?> SUPPLIER_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Supplier_fees> oList = new List<Supplier_fees>();
 dynamic p = new ExpandoObject();
-p.SUPPLIER_FEES_DESCRIPTION = SUPPLIER_FEES_DESCRIPTION; p.SUPPLIER_ID_LIST = string.Join(",", SUPPLIER_ID_LIST.ToArray()); p.FEES_ID_LIST = string.Join(",", FEES_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.SUPPLIER_FEES_DESCRIPTION = SUPPLIER_FEES_DESCRIPTION; p.SUPPLIER_ID_LIST = string.Join(",", SUPPLIER_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_FEES_BY_CRITERIA_IN_LIST", p);
 if (R != null) {foreach (var X in R) {
 Supplier_fees o = new Supplier_fees();
@@ -6077,11 +6001,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Supplier_fees> Get_Supplier_fees_By_Where_InList ( string SUPPLIER_FEES_DESCRIPTION, List<Int32?> SUPPLIER_ID_LIST, List<Int32?> FEES_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Supplier_fees> Get_Supplier_fees_By_Where_InList ( string SUPPLIER_FEES_DESCRIPTION, List<Int32?> SUPPLIER_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Supplier_fees> oList = new List<Supplier_fees>();
 dynamic p = new ExpandoObject();
-p.SUPPLIER_FEES_DESCRIPTION = SUPPLIER_FEES_DESCRIPTION; p.SUPPLIER_ID_LIST = string.Join(",", SUPPLIER_ID_LIST.ToArray()); p.FEES_ID_LIST = string.Join(",", FEES_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.SUPPLIER_FEES_DESCRIPTION = SUPPLIER_FEES_DESCRIPTION; p.SUPPLIER_ID_LIST = string.Join(",", SUPPLIER_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_FEES_BY_WHERE_IN_LIST", p);
 if (R != null) {foreach (var X in R) {
 Supplier_fees o = new Supplier_fees();
@@ -6236,46 +6160,42 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Client_fees> Get_Client_fees_By_Criteria_InList_Adv ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> FEES_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Client_fees> Get_Client_fees_By_Criteria_InList_Adv ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Client_fees> oList = new List<Client_fees>();
 dynamic p = new ExpandoObject();
-p.CLIENT_FEES_DESCRIPTION = CLIENT_FEES_DESCRIPTION; p.CLIENT_ID_LIST = string.Join(",", CLIENT_ID_LIST.ToArray()); p.FEES_ID_LIST = string.Join(",", FEES_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.PACKAGE_ID_LIST = string.Join(",", PACKAGE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.CLIENT_FEES_DESCRIPTION = CLIENT_FEES_DESCRIPTION; p.CLIENT_ID_LIST = string.Join(",", CLIENT_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.PACKAGE_ID_LIST = string.Join(",", PACKAGE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_FEES_BY_CRITERIA_IN_LIST_ADV", p);
 if (R != null) {foreach (var X in R) {
 Client_fees o = new Client_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
 o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
-o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 oList.Add(o);
 }
 }
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Client_fees> Get_Client_fees_By_Where_InList_Adv ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> FEES_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Client_fees> Get_Client_fees_By_Where_InList_Adv ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Client_fees> oList = new List<Client_fees>();
 dynamic p = new ExpandoObject();
-p.CLIENT_FEES_DESCRIPTION = CLIENT_FEES_DESCRIPTION; p.CLIENT_ID_LIST = string.Join(",", CLIENT_ID_LIST.ToArray()); p.FEES_ID_LIST = string.Join(",", FEES_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.PACKAGE_ID_LIST = string.Join(",", PACKAGE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.CLIENT_FEES_DESCRIPTION = CLIENT_FEES_DESCRIPTION; p.CLIENT_ID_LIST = string.Join(",", CLIENT_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.PACKAGE_ID_LIST = string.Join(",", PACKAGE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_FEES_BY_WHERE_IN_LIST_ADV", p);
 if (R != null) {foreach (var X in R) {
 Client_fees o = new Client_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
 o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
-o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 oList.Add(o);
 }
 }
@@ -6482,11 +6402,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Package> Get_Package_By_Criteria_InList_Adv ( string PACKAGE_NAME, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Package> Get_Package_By_Criteria_InList_Adv ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_TIMELINE, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Package> oList = new List<Package>();
 dynamic p = new ExpandoObject();
-p.PACKAGE_NAME = PACKAGE_NAME; p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.PACKAGE_NAME = PACKAGE_NAME; p.PACKAGE_TYPE = PACKAGE_TYPE; p.PACKAGE_TIMELINE = PACKAGE_TIMELINE; p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_PACKAGE_BY_CRITERIA_IN_LIST_ADV", p);
 if (R != null) {foreach (var X in R) {
 Package o = new Package();
@@ -6499,11 +6419,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Package> Get_Package_By_Where_InList_Adv ( string PACKAGE_NAME, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Package> Get_Package_By_Where_InList_Adv ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_TIMELINE, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Package> oList = new List<Package>();
 dynamic p = new ExpandoObject();
-p.PACKAGE_NAME = PACKAGE_NAME; p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.PACKAGE_NAME = PACKAGE_NAME; p.PACKAGE_TYPE = PACKAGE_TYPE; p.PACKAGE_TIMELINE = PACKAGE_TIMELINE; p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_PACKAGE_BY_WHERE_IN_LIST_ADV", p);
 if (R != null) {foreach (var X in R) {
 Package o = new Package();
@@ -6516,11 +6436,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Package> Get_Package_By_Criteria_InList_Adv_V2 ( string PACKAGE_NAME, string PACKAGE_STARTING_DATE, string PACKAGE_ENDING_DATE, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Package> Get_Package_By_Criteria_InList_Adv_V2 ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_ENDING_DATE, string PACKAGE_TIMELINE, string PACKAGE_STARTING_DATE, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Package> oList = new List<Package>();
 dynamic p = new ExpandoObject();
-p.PACKAGE_NAME = PACKAGE_NAME; p.PACKAGE_STARTING_DATE = PACKAGE_STARTING_DATE; p.PACKAGE_ENDING_DATE = PACKAGE_ENDING_DATE; p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.PACKAGE_NAME = PACKAGE_NAME; p.PACKAGE_TYPE = PACKAGE_TYPE; p.PACKAGE_ENDING_DATE = PACKAGE_ENDING_DATE; p.PACKAGE_TIMELINE = PACKAGE_TIMELINE; p.PACKAGE_STARTING_DATE = PACKAGE_STARTING_DATE; p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_PACKAGE_BY_CRITERIA_IN_LIST_ADV_V2", p);
 if (R != null) {foreach (var X in R) {
 Package o = new Package();
@@ -6531,11 +6451,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Package> Get_Package_By_Where_InList_Adv_V2 ( string PACKAGE_NAME, string PACKAGE_STARTING_DATE, string PACKAGE_ENDING_DATE, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Package> Get_Package_By_Where_InList_Adv_V2 ( string PACKAGE_NAME, string PACKAGE_TYPE, string PACKAGE_ENDING_DATE, string PACKAGE_TIMELINE, string PACKAGE_STARTING_DATE, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Package> oList = new List<Package>();
 dynamic p = new ExpandoObject();
-p.PACKAGE_NAME = PACKAGE_NAME; p.PACKAGE_STARTING_DATE = PACKAGE_STARTING_DATE; p.PACKAGE_ENDING_DATE = PACKAGE_ENDING_DATE; p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.PACKAGE_NAME = PACKAGE_NAME; p.PACKAGE_TYPE = PACKAGE_TYPE; p.PACKAGE_ENDING_DATE = PACKAGE_ENDING_DATE; p.PACKAGE_TIMELINE = PACKAGE_TIMELINE; p.PACKAGE_STARTING_DATE = PACKAGE_STARTING_DATE; p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_PACKAGE_BY_WHERE_IN_LIST_ADV_V2", p);
 if (R != null) {foreach (var X in R) {
 Package o = new Package();
@@ -6556,9 +6476,9 @@ if (R != null) {foreach (var X in R) {
 Session o = new Session();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Package = new Package();
-o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Client_fees = new Client_fees();
-o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.FEES_ID = GV<Int32>(X["T_CLIENT_FEES_FEES_ID"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);
+o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);
 oList.Add(o);
 }
 }
@@ -6575,9 +6495,9 @@ if (R != null) {foreach (var X in R) {
 Session o = new Session();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Package = new Package();
-o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Client_fees = new Client_fees();
-o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.FEES_ID = GV<Int32>(X["T_CLIENT_FEES_FEES_ID"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);
+o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);
 oList.Add(o);
 }
 }
@@ -6678,19 +6598,17 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Staff_fees> Get_Staff_fees_By_Criteria_InList_Adv ( string STAFF_FEES_DESCRIPTION, List<Int32?> STAFF_ID_LIST, List<Int32?> FEES_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Staff_fees> Get_Staff_fees_By_Criteria_InList_Adv ( string STAFF_FEES_DESCRIPTION, List<Int32?> STAFF_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Staff_fees> oList = new List<Staff_fees>();
 dynamic p = new ExpandoObject();
-p.STAFF_FEES_DESCRIPTION = STAFF_FEES_DESCRIPTION; p.STAFF_ID_LIST = string.Join(",", STAFF_ID_LIST.ToArray()); p.FEES_ID_LIST = string.Join(",", FEES_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.STAFF_FEES_DESCRIPTION = STAFF_FEES_DESCRIPTION; p.STAFF_ID_LIST = string.Join(",", STAFF_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_STAFF_FEES_BY_CRITERIA_IN_LIST_ADV", p);
 if (R != null) {foreach (var X in R) {
 Staff_fees o = new Staff_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Staff = new Staff();
 o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -6699,19 +6617,17 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Staff_fees> Get_Staff_fees_By_Where_InList_Adv ( string STAFF_FEES_DESCRIPTION, List<Int32?> STAFF_ID_LIST, List<Int32?> FEES_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Staff_fees> Get_Staff_fees_By_Where_InList_Adv ( string STAFF_FEES_DESCRIPTION, List<Int32?> STAFF_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Staff_fees> oList = new List<Staff_fees>();
 dynamic p = new ExpandoObject();
-p.STAFF_FEES_DESCRIPTION = STAFF_FEES_DESCRIPTION; p.STAFF_ID_LIST = string.Join(",", STAFF_ID_LIST.ToArray()); p.FEES_ID_LIST = string.Join(",", FEES_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.STAFF_FEES_DESCRIPTION = STAFF_FEES_DESCRIPTION; p.STAFF_ID_LIST = string.Join(",", STAFF_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_STAFF_FEES_BY_WHERE_IN_LIST_ADV", p);
 if (R != null) {foreach (var X in R) {
 Staff_fees o = new Staff_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Staff = new Staff();
 o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -6720,19 +6636,81 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Supplier_fees> Get_Supplier_fees_By_Criteria_InList_Adv ( string SUPPLIER_FEES_DESCRIPTION, List<Int32?> SUPPLIER_ID_LIST, List<Int32?> FEES_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Supplier> Get_Supplier_By_Criteria_InList_Adv ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+{
+List<Supplier> oList = new List<Supplier>();
+dynamic p = new ExpandoObject();
+p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_CRITERIA_IN_LIST_ADV", p);
+if (R != null) {foreach (var X in R) {
+Supplier o = new Supplier();
+oTools.CopyPropValues_FromDataRecord(X, o);
+o.My_Bloodtype = new Bloodtype();
+o.My_Bloodtype.BLOODTYPE_ID = GV<Int32>(X["T_BLOODTYPE_BLOODTYPE_ID"]);o.My_Bloodtype.BLOODTYPE_SYMBOL = GV<String>(X["T_BLOODTYPE_BLOODTYPE_SYMBOL"]);o.My_Bloodtype.ENTRY_USER_ID = GV<Int64>(X["T_BLOODTYPE_ENTRY_USER_ID"]);o.My_Bloodtype.ENTRY_DATE = GV<String>(X["T_BLOODTYPE_ENTRY_DATE"]);o.My_Bloodtype.OWNER_ID = GV<Int32>(X["T_BLOODTYPE_OWNER_ID"]);
+oList.Add(o);
+}
+}
+TOTAL_COUNT = p.TOTAL_COUNT;
+return oList;
+}
+public List<Supplier> Get_Supplier_By_Where_InList_Adv ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+{
+List<Supplier> oList = new List<Supplier>();
+dynamic p = new ExpandoObject();
+p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_WHERE_IN_LIST_ADV", p);
+if (R != null) {foreach (var X in R) {
+Supplier o = new Supplier();
+oTools.CopyPropValues_FromDataRecord(X, o);
+o.My_Bloodtype = new Bloodtype();
+o.My_Bloodtype.BLOODTYPE_ID = GV<Int32>(X["T_BLOODTYPE_BLOODTYPE_ID"]);o.My_Bloodtype.BLOODTYPE_SYMBOL = GV<String>(X["T_BLOODTYPE_BLOODTYPE_SYMBOL"]);o.My_Bloodtype.ENTRY_USER_ID = GV<Int64>(X["T_BLOODTYPE_ENTRY_USER_ID"]);o.My_Bloodtype.ENTRY_DATE = GV<String>(X["T_BLOODTYPE_ENTRY_DATE"]);o.My_Bloodtype.OWNER_ID = GV<Int32>(X["T_BLOODTYPE_OWNER_ID"]);
+oList.Add(o);
+}
+}
+TOTAL_COUNT = p.TOTAL_COUNT;
+return oList;
+}
+public List<Supplier> Get_Supplier_By_Criteria_InList_Adv_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+{
+List<Supplier> oList = new List<Supplier>();
+dynamic p = new ExpandoObject();
+p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_DOB = SUPPLIER_DOB; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_CRITERIA_IN_LIST_ADV_V2", p);
+if (R != null) {foreach (var X in R) {
+Supplier o = new Supplier();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+TOTAL_COUNT = p.TOTAL_COUNT;
+return oList;
+}
+public List<Supplier> Get_Supplier_By_Where_InList_Adv_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+{
+List<Supplier> oList = new List<Supplier>();
+dynamic p = new ExpandoObject();
+p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_DOB = SUPPLIER_DOB; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_WHERE_IN_LIST_ADV_V2", p);
+if (R != null) {foreach (var X in R) {
+Supplier o = new Supplier();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+TOTAL_COUNT = p.TOTAL_COUNT;
+return oList;
+}
+public List<Supplier_fees> Get_Supplier_fees_By_Criteria_InList_Adv ( string SUPPLIER_FEES_DESCRIPTION, List<Int32?> SUPPLIER_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Supplier_fees> oList = new List<Supplier_fees>();
 dynamic p = new ExpandoObject();
-p.SUPPLIER_FEES_DESCRIPTION = SUPPLIER_FEES_DESCRIPTION; p.SUPPLIER_ID_LIST = string.Join(",", SUPPLIER_ID_LIST.ToArray()); p.FEES_ID_LIST = string.Join(",", FEES_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.SUPPLIER_FEES_DESCRIPTION = SUPPLIER_FEES_DESCRIPTION; p.SUPPLIER_ID_LIST = string.Join(",", SUPPLIER_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_FEES_BY_CRITERIA_IN_LIST_ADV", p);
 if (R != null) {foreach (var X in R) {
 Supplier_fees o = new Supplier_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Supplier = new Supplier();
-o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
+o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(X["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(X["T_SUPPLIER_BLOODTYPE_ID"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -6741,19 +6719,17 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Supplier_fees> Get_Supplier_fees_By_Where_InList_Adv ( string SUPPLIER_FEES_DESCRIPTION, List<Int32?> SUPPLIER_ID_LIST, List<Int32?> FEES_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Supplier_fees> Get_Supplier_fees_By_Where_InList_Adv ( string SUPPLIER_FEES_DESCRIPTION, List<Int32?> SUPPLIER_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Supplier_fees> oList = new List<Supplier_fees>();
 dynamic p = new ExpandoObject();
-p.SUPPLIER_FEES_DESCRIPTION = SUPPLIER_FEES_DESCRIPTION; p.SUPPLIER_ID_LIST = string.Join(",", SUPPLIER_ID_LIST.ToArray()); p.FEES_ID_LIST = string.Join(",", FEES_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.SUPPLIER_FEES_DESCRIPTION = SUPPLIER_FEES_DESCRIPTION; p.SUPPLIER_ID_LIST = string.Join(",", SUPPLIER_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_FEES_BY_WHERE_IN_LIST_ADV", p);
 if (R != null) {foreach (var X in R) {
 Supplier_fees o = new Supplier_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Supplier = new Supplier();
-o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);
-o.My_Fees = new Fees();
-o.My_Fees.FEES_ID = GV<Int32>(X["T_FEES_FEES_ID"]);o.My_Fees.FEES_DESCRIPTION = GV<String>(X["T_FEES_FEES_DESCRIPTION"]);o.My_Fees.FEES_AMOUNT = GV<Int32>(X["T_FEES_FEES_AMOUNT"]);o.My_Fees.CURRENCY_ID = GV<Int32>(X["T_FEES_CURRENCY_ID"]);o.My_Fees.ENTRY_USER_ID = GV<Int64>(X["T_FEES_ENTRY_USER_ID"]);o.My_Fees.ENTRY_DATE = GV<String>(X["T_FEES_ENTRY_DATE"]);o.My_Fees.OWNER_ID = GV<Int32>(X["T_FEES_OWNER_ID"]);o.My_Fees.FEES_ORIGIN_DATE = GV<String>(X["T_FEES_FEES_ORIGIN_DATE"]);
+o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(X["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(X["T_SUPPLIER_BLOODTYPE_ID"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -6927,11 +6903,6 @@ public void Delete_Client_fees_By_CLIENT_ID ( Int32? CLIENT_ID)
 var p = new { CLIENT_ID = CLIENT_ID };
 ExecuteDelete("UPG_DELETE_CLIENT_FEES_BY_CLIENT_ID", p);
 }
-public void Delete_Client_fees_By_FEES_ID ( Int32? FEES_ID)
-{
-var p = new { FEES_ID = FEES_ID };
-ExecuteDelete("UPG_DELETE_CLIENT_FEES_BY_FEES_ID", p);
-}
 public void Delete_Client_fees_By_CURRENCY_ID ( Int32? CURRENCY_ID)
 {
 var p = new { CURRENCY_ID = CURRENCY_ID };
@@ -7082,11 +7053,6 @@ public void Delete_Staff_fees_By_STAFF_ID ( Int32? STAFF_ID)
 var p = new { STAFF_ID = STAFF_ID };
 ExecuteDelete("UPG_DELETE_STAFF_FEES_BY_STAFF_ID", p);
 }
-public void Delete_Staff_fees_By_FEES_ID ( Int32? FEES_ID)
-{
-var p = new { FEES_ID = FEES_ID };
-ExecuteDelete("UPG_DELETE_STAFF_FEES_BY_FEES_ID", p);
-}
 public void Delete_Staff_fees_By_CURRENCY_ID ( Int32? CURRENCY_ID)
 {
 var p = new { CURRENCY_ID = CURRENCY_ID };
@@ -7097,6 +7063,11 @@ public void Delete_Supplier_By_OWNER_ID ( Int32? OWNER_ID)
 var p = new { OWNER_ID = OWNER_ID };
 ExecuteDelete("UPG_DELETE_SUPPLIER_BY_OWNER_ID", p);
 }
+public void Delete_Supplier_By_BLOODTYPE_ID ( Int32? BLOODTYPE_ID)
+{
+var p = new { BLOODTYPE_ID = BLOODTYPE_ID };
+ExecuteDelete("UPG_DELETE_SUPPLIER_BY_BLOODTYPE_ID", p);
+}
 public void Delete_Supplier_fees_By_OWNER_ID ( Int32? OWNER_ID)
 {
 var p = new { OWNER_ID = OWNER_ID };
@@ -7106,11 +7077,6 @@ public void Delete_Supplier_fees_By_SUPPLIER_ID ( Int32? SUPPLIER_ID)
 {
 var p = new { SUPPLIER_ID = SUPPLIER_ID };
 ExecuteDelete("UPG_DELETE_SUPPLIER_FEES_BY_SUPPLIER_ID", p);
-}
-public void Delete_Supplier_fees_By_FEES_ID ( Int32? FEES_ID)
-{
-var p = new { FEES_ID = FEES_ID };
-ExecuteDelete("UPG_DELETE_SUPPLIER_FEES_BY_FEES_ID", p);
 }
 public void Delete_Supplier_fees_By_CURRENCY_ID ( Int32? CURRENCY_ID)
 {
@@ -7148,10 +7114,10 @@ oClient.CLIENT_ID = CLIENT_ID;oClient.CLIENT_NAME = CLIENT_NAME;oClient.CLIENT_P
 ExecuteEdit("UPG_EDIT_CLIENT", oClient, "CLIENT_ID");
 return oClient.CLIENT_ID;
 }
-public Int32? Edit_Client_fees ( Int32? CLIENT_FEES_ID, Int32? CLIENT_ID, string CLIENT_FEES_DESCRIPTION, Int32? FEES_ID, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, Int32? CURRENCY_ID, Int32? PACKAGE_ID)
+public Int32? Edit_Client_fees ( Int32? CLIENT_FEES_ID, Int32? CLIENT_ID, string CLIENT_FEES_DESCRIPTION, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, Int32? CURRENCY_ID, Int32? PACKAGE_ID, Int32? CLIENT_FEES_AMOUNT)
 {
 Client_fees oClient_fees = new Client_fees();
-oClient_fees.CLIENT_FEES_ID = CLIENT_FEES_ID;oClient_fees.CLIENT_ID = CLIENT_ID;oClient_fees.CLIENT_FEES_DESCRIPTION = CLIENT_FEES_DESCRIPTION;oClient_fees.FEES_ID = FEES_ID;oClient_fees.ENTRY_USER_ID = ENTRY_USER_ID;oClient_fees.ENTRY_DATE = ENTRY_DATE;oClient_fees.OWNER_ID = OWNER_ID;oClient_fees.CURRENCY_ID = CURRENCY_ID;oClient_fees.PACKAGE_ID = PACKAGE_ID;
+oClient_fees.CLIENT_FEES_ID = CLIENT_FEES_ID;oClient_fees.CLIENT_ID = CLIENT_ID;oClient_fees.CLIENT_FEES_DESCRIPTION = CLIENT_FEES_DESCRIPTION;oClient_fees.ENTRY_USER_ID = ENTRY_USER_ID;oClient_fees.ENTRY_DATE = ENTRY_DATE;oClient_fees.OWNER_ID = OWNER_ID;oClient_fees.CURRENCY_ID = CURRENCY_ID;oClient_fees.PACKAGE_ID = PACKAGE_ID;oClient_fees.CLIENT_FEES_AMOUNT = CLIENT_FEES_AMOUNT;
 ExecuteEdit("UPG_EDIT_CLIENT_FEES", oClient_fees, "CLIENT_FEES_ID");
 return oClient_fees.CLIENT_FEES_ID;
 }
@@ -7218,10 +7184,10 @@ oOwner.OWNER_ID = OWNER_ID;oOwner.CODE = CODE;oOwner.MAINTENANCE_DUE_DATE = MAIN
 ExecuteEdit("UPG_EDIT_OWNER", oOwner, "OWNER_ID");
 return oOwner.OWNER_ID;
 }
-public Int32? Edit_Package ( Int32? PACKAGE_ID, string PACKAGE_NAME, Int32? PACKAGE_PRICE, Int32? CURRENCY_ID, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, Int32? PACKAGE_SESSIONS_NB, string PACKAGE_STARTING_DATE, string PACKAGE_ENDING_DATE)
+public Int32? Edit_Package ( Int32? PACKAGE_ID, string PACKAGE_NAME, Int32? PACKAGE_PRICE, Int32? CURRENCY_ID, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, Int32? PACKAGE_SESSIONS_NB, string PACKAGE_TYPE, string PACKAGE_ENDING_DATE, string PACKAGE_TIMELINE, string PACKAGE_STARTING_DATE)
 {
 Package oPackage = new Package();
-oPackage.PACKAGE_ID = PACKAGE_ID;oPackage.PACKAGE_NAME = PACKAGE_NAME;oPackage.PACKAGE_PRICE = PACKAGE_PRICE;oPackage.CURRENCY_ID = CURRENCY_ID;oPackage.ENTRY_USER_ID = ENTRY_USER_ID;oPackage.ENTRY_DATE = ENTRY_DATE;oPackage.OWNER_ID = OWNER_ID;oPackage.PACKAGE_SESSIONS_NB = PACKAGE_SESSIONS_NB;oPackage.PACKAGE_STARTING_DATE = PACKAGE_STARTING_DATE;oPackage.PACKAGE_ENDING_DATE = PACKAGE_ENDING_DATE;
+oPackage.PACKAGE_ID = PACKAGE_ID;oPackage.PACKAGE_NAME = PACKAGE_NAME;oPackage.PACKAGE_PRICE = PACKAGE_PRICE;oPackage.CURRENCY_ID = CURRENCY_ID;oPackage.ENTRY_USER_ID = ENTRY_USER_ID;oPackage.ENTRY_DATE = ENTRY_DATE;oPackage.OWNER_ID = OWNER_ID;oPackage.PACKAGE_SESSIONS_NB = PACKAGE_SESSIONS_NB;oPackage.PACKAGE_TYPE = PACKAGE_TYPE;oPackage.PACKAGE_ENDING_DATE = PACKAGE_ENDING_DATE;oPackage.PACKAGE_TIMELINE = PACKAGE_TIMELINE;oPackage.PACKAGE_STARTING_DATE = PACKAGE_STARTING_DATE;
 ExecuteEdit("UPG_EDIT_PACKAGE", oPackage, "PACKAGE_ID");
 return oPackage.PACKAGE_ID;
 }
@@ -7246,24 +7212,24 @@ oStaff.STAFF_ID = STAFF_ID;oStaff.STAFF_NAME = STAFF_NAME;oStaff.STAFF_PH_NB = S
 ExecuteEdit("UPG_EDIT_STAFF", oStaff, "STAFF_ID");
 return oStaff.STAFF_ID;
 }
-public Int32? Edit_Staff_fees ( Int32? STAFF_FEES_ID, Int32? STAFF_ID, string STAFF_FEES_DESCRIPTION, Int32? FEES_ID, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, Int32? CURRENCY_ID)
+public Int32? Edit_Staff_fees ( Int32? STAFF_FEES_ID, Int32? STAFF_ID, string STAFF_FEES_DESCRIPTION, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, Int32? CURRENCY_ID, Int32? STAFF_FEES_AMOUNT)
 {
 Staff_fees oStaff_fees = new Staff_fees();
-oStaff_fees.STAFF_FEES_ID = STAFF_FEES_ID;oStaff_fees.STAFF_ID = STAFF_ID;oStaff_fees.STAFF_FEES_DESCRIPTION = STAFF_FEES_DESCRIPTION;oStaff_fees.FEES_ID = FEES_ID;oStaff_fees.ENTRY_USER_ID = ENTRY_USER_ID;oStaff_fees.ENTRY_DATE = ENTRY_DATE;oStaff_fees.OWNER_ID = OWNER_ID;oStaff_fees.CURRENCY_ID = CURRENCY_ID;
+oStaff_fees.STAFF_FEES_ID = STAFF_FEES_ID;oStaff_fees.STAFF_ID = STAFF_ID;oStaff_fees.STAFF_FEES_DESCRIPTION = STAFF_FEES_DESCRIPTION;oStaff_fees.ENTRY_USER_ID = ENTRY_USER_ID;oStaff_fees.ENTRY_DATE = ENTRY_DATE;oStaff_fees.OWNER_ID = OWNER_ID;oStaff_fees.CURRENCY_ID = CURRENCY_ID;oStaff_fees.STAFF_FEES_AMOUNT = STAFF_FEES_AMOUNT;
 ExecuteEdit("UPG_EDIT_STAFF_FEES", oStaff_fees, "STAFF_FEES_ID");
 return oStaff_fees.STAFF_FEES_ID;
 }
-public Int32? Edit_Supplier ( Int32? SUPPLIER_ID, string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID)
+public Int32? Edit_Supplier ( Int32? SUPPLIER_ID, string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, string SUPPLIER_DOB, Int32? BLOODTYPE_ID)
 {
 Supplier oSupplier = new Supplier();
-oSupplier.SUPPLIER_ID = SUPPLIER_ID;oSupplier.SUPPLIER_NAME = SUPPLIER_NAME;oSupplier.SUPPLIER_PH_NB = SUPPLIER_PH_NB;oSupplier.SUPPLIER_MAIL = SUPPLIER_MAIL;oSupplier.ENTRY_USER_ID = ENTRY_USER_ID;oSupplier.ENTRY_DATE = ENTRY_DATE;oSupplier.OWNER_ID = OWNER_ID;
+oSupplier.SUPPLIER_ID = SUPPLIER_ID;oSupplier.SUPPLIER_NAME = SUPPLIER_NAME;oSupplier.SUPPLIER_PH_NB = SUPPLIER_PH_NB;oSupplier.SUPPLIER_MAIL = SUPPLIER_MAIL;oSupplier.ENTRY_USER_ID = ENTRY_USER_ID;oSupplier.ENTRY_DATE = ENTRY_DATE;oSupplier.OWNER_ID = OWNER_ID;oSupplier.SUPPLIER_DOB = SUPPLIER_DOB;oSupplier.BLOODTYPE_ID = BLOODTYPE_ID;
 ExecuteEdit("UPG_EDIT_SUPPLIER", oSupplier, "SUPPLIER_ID");
 return oSupplier.SUPPLIER_ID;
 }
-public Int32? Edit_Supplier_fees ( Int32? SUPPLIER_FEES_ID, Int32? SUPPLIER_ID, string SUPPLIER_FEES_DESCRIPTION, Int32? FEES_ID, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, Int32? CURRENCY_ID)
+public Int32? Edit_Supplier_fees ( Int32? SUPPLIER_FEES_ID, Int32? SUPPLIER_ID, string SUPPLIER_FEES_DESCRIPTION, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, Int32? CURRENCY_ID, Int32? SUPPLIER_FEES_AMOUNT)
 {
 Supplier_fees oSupplier_fees = new Supplier_fees();
-oSupplier_fees.SUPPLIER_FEES_ID = SUPPLIER_FEES_ID;oSupplier_fees.SUPPLIER_ID = SUPPLIER_ID;oSupplier_fees.SUPPLIER_FEES_DESCRIPTION = SUPPLIER_FEES_DESCRIPTION;oSupplier_fees.FEES_ID = FEES_ID;oSupplier_fees.ENTRY_USER_ID = ENTRY_USER_ID;oSupplier_fees.ENTRY_DATE = ENTRY_DATE;oSupplier_fees.OWNER_ID = OWNER_ID;oSupplier_fees.CURRENCY_ID = CURRENCY_ID;
+oSupplier_fees.SUPPLIER_FEES_ID = SUPPLIER_FEES_ID;oSupplier_fees.SUPPLIER_ID = SUPPLIER_ID;oSupplier_fees.SUPPLIER_FEES_DESCRIPTION = SUPPLIER_FEES_DESCRIPTION;oSupplier_fees.ENTRY_USER_ID = ENTRY_USER_ID;oSupplier_fees.ENTRY_DATE = ENTRY_DATE;oSupplier_fees.OWNER_ID = OWNER_ID;oSupplier_fees.CURRENCY_ID = CURRENCY_ID;oSupplier_fees.SUPPLIER_FEES_AMOUNT = SUPPLIER_FEES_AMOUNT;
 ExecuteEdit("UPG_EDIT_SUPPLIER_FEES", oSupplier_fees, "SUPPLIER_FEES_ID");
 return oSupplier_fees.SUPPLIER_FEES_ID;
 }
@@ -7288,19 +7254,18 @@ oList.Add(o);
 BALANCE = p.BALANCE;
 return oList;
 }
-public List<dynamic> CheckClientPaymentStatus ( Int32? CLIENT_ID, Int32? CURRENCY_ID,ref  Int32? REMAINING_AMOUNT, long? OWNER_ID)
+public List<dynamic> CheckClientPaymentStatus ( Int32? CLIENT_ID,ref  Int32? BALANCE, long? OWNER_ID, Int32? CURRENCY_ID)
 {
 List<dynamic> oList = new List<dynamic>();
 dynamic p = new ExpandoObject();
-p.CLIENT_ID = CLIENT_ID; p.CURRENCY_ID = CURRENCY_ID; p.REMAINING_AMOUNT = REMAINING_AMOUNT; p.OWNER_ID = OWNER_ID;
+p.CLIENT_ID = CLIENT_ID; p.BALANCE = BALANCE; p.OWNER_ID = OWNER_ID; p.CURRENCY_ID = CURRENCY_ID;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("CheckClientPaymentStatus", p);
 if (R != null) {foreach (var X in R) {
 dynamic o = new ExpandoObject();
-o.RemainingAmount = GV<Int32>(X["RemainingAmount"]);
 oList.Add(o);
 }
 }
-REMAINING_AMOUNT = p.REMAINING_AMOUNT;
+BALANCE = p.BALANCE;
 return oList;
 }
 public List<dynamic> CheckIfUserExists ( string Username, string UserEmail)
@@ -7464,7 +7429,7 @@ p.JSON_CONTENT = JSON_CONTENT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UP_BULK_UPSERT_CLIENT_FEES", p);
 if (R != null) {foreach (var X in R) {
 dynamic o = new ExpandoObject();
-o.CLIENT_FEES_ID = GV<Int32>(X["CLIENT_FEES_ID"]);o.CLIENT_ID = GV<Int32>(X["CLIENT_ID"]);o.CLIENT_FEES_DESCRIPTION = GV<String>(X["CLIENT_FEES_DESCRIPTION"]);o.FEES_ID = GV<Int32>(X["FEES_ID"]);o.ENTRY_USER_ID = GV<Int64>(X["ENTRY_USER_ID"]);o.ENTRY_DATE = GV<String>(X["ENTRY_DATE"]);o.OWNER_ID = GV<Int32>(X["OWNER_ID"]);o.CURRENCY_ID = GV<Int32>(X["CURRENCY_ID"]);o.PACKAGE_ID = GV<Int32>(X["PACKAGE_ID"]);
+o.CLIENT_FEES_ID = GV<Int32>(X["CLIENT_FEES_ID"]);o.CLIENT_ID = GV<Int32>(X["CLIENT_ID"]);o.CLIENT_FEES_DESCRIPTION = GV<String>(X["CLIENT_FEES_DESCRIPTION"]);o.ENTRY_USER_ID = GV<Int64>(X["ENTRY_USER_ID"]);o.ENTRY_DATE = GV<String>(X["ENTRY_DATE"]);o.OWNER_ID = GV<Int32>(X["OWNER_ID"]);o.CURRENCY_ID = GV<Int32>(X["CURRENCY_ID"]);o.PACKAGE_ID = GV<Int32>(X["PACKAGE_ID"]);o.CLIENT_FEES_AMOUNT = GV<Int32>(X["CLIENT_FEES_AMOUNT"]);
 oList.Add(o);
 }
 }
@@ -7604,7 +7569,7 @@ p.JSON_CONTENT = JSON_CONTENT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UP_BULK_UPSERT_PACKAGE", p);
 if (R != null) {foreach (var X in R) {
 dynamic o = new ExpandoObject();
-o.PACKAGE_ID = GV<Int32>(X["PACKAGE_ID"]);o.PACKAGE_NAME = GV<String>(X["PACKAGE_NAME"]);o.PACKAGE_PRICE = GV<Int32>(X["PACKAGE_PRICE"]);o.CURRENCY_ID = GV<Int32>(X["CURRENCY_ID"]);o.ENTRY_USER_ID = GV<Int64>(X["ENTRY_USER_ID"]);o.ENTRY_DATE = GV<String>(X["ENTRY_DATE"]);o.OWNER_ID = GV<Int32>(X["OWNER_ID"]);o.PACKAGE_SESSIONS_NB = GV<Int32>(X["PACKAGE_SESSIONS_NB"]);o.PACKAGE_STARTING_DATE = GV<String>(X["PACKAGE_STARTING_DATE"]);o.PACKAGE_ENDING_DATE = GV<String>(X["PACKAGE_ENDING_DATE"]);
+o.PACKAGE_ID = GV<Int32>(X["PACKAGE_ID"]);o.PACKAGE_NAME = GV<String>(X["PACKAGE_NAME"]);o.PACKAGE_PRICE = GV<Int32>(X["PACKAGE_PRICE"]);o.CURRENCY_ID = GV<Int32>(X["CURRENCY_ID"]);o.ENTRY_USER_ID = GV<Int64>(X["ENTRY_USER_ID"]);o.ENTRY_DATE = GV<String>(X["ENTRY_DATE"]);o.OWNER_ID = GV<Int32>(X["OWNER_ID"]);o.PACKAGE_SESSIONS_NB = GV<Int32>(X["PACKAGE_SESSIONS_NB"]);o.PACKAGE_TYPE = GV<String>(X["PACKAGE_TYPE"]);o.PACKAGE_ENDING_DATE = GV<String>(X["PACKAGE_ENDING_DATE"]);o.PACKAGE_TIMELINE = GV<String>(X["PACKAGE_TIMELINE"]);o.PACKAGE_STARTING_DATE = GV<String>(X["PACKAGE_STARTING_DATE"]);
 oList.Add(o);
 }
 }
@@ -7660,7 +7625,7 @@ p.JSON_CONTENT = JSON_CONTENT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UP_BULK_UPSERT_STAFF_FEES", p);
 if (R != null) {foreach (var X in R) {
 dynamic o = new ExpandoObject();
-o.STAFF_FEES_ID = GV<Int32>(X["STAFF_FEES_ID"]);o.STAFF_ID = GV<Int32>(X["STAFF_ID"]);o.STAFF_FEES_DESCRIPTION = GV<String>(X["STAFF_FEES_DESCRIPTION"]);o.FEES_ID = GV<Int32>(X["FEES_ID"]);o.ENTRY_USER_ID = GV<Int64>(X["ENTRY_USER_ID"]);o.ENTRY_DATE = GV<String>(X["ENTRY_DATE"]);o.OWNER_ID = GV<Int32>(X["OWNER_ID"]);o.CURRENCY_ID = GV<Int32>(X["CURRENCY_ID"]);
+o.STAFF_FEES_ID = GV<Int32>(X["STAFF_FEES_ID"]);o.STAFF_ID = GV<Int32>(X["STAFF_ID"]);o.STAFF_FEES_DESCRIPTION = GV<String>(X["STAFF_FEES_DESCRIPTION"]);o.ENTRY_USER_ID = GV<Int64>(X["ENTRY_USER_ID"]);o.ENTRY_DATE = GV<String>(X["ENTRY_DATE"]);o.OWNER_ID = GV<Int32>(X["OWNER_ID"]);o.CURRENCY_ID = GV<Int32>(X["CURRENCY_ID"]);o.STAFF_FEES_AMOUNT = GV<Int32>(X["STAFF_FEES_AMOUNT"]);
 oList.Add(o);
 }
 }
@@ -7674,7 +7639,7 @@ p.JSON_CONTENT = JSON_CONTENT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UP_BULK_UPSERT_SUPPLIER", p);
 if (R != null) {foreach (var X in R) {
 dynamic o = new ExpandoObject();
-o.SUPPLIER_ID = GV<Int32>(X["SUPPLIER_ID"]);o.SUPPLIER_NAME = GV<String>(X["SUPPLIER_NAME"]);o.SUPPLIER_PH_NB = GV<String>(X["SUPPLIER_PH_NB"]);o.SUPPLIER_MAIL = GV<String>(X["SUPPLIER_MAIL"]);o.ENTRY_USER_ID = GV<Int64>(X["ENTRY_USER_ID"]);o.ENTRY_DATE = GV<String>(X["ENTRY_DATE"]);o.OWNER_ID = GV<Int32>(X["OWNER_ID"]);
+o.SUPPLIER_ID = GV<Int32>(X["SUPPLIER_ID"]);o.SUPPLIER_NAME = GV<String>(X["SUPPLIER_NAME"]);o.SUPPLIER_PH_NB = GV<String>(X["SUPPLIER_PH_NB"]);o.SUPPLIER_MAIL = GV<String>(X["SUPPLIER_MAIL"]);o.ENTRY_USER_ID = GV<Int64>(X["ENTRY_USER_ID"]);o.ENTRY_DATE = GV<String>(X["ENTRY_DATE"]);o.OWNER_ID = GV<Int32>(X["OWNER_ID"]);o.SUPPLIER_DOB = GV<String>(X["SUPPLIER_DOB"]);o.BLOODTYPE_ID = GV<Int32>(X["BLOODTYPE_ID"]);
 oList.Add(o);
 }
 }
@@ -7688,7 +7653,7 @@ p.JSON_CONTENT = JSON_CONTENT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UP_BULK_UPSERT_SUPPLIER_FEES", p);
 if (R != null) {foreach (var X in R) {
 dynamic o = new ExpandoObject();
-o.SUPPLIER_FEES_ID = GV<Int32>(X["SUPPLIER_FEES_ID"]);o.SUPPLIER_ID = GV<Int32>(X["SUPPLIER_ID"]);o.SUPPLIER_FEES_DESCRIPTION = GV<String>(X["SUPPLIER_FEES_DESCRIPTION"]);o.FEES_ID = GV<Int32>(X["FEES_ID"]);o.ENTRY_USER_ID = GV<Int64>(X["ENTRY_USER_ID"]);o.ENTRY_DATE = GV<String>(X["ENTRY_DATE"]);o.OWNER_ID = GV<Int32>(X["OWNER_ID"]);o.CURRENCY_ID = GV<Int32>(X["CURRENCY_ID"]);
+o.SUPPLIER_FEES_ID = GV<Int32>(X["SUPPLIER_FEES_ID"]);o.SUPPLIER_ID = GV<Int32>(X["SUPPLIER_ID"]);o.SUPPLIER_FEES_DESCRIPTION = GV<String>(X["SUPPLIER_FEES_DESCRIPTION"]);o.ENTRY_USER_ID = GV<Int64>(X["ENTRY_USER_ID"]);o.ENTRY_DATE = GV<String>(X["ENTRY_DATE"]);o.OWNER_ID = GV<Int32>(X["OWNER_ID"]);o.CURRENCY_ID = GV<Int32>(X["CURRENCY_ID"]);o.SUPPLIER_FEES_AMOUNT = GV<Int32>(X["SUPPLIER_FEES_AMOUNT"]);
 oList.Add(o);
 }
 }

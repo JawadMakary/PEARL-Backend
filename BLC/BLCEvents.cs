@@ -39,7 +39,15 @@ Get_Client_By_OWNER_ID_Adv,
 Get_Staff_By_OWNER_ID_Adv,
 UP_CHECK_USER_EXISTENCE,
 UpdatePassword,
-Login
+LoginFct,
+Edit_Staff,
+Edit_Supplier,
+Edit_Client,
+Get_Bloodtype_By_OWNER_ID,
+Get_Supplier_By_OWNER_ID,
+Edit_Client_fees,
+Edit_Supplier_fees,
+Edit_Staff_fees
 }
 #endregion
 

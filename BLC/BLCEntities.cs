@@ -460,11 +460,6 @@ public partial class Params_Get_Client_fees_By_CLIENT_ID
 public Int32? CLIENT_ID {get;set;}
 
 }
-public partial class Params_Get_Client_fees_By_FEES_ID
-{
-public Int32? FEES_ID {get;set;}
-
-}
 public partial class Params_Get_Client_fees_By_CURRENCY_ID
 {
 public Int32? CURRENCY_ID {get;set;}
@@ -620,11 +615,6 @@ public partial class Params_Get_Staff_fees_By_STAFF_ID
 public Int32? STAFF_ID {get;set;}
 
 }
-public partial class Params_Get_Staff_fees_By_FEES_ID
-{
-public Int32? FEES_ID {get;set;}
-
-}
 public partial class Params_Get_Staff_fees_By_CURRENCY_ID
 {
 public Int32? CURRENCY_ID {get;set;}
@@ -635,6 +625,11 @@ public partial class Params_Get_Supplier_By_OWNER_ID
 public Int32? OWNER_ID {get;set;}
 
 }
+public partial class Params_Get_Supplier_By_BLOODTYPE_ID
+{
+public Int32? BLOODTYPE_ID {get;set;}
+
+}
 public partial class Params_Get_Supplier_fees_By_OWNER_ID
 {
 public Int32? OWNER_ID {get;set;}
@@ -643,11 +638,6 @@ public Int32? OWNER_ID {get;set;}
 public partial class Params_Get_Supplier_fees_By_SUPPLIER_ID
 {
 public Int32? SUPPLIER_ID {get;set;}
-
-}
-public partial class Params_Get_Supplier_fees_By_FEES_ID
-{
-public Int32? FEES_ID {get;set;}
 
 }
 public partial class Params_Get_Supplier_fees_By_CURRENCY_ID
@@ -698,11 +688,6 @@ public List<Int32?> BLOODTYPE_ID_LIST {get;set;}
 public partial class Params_Get_Client_fees_By_CLIENT_ID_List
 {
 public List<Int32?> CLIENT_ID_LIST {get;set;}
-
-}
-public partial class Params_Get_Client_fees_By_FEES_ID_List
-{
-public List<Int32?> FEES_ID_LIST {get;set;}
 
 }
 public partial class Params_Get_Client_fees_By_CURRENCY_ID_List
@@ -765,24 +750,19 @@ public partial class Params_Get_Staff_fees_By_STAFF_ID_List
 public List<Int32?> STAFF_ID_LIST {get;set;}
 
 }
-public partial class Params_Get_Staff_fees_By_FEES_ID_List
-{
-public List<Int32?> FEES_ID_LIST {get;set;}
-
-}
 public partial class Params_Get_Staff_fees_By_CURRENCY_ID_List
 {
 public List<Int32?> CURRENCY_ID_LIST {get;set;}
 
 }
+public partial class Params_Get_Supplier_By_BLOODTYPE_ID_List
+{
+public List<Int32?> BLOODTYPE_ID_LIST {get;set;}
+
+}
 public partial class Params_Get_Supplier_fees_By_SUPPLIER_ID_List
 {
 public List<Int32?> SUPPLIER_ID_LIST {get;set;}
-
-}
-public partial class Params_Get_Supplier_fees_By_FEES_ID_List
-{
-public List<Int32?> FEES_ID_LIST {get;set;}
 
 }
 public partial class Params_Get_Supplier_fees_By_CURRENCY_ID_List
@@ -1177,6 +1157,8 @@ public partial class Params_Get_Package_By_Criteria
 
 public Int32? OWNER_ID {get;set;}
 public string PACKAGE_NAME {get;set;}
+public string PACKAGE_TYPE {get;set;}
+public string PACKAGE_TIMELINE {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -1186,6 +1168,8 @@ public partial class Params_Get_Package_By_Where
 
 public Int32? OWNER_ID {get;set;}
 public string PACKAGE_NAME {get;set;}
+public string PACKAGE_TYPE {get;set;}
+public string PACKAGE_TIMELINE {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -1195,8 +1179,10 @@ public partial class Params_Get_Package_By_Criteria_V2
 
 public Int32? OWNER_ID {get;set;}
 public string PACKAGE_NAME {get;set;}
-public string PACKAGE_STARTING_DATE {get;set;}
+public string PACKAGE_TYPE {get;set;}
 public string PACKAGE_ENDING_DATE {get;set;}
+public string PACKAGE_TIMELINE {get;set;}
+public string PACKAGE_STARTING_DATE {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -1206,8 +1192,10 @@ public partial class Params_Get_Package_By_Where_V2
 
 public Int32? OWNER_ID {get;set;}
 public string PACKAGE_NAME {get;set;}
-public string PACKAGE_STARTING_DATE {get;set;}
+public string PACKAGE_TYPE {get;set;}
 public string PACKAGE_ENDING_DATE {get;set;}
+public string PACKAGE_TIMELINE {get;set;}
+public string PACKAGE_STARTING_DATE {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -1400,6 +1388,30 @@ public Int32? OWNER_ID {get;set;}
 public string SUPPLIER_NAME {get;set;}
 public string SUPPLIER_PH_NB {get;set;}
 public string SUPPLIER_MAIL {get;set;}
+public long? START_ROW {get;set;}
+public long? END_ROW {get;set;}
+public long? TOTAL_COUNT {get;set;}
+}
+public partial class Params_Get_Supplier_By_Criteria_V2
+{
+
+public Int32? OWNER_ID {get;set;}
+public string SUPPLIER_NAME {get;set;}
+public string SUPPLIER_PH_NB {get;set;}
+public string SUPPLIER_MAIL {get;set;}
+public string SUPPLIER_DOB {get;set;}
+public long? START_ROW {get;set;}
+public long? END_ROW {get;set;}
+public long? TOTAL_COUNT {get;set;}
+}
+public partial class Params_Get_Supplier_By_Where_V2
+{
+
+public Int32? OWNER_ID {get;set;}
+public string SUPPLIER_NAME {get;set;}
+public string SUPPLIER_PH_NB {get;set;}
+public string SUPPLIER_MAIL {get;set;}
+public string SUPPLIER_DOB {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -1696,7 +1708,6 @@ public partial class Params_Get_Client_fees_By_Criteria_InList
 public Int32? OWNER_ID {get;set;}
 public string CLIENT_FEES_DESCRIPTION {get;set;}
 public List<Int32?> CLIENT_ID_LIST {get;set;}
-public List<Int32?> FEES_ID_LIST {get;set;}
 public List<Int32?> CURRENCY_ID_LIST {get;set;}
 public List<Int32?> PACKAGE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
@@ -1708,7 +1719,6 @@ public partial class Params_Get_Client_fees_By_Criteria_InList_SP
 public Int32? OWNER_ID {get;set;}
 public string CLIENT_FEES_DESCRIPTION {get;set;}
 public string CLIENT_ID_LIST {get;set;}
-public string FEES_ID_LIST {get;set;}
 public string CURRENCY_ID_LIST {get;set;}
 public string PACKAGE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
@@ -1721,7 +1731,6 @@ public partial class Params_Get_Client_fees_By_Where_InList
 public Int32? OWNER_ID {get;set;}
 public string CLIENT_FEES_DESCRIPTION {get;set;}
 public List<Int32?> CLIENT_ID_LIST {get;set;}
-public List<Int32?> FEES_ID_LIST {get;set;}
 public List<Int32?> CURRENCY_ID_LIST {get;set;}
 public List<Int32?> PACKAGE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
@@ -1733,7 +1742,6 @@ public partial class Params_Get_Client_fees_By_Where_InList_SP
 public Int32? OWNER_ID {get;set;}
 public string CLIENT_FEES_DESCRIPTION {get;set;}
 public string CLIENT_ID_LIST {get;set;}
-public string FEES_ID_LIST {get;set;}
 public string CURRENCY_ID_LIST {get;set;}
 public string PACKAGE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
@@ -1997,6 +2005,8 @@ public partial class Params_Get_Package_By_Criteria_InList
 
 public Int32? OWNER_ID {get;set;}
 public string PACKAGE_NAME {get;set;}
+public string PACKAGE_TYPE {get;set;}
+public string PACKAGE_TIMELINE {get;set;}
 public List<Int32?> CURRENCY_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2006,6 +2016,8 @@ public partial class Params_Get_Package_By_Criteria_InList_SP
 {
 public Int32? OWNER_ID {get;set;}
 public string PACKAGE_NAME {get;set;}
+public string PACKAGE_TYPE {get;set;}
+public string PACKAGE_TIMELINE {get;set;}
 public string CURRENCY_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2016,6 +2028,8 @@ public partial class Params_Get_Package_By_Where_InList
 
 public Int32? OWNER_ID {get;set;}
 public string PACKAGE_NAME {get;set;}
+public string PACKAGE_TYPE {get;set;}
+public string PACKAGE_TIMELINE {get;set;}
 public List<Int32?> CURRENCY_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2025,6 +2039,8 @@ public partial class Params_Get_Package_By_Where_InList_SP
 {
 public Int32? OWNER_ID {get;set;}
 public string PACKAGE_NAME {get;set;}
+public string PACKAGE_TYPE {get;set;}
+public string PACKAGE_TIMELINE {get;set;}
 public string CURRENCY_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2035,8 +2051,10 @@ public partial class Params_Get_Package_By_Criteria_InList_V2
 
 public Int32? OWNER_ID {get;set;}
 public string PACKAGE_NAME {get;set;}
-public string PACKAGE_STARTING_DATE {get;set;}
+public string PACKAGE_TYPE {get;set;}
 public string PACKAGE_ENDING_DATE {get;set;}
+public string PACKAGE_TIMELINE {get;set;}
+public string PACKAGE_STARTING_DATE {get;set;}
 public List<Int32?> CURRENCY_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2046,8 +2064,10 @@ public partial class Params_Get_Package_By_Criteria_InList_SP_V2
 {
 public Int32? OWNER_ID {get;set;}
 public string PACKAGE_NAME {get;set;}
-public string PACKAGE_STARTING_DATE {get;set;}
+public string PACKAGE_TYPE {get;set;}
 public string PACKAGE_ENDING_DATE {get;set;}
+public string PACKAGE_TIMELINE {get;set;}
+public string PACKAGE_STARTING_DATE {get;set;}
 public string CURRENCY_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2058,8 +2078,10 @@ public partial class Params_Get_Package_By_Where_InList_V2
 
 public Int32? OWNER_ID {get;set;}
 public string PACKAGE_NAME {get;set;}
-public string PACKAGE_STARTING_DATE {get;set;}
+public string PACKAGE_TYPE {get;set;}
 public string PACKAGE_ENDING_DATE {get;set;}
+public string PACKAGE_TIMELINE {get;set;}
+public string PACKAGE_STARTING_DATE {get;set;}
 public List<Int32?> CURRENCY_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2069,8 +2091,10 @@ public partial class Params_Get_Package_By_Where_InList_SP_V2
 {
 public Int32? OWNER_ID {get;set;}
 public string PACKAGE_NAME {get;set;}
-public string PACKAGE_STARTING_DATE {get;set;}
+public string PACKAGE_TYPE {get;set;}
 public string PACKAGE_ENDING_DATE {get;set;}
+public string PACKAGE_TIMELINE {get;set;}
+public string PACKAGE_STARTING_DATE {get;set;}
 public string CURRENCY_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2270,7 +2294,6 @@ public partial class Params_Get_Staff_fees_By_Criteria_InList
 public Int32? OWNER_ID {get;set;}
 public string STAFF_FEES_DESCRIPTION {get;set;}
 public List<Int32?> STAFF_ID_LIST {get;set;}
-public List<Int32?> FEES_ID_LIST {get;set;}
 public List<Int32?> CURRENCY_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2281,7 +2304,6 @@ public partial class Params_Get_Staff_fees_By_Criteria_InList_SP
 public Int32? OWNER_ID {get;set;}
 public string STAFF_FEES_DESCRIPTION {get;set;}
 public string STAFF_ID_LIST {get;set;}
-public string FEES_ID_LIST {get;set;}
 public string CURRENCY_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2293,7 +2315,6 @@ public partial class Params_Get_Staff_fees_By_Where_InList
 public Int32? OWNER_ID {get;set;}
 public string STAFF_FEES_DESCRIPTION {get;set;}
 public List<Int32?> STAFF_ID_LIST {get;set;}
-public List<Int32?> FEES_ID_LIST {get;set;}
 public List<Int32?> CURRENCY_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2304,8 +2325,103 @@ public partial class Params_Get_Staff_fees_By_Where_InList_SP
 public Int32? OWNER_ID {get;set;}
 public string STAFF_FEES_DESCRIPTION {get;set;}
 public string STAFF_ID_LIST {get;set;}
-public string FEES_ID_LIST {get;set;}
 public string CURRENCY_ID_LIST {get;set;}
+public long? START_ROW {get;set;}
+public long? END_ROW {get;set;}
+public long? TOTAL_COUNT {get;set;}
+}
+public partial class Params_Get_Supplier_By_Criteria_InList
+{
+
+public Int32? OWNER_ID {get;set;}
+public string SUPPLIER_NAME {get;set;}
+public string SUPPLIER_PH_NB {get;set;}
+public string SUPPLIER_MAIL {get;set;}
+public List<Int32?> BLOODTYPE_ID_LIST {get;set;}
+public long? START_ROW {get;set;}
+public long? END_ROW {get;set;}
+public long? TOTAL_COUNT {get;set;}
+}
+public partial class Params_Get_Supplier_By_Criteria_InList_SP
+{
+public Int32? OWNER_ID {get;set;}
+public string SUPPLIER_NAME {get;set;}
+public string SUPPLIER_PH_NB {get;set;}
+public string SUPPLIER_MAIL {get;set;}
+public string BLOODTYPE_ID_LIST {get;set;}
+public long? START_ROW {get;set;}
+public long? END_ROW {get;set;}
+public long? TOTAL_COUNT {get;set;}
+}
+public partial class Params_Get_Supplier_By_Where_InList
+{
+
+public Int32? OWNER_ID {get;set;}
+public string SUPPLIER_NAME {get;set;}
+public string SUPPLIER_PH_NB {get;set;}
+public string SUPPLIER_MAIL {get;set;}
+public List<Int32?> BLOODTYPE_ID_LIST {get;set;}
+public long? START_ROW {get;set;}
+public long? END_ROW {get;set;}
+public long? TOTAL_COUNT {get;set;}
+}
+public partial class Params_Get_Supplier_By_Where_InList_SP
+{
+public Int32? OWNER_ID {get;set;}
+public string SUPPLIER_NAME {get;set;}
+public string SUPPLIER_PH_NB {get;set;}
+public string SUPPLIER_MAIL {get;set;}
+public string BLOODTYPE_ID_LIST {get;set;}
+public long? START_ROW {get;set;}
+public long? END_ROW {get;set;}
+public long? TOTAL_COUNT {get;set;}
+}
+public partial class Params_Get_Supplier_By_Criteria_InList_V2
+{
+
+public Int32? OWNER_ID {get;set;}
+public string SUPPLIER_NAME {get;set;}
+public string SUPPLIER_PH_NB {get;set;}
+public string SUPPLIER_MAIL {get;set;}
+public string SUPPLIER_DOB {get;set;}
+public List<Int32?> BLOODTYPE_ID_LIST {get;set;}
+public long? START_ROW {get;set;}
+public long? END_ROW {get;set;}
+public long? TOTAL_COUNT {get;set;}
+}
+public partial class Params_Get_Supplier_By_Criteria_InList_SP_V2
+{
+public Int32? OWNER_ID {get;set;}
+public string SUPPLIER_NAME {get;set;}
+public string SUPPLIER_PH_NB {get;set;}
+public string SUPPLIER_MAIL {get;set;}
+public string SUPPLIER_DOB {get;set;}
+public string BLOODTYPE_ID_LIST {get;set;}
+public long? START_ROW {get;set;}
+public long? END_ROW {get;set;}
+public long? TOTAL_COUNT {get;set;}
+}
+public partial class Params_Get_Supplier_By_Where_InList_V2
+{
+
+public Int32? OWNER_ID {get;set;}
+public string SUPPLIER_NAME {get;set;}
+public string SUPPLIER_PH_NB {get;set;}
+public string SUPPLIER_MAIL {get;set;}
+public string SUPPLIER_DOB {get;set;}
+public List<Int32?> BLOODTYPE_ID_LIST {get;set;}
+public long? START_ROW {get;set;}
+public long? END_ROW {get;set;}
+public long? TOTAL_COUNT {get;set;}
+}
+public partial class Params_Get_Supplier_By_Where_InList_SP_V2
+{
+public Int32? OWNER_ID {get;set;}
+public string SUPPLIER_NAME {get;set;}
+public string SUPPLIER_PH_NB {get;set;}
+public string SUPPLIER_MAIL {get;set;}
+public string SUPPLIER_DOB {get;set;}
+public string BLOODTYPE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -2316,7 +2432,6 @@ public partial class Params_Get_Supplier_fees_By_Criteria_InList
 public Int32? OWNER_ID {get;set;}
 public string SUPPLIER_FEES_DESCRIPTION {get;set;}
 public List<Int32?> SUPPLIER_ID_LIST {get;set;}
-public List<Int32?> FEES_ID_LIST {get;set;}
 public List<Int32?> CURRENCY_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2327,7 +2442,6 @@ public partial class Params_Get_Supplier_fees_By_Criteria_InList_SP
 public Int32? OWNER_ID {get;set;}
 public string SUPPLIER_FEES_DESCRIPTION {get;set;}
 public string SUPPLIER_ID_LIST {get;set;}
-public string FEES_ID_LIST {get;set;}
 public string CURRENCY_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2339,7 +2453,6 @@ public partial class Params_Get_Supplier_fees_By_Where_InList
 public Int32? OWNER_ID {get;set;}
 public string SUPPLIER_FEES_DESCRIPTION {get;set;}
 public List<Int32?> SUPPLIER_ID_LIST {get;set;}
-public List<Int32?> FEES_ID_LIST {get;set;}
 public List<Int32?> CURRENCY_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2350,7 +2463,6 @@ public partial class Params_Get_Supplier_fees_By_Where_InList_SP
 public Int32? OWNER_ID {get;set;}
 public string SUPPLIER_FEES_DESCRIPTION {get;set;}
 public string SUPPLIER_ID_LIST {get;set;}
-public string FEES_ID_LIST {get;set;}
 public string CURRENCY_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2573,10 +2685,6 @@ public partial class Params_Delete_Client_fees_By_CLIENT_ID
 {
 public Int32? CLIENT_ID {get;set;}
 }
-public partial class Params_Delete_Client_fees_By_FEES_ID
-{
-public Int32? FEES_ID {get;set;}
-}
 public partial class Params_Delete_Client_fees_By_CURRENCY_ID
 {
 public Int32? CURRENCY_ID {get;set;}
@@ -2702,10 +2810,6 @@ public partial class Params_Delete_Staff_fees_By_STAFF_ID
 {
 public Int32? STAFF_ID {get;set;}
 }
-public partial class Params_Delete_Staff_fees_By_FEES_ID
-{
-public Int32? FEES_ID {get;set;}
-}
 public partial class Params_Delete_Staff_fees_By_CURRENCY_ID
 {
 public Int32? CURRENCY_ID {get;set;}
@@ -2714,6 +2818,10 @@ public partial class Params_Delete_Supplier_By_OWNER_ID
 {
 public Int32? OWNER_ID {get;set;}
 }
+public partial class Params_Delete_Supplier_By_BLOODTYPE_ID
+{
+public Int32? BLOODTYPE_ID {get;set;}
+}
 public partial class Params_Delete_Supplier_fees_By_OWNER_ID
 {
 public Int32? OWNER_ID {get;set;}
@@ -2721,10 +2829,6 @@ public Int32? OWNER_ID {get;set;}
 public partial class Params_Delete_Supplier_fees_By_SUPPLIER_ID
 {
 public Int32? SUPPLIER_ID {get;set;}
-}
-public partial class Params_Delete_Supplier_fees_By_FEES_ID
-{
-public Int32? FEES_ID {get;set;}
 }
 public partial class Params_Delete_Supplier_fees_By_CURRENCY_ID
 {
@@ -2783,12 +2887,12 @@ public partial class Client_fees
 public Int32? CLIENT_FEES_ID {get;set;}
 public Int32? CLIENT_ID {get;set;}
 public string CLIENT_FEES_DESCRIPTION {get;set;}
-public Int32? FEES_ID {get;set;}
 public long? ENTRY_USER_ID {get;set;}
 public string ENTRY_DATE {get;set;}
 public Int32? OWNER_ID {get;set;}
 public Int32? CURRENCY_ID {get;set;}
 public Int32? PACKAGE_ID {get;set;}
+public Int32? CLIENT_FEES_AMOUNT {get;set;}
 }
 public partial class Contact
 {
@@ -2897,8 +3001,10 @@ public long? ENTRY_USER_ID {get;set;}
 public string ENTRY_DATE {get;set;}
 public Int32? OWNER_ID {get;set;}
 public Int32? PACKAGE_SESSIONS_NB {get;set;}
-public string PACKAGE_STARTING_DATE {get;set;}
+public string PACKAGE_TYPE {get;set;}
 public string PACKAGE_ENDING_DATE {get;set;}
+public string PACKAGE_TIMELINE {get;set;}
+public string PACKAGE_STARTING_DATE {get;set;}
 }
 public partial class Person
 {
@@ -2947,11 +3053,11 @@ public partial class Staff_fees
 public Int32? STAFF_FEES_ID {get;set;}
 public Int32? STAFF_ID {get;set;}
 public string STAFF_FEES_DESCRIPTION {get;set;}
-public Int32? FEES_ID {get;set;}
 public long? ENTRY_USER_ID {get;set;}
 public string ENTRY_DATE {get;set;}
 public Int32? OWNER_ID {get;set;}
 public Int32? CURRENCY_ID {get;set;}
+public Int32? STAFF_FEES_AMOUNT {get;set;}
 }
 public partial class Supplier
 {
@@ -2962,17 +3068,19 @@ public string SUPPLIER_MAIL {get;set;}
 public long? ENTRY_USER_ID {get;set;}
 public string ENTRY_DATE {get;set;}
 public Int32? OWNER_ID {get;set;}
+public string SUPPLIER_DOB {get;set;}
+public Int32? BLOODTYPE_ID {get;set;}
 }
 public partial class Supplier_fees
 {
 public Int32? SUPPLIER_FEES_ID {get;set;}
 public Int32? SUPPLIER_ID {get;set;}
 public string SUPPLIER_FEES_DESCRIPTION {get;set;}
-public Int32? FEES_ID {get;set;}
 public long? ENTRY_USER_ID {get;set;}
 public string ENTRY_DATE {get;set;}
 public Int32? OWNER_ID {get;set;}
 public Int32? CURRENCY_ID {get;set;}
+public Int32? SUPPLIER_FEES_AMOUNT {get;set;}
 }
 public partial class User
 {

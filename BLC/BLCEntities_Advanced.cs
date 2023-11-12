@@ -53,7 +53,6 @@ public partial class Client_fees
 {
 #region Advanced Properties
 public Client My_Client {get;set;}
-public Fees My_Fees {get;set;}
 public Currency My_Currency {get;set;}
 public Package My_Package {get;set;}
 #endregion
@@ -164,7 +163,6 @@ public partial class Staff_fees
 {
 #region Advanced Properties
 public Staff My_Staff {get;set;}
-public Fees My_Fees {get;set;}
 public Currency My_Currency {get;set;}
 #endregion
 }
@@ -173,6 +171,7 @@ public Currency My_Currency {get;set;}
 public partial class Supplier
 {
 #region Advanced Properties
+public Bloodtype My_Bloodtype {get;set;}
 #endregion
 }
 #endregion
@@ -181,7 +180,6 @@ public partial class Supplier_fees
 {
 #region Advanced Properties
 public Supplier My_Supplier {get;set;}
-public Fees My_Fees {get;set;}
 public Currency My_Currency {get;set;}
 #endregion
 }

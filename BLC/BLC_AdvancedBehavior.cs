@@ -85,8 +85,6 @@ oClient_fees = new Client_fees();
 oTools.CopyPropValues(oDBEntry, oClient_fees);
 oClient_fees.My_Client = new Client();
 oTools.CopyPropValues(oDBEntry.My_Client, oClient_fees.My_Client);
-oClient_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oClient_fees.My_Fees);
 oClient_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oClient_fees.My_Currency);
 oClient_fees.My_Package = new Package();
@@ -280,8 +278,6 @@ oStaff_fees = new Staff_fees();
 oTools.CopyPropValues(oDBEntry, oStaff_fees);
 oStaff_fees.My_Staff = new Staff();
 oTools.CopyPropValues(oDBEntry.My_Staff, oStaff_fees.My_Staff);
-oStaff_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oStaff_fees.My_Fees);
 oStaff_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oStaff_fees.My_Currency);
 #endregion
@@ -297,6 +293,8 @@ if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Supplier_By_SUPP
 DALC.Supplier oDBEntry = _AppContext.Get_Supplier_By_SUPPLIER_ID_Adv(i_Params_Get_Supplier_By_SUPPLIER_ID.SUPPLIER_ID);
 oSupplier = new Supplier();
 oTools.CopyPropValues(oDBEntry, oSupplier);
+oSupplier.My_Bloodtype = new Bloodtype();
+oTools.CopyPropValues(oDBEntry.My_Bloodtype, oSupplier.My_Bloodtype);
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Supplier_By_SUPPLIER_ID_Adv");}
 return oSupplier;
@@ -312,8 +310,6 @@ oSupplier_fees = new Supplier_fees();
 oTools.CopyPropValues(oDBEntry, oSupplier_fees);
 oSupplier_fees.My_Supplier = new Supplier();
 oTools.CopyPropValues(oDBEntry.My_Supplier, oSupplier_fees.My_Supplier);
-oSupplier_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oSupplier_fees.My_Fees);
 oSupplier_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oSupplier_fees.My_Currency);
 #endregion
@@ -428,8 +424,6 @@ oClient_fees = new Client_fees();
 oTools.CopyPropValues(oDBEntry, oClient_fees);
 oClient_fees.My_Client = new Client();
 oTools.CopyPropValues(oDBEntry.My_Client, oClient_fees.My_Client);
-oClient_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oClient_fees.My_Fees);
 oClient_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oClient_fees.My_Currency);
 oClient_fees.My_Package = new Package();
@@ -740,8 +734,6 @@ oStaff_fees = new Staff_fees();
 oTools.CopyPropValues(oDBEntry, oStaff_fees);
 oStaff_fees.My_Staff = new Staff();
 oTools.CopyPropValues(oDBEntry.My_Staff, oStaff_fees.My_Staff);
-oStaff_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oStaff_fees.My_Fees);
 oStaff_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oStaff_fees.My_Currency);
 oList.Add(oStaff_fees);
@@ -766,6 +758,8 @@ foreach (var oDBEntry in oList_DBEntries)
 {
 oSupplier = new Supplier();
 oTools.CopyPropValues(oDBEntry, oSupplier);
+oSupplier.My_Bloodtype = new Bloodtype();
+oTools.CopyPropValues(oDBEntry.My_Bloodtype, oSupplier.My_Bloodtype);
 oList.Add(oSupplier);
 }
 }
@@ -790,8 +784,6 @@ oSupplier_fees = new Supplier_fees();
 oTools.CopyPropValues(oDBEntry, oSupplier_fees);
 oSupplier_fees.My_Supplier = new Supplier();
 oTools.CopyPropValues(oDBEntry.My_Supplier, oSupplier_fees.My_Supplier);
-oSupplier_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oSupplier_fees.My_Fees);
 oSupplier_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oSupplier_fees.My_Currency);
 oList.Add(oSupplier_fees);
@@ -1123,8 +1115,6 @@ oClient_fees = new Client_fees();
 oTools.CopyPropValues(oDBEntry, oClient_fees);
 oClient_fees.My_Client = new Client();
 oTools.CopyPropValues(oDBEntry.My_Client, oClient_fees.My_Client);
-oClient_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oClient_fees.My_Fees);
 oClient_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oClient_fees.My_Currency);
 oClient_fees.My_Package = new Package();
@@ -1152,8 +1142,6 @@ oClient_fees = new Client_fees();
 oTools.CopyPropValues(oDBEntry, oClient_fees);
 oClient_fees.My_Client = new Client();
 oTools.CopyPropValues(oDBEntry.My_Client, oClient_fees.My_Client);
-oClient_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oClient_fees.My_Fees);
 oClient_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oClient_fees.My_Currency);
 oClient_fees.My_Package = new Package();
@@ -1163,35 +1151,6 @@ oList.Add(oClient_fees);
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Client_fees_By_CLIENT_ID_Adv");}
-return oList;
-}
-public List<Client_fees> Get_Client_fees_By_FEES_ID_Adv(Params_Get_Client_fees_By_FEES_ID i_Params_Get_Client_fees_By_FEES_ID)
-{
-List<Client_fees> oList = new List<Client_fees>();
-Client_fees oClient_fees = new Client_fees();
-if (OnPreEvent_General != null){OnPreEvent_General("Get_Client_fees_By_FEES_ID_Adv");}
-if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Client_fees_By_FEES_ID_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Client_fees_By_FEES_ID));}
-#region Body Section.
-List<DALC.Client_fees> oList_DBEntries = _AppContext.Get_Client_fees_By_FEES_ID_Adv(i_Params_Get_Client_fees_By_FEES_ID.FEES_ID);
-if (oList_DBEntries != null)
-{
-foreach (var oDBEntry in oList_DBEntries)
-{
-oClient_fees = new Client_fees();
-oTools.CopyPropValues(oDBEntry, oClient_fees);
-oClient_fees.My_Client = new Client();
-oTools.CopyPropValues(oDBEntry.My_Client, oClient_fees.My_Client);
-oClient_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oClient_fees.My_Fees);
-oClient_fees.My_Currency = new Currency();
-oTools.CopyPropValues(oDBEntry.My_Currency, oClient_fees.My_Currency);
-oClient_fees.My_Package = new Package();
-oTools.CopyPropValues(oDBEntry.My_Package, oClient_fees.My_Package);
-oList.Add(oClient_fees);
-}
-}
-#endregion
-if (OnPostEvent_General != null){OnPostEvent_General("Get_Client_fees_By_FEES_ID_Adv");}
 return oList;
 }
 public List<Client_fees> Get_Client_fees_By_CURRENCY_ID_Adv(Params_Get_Client_fees_By_CURRENCY_ID i_Params_Get_Client_fees_By_CURRENCY_ID)
@@ -1210,8 +1169,6 @@ oClient_fees = new Client_fees();
 oTools.CopyPropValues(oDBEntry, oClient_fees);
 oClient_fees.My_Client = new Client();
 oTools.CopyPropValues(oDBEntry.My_Client, oClient_fees.My_Client);
-oClient_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oClient_fees.My_Fees);
 oClient_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oClient_fees.My_Currency);
 oClient_fees.My_Package = new Package();
@@ -1239,8 +1196,6 @@ oClient_fees = new Client_fees();
 oTools.CopyPropValues(oDBEntry, oClient_fees);
 oClient_fees.My_Client = new Client();
 oTools.CopyPropValues(oDBEntry.My_Client, oClient_fees.My_Client);
-oClient_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oClient_fees.My_Fees);
 oClient_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oClient_fees.My_Currency);
 oClient_fees.My_Package = new Package();
@@ -1862,8 +1817,6 @@ oStaff_fees = new Staff_fees();
 oTools.CopyPropValues(oDBEntry, oStaff_fees);
 oStaff_fees.My_Staff = new Staff();
 oTools.CopyPropValues(oDBEntry.My_Staff, oStaff_fees.My_Staff);
-oStaff_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oStaff_fees.My_Fees);
 oStaff_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oStaff_fees.My_Currency);
 oList.Add(oStaff_fees);
@@ -1889,8 +1842,6 @@ oStaff_fees = new Staff_fees();
 oTools.CopyPropValues(oDBEntry, oStaff_fees);
 oStaff_fees.My_Staff = new Staff();
 oTools.CopyPropValues(oDBEntry.My_Staff, oStaff_fees.My_Staff);
-oStaff_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oStaff_fees.My_Fees);
 oStaff_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oStaff_fees.My_Currency);
 oList.Add(oStaff_fees);
@@ -1898,33 +1849,6 @@ oList.Add(oStaff_fees);
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Staff_fees_By_STAFF_ID_Adv");}
-return oList;
-}
-public List<Staff_fees> Get_Staff_fees_By_FEES_ID_Adv(Params_Get_Staff_fees_By_FEES_ID i_Params_Get_Staff_fees_By_FEES_ID)
-{
-List<Staff_fees> oList = new List<Staff_fees>();
-Staff_fees oStaff_fees = new Staff_fees();
-if (OnPreEvent_General != null){OnPreEvent_General("Get_Staff_fees_By_FEES_ID_Adv");}
-if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Staff_fees_By_FEES_ID_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Staff_fees_By_FEES_ID));}
-#region Body Section.
-List<DALC.Staff_fees> oList_DBEntries = _AppContext.Get_Staff_fees_By_FEES_ID_Adv(i_Params_Get_Staff_fees_By_FEES_ID.FEES_ID);
-if (oList_DBEntries != null)
-{
-foreach (var oDBEntry in oList_DBEntries)
-{
-oStaff_fees = new Staff_fees();
-oTools.CopyPropValues(oDBEntry, oStaff_fees);
-oStaff_fees.My_Staff = new Staff();
-oTools.CopyPropValues(oDBEntry.My_Staff, oStaff_fees.My_Staff);
-oStaff_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oStaff_fees.My_Fees);
-oStaff_fees.My_Currency = new Currency();
-oTools.CopyPropValues(oDBEntry.My_Currency, oStaff_fees.My_Currency);
-oList.Add(oStaff_fees);
-}
-}
-#endregion
-if (OnPostEvent_General != null){OnPostEvent_General("Get_Staff_fees_By_FEES_ID_Adv");}
 return oList;
 }
 public List<Staff_fees> Get_Staff_fees_By_CURRENCY_ID_Adv(Params_Get_Staff_fees_By_CURRENCY_ID i_Params_Get_Staff_fees_By_CURRENCY_ID)
@@ -1943,8 +1867,6 @@ oStaff_fees = new Staff_fees();
 oTools.CopyPropValues(oDBEntry, oStaff_fees);
 oStaff_fees.My_Staff = new Staff();
 oTools.CopyPropValues(oDBEntry.My_Staff, oStaff_fees.My_Staff);
-oStaff_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oStaff_fees.My_Fees);
 oStaff_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oStaff_fees.My_Currency);
 oList.Add(oStaff_fees);
@@ -1968,11 +1890,36 @@ foreach (var oDBEntry in oList_DBEntries)
 {
 oSupplier = new Supplier();
 oTools.CopyPropValues(oDBEntry, oSupplier);
+oSupplier.My_Bloodtype = new Bloodtype();
+oTools.CopyPropValues(oDBEntry.My_Bloodtype, oSupplier.My_Bloodtype);
 oList.Add(oSupplier);
 }
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Supplier_By_OWNER_ID_Adv");}
+return oList;
+}
+public List<Supplier> Get_Supplier_By_BLOODTYPE_ID_Adv(Params_Get_Supplier_By_BLOODTYPE_ID i_Params_Get_Supplier_By_BLOODTYPE_ID)
+{
+List<Supplier> oList = new List<Supplier>();
+Supplier oSupplier = new Supplier();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Supplier_By_BLOODTYPE_ID_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Supplier_By_BLOODTYPE_ID_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Supplier_By_BLOODTYPE_ID));}
+#region Body Section.
+List<DALC.Supplier> oList_DBEntries = _AppContext.Get_Supplier_By_BLOODTYPE_ID_Adv(i_Params_Get_Supplier_By_BLOODTYPE_ID.BLOODTYPE_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oSupplier = new Supplier();
+oTools.CopyPropValues(oDBEntry, oSupplier);
+oSupplier.My_Bloodtype = new Bloodtype();
+oTools.CopyPropValues(oDBEntry.My_Bloodtype, oSupplier.My_Bloodtype);
+oList.Add(oSupplier);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Supplier_By_BLOODTYPE_ID_Adv");}
 return oList;
 }
 public List<Supplier_fees> Get_Supplier_fees_By_OWNER_ID_Adv(Params_Get_Supplier_fees_By_OWNER_ID i_Params_Get_Supplier_fees_By_OWNER_ID)
@@ -1991,8 +1938,6 @@ oSupplier_fees = new Supplier_fees();
 oTools.CopyPropValues(oDBEntry, oSupplier_fees);
 oSupplier_fees.My_Supplier = new Supplier();
 oTools.CopyPropValues(oDBEntry.My_Supplier, oSupplier_fees.My_Supplier);
-oSupplier_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oSupplier_fees.My_Fees);
 oSupplier_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oSupplier_fees.My_Currency);
 oList.Add(oSupplier_fees);
@@ -2018,8 +1963,6 @@ oSupplier_fees = new Supplier_fees();
 oTools.CopyPropValues(oDBEntry, oSupplier_fees);
 oSupplier_fees.My_Supplier = new Supplier();
 oTools.CopyPropValues(oDBEntry.My_Supplier, oSupplier_fees.My_Supplier);
-oSupplier_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oSupplier_fees.My_Fees);
 oSupplier_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oSupplier_fees.My_Currency);
 oList.Add(oSupplier_fees);
@@ -2027,33 +1970,6 @@ oList.Add(oSupplier_fees);
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Supplier_fees_By_SUPPLIER_ID_Adv");}
-return oList;
-}
-public List<Supplier_fees> Get_Supplier_fees_By_FEES_ID_Adv(Params_Get_Supplier_fees_By_FEES_ID i_Params_Get_Supplier_fees_By_FEES_ID)
-{
-List<Supplier_fees> oList = new List<Supplier_fees>();
-Supplier_fees oSupplier_fees = new Supplier_fees();
-if (OnPreEvent_General != null){OnPreEvent_General("Get_Supplier_fees_By_FEES_ID_Adv");}
-if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Supplier_fees_By_FEES_ID_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Supplier_fees_By_FEES_ID));}
-#region Body Section.
-List<DALC.Supplier_fees> oList_DBEntries = _AppContext.Get_Supplier_fees_By_FEES_ID_Adv(i_Params_Get_Supplier_fees_By_FEES_ID.FEES_ID);
-if (oList_DBEntries != null)
-{
-foreach (var oDBEntry in oList_DBEntries)
-{
-oSupplier_fees = new Supplier_fees();
-oTools.CopyPropValues(oDBEntry, oSupplier_fees);
-oSupplier_fees.My_Supplier = new Supplier();
-oTools.CopyPropValues(oDBEntry.My_Supplier, oSupplier_fees.My_Supplier);
-oSupplier_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oSupplier_fees.My_Fees);
-oSupplier_fees.My_Currency = new Currency();
-oTools.CopyPropValues(oDBEntry.My_Currency, oSupplier_fees.My_Currency);
-oList.Add(oSupplier_fees);
-}
-}
-#endregion
-if (OnPostEvent_General != null){OnPostEvent_General("Get_Supplier_fees_By_FEES_ID_Adv");}
 return oList;
 }
 public List<Supplier_fees> Get_Supplier_fees_By_CURRENCY_ID_Adv(Params_Get_Supplier_fees_By_CURRENCY_ID i_Params_Get_Supplier_fees_By_CURRENCY_ID)
@@ -2072,8 +1988,6 @@ oSupplier_fees = new Supplier_fees();
 oTools.CopyPropValues(oDBEntry, oSupplier_fees);
 oSupplier_fees.My_Supplier = new Supplier();
 oTools.CopyPropValues(oDBEntry.My_Supplier, oSupplier_fees.My_Supplier);
-oSupplier_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oSupplier_fees.My_Fees);
 oSupplier_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oSupplier_fees.My_Currency);
 oList.Add(oSupplier_fees);
@@ -2319,8 +2233,6 @@ oClient_fees = new Client_fees();
 oTools.CopyPropValues(oDBEntry, oClient_fees);
 oClient_fees.My_Client = new Client();
 oTools.CopyPropValues(oDBEntry.My_Client, oClient_fees.My_Client);
-oClient_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oClient_fees.My_Fees);
 oClient_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oClient_fees.My_Currency);
 oClient_fees.My_Package = new Package();
@@ -2330,35 +2242,6 @@ oList.Add(oClient_fees);
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Client_fees_By_CLIENT_ID_List_Adv");}
-return oList;
-}
-public List<Client_fees> Get_Client_fees_By_FEES_ID_List_Adv(Params_Get_Client_fees_By_FEES_ID_List i_Params_Get_Client_fees_By_FEES_ID_List)
-{
-List<Client_fees> oList = new List<Client_fees>();
-Client_fees oClient_fees = new Client_fees();
-if (OnPreEvent_General != null){OnPreEvent_General("Get_Client_fees_By_FEES_ID_List_Adv");}
-if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Client_fees_By_FEES_ID_List_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Client_fees_By_FEES_ID_List));}
-#region Body Section.
-List<DALC.Client_fees> oList_DBEntries = _AppContext.Get_Client_fees_By_FEES_ID_List_Adv(i_Params_Get_Client_fees_By_FEES_ID_List.FEES_ID_LIST);
-if (oList_DBEntries != null)
-{
-foreach (var oDBEntry in oList_DBEntries)
-{
-oClient_fees = new Client_fees();
-oTools.CopyPropValues(oDBEntry, oClient_fees);
-oClient_fees.My_Client = new Client();
-oTools.CopyPropValues(oDBEntry.My_Client, oClient_fees.My_Client);
-oClient_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oClient_fees.My_Fees);
-oClient_fees.My_Currency = new Currency();
-oTools.CopyPropValues(oDBEntry.My_Currency, oClient_fees.My_Currency);
-oClient_fees.My_Package = new Package();
-oTools.CopyPropValues(oDBEntry.My_Package, oClient_fees.My_Package);
-oList.Add(oClient_fees);
-}
-}
-#endregion
-if (OnPostEvent_General != null){OnPostEvent_General("Get_Client_fees_By_FEES_ID_List_Adv");}
 return oList;
 }
 public List<Client_fees> Get_Client_fees_By_CURRENCY_ID_List_Adv(Params_Get_Client_fees_By_CURRENCY_ID_List i_Params_Get_Client_fees_By_CURRENCY_ID_List)
@@ -2377,8 +2260,6 @@ oClient_fees = new Client_fees();
 oTools.CopyPropValues(oDBEntry, oClient_fees);
 oClient_fees.My_Client = new Client();
 oTools.CopyPropValues(oDBEntry.My_Client, oClient_fees.My_Client);
-oClient_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oClient_fees.My_Fees);
 oClient_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oClient_fees.My_Currency);
 oClient_fees.My_Package = new Package();
@@ -2406,8 +2287,6 @@ oClient_fees = new Client_fees();
 oTools.CopyPropValues(oDBEntry, oClient_fees);
 oClient_fees.My_Client = new Client();
 oTools.CopyPropValues(oDBEntry.My_Client, oClient_fees.My_Client);
-oClient_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oClient_fees.My_Fees);
 oClient_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oClient_fees.My_Currency);
 oClient_fees.My_Package = new Package();
@@ -2646,8 +2525,6 @@ oStaff_fees = new Staff_fees();
 oTools.CopyPropValues(oDBEntry, oStaff_fees);
 oStaff_fees.My_Staff = new Staff();
 oTools.CopyPropValues(oDBEntry.My_Staff, oStaff_fees.My_Staff);
-oStaff_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oStaff_fees.My_Fees);
 oStaff_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oStaff_fees.My_Currency);
 oList.Add(oStaff_fees);
@@ -2655,33 +2532,6 @@ oList.Add(oStaff_fees);
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Staff_fees_By_STAFF_ID_List_Adv");}
-return oList;
-}
-public List<Staff_fees> Get_Staff_fees_By_FEES_ID_List_Adv(Params_Get_Staff_fees_By_FEES_ID_List i_Params_Get_Staff_fees_By_FEES_ID_List)
-{
-List<Staff_fees> oList = new List<Staff_fees>();
-Staff_fees oStaff_fees = new Staff_fees();
-if (OnPreEvent_General != null){OnPreEvent_General("Get_Staff_fees_By_FEES_ID_List_Adv");}
-if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Staff_fees_By_FEES_ID_List_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Staff_fees_By_FEES_ID_List));}
-#region Body Section.
-List<DALC.Staff_fees> oList_DBEntries = _AppContext.Get_Staff_fees_By_FEES_ID_List_Adv(i_Params_Get_Staff_fees_By_FEES_ID_List.FEES_ID_LIST);
-if (oList_DBEntries != null)
-{
-foreach (var oDBEntry in oList_DBEntries)
-{
-oStaff_fees = new Staff_fees();
-oTools.CopyPropValues(oDBEntry, oStaff_fees);
-oStaff_fees.My_Staff = new Staff();
-oTools.CopyPropValues(oDBEntry.My_Staff, oStaff_fees.My_Staff);
-oStaff_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oStaff_fees.My_Fees);
-oStaff_fees.My_Currency = new Currency();
-oTools.CopyPropValues(oDBEntry.My_Currency, oStaff_fees.My_Currency);
-oList.Add(oStaff_fees);
-}
-}
-#endregion
-if (OnPostEvent_General != null){OnPostEvent_General("Get_Staff_fees_By_FEES_ID_List_Adv");}
 return oList;
 }
 public List<Staff_fees> Get_Staff_fees_By_CURRENCY_ID_List_Adv(Params_Get_Staff_fees_By_CURRENCY_ID_List i_Params_Get_Staff_fees_By_CURRENCY_ID_List)
@@ -2700,8 +2550,6 @@ oStaff_fees = new Staff_fees();
 oTools.CopyPropValues(oDBEntry, oStaff_fees);
 oStaff_fees.My_Staff = new Staff();
 oTools.CopyPropValues(oDBEntry.My_Staff, oStaff_fees.My_Staff);
-oStaff_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oStaff_fees.My_Fees);
 oStaff_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oStaff_fees.My_Currency);
 oList.Add(oStaff_fees);
@@ -2709,6 +2557,29 @@ oList.Add(oStaff_fees);
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Staff_fees_By_CURRENCY_ID_List_Adv");}
+return oList;
+}
+public List<Supplier> Get_Supplier_By_BLOODTYPE_ID_List_Adv(Params_Get_Supplier_By_BLOODTYPE_ID_List i_Params_Get_Supplier_By_BLOODTYPE_ID_List)
+{
+List<Supplier> oList = new List<Supplier>();
+Supplier oSupplier = new Supplier();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Supplier_By_BLOODTYPE_ID_List_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Supplier_By_BLOODTYPE_ID_List_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Supplier_By_BLOODTYPE_ID_List));}
+#region Body Section.
+List<DALC.Supplier> oList_DBEntries = _AppContext.Get_Supplier_By_BLOODTYPE_ID_List_Adv(i_Params_Get_Supplier_By_BLOODTYPE_ID_List.BLOODTYPE_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oSupplier = new Supplier();
+oTools.CopyPropValues(oDBEntry, oSupplier);
+oSupplier.My_Bloodtype = new Bloodtype();
+oTools.CopyPropValues(oDBEntry.My_Bloodtype, oSupplier.My_Bloodtype);
+oList.Add(oSupplier);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Supplier_By_BLOODTYPE_ID_List_Adv");}
 return oList;
 }
 public List<Supplier_fees> Get_Supplier_fees_By_SUPPLIER_ID_List_Adv(Params_Get_Supplier_fees_By_SUPPLIER_ID_List i_Params_Get_Supplier_fees_By_SUPPLIER_ID_List)
@@ -2727,8 +2598,6 @@ oSupplier_fees = new Supplier_fees();
 oTools.CopyPropValues(oDBEntry, oSupplier_fees);
 oSupplier_fees.My_Supplier = new Supplier();
 oTools.CopyPropValues(oDBEntry.My_Supplier, oSupplier_fees.My_Supplier);
-oSupplier_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oSupplier_fees.My_Fees);
 oSupplier_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oSupplier_fees.My_Currency);
 oList.Add(oSupplier_fees);
@@ -2736,33 +2605,6 @@ oList.Add(oSupplier_fees);
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Supplier_fees_By_SUPPLIER_ID_List_Adv");}
-return oList;
-}
-public List<Supplier_fees> Get_Supplier_fees_By_FEES_ID_List_Adv(Params_Get_Supplier_fees_By_FEES_ID_List i_Params_Get_Supplier_fees_By_FEES_ID_List)
-{
-List<Supplier_fees> oList = new List<Supplier_fees>();
-Supplier_fees oSupplier_fees = new Supplier_fees();
-if (OnPreEvent_General != null){OnPreEvent_General("Get_Supplier_fees_By_FEES_ID_List_Adv");}
-if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Supplier_fees_By_FEES_ID_List_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Supplier_fees_By_FEES_ID_List));}
-#region Body Section.
-List<DALC.Supplier_fees> oList_DBEntries = _AppContext.Get_Supplier_fees_By_FEES_ID_List_Adv(i_Params_Get_Supplier_fees_By_FEES_ID_List.FEES_ID_LIST);
-if (oList_DBEntries != null)
-{
-foreach (var oDBEntry in oList_DBEntries)
-{
-oSupplier_fees = new Supplier_fees();
-oTools.CopyPropValues(oDBEntry, oSupplier_fees);
-oSupplier_fees.My_Supplier = new Supplier();
-oTools.CopyPropValues(oDBEntry.My_Supplier, oSupplier_fees.My_Supplier);
-oSupplier_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oSupplier_fees.My_Fees);
-oSupplier_fees.My_Currency = new Currency();
-oTools.CopyPropValues(oDBEntry.My_Currency, oSupplier_fees.My_Currency);
-oList.Add(oSupplier_fees);
-}
-}
-#endregion
-if (OnPostEvent_General != null){OnPostEvent_General("Get_Supplier_fees_By_FEES_ID_List_Adv");}
 return oList;
 }
 public List<Supplier_fees> Get_Supplier_fees_By_CURRENCY_ID_List_Adv(Params_Get_Supplier_fees_By_CURRENCY_ID_List i_Params_Get_Supplier_fees_By_CURRENCY_ID_List)
@@ -2781,8 +2623,6 @@ oSupplier_fees = new Supplier_fees();
 oTools.CopyPropValues(oDBEntry, oSupplier_fees);
 oSupplier_fees.My_Supplier = new Supplier();
 oTools.CopyPropValues(oDBEntry.My_Supplier, oSupplier_fees.My_Supplier);
-oSupplier_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oSupplier_fees.My_Fees);
 oSupplier_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oSupplier_fees.My_Currency);
 oList.Add(oSupplier_fees);
@@ -3120,8 +2960,6 @@ oClient_fees = new Client_fees();
 oTools.CopyPropValues(oDBEntry, oClient_fees);
 oClient_fees.My_Client = new Client();
 oTools.CopyPropValues(oDBEntry.My_Client, oClient_fees.My_Client);
-oClient_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oClient_fees.My_Fees);
 oClient_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oClient_fees.My_Currency);
 oClient_fees.My_Package = new Package();
@@ -3154,8 +2992,6 @@ oClient_fees = new Client_fees();
 oTools.CopyPropValues(oDBEntry, oClient_fees);
 oClient_fees.My_Client = new Client();
 oTools.CopyPropValues(oDBEntry.My_Client, oClient_fees.My_Client);
-oClient_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oClient_fees.My_Fees);
 oClient_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oClient_fees.My_Currency);
 oClient_fees.My_Package = new Package();
@@ -3723,7 +3559,7 @@ if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Package_By_Crite
 if ((i_Params_Get_Package_By_Criteria.OWNER_ID == null) || (i_Params_Get_Package_By_Criteria.OWNER_ID == 0)) { i_Params_Get_Package_By_Criteria.OWNER_ID = this.OwnerID; }
 if (i_Params_Get_Package_By_Criteria.START_ROW == null) { i_Params_Get_Package_By_Criteria.START_ROW = 0; }
 if ((i_Params_Get_Package_By_Criteria.END_ROW == null) || (i_Params_Get_Package_By_Criteria.END_ROW == 0)) { i_Params_Get_Package_By_Criteria.END_ROW = 1000000; }
-List<DALC.Package> oList_DBEntries = _AppContext.Get_Package_By_Criteria_Adv(i_Params_Get_Package_By_Criteria.PACKAGE_NAME,i_Params_Get_Package_By_Criteria.OWNER_ID,i_Params_Get_Package_By_Criteria.START_ROW,i_Params_Get_Package_By_Criteria.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Package> oList_DBEntries = _AppContext.Get_Package_By_Criteria_Adv(i_Params_Get_Package_By_Criteria.PACKAGE_NAME,i_Params_Get_Package_By_Criteria.PACKAGE_TYPE,i_Params_Get_Package_By_Criteria.PACKAGE_TIMELINE,i_Params_Get_Package_By_Criteria.OWNER_ID,i_Params_Get_Package_By_Criteria.START_ROW,i_Params_Get_Package_By_Criteria.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -3751,7 +3587,7 @@ if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Package_By_Where
 if ((i_Params_Get_Package_By_Where.OWNER_ID == null) || (i_Params_Get_Package_By_Where.OWNER_ID == 0)) { i_Params_Get_Package_By_Where.OWNER_ID = this.OwnerID; }
 if (i_Params_Get_Package_By_Where.START_ROW == null) { i_Params_Get_Package_By_Where.START_ROW = 0; }
 if ((i_Params_Get_Package_By_Where.END_ROW == null) || (i_Params_Get_Package_By_Where.END_ROW == 0)) { i_Params_Get_Package_By_Where.END_ROW = 1000000; }
-List<DALC.Package> oList_DBEntries = _AppContext.Get_Package_By_Where_Adv(i_Params_Get_Package_By_Where.PACKAGE_NAME,i_Params_Get_Package_By_Where.OWNER_ID,i_Params_Get_Package_By_Where.START_ROW,i_Params_Get_Package_By_Where.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Package> oList_DBEntries = _AppContext.Get_Package_By_Where_Adv(i_Params_Get_Package_By_Where.PACKAGE_NAME,i_Params_Get_Package_By_Where.PACKAGE_TYPE,i_Params_Get_Package_By_Where.PACKAGE_TIMELINE,i_Params_Get_Package_By_Where.OWNER_ID,i_Params_Get_Package_By_Where.START_ROW,i_Params_Get_Package_By_Where.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -3779,7 +3615,7 @@ if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Package_By_Crite
 if ((i_Params_Get_Package_By_Criteria_V2.OWNER_ID == null) || (i_Params_Get_Package_By_Criteria_V2.OWNER_ID == 0)) { i_Params_Get_Package_By_Criteria_V2.OWNER_ID = this.OwnerID; }
 if (i_Params_Get_Package_By_Criteria_V2.START_ROW == null) { i_Params_Get_Package_By_Criteria_V2.START_ROW = 0; }
 if ((i_Params_Get_Package_By_Criteria_V2.END_ROW == null) || (i_Params_Get_Package_By_Criteria_V2.END_ROW == 0)) { i_Params_Get_Package_By_Criteria_V2.END_ROW = 1000000; }
-List<DALC.Package> oList_DBEntries = _AppContext.Get_Package_By_Criteria_Adv_V2(i_Params_Get_Package_By_Criteria_V2.PACKAGE_NAME,i_Params_Get_Package_By_Criteria_V2.PACKAGE_STARTING_DATE,i_Params_Get_Package_By_Criteria_V2.PACKAGE_ENDING_DATE,i_Params_Get_Package_By_Criteria_V2.OWNER_ID,i_Params_Get_Package_By_Criteria_V2.START_ROW,i_Params_Get_Package_By_Criteria_V2.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Package> oList_DBEntries = _AppContext.Get_Package_By_Criteria_Adv_V2(i_Params_Get_Package_By_Criteria_V2.PACKAGE_NAME,i_Params_Get_Package_By_Criteria_V2.PACKAGE_TYPE,i_Params_Get_Package_By_Criteria_V2.PACKAGE_ENDING_DATE,i_Params_Get_Package_By_Criteria_V2.PACKAGE_TIMELINE,i_Params_Get_Package_By_Criteria_V2.PACKAGE_STARTING_DATE,i_Params_Get_Package_By_Criteria_V2.OWNER_ID,i_Params_Get_Package_By_Criteria_V2.START_ROW,i_Params_Get_Package_By_Criteria_V2.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -3807,7 +3643,7 @@ if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Package_By_Where
 if ((i_Params_Get_Package_By_Where_V2.OWNER_ID == null) || (i_Params_Get_Package_By_Where_V2.OWNER_ID == 0)) { i_Params_Get_Package_By_Where_V2.OWNER_ID = this.OwnerID; }
 if (i_Params_Get_Package_By_Where_V2.START_ROW == null) { i_Params_Get_Package_By_Where_V2.START_ROW = 0; }
 if ((i_Params_Get_Package_By_Where_V2.END_ROW == null) || (i_Params_Get_Package_By_Where_V2.END_ROW == 0)) { i_Params_Get_Package_By_Where_V2.END_ROW = 1000000; }
-List<DALC.Package> oList_DBEntries = _AppContext.Get_Package_By_Where_Adv_V2(i_Params_Get_Package_By_Where_V2.PACKAGE_NAME,i_Params_Get_Package_By_Where_V2.PACKAGE_STARTING_DATE,i_Params_Get_Package_By_Where_V2.PACKAGE_ENDING_DATE,i_Params_Get_Package_By_Where_V2.OWNER_ID,i_Params_Get_Package_By_Where_V2.START_ROW,i_Params_Get_Package_By_Where_V2.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Package> oList_DBEntries = _AppContext.Get_Package_By_Where_Adv_V2(i_Params_Get_Package_By_Where_V2.PACKAGE_NAME,i_Params_Get_Package_By_Where_V2.PACKAGE_TYPE,i_Params_Get_Package_By_Where_V2.PACKAGE_ENDING_DATE,i_Params_Get_Package_By_Where_V2.PACKAGE_TIMELINE,i_Params_Get_Package_By_Where_V2.PACKAGE_STARTING_DATE,i_Params_Get_Package_By_Where_V2.OWNER_ID,i_Params_Get_Package_By_Where_V2.START_ROW,i_Params_Get_Package_By_Where_V2.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -4180,8 +4016,6 @@ oStaff_fees = new Staff_fees();
 oTools.CopyPropValues(oDBEntry, oStaff_fees);
 oStaff_fees.My_Staff = new Staff();
 oTools.CopyPropValues(oDBEntry.My_Staff, oStaff_fees.My_Staff);
-oStaff_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oStaff_fees.My_Fees);
 oStaff_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oStaff_fees.My_Currency);
 oList.Add(oStaff_fees);
@@ -4212,8 +4046,6 @@ oStaff_fees = new Staff_fees();
 oTools.CopyPropValues(oDBEntry, oStaff_fees);
 oStaff_fees.My_Staff = new Staff();
 oTools.CopyPropValues(oDBEntry.My_Staff, oStaff_fees.My_Staff);
-oStaff_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oStaff_fees.My_Fees);
 oStaff_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oStaff_fees.My_Currency);
 oList.Add(oStaff_fees);
@@ -4242,6 +4074,8 @@ foreach (var oDBEntry in oList_DBEntries)
 {
 oSupplier = new Supplier();
 oTools.CopyPropValues(oDBEntry, oSupplier);
+oSupplier.My_Bloodtype = new Bloodtype();
+oTools.CopyPropValues(oDBEntry.My_Bloodtype, oSupplier.My_Bloodtype);
 oList.Add(oSupplier);
 }
 }
@@ -4268,12 +4102,70 @@ foreach (var oDBEntry in oList_DBEntries)
 {
 oSupplier = new Supplier();
 oTools.CopyPropValues(oDBEntry, oSupplier);
+oSupplier.My_Bloodtype = new Bloodtype();
+oTools.CopyPropValues(oDBEntry.My_Bloodtype, oSupplier.My_Bloodtype);
 oList.Add(oSupplier);
 }
 }
 i_Params_Get_Supplier_By_Where.TOTAL_COUNT = tmp_TOTAL_COUNT;
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Supplier_By_Where_Adv");}
+return oList;
+}
+public List<Supplier> Get_Supplier_By_Criteria_Adv_V2(Params_Get_Supplier_By_Criteria_V2 i_Params_Get_Supplier_By_Criteria_V2)
+{
+List<Supplier> oList = new List<Supplier>();
+long? tmp_TOTAL_COUNT = 0;
+Supplier oSupplier = null;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Supplier_By_Criteria_Adv_V2");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Supplier_By_Criteria_Adv_V2",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Supplier_By_Criteria_V2));}
+#region Body Section.
+if ((i_Params_Get_Supplier_By_Criteria_V2.OWNER_ID == null) || (i_Params_Get_Supplier_By_Criteria_V2.OWNER_ID == 0)) { i_Params_Get_Supplier_By_Criteria_V2.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Supplier_By_Criteria_V2.START_ROW == null) { i_Params_Get_Supplier_By_Criteria_V2.START_ROW = 0; }
+if ((i_Params_Get_Supplier_By_Criteria_V2.END_ROW == null) || (i_Params_Get_Supplier_By_Criteria_V2.END_ROW == 0)) { i_Params_Get_Supplier_By_Criteria_V2.END_ROW = 1000000; }
+List<DALC.Supplier> oList_DBEntries = _AppContext.Get_Supplier_By_Criteria_Adv_V2(i_Params_Get_Supplier_By_Criteria_V2.SUPPLIER_NAME,i_Params_Get_Supplier_By_Criteria_V2.SUPPLIER_PH_NB,i_Params_Get_Supplier_By_Criteria_V2.SUPPLIER_MAIL,i_Params_Get_Supplier_By_Criteria_V2.SUPPLIER_DOB,i_Params_Get_Supplier_By_Criteria_V2.OWNER_ID,i_Params_Get_Supplier_By_Criteria_V2.START_ROW,i_Params_Get_Supplier_By_Criteria_V2.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oSupplier = new Supplier();
+oTools.CopyPropValues(oDBEntry, oSupplier);
+oSupplier.My_Bloodtype = new Bloodtype();
+oTools.CopyPropValues(oDBEntry.My_Bloodtype, oSupplier.My_Bloodtype);
+oList.Add(oSupplier);
+}
+}
+i_Params_Get_Supplier_By_Criteria_V2.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Supplier_By_Criteria_Adv_V2");}
+return oList;
+}
+public List<Supplier> Get_Supplier_By_Where_Adv_V2(Params_Get_Supplier_By_Where_V2 i_Params_Get_Supplier_By_Where_V2)
+{
+List<Supplier> oList = new List<Supplier>();
+long? tmp_TOTAL_COUNT = 0;
+Supplier oSupplier = null;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Supplier_By_Where_Adv_V2");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Supplier_By_Where_Adv_V2",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Supplier_By_Where_V2));}
+#region Body Section.
+if ((i_Params_Get_Supplier_By_Where_V2.OWNER_ID == null) || (i_Params_Get_Supplier_By_Where_V2.OWNER_ID == 0)) { i_Params_Get_Supplier_By_Where_V2.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Supplier_By_Where_V2.START_ROW == null) { i_Params_Get_Supplier_By_Where_V2.START_ROW = 0; }
+if ((i_Params_Get_Supplier_By_Where_V2.END_ROW == null) || (i_Params_Get_Supplier_By_Where_V2.END_ROW == 0)) { i_Params_Get_Supplier_By_Where_V2.END_ROW = 1000000; }
+List<DALC.Supplier> oList_DBEntries = _AppContext.Get_Supplier_By_Where_Adv_V2(i_Params_Get_Supplier_By_Where_V2.SUPPLIER_NAME,i_Params_Get_Supplier_By_Where_V2.SUPPLIER_PH_NB,i_Params_Get_Supplier_By_Where_V2.SUPPLIER_MAIL,i_Params_Get_Supplier_By_Where_V2.SUPPLIER_DOB,i_Params_Get_Supplier_By_Where_V2.OWNER_ID,i_Params_Get_Supplier_By_Where_V2.START_ROW,i_Params_Get_Supplier_By_Where_V2.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oSupplier = new Supplier();
+oTools.CopyPropValues(oDBEntry, oSupplier);
+oSupplier.My_Bloodtype = new Bloodtype();
+oTools.CopyPropValues(oDBEntry.My_Bloodtype, oSupplier.My_Bloodtype);
+oList.Add(oSupplier);
+}
+}
+i_Params_Get_Supplier_By_Where_V2.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Supplier_By_Where_Adv_V2");}
 return oList;
 }
 public List<Supplier_fees> Get_Supplier_fees_By_Criteria_Adv(Params_Get_Supplier_fees_By_Criteria i_Params_Get_Supplier_fees_By_Criteria)
@@ -4296,8 +4188,6 @@ oSupplier_fees = new Supplier_fees();
 oTools.CopyPropValues(oDBEntry, oSupplier_fees);
 oSupplier_fees.My_Supplier = new Supplier();
 oTools.CopyPropValues(oDBEntry.My_Supplier, oSupplier_fees.My_Supplier);
-oSupplier_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oSupplier_fees.My_Fees);
 oSupplier_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oSupplier_fees.My_Currency);
 oList.Add(oSupplier_fees);
@@ -4328,8 +4218,6 @@ oSupplier_fees = new Supplier_fees();
 oTools.CopyPropValues(oDBEntry, oSupplier_fees);
 oSupplier_fees.My_Supplier = new Supplier();
 oTools.CopyPropValues(oDBEntry.My_Supplier, oSupplier_fees.My_Supplier);
-oSupplier_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oSupplier_fees.My_Fees);
 oSupplier_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oSupplier_fees.My_Currency);
 oList.Add(oSupplier_fees);
@@ -4885,7 +4773,6 @@ Client_fees oClient_fees = new Client_fees();
 long? tmp_TOTAL_COUNT = 0; 
 Params_Get_Client_fees_By_Criteria_InList_SP oParams_Get_Client_fees_By_Criteria_InList_SP = new Params_Get_Client_fees_By_Criteria_InList_SP();
 Params_Get_Client_By_CLIENT_ID oParams_Get_Client_By_CLIENT_ID = new Params_Get_Client_By_CLIENT_ID();
-Params_Get_Fees_By_FEES_ID oParams_Get_Fees_By_FEES_ID = new Params_Get_Fees_By_FEES_ID();
 Params_Get_Currency_By_CURRENCY_ID oParams_Get_Currency_By_CURRENCY_ID = new Params_Get_Currency_By_CURRENCY_ID();
 Params_Get_Package_By_PACKAGE_ID oParams_Get_Package_By_PACKAGE_ID = new Params_Get_Package_By_PACKAGE_ID();
 if (OnPreEvent_General != null){OnPreEvent_General("Get_Client_fees_By_Criteria_InList_Adv");}
@@ -4901,11 +4788,6 @@ if ( i_Params_Get_Client_fees_By_Criteria_InList.CLIENT_ID_LIST == null)
 i_Params_Get_Client_fees_By_Criteria_InList.CLIENT_ID_LIST = new List<Int32?>();
 }
 oParams_Get_Client_fees_By_Criteria_InList_SP.CLIENT_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Client_fees_By_Criteria_InList.CLIENT_ID_LIST);
-if ( i_Params_Get_Client_fees_By_Criteria_InList.FEES_ID_LIST == null)
-{
-i_Params_Get_Client_fees_By_Criteria_InList.FEES_ID_LIST = new List<Int32?>();
-}
-oParams_Get_Client_fees_By_Criteria_InList_SP.FEES_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Client_fees_By_Criteria_InList.FEES_ID_LIST);
 if ( i_Params_Get_Client_fees_By_Criteria_InList.CURRENCY_ID_LIST == null)
 {
 i_Params_Get_Client_fees_By_Criteria_InList.CURRENCY_ID_LIST = new List<Int32?>();
@@ -4919,7 +4801,7 @@ oParams_Get_Client_fees_By_Criteria_InList_SP.PACKAGE_ID_LIST = oTools.Convert_L
 oParams_Get_Client_fees_By_Criteria_InList_SP.START_ROW = i_Params_Get_Client_fees_By_Criteria_InList.START_ROW;
 oParams_Get_Client_fees_By_Criteria_InList_SP.END_ROW = i_Params_Get_Client_fees_By_Criteria_InList.END_ROW;
 oParams_Get_Client_fees_By_Criteria_InList_SP.TOTAL_COUNT = i_Params_Get_Client_fees_By_Criteria_InList.TOTAL_COUNT;
-List<DALC.Client_fees> oList_DBEntries = _AppContext.Get_Client_fees_By_Criteria_InList_Adv(i_Params_Get_Client_fees_By_Criteria_InList.CLIENT_FEES_DESCRIPTION,i_Params_Get_Client_fees_By_Criteria_InList.CLIENT_ID_LIST,i_Params_Get_Client_fees_By_Criteria_InList.FEES_ID_LIST,i_Params_Get_Client_fees_By_Criteria_InList.CURRENCY_ID_LIST,i_Params_Get_Client_fees_By_Criteria_InList.PACKAGE_ID_LIST,i_Params_Get_Client_fees_By_Criteria_InList.OWNER_ID,i_Params_Get_Client_fees_By_Criteria_InList.START_ROW,i_Params_Get_Client_fees_By_Criteria_InList.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Client_fees> oList_DBEntries = _AppContext.Get_Client_fees_By_Criteria_InList_Adv(i_Params_Get_Client_fees_By_Criteria_InList.CLIENT_FEES_DESCRIPTION,i_Params_Get_Client_fees_By_Criteria_InList.CLIENT_ID_LIST,i_Params_Get_Client_fees_By_Criteria_InList.CURRENCY_ID_LIST,i_Params_Get_Client_fees_By_Criteria_InList.PACKAGE_ID_LIST,i_Params_Get_Client_fees_By_Criteria_InList.OWNER_ID,i_Params_Get_Client_fees_By_Criteria_InList.START_ROW,i_Params_Get_Client_fees_By_Criteria_InList.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -4928,8 +4810,6 @@ oClient_fees = new Client_fees();
 oTools.CopyPropValues(oDBEntry, oClient_fees);
 oClient_fees.My_Client = new Client();
 oTools.CopyPropValues(oDBEntry.My_Client, oClient_fees.My_Client);
-oClient_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oClient_fees.My_Fees);
 oClient_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oClient_fees.My_Currency);
 oClient_fees.My_Package = new Package();
@@ -4950,7 +4830,6 @@ Client_fees oClient_fees = new Client_fees();
 long? tmp_TOTAL_COUNT = 0; 
 Params_Get_Client_fees_By_Where_InList_SP oParams_Get_Client_fees_By_Where_InList_SP = new Params_Get_Client_fees_By_Where_InList_SP();
 Params_Get_Client_By_CLIENT_ID oParams_Get_Client_By_CLIENT_ID = new Params_Get_Client_By_CLIENT_ID();
-Params_Get_Fees_By_FEES_ID oParams_Get_Fees_By_FEES_ID = new Params_Get_Fees_By_FEES_ID();
 Params_Get_Currency_By_CURRENCY_ID oParams_Get_Currency_By_CURRENCY_ID = new Params_Get_Currency_By_CURRENCY_ID();
 Params_Get_Package_By_PACKAGE_ID oParams_Get_Package_By_PACKAGE_ID = new Params_Get_Package_By_PACKAGE_ID();
 if (OnPreEvent_General != null){OnPreEvent_General("Get_Client_fees_By_Where_InList_Adv");}
@@ -4966,11 +4845,6 @@ if ( i_Params_Get_Client_fees_By_Where_InList.CLIENT_ID_LIST == null)
 i_Params_Get_Client_fees_By_Where_InList.CLIENT_ID_LIST = new List<Int32?>();
 }
 oParams_Get_Client_fees_By_Where_InList_SP.CLIENT_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Client_fees_By_Where_InList.CLIENT_ID_LIST);
-if ( i_Params_Get_Client_fees_By_Where_InList.FEES_ID_LIST == null)
-{
-i_Params_Get_Client_fees_By_Where_InList.FEES_ID_LIST = new List<Int32?>();
-}
-oParams_Get_Client_fees_By_Where_InList_SP.FEES_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Client_fees_By_Where_InList.FEES_ID_LIST);
 if ( i_Params_Get_Client_fees_By_Where_InList.CURRENCY_ID_LIST == null)
 {
 i_Params_Get_Client_fees_By_Where_InList.CURRENCY_ID_LIST = new List<Int32?>();
@@ -4984,7 +4858,7 @@ oParams_Get_Client_fees_By_Where_InList_SP.PACKAGE_ID_LIST = oTools.Convert_List
 oParams_Get_Client_fees_By_Where_InList_SP.START_ROW = i_Params_Get_Client_fees_By_Where_InList.START_ROW;
 oParams_Get_Client_fees_By_Where_InList_SP.END_ROW = i_Params_Get_Client_fees_By_Where_InList.END_ROW;
 oParams_Get_Client_fees_By_Where_InList_SP.TOTAL_COUNT = i_Params_Get_Client_fees_By_Where_InList.TOTAL_COUNT;
-List<DALC.Client_fees> oList_DBEntries = _AppContext.Get_Client_fees_By_Where_InList_Adv(i_Params_Get_Client_fees_By_Where_InList.CLIENT_FEES_DESCRIPTION,i_Params_Get_Client_fees_By_Where_InList.CLIENT_ID_LIST,i_Params_Get_Client_fees_By_Where_InList.FEES_ID_LIST,i_Params_Get_Client_fees_By_Where_InList.CURRENCY_ID_LIST,i_Params_Get_Client_fees_By_Where_InList.PACKAGE_ID_LIST,i_Params_Get_Client_fees_By_Where_InList.OWNER_ID,i_Params_Get_Client_fees_By_Where_InList.START_ROW,i_Params_Get_Client_fees_By_Where_InList.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Client_fees> oList_DBEntries = _AppContext.Get_Client_fees_By_Where_InList_Adv(i_Params_Get_Client_fees_By_Where_InList.CLIENT_FEES_DESCRIPTION,i_Params_Get_Client_fees_By_Where_InList.CLIENT_ID_LIST,i_Params_Get_Client_fees_By_Where_InList.CURRENCY_ID_LIST,i_Params_Get_Client_fees_By_Where_InList.PACKAGE_ID_LIST,i_Params_Get_Client_fees_By_Where_InList.OWNER_ID,i_Params_Get_Client_fees_By_Where_InList.START_ROW,i_Params_Get_Client_fees_By_Where_InList.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -4993,8 +4867,6 @@ oClient_fees = new Client_fees();
 oTools.CopyPropValues(oDBEntry, oClient_fees);
 oClient_fees.My_Client = new Client();
 oTools.CopyPropValues(oDBEntry.My_Client, oClient_fees.My_Client);
-oClient_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oClient_fees.My_Fees);
 oClient_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oClient_fees.My_Currency);
 oClient_fees.My_Package = new Package();
@@ -5527,6 +5399,8 @@ if (i_Params_Get_Package_By_Criteria_InList.START_ROW == null) { i_Params_Get_Pa
 if ((i_Params_Get_Package_By_Criteria_InList.END_ROW == null) || (i_Params_Get_Package_By_Criteria_InList.END_ROW == 0)) { i_Params_Get_Package_By_Criteria_InList.END_ROW = 1000000; }
 oParams_Get_Package_By_Criteria_InList_SP.OWNER_ID = i_Params_Get_Package_By_Criteria_InList.OWNER_ID;
 oParams_Get_Package_By_Criteria_InList_SP.PACKAGE_NAME = i_Params_Get_Package_By_Criteria_InList.PACKAGE_NAME;
+oParams_Get_Package_By_Criteria_InList_SP.PACKAGE_TYPE = i_Params_Get_Package_By_Criteria_InList.PACKAGE_TYPE;
+oParams_Get_Package_By_Criteria_InList_SP.PACKAGE_TIMELINE = i_Params_Get_Package_By_Criteria_InList.PACKAGE_TIMELINE;
 if ( i_Params_Get_Package_By_Criteria_InList.CURRENCY_ID_LIST == null)
 {
 i_Params_Get_Package_By_Criteria_InList.CURRENCY_ID_LIST = new List<Int32?>();
@@ -5535,7 +5409,7 @@ oParams_Get_Package_By_Criteria_InList_SP.CURRENCY_ID_LIST = oTools.Convert_List
 oParams_Get_Package_By_Criteria_InList_SP.START_ROW = i_Params_Get_Package_By_Criteria_InList.START_ROW;
 oParams_Get_Package_By_Criteria_InList_SP.END_ROW = i_Params_Get_Package_By_Criteria_InList.END_ROW;
 oParams_Get_Package_By_Criteria_InList_SP.TOTAL_COUNT = i_Params_Get_Package_By_Criteria_InList.TOTAL_COUNT;
-List<DALC.Package> oList_DBEntries = _AppContext.Get_Package_By_Criteria_InList_Adv(i_Params_Get_Package_By_Criteria_InList.PACKAGE_NAME,i_Params_Get_Package_By_Criteria_InList.CURRENCY_ID_LIST,i_Params_Get_Package_By_Criteria_InList.OWNER_ID,i_Params_Get_Package_By_Criteria_InList.START_ROW,i_Params_Get_Package_By_Criteria_InList.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Package> oList_DBEntries = _AppContext.Get_Package_By_Criteria_InList_Adv(i_Params_Get_Package_By_Criteria_InList.PACKAGE_NAME,i_Params_Get_Package_By_Criteria_InList.PACKAGE_TYPE,i_Params_Get_Package_By_Criteria_InList.PACKAGE_TIMELINE,i_Params_Get_Package_By_Criteria_InList.CURRENCY_ID_LIST,i_Params_Get_Package_By_Criteria_InList.OWNER_ID,i_Params_Get_Package_By_Criteria_InList.START_ROW,i_Params_Get_Package_By_Criteria_InList.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -5568,6 +5442,8 @@ if (i_Params_Get_Package_By_Where_InList.START_ROW == null) { i_Params_Get_Packa
 if ((i_Params_Get_Package_By_Where_InList.END_ROW == null) || (i_Params_Get_Package_By_Where_InList.END_ROW == 0)) { i_Params_Get_Package_By_Where_InList.END_ROW = 1000000; }
 oParams_Get_Package_By_Where_InList_SP.OWNER_ID = i_Params_Get_Package_By_Where_InList.OWNER_ID;
 oParams_Get_Package_By_Where_InList_SP.PACKAGE_NAME = i_Params_Get_Package_By_Where_InList.PACKAGE_NAME;
+oParams_Get_Package_By_Where_InList_SP.PACKAGE_TYPE = i_Params_Get_Package_By_Where_InList.PACKAGE_TYPE;
+oParams_Get_Package_By_Where_InList_SP.PACKAGE_TIMELINE = i_Params_Get_Package_By_Where_InList.PACKAGE_TIMELINE;
 if ( i_Params_Get_Package_By_Where_InList.CURRENCY_ID_LIST == null)
 {
 i_Params_Get_Package_By_Where_InList.CURRENCY_ID_LIST = new List<Int32?>();
@@ -5576,7 +5452,7 @@ oParams_Get_Package_By_Where_InList_SP.CURRENCY_ID_LIST = oTools.Convert_List_To
 oParams_Get_Package_By_Where_InList_SP.START_ROW = i_Params_Get_Package_By_Where_InList.START_ROW;
 oParams_Get_Package_By_Where_InList_SP.END_ROW = i_Params_Get_Package_By_Where_InList.END_ROW;
 oParams_Get_Package_By_Where_InList_SP.TOTAL_COUNT = i_Params_Get_Package_By_Where_InList.TOTAL_COUNT;
-List<DALC.Package> oList_DBEntries = _AppContext.Get_Package_By_Where_InList_Adv(i_Params_Get_Package_By_Where_InList.PACKAGE_NAME,i_Params_Get_Package_By_Where_InList.CURRENCY_ID_LIST,i_Params_Get_Package_By_Where_InList.OWNER_ID,i_Params_Get_Package_By_Where_InList.START_ROW,i_Params_Get_Package_By_Where_InList.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Package> oList_DBEntries = _AppContext.Get_Package_By_Where_InList_Adv(i_Params_Get_Package_By_Where_InList.PACKAGE_NAME,i_Params_Get_Package_By_Where_InList.PACKAGE_TYPE,i_Params_Get_Package_By_Where_InList.PACKAGE_TIMELINE,i_Params_Get_Package_By_Where_InList.CURRENCY_ID_LIST,i_Params_Get_Package_By_Where_InList.OWNER_ID,i_Params_Get_Package_By_Where_InList.START_ROW,i_Params_Get_Package_By_Where_InList.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -5609,8 +5485,10 @@ if (i_Params_Get_Package_By_Criteria_InList_V2.START_ROW == null) { i_Params_Get
 if ((i_Params_Get_Package_By_Criteria_InList_V2.END_ROW == null) || (i_Params_Get_Package_By_Criteria_InList_V2.END_ROW == 0)) { i_Params_Get_Package_By_Criteria_InList_V2.END_ROW = 1000000; }
 oParams_Get_Package_By_Criteria_InList_SP_V2.OWNER_ID = i_Params_Get_Package_By_Criteria_InList_V2.OWNER_ID;
 oParams_Get_Package_By_Criteria_InList_SP_V2.PACKAGE_NAME = i_Params_Get_Package_By_Criteria_InList_V2.PACKAGE_NAME;
-oParams_Get_Package_By_Criteria_InList_SP_V2.PACKAGE_STARTING_DATE = i_Params_Get_Package_By_Criteria_InList_V2.PACKAGE_STARTING_DATE;
+oParams_Get_Package_By_Criteria_InList_SP_V2.PACKAGE_TYPE = i_Params_Get_Package_By_Criteria_InList_V2.PACKAGE_TYPE;
 oParams_Get_Package_By_Criteria_InList_SP_V2.PACKAGE_ENDING_DATE = i_Params_Get_Package_By_Criteria_InList_V2.PACKAGE_ENDING_DATE;
+oParams_Get_Package_By_Criteria_InList_SP_V2.PACKAGE_TIMELINE = i_Params_Get_Package_By_Criteria_InList_V2.PACKAGE_TIMELINE;
+oParams_Get_Package_By_Criteria_InList_SP_V2.PACKAGE_STARTING_DATE = i_Params_Get_Package_By_Criteria_InList_V2.PACKAGE_STARTING_DATE;
 if ( i_Params_Get_Package_By_Criteria_InList_V2.CURRENCY_ID_LIST == null)
 {
 i_Params_Get_Package_By_Criteria_InList_V2.CURRENCY_ID_LIST = new List<Int32?>();
@@ -5619,7 +5497,7 @@ oParams_Get_Package_By_Criteria_InList_SP_V2.CURRENCY_ID_LIST = oTools.Convert_L
 oParams_Get_Package_By_Criteria_InList_SP_V2.START_ROW = i_Params_Get_Package_By_Criteria_InList_V2.START_ROW;
 oParams_Get_Package_By_Criteria_InList_SP_V2.END_ROW = i_Params_Get_Package_By_Criteria_InList_V2.END_ROW;
 oParams_Get_Package_By_Criteria_InList_SP_V2.TOTAL_COUNT = i_Params_Get_Package_By_Criteria_InList_V2.TOTAL_COUNT;
-List<DALC.Package> oList_DBEntries = _AppContext.Get_Package_By_Criteria_InList_Adv_V2(i_Params_Get_Package_By_Criteria_InList_V2.PACKAGE_NAME,i_Params_Get_Package_By_Criteria_InList_V2.PACKAGE_STARTING_DATE,i_Params_Get_Package_By_Criteria_InList_V2.PACKAGE_ENDING_DATE,i_Params_Get_Package_By_Criteria_InList_V2.CURRENCY_ID_LIST,i_Params_Get_Package_By_Criteria_InList_V2.OWNER_ID,i_Params_Get_Package_By_Criteria_InList_V2.START_ROW,i_Params_Get_Package_By_Criteria_InList_V2.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Package> oList_DBEntries = _AppContext.Get_Package_By_Criteria_InList_Adv_V2(i_Params_Get_Package_By_Criteria_InList_V2.PACKAGE_NAME,i_Params_Get_Package_By_Criteria_InList_V2.PACKAGE_TYPE,i_Params_Get_Package_By_Criteria_InList_V2.PACKAGE_ENDING_DATE,i_Params_Get_Package_By_Criteria_InList_V2.PACKAGE_TIMELINE,i_Params_Get_Package_By_Criteria_InList_V2.PACKAGE_STARTING_DATE,i_Params_Get_Package_By_Criteria_InList_V2.CURRENCY_ID_LIST,i_Params_Get_Package_By_Criteria_InList_V2.OWNER_ID,i_Params_Get_Package_By_Criteria_InList_V2.START_ROW,i_Params_Get_Package_By_Criteria_InList_V2.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -5652,8 +5530,10 @@ if (i_Params_Get_Package_By_Where_InList_V2.START_ROW == null) { i_Params_Get_Pa
 if ((i_Params_Get_Package_By_Where_InList_V2.END_ROW == null) || (i_Params_Get_Package_By_Where_InList_V2.END_ROW == 0)) { i_Params_Get_Package_By_Where_InList_V2.END_ROW = 1000000; }
 oParams_Get_Package_By_Where_InList_SP_V2.OWNER_ID = i_Params_Get_Package_By_Where_InList_V2.OWNER_ID;
 oParams_Get_Package_By_Where_InList_SP_V2.PACKAGE_NAME = i_Params_Get_Package_By_Where_InList_V2.PACKAGE_NAME;
-oParams_Get_Package_By_Where_InList_SP_V2.PACKAGE_STARTING_DATE = i_Params_Get_Package_By_Where_InList_V2.PACKAGE_STARTING_DATE;
+oParams_Get_Package_By_Where_InList_SP_V2.PACKAGE_TYPE = i_Params_Get_Package_By_Where_InList_V2.PACKAGE_TYPE;
 oParams_Get_Package_By_Where_InList_SP_V2.PACKAGE_ENDING_DATE = i_Params_Get_Package_By_Where_InList_V2.PACKAGE_ENDING_DATE;
+oParams_Get_Package_By_Where_InList_SP_V2.PACKAGE_TIMELINE = i_Params_Get_Package_By_Where_InList_V2.PACKAGE_TIMELINE;
+oParams_Get_Package_By_Where_InList_SP_V2.PACKAGE_STARTING_DATE = i_Params_Get_Package_By_Where_InList_V2.PACKAGE_STARTING_DATE;
 if ( i_Params_Get_Package_By_Where_InList_V2.CURRENCY_ID_LIST == null)
 {
 i_Params_Get_Package_By_Where_InList_V2.CURRENCY_ID_LIST = new List<Int32?>();
@@ -5662,7 +5542,7 @@ oParams_Get_Package_By_Where_InList_SP_V2.CURRENCY_ID_LIST = oTools.Convert_List
 oParams_Get_Package_By_Where_InList_SP_V2.START_ROW = i_Params_Get_Package_By_Where_InList_V2.START_ROW;
 oParams_Get_Package_By_Where_InList_SP_V2.END_ROW = i_Params_Get_Package_By_Where_InList_V2.END_ROW;
 oParams_Get_Package_By_Where_InList_SP_V2.TOTAL_COUNT = i_Params_Get_Package_By_Where_InList_V2.TOTAL_COUNT;
-List<DALC.Package> oList_DBEntries = _AppContext.Get_Package_By_Where_InList_Adv_V2(i_Params_Get_Package_By_Where_InList_V2.PACKAGE_NAME,i_Params_Get_Package_By_Where_InList_V2.PACKAGE_STARTING_DATE,i_Params_Get_Package_By_Where_InList_V2.PACKAGE_ENDING_DATE,i_Params_Get_Package_By_Where_InList_V2.CURRENCY_ID_LIST,i_Params_Get_Package_By_Where_InList_V2.OWNER_ID,i_Params_Get_Package_By_Where_InList_V2.START_ROW,i_Params_Get_Package_By_Where_InList_V2.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Package> oList_DBEntries = _AppContext.Get_Package_By_Where_InList_Adv_V2(i_Params_Get_Package_By_Where_InList_V2.PACKAGE_NAME,i_Params_Get_Package_By_Where_InList_V2.PACKAGE_TYPE,i_Params_Get_Package_By_Where_InList_V2.PACKAGE_ENDING_DATE,i_Params_Get_Package_By_Where_InList_V2.PACKAGE_TIMELINE,i_Params_Get_Package_By_Where_InList_V2.PACKAGE_STARTING_DATE,i_Params_Get_Package_By_Where_InList_V2.CURRENCY_ID_LIST,i_Params_Get_Package_By_Where_InList_V2.OWNER_ID,i_Params_Get_Package_By_Where_InList_V2.START_ROW,i_Params_Get_Package_By_Where_InList_V2.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -6061,7 +5941,6 @@ Staff_fees oStaff_fees = new Staff_fees();
 long? tmp_TOTAL_COUNT = 0; 
 Params_Get_Staff_fees_By_Criteria_InList_SP oParams_Get_Staff_fees_By_Criteria_InList_SP = new Params_Get_Staff_fees_By_Criteria_InList_SP();
 Params_Get_Staff_By_STAFF_ID oParams_Get_Staff_By_STAFF_ID = new Params_Get_Staff_By_STAFF_ID();
-Params_Get_Fees_By_FEES_ID oParams_Get_Fees_By_FEES_ID = new Params_Get_Fees_By_FEES_ID();
 Params_Get_Currency_By_CURRENCY_ID oParams_Get_Currency_By_CURRENCY_ID = new Params_Get_Currency_By_CURRENCY_ID();
 if (OnPreEvent_General != null){OnPreEvent_General("Get_Staff_fees_By_Criteria_InList_Adv");}
 if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Staff_fees_By_Criteria_InList_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Staff_fees_By_Criteria_InList));}
@@ -6076,11 +5955,6 @@ if ( i_Params_Get_Staff_fees_By_Criteria_InList.STAFF_ID_LIST == null)
 i_Params_Get_Staff_fees_By_Criteria_InList.STAFF_ID_LIST = new List<Int32?>();
 }
 oParams_Get_Staff_fees_By_Criteria_InList_SP.STAFF_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Staff_fees_By_Criteria_InList.STAFF_ID_LIST);
-if ( i_Params_Get_Staff_fees_By_Criteria_InList.FEES_ID_LIST == null)
-{
-i_Params_Get_Staff_fees_By_Criteria_InList.FEES_ID_LIST = new List<Int32?>();
-}
-oParams_Get_Staff_fees_By_Criteria_InList_SP.FEES_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Staff_fees_By_Criteria_InList.FEES_ID_LIST);
 if ( i_Params_Get_Staff_fees_By_Criteria_InList.CURRENCY_ID_LIST == null)
 {
 i_Params_Get_Staff_fees_By_Criteria_InList.CURRENCY_ID_LIST = new List<Int32?>();
@@ -6089,7 +5963,7 @@ oParams_Get_Staff_fees_By_Criteria_InList_SP.CURRENCY_ID_LIST = oTools.Convert_L
 oParams_Get_Staff_fees_By_Criteria_InList_SP.START_ROW = i_Params_Get_Staff_fees_By_Criteria_InList.START_ROW;
 oParams_Get_Staff_fees_By_Criteria_InList_SP.END_ROW = i_Params_Get_Staff_fees_By_Criteria_InList.END_ROW;
 oParams_Get_Staff_fees_By_Criteria_InList_SP.TOTAL_COUNT = i_Params_Get_Staff_fees_By_Criteria_InList.TOTAL_COUNT;
-List<DALC.Staff_fees> oList_DBEntries = _AppContext.Get_Staff_fees_By_Criteria_InList_Adv(i_Params_Get_Staff_fees_By_Criteria_InList.STAFF_FEES_DESCRIPTION,i_Params_Get_Staff_fees_By_Criteria_InList.STAFF_ID_LIST,i_Params_Get_Staff_fees_By_Criteria_InList.FEES_ID_LIST,i_Params_Get_Staff_fees_By_Criteria_InList.CURRENCY_ID_LIST,i_Params_Get_Staff_fees_By_Criteria_InList.OWNER_ID,i_Params_Get_Staff_fees_By_Criteria_InList.START_ROW,i_Params_Get_Staff_fees_By_Criteria_InList.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Staff_fees> oList_DBEntries = _AppContext.Get_Staff_fees_By_Criteria_InList_Adv(i_Params_Get_Staff_fees_By_Criteria_InList.STAFF_FEES_DESCRIPTION,i_Params_Get_Staff_fees_By_Criteria_InList.STAFF_ID_LIST,i_Params_Get_Staff_fees_By_Criteria_InList.CURRENCY_ID_LIST,i_Params_Get_Staff_fees_By_Criteria_InList.OWNER_ID,i_Params_Get_Staff_fees_By_Criteria_InList.START_ROW,i_Params_Get_Staff_fees_By_Criteria_InList.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -6098,8 +5972,6 @@ oStaff_fees = new Staff_fees();
 oTools.CopyPropValues(oDBEntry, oStaff_fees);
 oStaff_fees.My_Staff = new Staff();
 oTools.CopyPropValues(oDBEntry.My_Staff, oStaff_fees.My_Staff);
-oStaff_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oStaff_fees.My_Fees);
 oStaff_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oStaff_fees.My_Currency);
 oList.Add(oStaff_fees);
@@ -6118,7 +5990,6 @@ Staff_fees oStaff_fees = new Staff_fees();
 long? tmp_TOTAL_COUNT = 0; 
 Params_Get_Staff_fees_By_Where_InList_SP oParams_Get_Staff_fees_By_Where_InList_SP = new Params_Get_Staff_fees_By_Where_InList_SP();
 Params_Get_Staff_By_STAFF_ID oParams_Get_Staff_By_STAFF_ID = new Params_Get_Staff_By_STAFF_ID();
-Params_Get_Fees_By_FEES_ID oParams_Get_Fees_By_FEES_ID = new Params_Get_Fees_By_FEES_ID();
 Params_Get_Currency_By_CURRENCY_ID oParams_Get_Currency_By_CURRENCY_ID = new Params_Get_Currency_By_CURRENCY_ID();
 if (OnPreEvent_General != null){OnPreEvent_General("Get_Staff_fees_By_Where_InList_Adv");}
 if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Staff_fees_By_Where_InList_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Staff_fees_By_Where_InList));}
@@ -6133,11 +6004,6 @@ if ( i_Params_Get_Staff_fees_By_Where_InList.STAFF_ID_LIST == null)
 i_Params_Get_Staff_fees_By_Where_InList.STAFF_ID_LIST = new List<Int32?>();
 }
 oParams_Get_Staff_fees_By_Where_InList_SP.STAFF_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Staff_fees_By_Where_InList.STAFF_ID_LIST);
-if ( i_Params_Get_Staff_fees_By_Where_InList.FEES_ID_LIST == null)
-{
-i_Params_Get_Staff_fees_By_Where_InList.FEES_ID_LIST = new List<Int32?>();
-}
-oParams_Get_Staff_fees_By_Where_InList_SP.FEES_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Staff_fees_By_Where_InList.FEES_ID_LIST);
 if ( i_Params_Get_Staff_fees_By_Where_InList.CURRENCY_ID_LIST == null)
 {
 i_Params_Get_Staff_fees_By_Where_InList.CURRENCY_ID_LIST = new List<Int32?>();
@@ -6146,7 +6012,7 @@ oParams_Get_Staff_fees_By_Where_InList_SP.CURRENCY_ID_LIST = oTools.Convert_List
 oParams_Get_Staff_fees_By_Where_InList_SP.START_ROW = i_Params_Get_Staff_fees_By_Where_InList.START_ROW;
 oParams_Get_Staff_fees_By_Where_InList_SP.END_ROW = i_Params_Get_Staff_fees_By_Where_InList.END_ROW;
 oParams_Get_Staff_fees_By_Where_InList_SP.TOTAL_COUNT = i_Params_Get_Staff_fees_By_Where_InList.TOTAL_COUNT;
-List<DALC.Staff_fees> oList_DBEntries = _AppContext.Get_Staff_fees_By_Where_InList_Adv(i_Params_Get_Staff_fees_By_Where_InList.STAFF_FEES_DESCRIPTION,i_Params_Get_Staff_fees_By_Where_InList.STAFF_ID_LIST,i_Params_Get_Staff_fees_By_Where_InList.FEES_ID_LIST,i_Params_Get_Staff_fees_By_Where_InList.CURRENCY_ID_LIST,i_Params_Get_Staff_fees_By_Where_InList.OWNER_ID,i_Params_Get_Staff_fees_By_Where_InList.START_ROW,i_Params_Get_Staff_fees_By_Where_InList.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Staff_fees> oList_DBEntries = _AppContext.Get_Staff_fees_By_Where_InList_Adv(i_Params_Get_Staff_fees_By_Where_InList.STAFF_FEES_DESCRIPTION,i_Params_Get_Staff_fees_By_Where_InList.STAFF_ID_LIST,i_Params_Get_Staff_fees_By_Where_InList.CURRENCY_ID_LIST,i_Params_Get_Staff_fees_By_Where_InList.OWNER_ID,i_Params_Get_Staff_fees_By_Where_InList.START_ROW,i_Params_Get_Staff_fees_By_Where_InList.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -6155,8 +6021,6 @@ oStaff_fees = new Staff_fees();
 oTools.CopyPropValues(oDBEntry, oStaff_fees);
 oStaff_fees.My_Staff = new Staff();
 oTools.CopyPropValues(oDBEntry.My_Staff, oStaff_fees.My_Staff);
-oStaff_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oStaff_fees.My_Fees);
 oStaff_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oStaff_fees.My_Currency);
 oList.Add(oStaff_fees);
@@ -6168,6 +6032,180 @@ i_Params_Get_Staff_fees_By_Where_InList.TOTAL_COUNT = tmp_TOTAL_COUNT;
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Staff_fees_By_Where_InList_Adv");}
 return oList;
 }
+public List<Supplier> Get_Supplier_By_Criteria_InList_Adv(Params_Get_Supplier_By_Criteria_InList i_Params_Get_Supplier_By_Criteria_InList)
+{
+List<Supplier> oList = new List<Supplier>();
+Supplier oSupplier = new Supplier();
+long? tmp_TOTAL_COUNT = 0; 
+Params_Get_Supplier_By_Criteria_InList_SP oParams_Get_Supplier_By_Criteria_InList_SP = new Params_Get_Supplier_By_Criteria_InList_SP();
+Params_Get_Bloodtype_By_BLOODTYPE_ID oParams_Get_Bloodtype_By_BLOODTYPE_ID = new Params_Get_Bloodtype_By_BLOODTYPE_ID();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Supplier_By_Criteria_InList_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Supplier_By_Criteria_InList_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Supplier_By_Criteria_InList));}
+#region Body Section.
+if ((i_Params_Get_Supplier_By_Criteria_InList.OWNER_ID == null) || (i_Params_Get_Supplier_By_Criteria_InList.OWNER_ID == 0)) { i_Params_Get_Supplier_By_Criteria_InList.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Supplier_By_Criteria_InList.START_ROW == null) { i_Params_Get_Supplier_By_Criteria_InList.START_ROW = 0; }
+if ((i_Params_Get_Supplier_By_Criteria_InList.END_ROW == null) || (i_Params_Get_Supplier_By_Criteria_InList.END_ROW == 0)) { i_Params_Get_Supplier_By_Criteria_InList.END_ROW = 1000000; }
+oParams_Get_Supplier_By_Criteria_InList_SP.OWNER_ID = i_Params_Get_Supplier_By_Criteria_InList.OWNER_ID;
+oParams_Get_Supplier_By_Criteria_InList_SP.SUPPLIER_NAME = i_Params_Get_Supplier_By_Criteria_InList.SUPPLIER_NAME;
+oParams_Get_Supplier_By_Criteria_InList_SP.SUPPLIER_PH_NB = i_Params_Get_Supplier_By_Criteria_InList.SUPPLIER_PH_NB;
+oParams_Get_Supplier_By_Criteria_InList_SP.SUPPLIER_MAIL = i_Params_Get_Supplier_By_Criteria_InList.SUPPLIER_MAIL;
+if ( i_Params_Get_Supplier_By_Criteria_InList.BLOODTYPE_ID_LIST == null)
+{
+i_Params_Get_Supplier_By_Criteria_InList.BLOODTYPE_ID_LIST = new List<Int32?>();
+}
+oParams_Get_Supplier_By_Criteria_InList_SP.BLOODTYPE_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Supplier_By_Criteria_InList.BLOODTYPE_ID_LIST);
+oParams_Get_Supplier_By_Criteria_InList_SP.START_ROW = i_Params_Get_Supplier_By_Criteria_InList.START_ROW;
+oParams_Get_Supplier_By_Criteria_InList_SP.END_ROW = i_Params_Get_Supplier_By_Criteria_InList.END_ROW;
+oParams_Get_Supplier_By_Criteria_InList_SP.TOTAL_COUNT = i_Params_Get_Supplier_By_Criteria_InList.TOTAL_COUNT;
+List<DALC.Supplier> oList_DBEntries = _AppContext.Get_Supplier_By_Criteria_InList_Adv(i_Params_Get_Supplier_By_Criteria_InList.SUPPLIER_NAME,i_Params_Get_Supplier_By_Criteria_InList.SUPPLIER_PH_NB,i_Params_Get_Supplier_By_Criteria_InList.SUPPLIER_MAIL,i_Params_Get_Supplier_By_Criteria_InList.BLOODTYPE_ID_LIST,i_Params_Get_Supplier_By_Criteria_InList.OWNER_ID,i_Params_Get_Supplier_By_Criteria_InList.START_ROW,i_Params_Get_Supplier_By_Criteria_InList.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oSupplier = new Supplier();
+oTools.CopyPropValues(oDBEntry, oSupplier);
+oSupplier.My_Bloodtype = new Bloodtype();
+oTools.CopyPropValues(oDBEntry.My_Bloodtype, oSupplier.My_Bloodtype);
+oList.Add(oSupplier);
+}
+}
+i_Params_Get_Supplier_By_Criteria_InList.TOTAL_COUNT = oParams_Get_Supplier_By_Criteria_InList_SP.TOTAL_COUNT;
+i_Params_Get_Supplier_By_Criteria_InList.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Supplier_By_Criteria_InList_Adv");}
+return oList;
+}
+public List<Supplier> Get_Supplier_By_Where_InList_Adv(Params_Get_Supplier_By_Where_InList i_Params_Get_Supplier_By_Where_InList)
+{
+List<Supplier> oList = new List<Supplier>();
+Supplier oSupplier = new Supplier();
+long? tmp_TOTAL_COUNT = 0; 
+Params_Get_Supplier_By_Where_InList_SP oParams_Get_Supplier_By_Where_InList_SP = new Params_Get_Supplier_By_Where_InList_SP();
+Params_Get_Bloodtype_By_BLOODTYPE_ID oParams_Get_Bloodtype_By_BLOODTYPE_ID = new Params_Get_Bloodtype_By_BLOODTYPE_ID();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Supplier_By_Where_InList_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Supplier_By_Where_InList_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Supplier_By_Where_InList));}
+#region Body Section.
+if ((i_Params_Get_Supplier_By_Where_InList.OWNER_ID == null) || (i_Params_Get_Supplier_By_Where_InList.OWNER_ID == 0)) { i_Params_Get_Supplier_By_Where_InList.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Supplier_By_Where_InList.START_ROW == null) { i_Params_Get_Supplier_By_Where_InList.START_ROW = 0; }
+if ((i_Params_Get_Supplier_By_Where_InList.END_ROW == null) || (i_Params_Get_Supplier_By_Where_InList.END_ROW == 0)) { i_Params_Get_Supplier_By_Where_InList.END_ROW = 1000000; }
+oParams_Get_Supplier_By_Where_InList_SP.OWNER_ID = i_Params_Get_Supplier_By_Where_InList.OWNER_ID;
+oParams_Get_Supplier_By_Where_InList_SP.SUPPLIER_NAME = i_Params_Get_Supplier_By_Where_InList.SUPPLIER_NAME;
+oParams_Get_Supplier_By_Where_InList_SP.SUPPLIER_PH_NB = i_Params_Get_Supplier_By_Where_InList.SUPPLIER_PH_NB;
+oParams_Get_Supplier_By_Where_InList_SP.SUPPLIER_MAIL = i_Params_Get_Supplier_By_Where_InList.SUPPLIER_MAIL;
+if ( i_Params_Get_Supplier_By_Where_InList.BLOODTYPE_ID_LIST == null)
+{
+i_Params_Get_Supplier_By_Where_InList.BLOODTYPE_ID_LIST = new List<Int32?>();
+}
+oParams_Get_Supplier_By_Where_InList_SP.BLOODTYPE_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Supplier_By_Where_InList.BLOODTYPE_ID_LIST);
+oParams_Get_Supplier_By_Where_InList_SP.START_ROW = i_Params_Get_Supplier_By_Where_InList.START_ROW;
+oParams_Get_Supplier_By_Where_InList_SP.END_ROW = i_Params_Get_Supplier_By_Where_InList.END_ROW;
+oParams_Get_Supplier_By_Where_InList_SP.TOTAL_COUNT = i_Params_Get_Supplier_By_Where_InList.TOTAL_COUNT;
+List<DALC.Supplier> oList_DBEntries = _AppContext.Get_Supplier_By_Where_InList_Adv(i_Params_Get_Supplier_By_Where_InList.SUPPLIER_NAME,i_Params_Get_Supplier_By_Where_InList.SUPPLIER_PH_NB,i_Params_Get_Supplier_By_Where_InList.SUPPLIER_MAIL,i_Params_Get_Supplier_By_Where_InList.BLOODTYPE_ID_LIST,i_Params_Get_Supplier_By_Where_InList.OWNER_ID,i_Params_Get_Supplier_By_Where_InList.START_ROW,i_Params_Get_Supplier_By_Where_InList.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oSupplier = new Supplier();
+oTools.CopyPropValues(oDBEntry, oSupplier);
+oSupplier.My_Bloodtype = new Bloodtype();
+oTools.CopyPropValues(oDBEntry.My_Bloodtype, oSupplier.My_Bloodtype);
+oList.Add(oSupplier);
+}
+}
+i_Params_Get_Supplier_By_Where_InList.TOTAL_COUNT = oParams_Get_Supplier_By_Where_InList_SP.TOTAL_COUNT;
+i_Params_Get_Supplier_By_Where_InList.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Supplier_By_Where_InList_Adv");}
+return oList;
+}
+public List<Supplier> Get_Supplier_By_Criteria_InList_Adv_V2(Params_Get_Supplier_By_Criteria_InList_V2 i_Params_Get_Supplier_By_Criteria_InList_V2)
+{
+List<Supplier> oList = new List<Supplier>();
+Supplier oSupplier = new Supplier();
+long? tmp_TOTAL_COUNT = 0; 
+Params_Get_Supplier_By_Criteria_InList_SP_V2 oParams_Get_Supplier_By_Criteria_InList_SP_V2 = new Params_Get_Supplier_By_Criteria_InList_SP_V2();
+Params_Get_Bloodtype_By_BLOODTYPE_ID oParams_Get_Bloodtype_By_BLOODTYPE_ID = new Params_Get_Bloodtype_By_BLOODTYPE_ID();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Supplier_By_Criteria_InList_Adv_V2");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Supplier_By_Criteria_InList_Adv_V2",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Supplier_By_Criteria_InList_V2));}
+#region Body Section.
+if ((i_Params_Get_Supplier_By_Criteria_InList_V2.OWNER_ID == null) || (i_Params_Get_Supplier_By_Criteria_InList_V2.OWNER_ID == 0)) { i_Params_Get_Supplier_By_Criteria_InList_V2.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Supplier_By_Criteria_InList_V2.START_ROW == null) { i_Params_Get_Supplier_By_Criteria_InList_V2.START_ROW = 0; }
+if ((i_Params_Get_Supplier_By_Criteria_InList_V2.END_ROW == null) || (i_Params_Get_Supplier_By_Criteria_InList_V2.END_ROW == 0)) { i_Params_Get_Supplier_By_Criteria_InList_V2.END_ROW = 1000000; }
+oParams_Get_Supplier_By_Criteria_InList_SP_V2.OWNER_ID = i_Params_Get_Supplier_By_Criteria_InList_V2.OWNER_ID;
+oParams_Get_Supplier_By_Criteria_InList_SP_V2.SUPPLIER_NAME = i_Params_Get_Supplier_By_Criteria_InList_V2.SUPPLIER_NAME;
+oParams_Get_Supplier_By_Criteria_InList_SP_V2.SUPPLIER_PH_NB = i_Params_Get_Supplier_By_Criteria_InList_V2.SUPPLIER_PH_NB;
+oParams_Get_Supplier_By_Criteria_InList_SP_V2.SUPPLIER_MAIL = i_Params_Get_Supplier_By_Criteria_InList_V2.SUPPLIER_MAIL;
+oParams_Get_Supplier_By_Criteria_InList_SP_V2.SUPPLIER_DOB = i_Params_Get_Supplier_By_Criteria_InList_V2.SUPPLIER_DOB;
+if ( i_Params_Get_Supplier_By_Criteria_InList_V2.BLOODTYPE_ID_LIST == null)
+{
+i_Params_Get_Supplier_By_Criteria_InList_V2.BLOODTYPE_ID_LIST = new List<Int32?>();
+}
+oParams_Get_Supplier_By_Criteria_InList_SP_V2.BLOODTYPE_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Supplier_By_Criteria_InList_V2.BLOODTYPE_ID_LIST);
+oParams_Get_Supplier_By_Criteria_InList_SP_V2.START_ROW = i_Params_Get_Supplier_By_Criteria_InList_V2.START_ROW;
+oParams_Get_Supplier_By_Criteria_InList_SP_V2.END_ROW = i_Params_Get_Supplier_By_Criteria_InList_V2.END_ROW;
+oParams_Get_Supplier_By_Criteria_InList_SP_V2.TOTAL_COUNT = i_Params_Get_Supplier_By_Criteria_InList_V2.TOTAL_COUNT;
+List<DALC.Supplier> oList_DBEntries = _AppContext.Get_Supplier_By_Criteria_InList_Adv_V2(i_Params_Get_Supplier_By_Criteria_InList_V2.SUPPLIER_NAME,i_Params_Get_Supplier_By_Criteria_InList_V2.SUPPLIER_PH_NB,i_Params_Get_Supplier_By_Criteria_InList_V2.SUPPLIER_MAIL,i_Params_Get_Supplier_By_Criteria_InList_V2.SUPPLIER_DOB,i_Params_Get_Supplier_By_Criteria_InList_V2.BLOODTYPE_ID_LIST,i_Params_Get_Supplier_By_Criteria_InList_V2.OWNER_ID,i_Params_Get_Supplier_By_Criteria_InList_V2.START_ROW,i_Params_Get_Supplier_By_Criteria_InList_V2.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oSupplier = new Supplier();
+oTools.CopyPropValues(oDBEntry, oSupplier);
+oSupplier.My_Bloodtype = new Bloodtype();
+oTools.CopyPropValues(oDBEntry.My_Bloodtype, oSupplier.My_Bloodtype);
+oList.Add(oSupplier);
+}
+}
+i_Params_Get_Supplier_By_Criteria_InList_V2.TOTAL_COUNT = oParams_Get_Supplier_By_Criteria_InList_SP_V2.TOTAL_COUNT;
+i_Params_Get_Supplier_By_Criteria_InList_V2.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Supplier_By_Criteria_InList_Adv_V2");}
+return oList;
+}
+public List<Supplier> Get_Supplier_By_Where_InList_Adv_V2(Params_Get_Supplier_By_Where_InList_V2 i_Params_Get_Supplier_By_Where_InList_V2)
+{
+List<Supplier> oList = new List<Supplier>();
+Supplier oSupplier = new Supplier();
+long? tmp_TOTAL_COUNT = 0; 
+Params_Get_Supplier_By_Where_InList_SP_V2 oParams_Get_Supplier_By_Where_InList_SP_V2 = new Params_Get_Supplier_By_Where_InList_SP_V2();
+Params_Get_Bloodtype_By_BLOODTYPE_ID oParams_Get_Bloodtype_By_BLOODTYPE_ID = new Params_Get_Bloodtype_By_BLOODTYPE_ID();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Supplier_By_Where_InList_Adv_V2");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Supplier_By_Where_InList_Adv_V2",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Supplier_By_Where_InList_V2));}
+#region Body Section.
+if ((i_Params_Get_Supplier_By_Where_InList_V2.OWNER_ID == null) || (i_Params_Get_Supplier_By_Where_InList_V2.OWNER_ID == 0)) { i_Params_Get_Supplier_By_Where_InList_V2.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Supplier_By_Where_InList_V2.START_ROW == null) { i_Params_Get_Supplier_By_Where_InList_V2.START_ROW = 0; }
+if ((i_Params_Get_Supplier_By_Where_InList_V2.END_ROW == null) || (i_Params_Get_Supplier_By_Where_InList_V2.END_ROW == 0)) { i_Params_Get_Supplier_By_Where_InList_V2.END_ROW = 1000000; }
+oParams_Get_Supplier_By_Where_InList_SP_V2.OWNER_ID = i_Params_Get_Supplier_By_Where_InList_V2.OWNER_ID;
+oParams_Get_Supplier_By_Where_InList_SP_V2.SUPPLIER_NAME = i_Params_Get_Supplier_By_Where_InList_V2.SUPPLIER_NAME;
+oParams_Get_Supplier_By_Where_InList_SP_V2.SUPPLIER_PH_NB = i_Params_Get_Supplier_By_Where_InList_V2.SUPPLIER_PH_NB;
+oParams_Get_Supplier_By_Where_InList_SP_V2.SUPPLIER_MAIL = i_Params_Get_Supplier_By_Where_InList_V2.SUPPLIER_MAIL;
+oParams_Get_Supplier_By_Where_InList_SP_V2.SUPPLIER_DOB = i_Params_Get_Supplier_By_Where_InList_V2.SUPPLIER_DOB;
+if ( i_Params_Get_Supplier_By_Where_InList_V2.BLOODTYPE_ID_LIST == null)
+{
+i_Params_Get_Supplier_By_Where_InList_V2.BLOODTYPE_ID_LIST = new List<Int32?>();
+}
+oParams_Get_Supplier_By_Where_InList_SP_V2.BLOODTYPE_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Supplier_By_Where_InList_V2.BLOODTYPE_ID_LIST);
+oParams_Get_Supplier_By_Where_InList_SP_V2.START_ROW = i_Params_Get_Supplier_By_Where_InList_V2.START_ROW;
+oParams_Get_Supplier_By_Where_InList_SP_V2.END_ROW = i_Params_Get_Supplier_By_Where_InList_V2.END_ROW;
+oParams_Get_Supplier_By_Where_InList_SP_V2.TOTAL_COUNT = i_Params_Get_Supplier_By_Where_InList_V2.TOTAL_COUNT;
+List<DALC.Supplier> oList_DBEntries = _AppContext.Get_Supplier_By_Where_InList_Adv_V2(i_Params_Get_Supplier_By_Where_InList_V2.SUPPLIER_NAME,i_Params_Get_Supplier_By_Where_InList_V2.SUPPLIER_PH_NB,i_Params_Get_Supplier_By_Where_InList_V2.SUPPLIER_MAIL,i_Params_Get_Supplier_By_Where_InList_V2.SUPPLIER_DOB,i_Params_Get_Supplier_By_Where_InList_V2.BLOODTYPE_ID_LIST,i_Params_Get_Supplier_By_Where_InList_V2.OWNER_ID,i_Params_Get_Supplier_By_Where_InList_V2.START_ROW,i_Params_Get_Supplier_By_Where_InList_V2.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oSupplier = new Supplier();
+oTools.CopyPropValues(oDBEntry, oSupplier);
+oSupplier.My_Bloodtype = new Bloodtype();
+oTools.CopyPropValues(oDBEntry.My_Bloodtype, oSupplier.My_Bloodtype);
+oList.Add(oSupplier);
+}
+}
+i_Params_Get_Supplier_By_Where_InList_V2.TOTAL_COUNT = oParams_Get_Supplier_By_Where_InList_SP_V2.TOTAL_COUNT;
+i_Params_Get_Supplier_By_Where_InList_V2.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Supplier_By_Where_InList_Adv_V2");}
+return oList;
+}
 public List<Supplier_fees> Get_Supplier_fees_By_Criteria_InList_Adv(Params_Get_Supplier_fees_By_Criteria_InList i_Params_Get_Supplier_fees_By_Criteria_InList)
 {
 List<Supplier_fees> oList = new List<Supplier_fees>();
@@ -6175,7 +6213,6 @@ Supplier_fees oSupplier_fees = new Supplier_fees();
 long? tmp_TOTAL_COUNT = 0; 
 Params_Get_Supplier_fees_By_Criteria_InList_SP oParams_Get_Supplier_fees_By_Criteria_InList_SP = new Params_Get_Supplier_fees_By_Criteria_InList_SP();
 Params_Get_Supplier_By_SUPPLIER_ID oParams_Get_Supplier_By_SUPPLIER_ID = new Params_Get_Supplier_By_SUPPLIER_ID();
-Params_Get_Fees_By_FEES_ID oParams_Get_Fees_By_FEES_ID = new Params_Get_Fees_By_FEES_ID();
 Params_Get_Currency_By_CURRENCY_ID oParams_Get_Currency_By_CURRENCY_ID = new Params_Get_Currency_By_CURRENCY_ID();
 if (OnPreEvent_General != null){OnPreEvent_General("Get_Supplier_fees_By_Criteria_InList_Adv");}
 if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Supplier_fees_By_Criteria_InList_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Supplier_fees_By_Criteria_InList));}
@@ -6190,11 +6227,6 @@ if ( i_Params_Get_Supplier_fees_By_Criteria_InList.SUPPLIER_ID_LIST == null)
 i_Params_Get_Supplier_fees_By_Criteria_InList.SUPPLIER_ID_LIST = new List<Int32?>();
 }
 oParams_Get_Supplier_fees_By_Criteria_InList_SP.SUPPLIER_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Supplier_fees_By_Criteria_InList.SUPPLIER_ID_LIST);
-if ( i_Params_Get_Supplier_fees_By_Criteria_InList.FEES_ID_LIST == null)
-{
-i_Params_Get_Supplier_fees_By_Criteria_InList.FEES_ID_LIST = new List<Int32?>();
-}
-oParams_Get_Supplier_fees_By_Criteria_InList_SP.FEES_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Supplier_fees_By_Criteria_InList.FEES_ID_LIST);
 if ( i_Params_Get_Supplier_fees_By_Criteria_InList.CURRENCY_ID_LIST == null)
 {
 i_Params_Get_Supplier_fees_By_Criteria_InList.CURRENCY_ID_LIST = new List<Int32?>();
@@ -6203,7 +6235,7 @@ oParams_Get_Supplier_fees_By_Criteria_InList_SP.CURRENCY_ID_LIST = oTools.Conver
 oParams_Get_Supplier_fees_By_Criteria_InList_SP.START_ROW = i_Params_Get_Supplier_fees_By_Criteria_InList.START_ROW;
 oParams_Get_Supplier_fees_By_Criteria_InList_SP.END_ROW = i_Params_Get_Supplier_fees_By_Criteria_InList.END_ROW;
 oParams_Get_Supplier_fees_By_Criteria_InList_SP.TOTAL_COUNT = i_Params_Get_Supplier_fees_By_Criteria_InList.TOTAL_COUNT;
-List<DALC.Supplier_fees> oList_DBEntries = _AppContext.Get_Supplier_fees_By_Criteria_InList_Adv(i_Params_Get_Supplier_fees_By_Criteria_InList.SUPPLIER_FEES_DESCRIPTION,i_Params_Get_Supplier_fees_By_Criteria_InList.SUPPLIER_ID_LIST,i_Params_Get_Supplier_fees_By_Criteria_InList.FEES_ID_LIST,i_Params_Get_Supplier_fees_By_Criteria_InList.CURRENCY_ID_LIST,i_Params_Get_Supplier_fees_By_Criteria_InList.OWNER_ID,i_Params_Get_Supplier_fees_By_Criteria_InList.START_ROW,i_Params_Get_Supplier_fees_By_Criteria_InList.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Supplier_fees> oList_DBEntries = _AppContext.Get_Supplier_fees_By_Criteria_InList_Adv(i_Params_Get_Supplier_fees_By_Criteria_InList.SUPPLIER_FEES_DESCRIPTION,i_Params_Get_Supplier_fees_By_Criteria_InList.SUPPLIER_ID_LIST,i_Params_Get_Supplier_fees_By_Criteria_InList.CURRENCY_ID_LIST,i_Params_Get_Supplier_fees_By_Criteria_InList.OWNER_ID,i_Params_Get_Supplier_fees_By_Criteria_InList.START_ROW,i_Params_Get_Supplier_fees_By_Criteria_InList.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -6212,8 +6244,6 @@ oSupplier_fees = new Supplier_fees();
 oTools.CopyPropValues(oDBEntry, oSupplier_fees);
 oSupplier_fees.My_Supplier = new Supplier();
 oTools.CopyPropValues(oDBEntry.My_Supplier, oSupplier_fees.My_Supplier);
-oSupplier_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oSupplier_fees.My_Fees);
 oSupplier_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oSupplier_fees.My_Currency);
 oList.Add(oSupplier_fees);
@@ -6232,7 +6262,6 @@ Supplier_fees oSupplier_fees = new Supplier_fees();
 long? tmp_TOTAL_COUNT = 0; 
 Params_Get_Supplier_fees_By_Where_InList_SP oParams_Get_Supplier_fees_By_Where_InList_SP = new Params_Get_Supplier_fees_By_Where_InList_SP();
 Params_Get_Supplier_By_SUPPLIER_ID oParams_Get_Supplier_By_SUPPLIER_ID = new Params_Get_Supplier_By_SUPPLIER_ID();
-Params_Get_Fees_By_FEES_ID oParams_Get_Fees_By_FEES_ID = new Params_Get_Fees_By_FEES_ID();
 Params_Get_Currency_By_CURRENCY_ID oParams_Get_Currency_By_CURRENCY_ID = new Params_Get_Currency_By_CURRENCY_ID();
 if (OnPreEvent_General != null){OnPreEvent_General("Get_Supplier_fees_By_Where_InList_Adv");}
 if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Supplier_fees_By_Where_InList_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Supplier_fees_By_Where_InList));}
@@ -6247,11 +6276,6 @@ if ( i_Params_Get_Supplier_fees_By_Where_InList.SUPPLIER_ID_LIST == null)
 i_Params_Get_Supplier_fees_By_Where_InList.SUPPLIER_ID_LIST = new List<Int32?>();
 }
 oParams_Get_Supplier_fees_By_Where_InList_SP.SUPPLIER_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Supplier_fees_By_Where_InList.SUPPLIER_ID_LIST);
-if ( i_Params_Get_Supplier_fees_By_Where_InList.FEES_ID_LIST == null)
-{
-i_Params_Get_Supplier_fees_By_Where_InList.FEES_ID_LIST = new List<Int32?>();
-}
-oParams_Get_Supplier_fees_By_Where_InList_SP.FEES_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Supplier_fees_By_Where_InList.FEES_ID_LIST);
 if ( i_Params_Get_Supplier_fees_By_Where_InList.CURRENCY_ID_LIST == null)
 {
 i_Params_Get_Supplier_fees_By_Where_InList.CURRENCY_ID_LIST = new List<Int32?>();
@@ -6260,7 +6284,7 @@ oParams_Get_Supplier_fees_By_Where_InList_SP.CURRENCY_ID_LIST = oTools.Convert_L
 oParams_Get_Supplier_fees_By_Where_InList_SP.START_ROW = i_Params_Get_Supplier_fees_By_Where_InList.START_ROW;
 oParams_Get_Supplier_fees_By_Where_InList_SP.END_ROW = i_Params_Get_Supplier_fees_By_Where_InList.END_ROW;
 oParams_Get_Supplier_fees_By_Where_InList_SP.TOTAL_COUNT = i_Params_Get_Supplier_fees_By_Where_InList.TOTAL_COUNT;
-List<DALC.Supplier_fees> oList_DBEntries = _AppContext.Get_Supplier_fees_By_Where_InList_Adv(i_Params_Get_Supplier_fees_By_Where_InList.SUPPLIER_FEES_DESCRIPTION,i_Params_Get_Supplier_fees_By_Where_InList.SUPPLIER_ID_LIST,i_Params_Get_Supplier_fees_By_Where_InList.FEES_ID_LIST,i_Params_Get_Supplier_fees_By_Where_InList.CURRENCY_ID_LIST,i_Params_Get_Supplier_fees_By_Where_InList.OWNER_ID,i_Params_Get_Supplier_fees_By_Where_InList.START_ROW,i_Params_Get_Supplier_fees_By_Where_InList.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Supplier_fees> oList_DBEntries = _AppContext.Get_Supplier_fees_By_Where_InList_Adv(i_Params_Get_Supplier_fees_By_Where_InList.SUPPLIER_FEES_DESCRIPTION,i_Params_Get_Supplier_fees_By_Where_InList.SUPPLIER_ID_LIST,i_Params_Get_Supplier_fees_By_Where_InList.CURRENCY_ID_LIST,i_Params_Get_Supplier_fees_By_Where_InList.OWNER_ID,i_Params_Get_Supplier_fees_By_Where_InList.START_ROW,i_Params_Get_Supplier_fees_By_Where_InList.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -6269,8 +6293,6 @@ oSupplier_fees = new Supplier_fees();
 oTools.CopyPropValues(oDBEntry, oSupplier_fees);
 oSupplier_fees.My_Supplier = new Supplier();
 oTools.CopyPropValues(oDBEntry.My_Supplier, oSupplier_fees.My_Supplier);
-oSupplier_fees.My_Fees = new Fees();
-oTools.CopyPropValues(oDBEntry.My_Fees, oSupplier_fees.My_Fees);
 oSupplier_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oSupplier_fees.My_Currency);
 oList.Add(oSupplier_fees);
