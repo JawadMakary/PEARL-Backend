@@ -1293,6 +1293,89 @@ return oResult_Get_Client_By_OWNER_ID_Adv;
 #endregion
 }
 #endregion
+#region Get_Client_fees_By_CLIENT_ID
+[HttpPost]
+[Route("Get_Client_fees_By_CLIENT_ID")]
+public Result_Get_Client_fees_By_CLIENT_ID Get_Client_fees_By_CLIENT_ID(Params_Get_Client_fees_By_CLIENT_ID i_Params_Get_Client_fees_By_CLIENT_ID)
+{
+#region Declaration And Initialization Section.
+List<Client_fees>  oReturnValue = new List<Client_fees> ();
+string i_Ticket = string.Empty;
+Result_Get_Client_fees_By_CLIENT_ID oResult_Get_Client_fees_By_CLIENT_ID = new Result_Get_Client_fees_By_CLIENT_ID();
+#endregion
+#region Body Section.
+try
+{
+
+// Ticket Checking
+//-------------------
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] != null)
+{
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] == "1")
+{
+if
+(
+(
+(HttpContext.Request.Query["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Query["Ticket"].ToString() != "")
+)
+||
+(
+(HttpContext.Request.Headers["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Headers["Ticket"].ToString() != "")
+)
+)
+{
+i_Ticket = string.IsNullOrEmpty(HttpContext.Request.Query["Ticket"])  ? "": HttpContext.Request.Query["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+i_Ticket = HttpContext.Request.Headers["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+throw new Exception("Missing Ticket");
+}
+}
+}
+else
+{
+throw new Exception("Invalid Ticket");
+}
+}
+}
+//-------------------
+
+BLC.BLC oBLC_Default = new BLC.BLC();
+BLCInitializer oBLCInitializer = new BLCInitializer();
+oBLCInitializer.UserID           = Convert.ToInt64(oBLC_Default.ResolveTicket(i_Ticket)["USER_ID"]);
+oBLCInitializer.OwnerID          = Convert.ToInt32(oBLC_Default.ResolveTicket(i_Ticket)["OWNER_ID"]);
+oBLCInitializer.ConnectionString = ConfigurationManager.AppSettings["CONN_STR"];
+oBLCInitializer.Messages_FilePath = ConfigurationManager.AppSettings["BLC_MESSAGES"];
+using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
+{
+oBLC.Monitor_API_Calls();
+oReturnValue = oBLC.Get_Client_fees_By_CLIENT_ID(i_Params_Get_Client_fees_By_CLIENT_ID);
+oResult_Get_Client_fees_By_CLIENT_ID.My_Result = oReturnValue;
+oResult_Get_Client_fees_By_CLIENT_ID.My_Params_Get_Client_fees_By_CLIENT_ID = i_Params_Get_Client_fees_By_CLIENT_ID;
+}
+}
+catch(Exception ex)
+{
+if (ex.GetType().FullName != "BLC.BLCException")
+{
+oResult_Get_Client_fees_By_CLIENT_ID.ExceptionMsg = string.Format("Get_Client_fees_By_CLIENT_ID : {0}", ex.Message);
+}
+else
+{
+oResult_Get_Client_fees_By_CLIENT_ID.ExceptionMsg = ex.Message;
+oResult_Get_Client_fees_By_CLIENT_ID.ExceptionCode = ((BLCException)ex).Code;
+}
+}
+#endregion
+#region Return Section
+return oResult_Get_Client_fees_By_CLIENT_ID;
+#endregion
+}
+#endregion
 #region Get_Client_fees_By_OWNER_ID_Adv
 [HttpPost]
 [Route("Get_Client_fees_By_OWNER_ID_Adv")]
@@ -2004,6 +2087,89 @@ return oResult_Get_Staff_By_OWNER_ID_Adv;
 #endregion
 }
 #endregion
+#region Get_Staff_By_STAFF_ID
+[HttpPost]
+[Route("Get_Staff_By_STAFF_ID")]
+public Result_Get_Staff_By_STAFF_ID Get_Staff_By_STAFF_ID(Params_Get_Staff_By_STAFF_ID i_Params_Get_Staff_By_STAFF_ID)
+{
+#region Declaration And Initialization Section.
+Staff oReturnValue = new Staff();
+string i_Ticket = string.Empty;
+Result_Get_Staff_By_STAFF_ID oResult_Get_Staff_By_STAFF_ID = new Result_Get_Staff_By_STAFF_ID();
+#endregion
+#region Body Section.
+try
+{
+
+// Ticket Checking
+//-------------------
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] != null)
+{
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] == "1")
+{
+if
+(
+(
+(HttpContext.Request.Query["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Query["Ticket"].ToString() != "")
+)
+||
+(
+(HttpContext.Request.Headers["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Headers["Ticket"].ToString() != "")
+)
+)
+{
+i_Ticket = string.IsNullOrEmpty(HttpContext.Request.Query["Ticket"])  ? "": HttpContext.Request.Query["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+i_Ticket = HttpContext.Request.Headers["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+throw new Exception("Missing Ticket");
+}
+}
+}
+else
+{
+throw new Exception("Invalid Ticket");
+}
+}
+}
+//-------------------
+
+BLC.BLC oBLC_Default = new BLC.BLC();
+BLCInitializer oBLCInitializer = new BLCInitializer();
+oBLCInitializer.UserID           = Convert.ToInt64(oBLC_Default.ResolveTicket(i_Ticket)["USER_ID"]);
+oBLCInitializer.OwnerID          = Convert.ToInt32(oBLC_Default.ResolveTicket(i_Ticket)["OWNER_ID"]);
+oBLCInitializer.ConnectionString = ConfigurationManager.AppSettings["CONN_STR"];
+oBLCInitializer.Messages_FilePath = ConfigurationManager.AppSettings["BLC_MESSAGES"];
+using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
+{
+oBLC.Monitor_API_Calls();
+oReturnValue = oBLC.Get_Staff_By_STAFF_ID(i_Params_Get_Staff_By_STAFF_ID);
+oResult_Get_Staff_By_STAFF_ID.My_Result = oReturnValue;
+oResult_Get_Staff_By_STAFF_ID.My_Params_Get_Staff_By_STAFF_ID = i_Params_Get_Staff_By_STAFF_ID;
+}
+}
+catch(Exception ex)
+{
+if (ex.GetType().FullName != "BLC.BLCException")
+{
+oResult_Get_Staff_By_STAFF_ID.ExceptionMsg = string.Format("Get_Staff_By_STAFF_ID : {0}", ex.Message);
+}
+else
+{
+oResult_Get_Staff_By_STAFF_ID.ExceptionMsg = ex.Message;
+oResult_Get_Staff_By_STAFF_ID.ExceptionCode = ((BLCException)ex).Code;
+}
+}
+#endregion
+#region Return Section
+return oResult_Get_Staff_By_STAFF_ID;
+#endregion
+}
+#endregion
 #region Get_Staff_fees_By_OWNER_ID_Adv
 [HttpPost]
 [Route("Get_Staff_fees_By_OWNER_ID_Adv")]
@@ -2080,6 +2246,89 @@ oResult_Get_Staff_fees_By_OWNER_ID_Adv.ExceptionCode = ((BLCException)ex).Code;
 #endregion
 #region Return Section
 return oResult_Get_Staff_fees_By_OWNER_ID_Adv;
+#endregion
+}
+#endregion
+#region Get_Staff_fees_By_STAFF_ID
+[HttpPost]
+[Route("Get_Staff_fees_By_STAFF_ID")]
+public Result_Get_Staff_fees_By_STAFF_ID Get_Staff_fees_By_STAFF_ID(Params_Get_Staff_fees_By_STAFF_ID i_Params_Get_Staff_fees_By_STAFF_ID)
+{
+#region Declaration And Initialization Section.
+List<Staff_fees>  oReturnValue = new List<Staff_fees> ();
+string i_Ticket = string.Empty;
+Result_Get_Staff_fees_By_STAFF_ID oResult_Get_Staff_fees_By_STAFF_ID = new Result_Get_Staff_fees_By_STAFF_ID();
+#endregion
+#region Body Section.
+try
+{
+
+// Ticket Checking
+//-------------------
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] != null)
+{
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] == "1")
+{
+if
+(
+(
+(HttpContext.Request.Query["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Query["Ticket"].ToString() != "")
+)
+||
+(
+(HttpContext.Request.Headers["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Headers["Ticket"].ToString() != "")
+)
+)
+{
+i_Ticket = string.IsNullOrEmpty(HttpContext.Request.Query["Ticket"])  ? "": HttpContext.Request.Query["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+i_Ticket = HttpContext.Request.Headers["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+throw new Exception("Missing Ticket");
+}
+}
+}
+else
+{
+throw new Exception("Invalid Ticket");
+}
+}
+}
+//-------------------
+
+BLC.BLC oBLC_Default = new BLC.BLC();
+BLCInitializer oBLCInitializer = new BLCInitializer();
+oBLCInitializer.UserID           = Convert.ToInt64(oBLC_Default.ResolveTicket(i_Ticket)["USER_ID"]);
+oBLCInitializer.OwnerID          = Convert.ToInt32(oBLC_Default.ResolveTicket(i_Ticket)["OWNER_ID"]);
+oBLCInitializer.ConnectionString = ConfigurationManager.AppSettings["CONN_STR"];
+oBLCInitializer.Messages_FilePath = ConfigurationManager.AppSettings["BLC_MESSAGES"];
+using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
+{
+oBLC.Monitor_API_Calls();
+oReturnValue = oBLC.Get_Staff_fees_By_STAFF_ID(i_Params_Get_Staff_fees_By_STAFF_ID);
+oResult_Get_Staff_fees_By_STAFF_ID.My_Result = oReturnValue;
+oResult_Get_Staff_fees_By_STAFF_ID.My_Params_Get_Staff_fees_By_STAFF_ID = i_Params_Get_Staff_fees_By_STAFF_ID;
+}
+}
+catch(Exception ex)
+{
+if (ex.GetType().FullName != "BLC.BLCException")
+{
+oResult_Get_Staff_fees_By_STAFF_ID.ExceptionMsg = string.Format("Get_Staff_fees_By_STAFF_ID : {0}", ex.Message);
+}
+else
+{
+oResult_Get_Staff_fees_By_STAFF_ID.ExceptionMsg = ex.Message;
+oResult_Get_Staff_fees_By_STAFF_ID.ExceptionCode = ((BLCException)ex).Code;
+}
+}
+#endregion
+#region Return Section
+return oResult_Get_Staff_fees_By_STAFF_ID;
 #endregion
 }
 #endregion
@@ -2162,6 +2411,89 @@ return oResult_Get_Supplier_By_OWNER_ID;
 #endregion
 }
 #endregion
+#region Get_Supplier_By_SUPPLIER_ID
+[HttpPost]
+[Route("Get_Supplier_By_SUPPLIER_ID")]
+public Result_Get_Supplier_By_SUPPLIER_ID Get_Supplier_By_SUPPLIER_ID(Params_Get_Supplier_By_SUPPLIER_ID i_Params_Get_Supplier_By_SUPPLIER_ID)
+{
+#region Declaration And Initialization Section.
+Supplier oReturnValue = new Supplier();
+string i_Ticket = string.Empty;
+Result_Get_Supplier_By_SUPPLIER_ID oResult_Get_Supplier_By_SUPPLIER_ID = new Result_Get_Supplier_By_SUPPLIER_ID();
+#endregion
+#region Body Section.
+try
+{
+
+// Ticket Checking
+//-------------------
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] != null)
+{
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] == "1")
+{
+if
+(
+(
+(HttpContext.Request.Query["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Query["Ticket"].ToString() != "")
+)
+||
+(
+(HttpContext.Request.Headers["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Headers["Ticket"].ToString() != "")
+)
+)
+{
+i_Ticket = string.IsNullOrEmpty(HttpContext.Request.Query["Ticket"])  ? "": HttpContext.Request.Query["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+i_Ticket = HttpContext.Request.Headers["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+throw new Exception("Missing Ticket");
+}
+}
+}
+else
+{
+throw new Exception("Invalid Ticket");
+}
+}
+}
+//-------------------
+
+BLC.BLC oBLC_Default = new BLC.BLC();
+BLCInitializer oBLCInitializer = new BLCInitializer();
+oBLCInitializer.UserID           = Convert.ToInt64(oBLC_Default.ResolveTicket(i_Ticket)["USER_ID"]);
+oBLCInitializer.OwnerID          = Convert.ToInt32(oBLC_Default.ResolveTicket(i_Ticket)["OWNER_ID"]);
+oBLCInitializer.ConnectionString = ConfigurationManager.AppSettings["CONN_STR"];
+oBLCInitializer.Messages_FilePath = ConfigurationManager.AppSettings["BLC_MESSAGES"];
+using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
+{
+oBLC.Monitor_API_Calls();
+oReturnValue = oBLC.Get_Supplier_By_SUPPLIER_ID(i_Params_Get_Supplier_By_SUPPLIER_ID);
+oResult_Get_Supplier_By_SUPPLIER_ID.My_Result = oReturnValue;
+oResult_Get_Supplier_By_SUPPLIER_ID.My_Params_Get_Supplier_By_SUPPLIER_ID = i_Params_Get_Supplier_By_SUPPLIER_ID;
+}
+}
+catch(Exception ex)
+{
+if (ex.GetType().FullName != "BLC.BLCException")
+{
+oResult_Get_Supplier_By_SUPPLIER_ID.ExceptionMsg = string.Format("Get_Supplier_By_SUPPLIER_ID : {0}", ex.Message);
+}
+else
+{
+oResult_Get_Supplier_By_SUPPLIER_ID.ExceptionMsg = ex.Message;
+oResult_Get_Supplier_By_SUPPLIER_ID.ExceptionCode = ((BLCException)ex).Code;
+}
+}
+#endregion
+#region Return Section
+return oResult_Get_Supplier_By_SUPPLIER_ID;
+#endregion
+}
+#endregion
 #region Get_Supplier_fees_By_OWNER_ID_Adv
 [HttpPost]
 [Route("Get_Supplier_fees_By_OWNER_ID_Adv")]
@@ -2238,6 +2570,89 @@ oResult_Get_Supplier_fees_By_OWNER_ID_Adv.ExceptionCode = ((BLCException)ex).Cod
 #endregion
 #region Return Section
 return oResult_Get_Supplier_fees_By_OWNER_ID_Adv;
+#endregion
+}
+#endregion
+#region Get_Supplier_fees_By_SUPPLIER_ID
+[HttpPost]
+[Route("Get_Supplier_fees_By_SUPPLIER_ID")]
+public Result_Get_Supplier_fees_By_SUPPLIER_ID Get_Supplier_fees_By_SUPPLIER_ID(Params_Get_Supplier_fees_By_SUPPLIER_ID i_Params_Get_Supplier_fees_By_SUPPLIER_ID)
+{
+#region Declaration And Initialization Section.
+List<Supplier_fees>  oReturnValue = new List<Supplier_fees> ();
+string i_Ticket = string.Empty;
+Result_Get_Supplier_fees_By_SUPPLIER_ID oResult_Get_Supplier_fees_By_SUPPLIER_ID = new Result_Get_Supplier_fees_By_SUPPLIER_ID();
+#endregion
+#region Body Section.
+try
+{
+
+// Ticket Checking
+//-------------------
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] != null)
+{
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] == "1")
+{
+if
+(
+(
+(HttpContext.Request.Query["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Query["Ticket"].ToString() != "")
+)
+||
+(
+(HttpContext.Request.Headers["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Headers["Ticket"].ToString() != "")
+)
+)
+{
+i_Ticket = string.IsNullOrEmpty(HttpContext.Request.Query["Ticket"])  ? "": HttpContext.Request.Query["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+i_Ticket = HttpContext.Request.Headers["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+throw new Exception("Missing Ticket");
+}
+}
+}
+else
+{
+throw new Exception("Invalid Ticket");
+}
+}
+}
+//-------------------
+
+BLC.BLC oBLC_Default = new BLC.BLC();
+BLCInitializer oBLCInitializer = new BLCInitializer();
+oBLCInitializer.UserID           = Convert.ToInt64(oBLC_Default.ResolveTicket(i_Ticket)["USER_ID"]);
+oBLCInitializer.OwnerID          = Convert.ToInt32(oBLC_Default.ResolveTicket(i_Ticket)["OWNER_ID"]);
+oBLCInitializer.ConnectionString = ConfigurationManager.AppSettings["CONN_STR"];
+oBLCInitializer.Messages_FilePath = ConfigurationManager.AppSettings["BLC_MESSAGES"];
+using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
+{
+oBLC.Monitor_API_Calls();
+oReturnValue = oBLC.Get_Supplier_fees_By_SUPPLIER_ID(i_Params_Get_Supplier_fees_By_SUPPLIER_ID);
+oResult_Get_Supplier_fees_By_SUPPLIER_ID.My_Result = oReturnValue;
+oResult_Get_Supplier_fees_By_SUPPLIER_ID.My_Params_Get_Supplier_fees_By_SUPPLIER_ID = i_Params_Get_Supplier_fees_By_SUPPLIER_ID;
+}
+}
+catch(Exception ex)
+{
+if (ex.GetType().FullName != "BLC.BLCException")
+{
+oResult_Get_Supplier_fees_By_SUPPLIER_ID.ExceptionMsg = string.Format("Get_Supplier_fees_By_SUPPLIER_ID : {0}", ex.Message);
+}
+else
+{
+oResult_Get_Supplier_fees_By_SUPPLIER_ID.ExceptionMsg = ex.Message;
+oResult_Get_Supplier_fees_By_SUPPLIER_ID.ExceptionCode = ((BLCException)ex).Code;
+}
+}
+#endregion
+#region Return Section
+return oResult_Get_Supplier_fees_By_SUPPLIER_ID;
 #endregion
 }
 #endregion
@@ -2868,6 +3283,15 @@ public Params_Get_Client_By_OWNER_ID My_Params_Get_Client_By_OWNER_ID { get; set
 #endregion
 }
 #endregion
+#region Result_Get_Client_fees_By_CLIENT_ID
+public partial class Result_Get_Client_fees_By_CLIENT_ID : Action_Result
+{
+#region Properties.
+public List<Client_fees>  My_Result { get; set; }
+public Params_Get_Client_fees_By_CLIENT_ID My_Params_Get_Client_fees_By_CLIENT_ID { get; set; }
+#endregion
+}
+#endregion
 #region Result_Get_Client_fees_By_OWNER_ID_Adv
 public partial class Result_Get_Client_fees_By_OWNER_ID_Adv : Action_Result
 {
@@ -2949,12 +3373,30 @@ public Params_Get_Staff_By_OWNER_ID My_Params_Get_Staff_By_OWNER_ID { get; set; 
 #endregion
 }
 #endregion
+#region Result_Get_Staff_By_STAFF_ID
+public partial class Result_Get_Staff_By_STAFF_ID : Action_Result
+{
+#region Properties.
+public Staff My_Result { get; set; }
+public Params_Get_Staff_By_STAFF_ID My_Params_Get_Staff_By_STAFF_ID { get; set; }
+#endregion
+}
+#endregion
 #region Result_Get_Staff_fees_By_OWNER_ID_Adv
 public partial class Result_Get_Staff_fees_By_OWNER_ID_Adv : Action_Result
 {
 #region Properties.
 public List<Staff_fees>  My_Result { get; set; }
 public Params_Get_Staff_fees_By_OWNER_ID My_Params_Get_Staff_fees_By_OWNER_ID { get; set; }
+#endregion
+}
+#endregion
+#region Result_Get_Staff_fees_By_STAFF_ID
+public partial class Result_Get_Staff_fees_By_STAFF_ID : Action_Result
+{
+#region Properties.
+public List<Staff_fees>  My_Result { get; set; }
+public Params_Get_Staff_fees_By_STAFF_ID My_Params_Get_Staff_fees_By_STAFF_ID { get; set; }
 #endregion
 }
 #endregion
@@ -2967,12 +3409,30 @@ public Params_Get_Supplier_By_OWNER_ID My_Params_Get_Supplier_By_OWNER_ID { get;
 #endregion
 }
 #endregion
+#region Result_Get_Supplier_By_SUPPLIER_ID
+public partial class Result_Get_Supplier_By_SUPPLIER_ID : Action_Result
+{
+#region Properties.
+public Supplier My_Result { get; set; }
+public Params_Get_Supplier_By_SUPPLIER_ID My_Params_Get_Supplier_By_SUPPLIER_ID { get; set; }
+#endregion
+}
+#endregion
 #region Result_Get_Supplier_fees_By_OWNER_ID_Adv
 public partial class Result_Get_Supplier_fees_By_OWNER_ID_Adv : Action_Result
 {
 #region Properties.
 public List<Supplier_fees>  My_Result { get; set; }
 public Params_Get_Supplier_fees_By_OWNER_ID My_Params_Get_Supplier_fees_By_OWNER_ID { get; set; }
+#endregion
+}
+#endregion
+#region Result_Get_Supplier_fees_By_SUPPLIER_ID
+public partial class Result_Get_Supplier_fees_By_SUPPLIER_ID : Action_Result
+{
+#region Properties.
+public List<Supplier_fees>  My_Result { get; set; }
+public Params_Get_Supplier_fees_By_SUPPLIER_ID My_Params_Get_Supplier_fees_By_SUPPLIER_ID { get; set; }
 #endregion
 }
 #endregion
