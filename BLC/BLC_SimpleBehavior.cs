@@ -40,6 +40,7 @@ private Method_run _Method_run;
 private Owner _Owner;
 private Package _Package;
 private Person _Person;
+private Registration _Registration;
 private Session _Session;
 private Staff _Staff;
 private Staff_fees _Staff_fees;
@@ -78,6 +79,8 @@ private bool _Stop_Edit_Package_Execution;
 private bool _Stop_Delete_Package_Execution;
 private bool _Stop_Edit_Person_Execution;
 private bool _Stop_Delete_Person_Execution;
+private bool _Stop_Edit_Registration_Execution;
+private bool _Stop_Delete_Registration_Execution;
 private bool _Stop_Edit_Session_Execution;
 private bool _Stop_Delete_Session_Execution;
 private bool _Stop_Edit_Staff_Execution;
@@ -286,6 +289,19 @@ oTools.CopyPropValues(oDBEntry, oPerson);
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Person_By_PERSON_ID");}
 return oPerson;
+}
+public Registration Get_Registration_By_REGISTRATION_ID(Params_Get_Registration_By_REGISTRATION_ID i_Params_Get_Registration_By_REGISTRATION_ID)
+{
+Registration oRegistration = null;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registration_By_REGISTRATION_ID");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registration_By_REGISTRATION_ID",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registration_By_REGISTRATION_ID));}
+#region Body Section.
+DALC.Registration oDBEntry = _AppContext.Get_Registration_By_REGISTRATION_ID(i_Params_Get_Registration_By_REGISTRATION_ID.REGISTRATION_ID);
+oRegistration = new Registration();
+oTools.CopyPropValues(oDBEntry, oRegistration);
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registration_By_REGISTRATION_ID");}
+return oRegistration;
 }
 public Session Get_Session_By_SESSION_ID(Params_Get_Session_By_SESSION_ID i_Params_Get_Session_By_SESSION_ID)
 {
@@ -693,6 +709,28 @@ oList.Add(oPerson);
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Person_By_PERSON_ID_List");}
+return oList;
+}
+public List<Registration> Get_Registration_By_REGISTRATION_ID_List(Params_Get_Registration_By_REGISTRATION_ID_List i_Params_Get_Registration_By_REGISTRATION_ID_List)
+{
+Registration oRegistration = null;
+List<Registration> oList = new List<Registration>();
+Params_Get_Registration_By_REGISTRATION_ID_List_SP oParams_Get_Registration_By_REGISTRATION_ID_List_SP = new Params_Get_Registration_By_REGISTRATION_ID_List_SP();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registration_By_REGISTRATION_ID_List");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registration_By_REGISTRATION_ID_List",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registration_By_REGISTRATION_ID_List));}
+#region Body Section.
+List<DALC.Registration> oList_DBEntries = _AppContext.Get_Registration_By_REGISTRATION_ID_List(i_Params_Get_Registration_By_REGISTRATION_ID_List.REGISTRATION_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistration = new Registration();
+oTools.CopyPropValues(oDBEntry, oRegistration);
+oList.Add(oRegistration);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registration_By_REGISTRATION_ID_List");}
 return oList;
 }
 public List<Session> Get_Session_By_SESSION_ID_List(Params_Get_Session_By_SESSION_ID_List i_Params_Get_Session_By_SESSION_ID_List)
@@ -1119,6 +1157,27 @@ oList.Add(oClient_fees);
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Client_fees_By_PACKAGE_ID");}
+return oList;
+}
+public List<Client_fees> Get_Client_fees_By_REGISTRATION_ID(Params_Get_Client_fees_By_REGISTRATION_ID i_Params_Get_Client_fees_By_REGISTRATION_ID)
+{
+List<Client_fees> oList = new List<Client_fees>();
+Client_fees oClient_fees = new Client_fees();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Client_fees_By_REGISTRATION_ID");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Client_fees_By_REGISTRATION_ID",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Client_fees_By_REGISTRATION_ID));}
+#region Body Section.
+List<DALC.Client_fees> oList_DBEntries = _AppContext.Get_Client_fees_By_REGISTRATION_ID(i_Params_Get_Client_fees_By_REGISTRATION_ID.REGISTRATION_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oClient_fees = new Client_fees();
+oTools.CopyPropValues(oDBEntry, oClient_fees);
+oList.Add(oClient_fees);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Client_fees_By_REGISTRATION_ID");}
 return oList;
 }
 public List<Contact> Get_Contact_By_PERSON_ID(Params_Get_Contact_By_PERSON_ID i_Params_Get_Contact_By_PERSON_ID)
@@ -1560,6 +1619,90 @@ oList.Add(oPerson);
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Person_By_OWNER_ID");}
+return oList;
+}
+public List<Registration> Get_Registration_By_OWNER_ID(Params_Get_Registration_By_OWNER_ID i_Params_Get_Registration_By_OWNER_ID)
+{
+List<Registration> oList = new List<Registration>();
+Registration oRegistration = new Registration();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registration_By_OWNER_ID");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registration_By_OWNER_ID",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registration_By_OWNER_ID));}
+#region Body Section.
+List<DALC.Registration> oList_DBEntries = _AppContext.Get_Registration_By_OWNER_ID(i_Params_Get_Registration_By_OWNER_ID.OWNER_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistration = new Registration();
+oTools.CopyPropValues(oDBEntry, oRegistration);
+oList.Add(oRegistration);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registration_By_OWNER_ID");}
+return oList;
+}
+public List<Registration> Get_Registration_By_CLIENT_ID(Params_Get_Registration_By_CLIENT_ID i_Params_Get_Registration_By_CLIENT_ID)
+{
+List<Registration> oList = new List<Registration>();
+Registration oRegistration = new Registration();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registration_By_CLIENT_ID");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registration_By_CLIENT_ID",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registration_By_CLIENT_ID));}
+#region Body Section.
+List<DALC.Registration> oList_DBEntries = _AppContext.Get_Registration_By_CLIENT_ID(i_Params_Get_Registration_By_CLIENT_ID.CLIENT_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistration = new Registration();
+oTools.CopyPropValues(oDBEntry, oRegistration);
+oList.Add(oRegistration);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registration_By_CLIENT_ID");}
+return oList;
+}
+public List<Registration> Get_Registration_By_PACKAGE_ID(Params_Get_Registration_By_PACKAGE_ID i_Params_Get_Registration_By_PACKAGE_ID)
+{
+List<Registration> oList = new List<Registration>();
+Registration oRegistration = new Registration();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registration_By_PACKAGE_ID");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registration_By_PACKAGE_ID",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registration_By_PACKAGE_ID));}
+#region Body Section.
+List<DALC.Registration> oList_DBEntries = _AppContext.Get_Registration_By_PACKAGE_ID(i_Params_Get_Registration_By_PACKAGE_ID.PACKAGE_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistration = new Registration();
+oTools.CopyPropValues(oDBEntry, oRegistration);
+oList.Add(oRegistration);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registration_By_PACKAGE_ID");}
+return oList;
+}
+public List<Registration> Get_Registration_By_CURRENCY_ID(Params_Get_Registration_By_CURRENCY_ID i_Params_Get_Registration_By_CURRENCY_ID)
+{
+List<Registration> oList = new List<Registration>();
+Registration oRegistration = new Registration();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registration_By_CURRENCY_ID");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registration_By_CURRENCY_ID",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registration_By_CURRENCY_ID));}
+#region Body Section.
+List<DALC.Registration> oList_DBEntries = _AppContext.Get_Registration_By_CURRENCY_ID(i_Params_Get_Registration_By_CURRENCY_ID.CURRENCY_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistration = new Registration();
+oTools.CopyPropValues(oDBEntry, oRegistration);
+oList.Add(oRegistration);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registration_By_CURRENCY_ID");}
 return oList;
 }
 public List<Session> Get_Session_By_OWNER_ID(Params_Get_Session_By_OWNER_ID i_Params_Get_Session_By_OWNER_ID)
@@ -2066,6 +2209,27 @@ oList.Add(oClient_fees);
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Client_fees_By_PACKAGE_ID_List");}
 return oList;
 }
+public List<Client_fees> Get_Client_fees_By_REGISTRATION_ID_List(Params_Get_Client_fees_By_REGISTRATION_ID_List i_Params_Get_Client_fees_By_REGISTRATION_ID_List)
+{
+List<Client_fees> oList = new List<Client_fees>();
+Client_fees oClient_fees = new Client_fees();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Client_fees_By_REGISTRATION_ID_List");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Client_fees_By_REGISTRATION_ID_List",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Client_fees_By_REGISTRATION_ID_List));}
+#region Body Section.
+List<DALC.Client_fees> oList_DBEntries = _AppContext.Get_Client_fees_By_REGISTRATION_ID_List(i_Params_Get_Client_fees_By_REGISTRATION_ID_List.REGISTRATION_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oClient_fees = new Client_fees();
+oTools.CopyPropValues(oDBEntry, oClient_fees);
+oList.Add(oClient_fees);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Client_fees_By_REGISTRATION_ID_List");}
+return oList;
+}
 public List<Contact> Get_Contact_By_PERSON_ID_List(Params_Get_Contact_By_PERSON_ID_List i_Params_Get_Contact_By_PERSON_ID_List)
 {
 List<Contact> oList = new List<Contact>();
@@ -2190,6 +2354,69 @@ oList.Add(oPackage);
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Package_By_CURRENCY_ID_List");}
+return oList;
+}
+public List<Registration> Get_Registration_By_CLIENT_ID_List(Params_Get_Registration_By_CLIENT_ID_List i_Params_Get_Registration_By_CLIENT_ID_List)
+{
+List<Registration> oList = new List<Registration>();
+Registration oRegistration = new Registration();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registration_By_CLIENT_ID_List");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registration_By_CLIENT_ID_List",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registration_By_CLIENT_ID_List));}
+#region Body Section.
+List<DALC.Registration> oList_DBEntries = _AppContext.Get_Registration_By_CLIENT_ID_List(i_Params_Get_Registration_By_CLIENT_ID_List.CLIENT_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistration = new Registration();
+oTools.CopyPropValues(oDBEntry, oRegistration);
+oList.Add(oRegistration);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registration_By_CLIENT_ID_List");}
+return oList;
+}
+public List<Registration> Get_Registration_By_PACKAGE_ID_List(Params_Get_Registration_By_PACKAGE_ID_List i_Params_Get_Registration_By_PACKAGE_ID_List)
+{
+List<Registration> oList = new List<Registration>();
+Registration oRegistration = new Registration();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registration_By_PACKAGE_ID_List");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registration_By_PACKAGE_ID_List",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registration_By_PACKAGE_ID_List));}
+#region Body Section.
+List<DALC.Registration> oList_DBEntries = _AppContext.Get_Registration_By_PACKAGE_ID_List(i_Params_Get_Registration_By_PACKAGE_ID_List.PACKAGE_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistration = new Registration();
+oTools.CopyPropValues(oDBEntry, oRegistration);
+oList.Add(oRegistration);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registration_By_PACKAGE_ID_List");}
+return oList;
+}
+public List<Registration> Get_Registration_By_CURRENCY_ID_List(Params_Get_Registration_By_CURRENCY_ID_List i_Params_Get_Registration_By_CURRENCY_ID_List)
+{
+List<Registration> oList = new List<Registration>();
+Registration oRegistration = new Registration();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registration_By_CURRENCY_ID_List");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registration_By_CURRENCY_ID_List",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registration_By_CURRENCY_ID_List));}
+#region Body Section.
+List<DALC.Registration> oList_DBEntries = _AppContext.Get_Registration_By_CURRENCY_ID_List(i_Params_Get_Registration_By_CURRENCY_ID_List.CURRENCY_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistration = new Registration();
+oTools.CopyPropValues(oDBEntry, oRegistration);
+oList.Add(oRegistration);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registration_By_CURRENCY_ID_List");}
 return oList;
 }
 public List<Session> Get_Session_By_PACKAGE_ID_List(Params_Get_Session_By_PACKAGE_ID_List i_Params_Get_Session_By_PACKAGE_ID_List)
@@ -4415,10 +4642,15 @@ if ( i_Params_Get_Client_fees_By_Criteria_InList.PACKAGE_ID_LIST == null)
 i_Params_Get_Client_fees_By_Criteria_InList.PACKAGE_ID_LIST = new List<Int32?>();
 }
 oParams_Get_Client_fees_By_Criteria_InList_SP.PACKAGE_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Client_fees_By_Criteria_InList.PACKAGE_ID_LIST);
+if ( i_Params_Get_Client_fees_By_Criteria_InList.REGISTRATION_ID_LIST == null)
+{
+i_Params_Get_Client_fees_By_Criteria_InList.REGISTRATION_ID_LIST = new List<Int32?>();
+}
+oParams_Get_Client_fees_By_Criteria_InList_SP.REGISTRATION_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Client_fees_By_Criteria_InList.REGISTRATION_ID_LIST);
 oParams_Get_Client_fees_By_Criteria_InList_SP.START_ROW = i_Params_Get_Client_fees_By_Criteria_InList.START_ROW;
 oParams_Get_Client_fees_By_Criteria_InList_SP.END_ROW = i_Params_Get_Client_fees_By_Criteria_InList.END_ROW;
 oParams_Get_Client_fees_By_Criteria_InList_SP.TOTAL_COUNT = i_Params_Get_Client_fees_By_Criteria_InList.TOTAL_COUNT;
-List<DALC.Client_fees> oList_DBEntries = _AppContext.Get_Client_fees_By_Criteria_InList(i_Params_Get_Client_fees_By_Criteria_InList.CLIENT_FEES_DESCRIPTION,i_Params_Get_Client_fees_By_Criteria_InList.CLIENT_ID_LIST,i_Params_Get_Client_fees_By_Criteria_InList.CURRENCY_ID_LIST,i_Params_Get_Client_fees_By_Criteria_InList.PACKAGE_ID_LIST,i_Params_Get_Client_fees_By_Criteria_InList.OWNER_ID,i_Params_Get_Client_fees_By_Criteria_InList.START_ROW,i_Params_Get_Client_fees_By_Criteria_InList.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Client_fees> oList_DBEntries = _AppContext.Get_Client_fees_By_Criteria_InList(i_Params_Get_Client_fees_By_Criteria_InList.CLIENT_FEES_DESCRIPTION,i_Params_Get_Client_fees_By_Criteria_InList.CLIENT_ID_LIST,i_Params_Get_Client_fees_By_Criteria_InList.CURRENCY_ID_LIST,i_Params_Get_Client_fees_By_Criteria_InList.PACKAGE_ID_LIST,i_Params_Get_Client_fees_By_Criteria_InList.REGISTRATION_ID_LIST,i_Params_Get_Client_fees_By_Criteria_InList.OWNER_ID,i_Params_Get_Client_fees_By_Criteria_InList.START_ROW,i_Params_Get_Client_fees_By_Criteria_InList.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -4463,10 +4695,15 @@ if ( i_Params_Get_Client_fees_By_Where_InList.PACKAGE_ID_LIST == null)
 i_Params_Get_Client_fees_By_Where_InList.PACKAGE_ID_LIST = new List<Int32?>();
 }
 oParams_Get_Client_fees_By_Where_InList_SP.PACKAGE_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Client_fees_By_Where_InList.PACKAGE_ID_LIST);
+if ( i_Params_Get_Client_fees_By_Where_InList.REGISTRATION_ID_LIST == null)
+{
+i_Params_Get_Client_fees_By_Where_InList.REGISTRATION_ID_LIST = new List<Int32?>();
+}
+oParams_Get_Client_fees_By_Where_InList_SP.REGISTRATION_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Client_fees_By_Where_InList.REGISTRATION_ID_LIST);
 oParams_Get_Client_fees_By_Where_InList_SP.START_ROW = i_Params_Get_Client_fees_By_Where_InList.START_ROW;
 oParams_Get_Client_fees_By_Where_InList_SP.END_ROW = i_Params_Get_Client_fees_By_Where_InList.END_ROW;
 oParams_Get_Client_fees_By_Where_InList_SP.TOTAL_COUNT = i_Params_Get_Client_fees_By_Where_InList.TOTAL_COUNT;
-List<DALC.Client_fees> oList_DBEntries = _AppContext.Get_Client_fees_By_Where_InList(i_Params_Get_Client_fees_By_Where_InList.CLIENT_FEES_DESCRIPTION,i_Params_Get_Client_fees_By_Where_InList.CLIENT_ID_LIST,i_Params_Get_Client_fees_By_Where_InList.CURRENCY_ID_LIST,i_Params_Get_Client_fees_By_Where_InList.PACKAGE_ID_LIST,i_Params_Get_Client_fees_By_Where_InList.OWNER_ID,i_Params_Get_Client_fees_By_Where_InList.START_ROW,i_Params_Get_Client_fees_By_Where_InList.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Client_fees> oList_DBEntries = _AppContext.Get_Client_fees_By_Where_InList(i_Params_Get_Client_fees_By_Where_InList.CLIENT_FEES_DESCRIPTION,i_Params_Get_Client_fees_By_Where_InList.CLIENT_ID_LIST,i_Params_Get_Client_fees_By_Where_InList.CURRENCY_ID_LIST,i_Params_Get_Client_fees_By_Where_InList.PACKAGE_ID_LIST,i_Params_Get_Client_fees_By_Where_InList.REGISTRATION_ID_LIST,i_Params_Get_Client_fees_By_Where_InList.OWNER_ID,i_Params_Get_Client_fees_By_Where_InList.START_ROW,i_Params_Get_Client_fees_By_Where_InList.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -6410,6 +6647,42 @@ throw new Exception(ex.Message);
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Delete_Person");}
 }
+public void Delete_Registration(Params_Delete_Registration i_Params_Delete_Registration)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Registration");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Delete_Registration",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Delete_Registration));}
+#region Body Section.
+try
+{
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Delete_Registration_Execution)
+{
+_Stop_Delete_Registration_Execution = false;
+return;
+}
+_AppContext.Delete_Registration(i_Params_Delete_Registration.REGISTRATION_ID);
+oScope.Complete();
+}
+}
+catch (BLCException blcex)
+{
+throw new BLCException(blcex.Message);
+}
+catch (Exception ex)
+{
+if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+{
+throw new BLCException("Cannot be deleted because of related records in other tables");
+}
+else
+{
+throw new Exception(ex.Message);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Registration");}
+}
 public void Delete_Session(Params_Delete_Session i_Params_Delete_Session)
 {
 Params_Get_Session_By_SESSION_ID oParams_Get_Session_By_SESSION_ID = new Params_Get_Session_By_SESSION_ID();
@@ -7193,6 +7466,42 @@ throw new Exception(ex.Message);
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Delete_Client_fees_By_PACKAGE_ID");}
+}
+public void Delete_Client_fees_By_REGISTRATION_ID(Params_Delete_Client_fees_By_REGISTRATION_ID i_Params_Delete_Client_fees_By_REGISTRATION_ID)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Client_fees_By_REGISTRATION_ID");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Delete_Client_fees_By_REGISTRATION_ID",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Delete_Client_fees_By_REGISTRATION_ID));}
+#region Body Section.
+try
+{
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Delete_Client_fees_Execution)
+{
+_Stop_Delete_Client_fees_Execution = false;
+return;
+}
+_AppContext.Delete_Client_fees_By_REGISTRATION_ID(i_Params_Delete_Client_fees_By_REGISTRATION_ID.REGISTRATION_ID);
+oScope.Complete();
+}
+}
+catch (BLCException blcex)
+{
+throw new BLCException(blcex.Message);
+}
+catch (Exception ex)
+{
+if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+{
+throw new BLCException("Cannot be deleted because of related records in other tables");
+}
+else
+{
+throw new Exception(ex.Message);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Client_fees_By_REGISTRATION_ID");}
 }
 public void Delete_Contact_By_PERSON_ID(Params_Delete_Contact_By_PERSON_ID i_Params_Delete_Contact_By_PERSON_ID)
 {
@@ -7992,6 +8301,150 @@ throw new Exception(ex.Message);
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Delete_Person_By_OWNER_ID");}
 }
+public void Delete_Registration_By_OWNER_ID(Params_Delete_Registration_By_OWNER_ID i_Params_Delete_Registration_By_OWNER_ID)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Registration_By_OWNER_ID");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Delete_Registration_By_OWNER_ID",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Delete_Registration_By_OWNER_ID));}
+#region Body Section.
+try
+{
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Delete_Registration_Execution)
+{
+_Stop_Delete_Registration_Execution = false;
+return;
+}
+_AppContext.Delete_Registration_By_OWNER_ID(i_Params_Delete_Registration_By_OWNER_ID.OWNER_ID);
+oScope.Complete();
+}
+}
+catch (BLCException blcex)
+{
+throw new BLCException(blcex.Message);
+}
+catch (Exception ex)
+{
+if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+{
+throw new BLCException("Cannot be deleted because of related records in other tables");
+}
+else
+{
+throw new Exception(ex.Message);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Registration_By_OWNER_ID");}
+}
+public void Delete_Registration_By_CLIENT_ID(Params_Delete_Registration_By_CLIENT_ID i_Params_Delete_Registration_By_CLIENT_ID)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Registration_By_CLIENT_ID");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Delete_Registration_By_CLIENT_ID",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Delete_Registration_By_CLIENT_ID));}
+#region Body Section.
+try
+{
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Delete_Registration_Execution)
+{
+_Stop_Delete_Registration_Execution = false;
+return;
+}
+_AppContext.Delete_Registration_By_CLIENT_ID(i_Params_Delete_Registration_By_CLIENT_ID.CLIENT_ID);
+oScope.Complete();
+}
+}
+catch (BLCException blcex)
+{
+throw new BLCException(blcex.Message);
+}
+catch (Exception ex)
+{
+if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+{
+throw new BLCException("Cannot be deleted because of related records in other tables");
+}
+else
+{
+throw new Exception(ex.Message);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Registration_By_CLIENT_ID");}
+}
+public void Delete_Registration_By_PACKAGE_ID(Params_Delete_Registration_By_PACKAGE_ID i_Params_Delete_Registration_By_PACKAGE_ID)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Registration_By_PACKAGE_ID");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Delete_Registration_By_PACKAGE_ID",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Delete_Registration_By_PACKAGE_ID));}
+#region Body Section.
+try
+{
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Delete_Registration_Execution)
+{
+_Stop_Delete_Registration_Execution = false;
+return;
+}
+_AppContext.Delete_Registration_By_PACKAGE_ID(i_Params_Delete_Registration_By_PACKAGE_ID.PACKAGE_ID);
+oScope.Complete();
+}
+}
+catch (BLCException blcex)
+{
+throw new BLCException(blcex.Message);
+}
+catch (Exception ex)
+{
+if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+{
+throw new BLCException("Cannot be deleted because of related records in other tables");
+}
+else
+{
+throw new Exception(ex.Message);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Registration_By_PACKAGE_ID");}
+}
+public void Delete_Registration_By_CURRENCY_ID(Params_Delete_Registration_By_CURRENCY_ID i_Params_Delete_Registration_By_CURRENCY_ID)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Registration_By_CURRENCY_ID");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Delete_Registration_By_CURRENCY_ID",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Delete_Registration_By_CURRENCY_ID));}
+#region Body Section.
+try
+{
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Delete_Registration_Execution)
+{
+_Stop_Delete_Registration_Execution = false;
+return;
+}
+_AppContext.Delete_Registration_By_CURRENCY_ID(i_Params_Delete_Registration_By_CURRENCY_ID.CURRENCY_ID);
+oScope.Complete();
+}
+}
+catch (BLCException blcex)
+{
+throw new BLCException(blcex.Message);
+}
+catch (Exception ex)
+{
+if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+{
+throw new BLCException("Cannot be deleted because of related records in other tables");
+}
+else
+{
+throw new Exception(ex.Message);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Registration_By_CURRENCY_ID");}
+}
 public void Delete_Session_By_OWNER_ID(Params_Delete_Session_By_OWNER_ID i_Params_Delete_Session_By_OWNER_ID)
 {
 Params_Get_Session_By_OWNER_ID oParams_Get_Session_By_OWNER_ID = new Params_Get_Session_By_OWNER_ID();
@@ -8712,6 +9165,7 @@ i_Client_fees.CLIENT_FEES_ID
 ,i_Client_fees.CURRENCY_ID
 ,i_Client_fees.PACKAGE_ID
 ,i_Client_fees.CLIENT_FEES_AMOUNT
+,i_Client_fees.REGISTRATION_ID
 );
 oScope.Complete();
 }
@@ -9140,6 +9594,46 @@ oScope.Complete();
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Edit_Person");}
+}
+public void Edit_Registration(Registration i_Registration) 
+{
+Enum_EditMode oEditMode_Flag = Enum_EditMode.Update;
+if (i_Registration.REGISTRATION_ID == -1)
+{
+oEditMode_Flag = Enum_EditMode.Add;
+}
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Registration");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Edit_Registration",Newtonsoft.Json.JsonConvert.SerializeObject(i_Registration));}
+#region Body Section.
+if ((i_Registration.REGISTRATION_ID == null) || (i_Registration.REGISTRATION_ID == 0)) { throw new BLCException("Missing primary key while calling Edit_Registration"); }
+i_Registration.ENTRY_USER_ID = this.UserID;
+i_Registration.ENTRY_DATE    = oTools.GetDateString(DateTime.Today);
+i_Registration.OWNER_ID      = this.OwnerID;
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Edit_Registration_Execution)
+{
+_Stop_Edit_Registration_Execution = false;
+return;
+}
+i_Registration.REGISTRATION_ID = _AppContext.Edit_Registration
+(
+i_Registration.REGISTRATION_ID
+,i_Registration.CLIENT_ID
+,i_Registration.REGISTRATION_DATE
+,i_Registration.PACKAGE_ID
+,i_Registration.REGISTRATION_DISCOUNT
+,i_Registration.REGISTRATION_TOTAL_PRICE
+,i_Registration.CURRENCY_ID
+,i_Registration.REGISTRATION_DESCRIPTION
+,i_Registration.ENTRY_USER_ID
+,i_Registration.ENTRY_DATE
+,i_Registration.OWNER_ID
+);
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Registration");}
 }
 public void Edit_Session(Session i_Session) 
 {
@@ -10010,6 +10504,49 @@ oScope.Complete();
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Edit_Person_List");}
+}
+public void Edit_Registration_List(List<Registration> i_List_Registration)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Registration_List");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+if (i_List_Registration != null)
+{
+foreach (var oRow in i_List_Registration)
+{
+Edit_Registration(oRow);
+}
+}
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Registration_List");}
+}
+public void Edit_Registration_List(Params_Edit_Registration_List i_Params_Edit_Registration_List)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Registration_List");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+if (i_Params_Edit_Registration_List.My_List_To_Delete != null)
+{
+foreach (var oRow in i_Params_Edit_Registration_List.My_List_To_Delete)
+{
+Delete_Registration(new Params_Delete_Registration() { REGISTRATION_ID = oRow.REGISTRATION_ID });
+}
+}
+if (i_Params_Edit_Registration_List.My_List_To_Edit != null)
+{
+foreach (var oRow in i_Params_Edit_Registration_List.My_List_To_Edit)
+{
+Edit_Registration(oRow);
+}
+}
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Registration_List");}
 }
 public void Edit_Session_List(List<Session> i_List_Session)
 {

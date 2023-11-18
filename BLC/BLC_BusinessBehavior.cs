@@ -430,8 +430,91 @@ oScope.Complete();
 if (OnPostEvent_General != null){OnPostEvent_General("Edit_Client_WithClient_fees");}
 }
 #endregion
-#region Edit_Client_WithRelatedData(Client i_Client,List<Client_fees> i_List_Client_fees)
-public void Edit_Client_WithRelatedData(Client i_Client,List<Client_fees> i_List_Client_fees)
+#region Reset_Registration_By_Client
+public void Reset_Registration_By_Client(Client i_Client, List<Registration> i_Registration_List)
+{
+#region Declaration And Initialization Section.
+Params_Delete_Registration_By_CLIENT_ID oParams_Delete_Registration_By_CLIENT_ID = new Params_Delete_Registration_By_CLIENT_ID();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Reset_Registration_By_Client");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Delete Existing Registration
+//---------------------------------
+oParams_Delete_Registration_By_CLIENT_ID.CLIENT_ID = i_Client.CLIENT_ID;
+Delete_Registration_By_CLIENT_ID(oParams_Delete_Registration_By_CLIENT_ID);
+//---------------------------------
+// Edit Registration
+//---------------------------------
+Edit_Client_WithRegistration(i_Client, i_Registration_List);
+//---------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Reset_Registration_By_Client");}
+}
+#endregion
+#region Reset_Registration_By_Client
+public void Reset_Registration_By_Client(Client i_Client, List<Registration> i_Registration_List_To_Delete,List<Registration> i_Registration_List_To_Create)
+{
+#region Declaration And Initialization Section.
+Params_Delete_Registration oParams_Delete_Registration = new Params_Delete_Registration();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Reset_Registration_By_Client");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Delete Specified Items 
+//---------------------------------
+ if (i_Registration_List_To_Delete != null)
+{
+foreach (var oRow in i_Registration_List_To_Delete)
+{
+oParams_Delete_Registration.REGISTRATION_ID = oRow.REGISTRATION_ID;
+Delete_Registration(oParams_Delete_Registration);
+}
+}
+//---------------------------------
+// Edit Registration
+//---------------------------------
+Edit_Client_WithRegistration(i_Client, i_Registration_List_To_Create);
+//---------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Reset_Registration_By_Client");}
+}
+#endregion
+#region Edit_Client_With_Registration(Client i_Client,List<Registration> i_RegistrationList)
+public void Edit_Client_WithRegistration(Client i_Client,List<Registration> i_List_Registration)
+{
+#region Declaration And Initialization Section.
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Client_WithRegistration");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Business Operation.
+//-------------------------------
+Edit_Client(i_Client);
+if (i_List_Registration != null)
+{
+foreach(Registration oRegistration in i_List_Registration)
+{
+oRegistration.CLIENT_ID = i_Client.CLIENT_ID;
+Edit_Registration(oRegistration);
+}
+}
+//-------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Client_WithRegistration");}
+}
+#endregion
+#region Edit_Client_WithRelatedData(Client i_Client,List<Client_fees> i_List_Client_fees,List<Registration> i_List_Registration)
+public void Edit_Client_WithRelatedData(Client i_Client,List<Client_fees> i_List_Client_fees,List<Registration> i_List_Registration)
 {
 #region Declaration And Initialization Section.
 #endregion
@@ -450,6 +533,14 @@ oClient_fees.CLIENT_ID = i_Client.CLIENT_ID;
 Edit_Client_fees(oClient_fees);
 }
 }
+if (i_List_Registration != null)
+{
+foreach(Registration oRegistration in i_List_Registration)
+{
+oRegistration.CLIENT_ID = i_Client.CLIENT_ID;
+Edit_Registration(oRegistration);
+}
+}
 //-------------------------------
 oScope.Complete();
 }
@@ -463,6 +554,7 @@ public void Delete_Client_With_Children(Client i_Client)
  #region Declaration And Initialization Section.
 Params_Delete_Client oParams_Delete_Client = new Params_Delete_Client();
 Params_Delete_Client_fees_By_CLIENT_ID oParams_Delete_Client_fees_By_CLIENT_ID = new Params_Delete_Client_fees_By_CLIENT_ID();
+Params_Delete_Registration_By_CLIENT_ID oParams_Delete_Registration_By_CLIENT_ID = new Params_Delete_Registration_By_CLIENT_ID();
 #endregion
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Client_With_Children");}
  #region Body Section.
@@ -471,6 +563,8 @@ using (TransactionScope oScope = new TransactionScope())
 //-------------------------
 oParams_Delete_Client_fees_By_CLIENT_ID.CLIENT_ID = i_Client.CLIENT_ID;
 Delete_Client_fees_By_CLIENT_ID(oParams_Delete_Client_fees_By_CLIENT_ID);
+oParams_Delete_Registration_By_CLIENT_ID.CLIENT_ID = i_Client.CLIENT_ID;
+Delete_Registration_By_CLIENT_ID(oParams_Delete_Registration_By_CLIENT_ID);
 //-------------------------
 
 //-------------------------
@@ -868,6 +962,89 @@ oScope.Complete();
 if (OnPostEvent_General != null){OnPostEvent_General("Edit_Currency_WithPackage");}
 }
 #endregion
+#region Reset_Registration_By_Currency
+public void Reset_Registration_By_Currency(Currency i_Currency, List<Registration> i_Registration_List)
+{
+#region Declaration And Initialization Section.
+Params_Delete_Registration_By_CURRENCY_ID oParams_Delete_Registration_By_CURRENCY_ID = new Params_Delete_Registration_By_CURRENCY_ID();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Reset_Registration_By_Currency");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Delete Existing Registration
+//---------------------------------
+oParams_Delete_Registration_By_CURRENCY_ID.CURRENCY_ID = i_Currency.CURRENCY_ID;
+Delete_Registration_By_CURRENCY_ID(oParams_Delete_Registration_By_CURRENCY_ID);
+//---------------------------------
+// Edit Registration
+//---------------------------------
+Edit_Currency_WithRegistration(i_Currency, i_Registration_List);
+//---------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Reset_Registration_By_Currency");}
+}
+#endregion
+#region Reset_Registration_By_Currency
+public void Reset_Registration_By_Currency(Currency i_Currency, List<Registration> i_Registration_List_To_Delete,List<Registration> i_Registration_List_To_Create)
+{
+#region Declaration And Initialization Section.
+Params_Delete_Registration oParams_Delete_Registration = new Params_Delete_Registration();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Reset_Registration_By_Currency");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Delete Specified Items 
+//---------------------------------
+ if (i_Registration_List_To_Delete != null)
+{
+foreach (var oRow in i_Registration_List_To_Delete)
+{
+oParams_Delete_Registration.REGISTRATION_ID = oRow.REGISTRATION_ID;
+Delete_Registration(oParams_Delete_Registration);
+}
+}
+//---------------------------------
+// Edit Registration
+//---------------------------------
+Edit_Currency_WithRegistration(i_Currency, i_Registration_List_To_Create);
+//---------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Reset_Registration_By_Currency");}
+}
+#endregion
+#region Edit_Currency_With_Registration(Currency i_Currency,List<Registration> i_RegistrationList)
+public void Edit_Currency_WithRegistration(Currency i_Currency,List<Registration> i_List_Registration)
+{
+#region Declaration And Initialization Section.
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Currency_WithRegistration");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Business Operation.
+//-------------------------------
+Edit_Currency(i_Currency);
+if (i_List_Registration != null)
+{
+foreach(Registration oRegistration in i_List_Registration)
+{
+oRegistration.CURRENCY_ID = i_Currency.CURRENCY_ID;
+Edit_Registration(oRegistration);
+}
+}
+//-------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Currency_WithRegistration");}
+}
+#endregion
 #region Reset_Staff_fees_By_Currency
 public void Reset_Staff_fees_By_Currency(Currency i_Currency, List<Staff_fees> i_Staff_fees_List)
 {
@@ -1034,8 +1211,8 @@ oScope.Complete();
 if (OnPostEvent_General != null){OnPostEvent_General("Edit_Currency_WithSupplier_fees");}
 }
 #endregion
-#region Edit_Currency_WithRelatedData(Currency i_Currency,List<Client_fees> i_List_Client_fees,List<Fees> i_List_Fees,List<Package> i_List_Package,List<Staff_fees> i_List_Staff_fees,List<Supplier_fees> i_List_Supplier_fees)
-public void Edit_Currency_WithRelatedData(Currency i_Currency,List<Client_fees> i_List_Client_fees,List<Fees> i_List_Fees,List<Package> i_List_Package,List<Staff_fees> i_List_Staff_fees,List<Supplier_fees> i_List_Supplier_fees)
+#region Edit_Currency_WithRelatedData(Currency i_Currency,List<Client_fees> i_List_Client_fees,List<Fees> i_List_Fees,List<Package> i_List_Package,List<Registration> i_List_Registration,List<Staff_fees> i_List_Staff_fees,List<Supplier_fees> i_List_Supplier_fees)
+public void Edit_Currency_WithRelatedData(Currency i_Currency,List<Client_fees> i_List_Client_fees,List<Fees> i_List_Fees,List<Package> i_List_Package,List<Registration> i_List_Registration,List<Staff_fees> i_List_Staff_fees,List<Supplier_fees> i_List_Supplier_fees)
 {
 #region Declaration And Initialization Section.
 #endregion
@@ -1070,6 +1247,14 @@ oPackage.CURRENCY_ID = i_Currency.CURRENCY_ID;
 Edit_Package(oPackage);
 }
 }
+if (i_List_Registration != null)
+{
+foreach(Registration oRegistration in i_List_Registration)
+{
+oRegistration.CURRENCY_ID = i_Currency.CURRENCY_ID;
+Edit_Registration(oRegistration);
+}
+}
 if (i_List_Staff_fees != null)
 {
 foreach(Staff_fees oStaff_fees in i_List_Staff_fees)
@@ -1101,6 +1286,7 @@ Params_Delete_Currency oParams_Delete_Currency = new Params_Delete_Currency();
 Params_Delete_Client_fees_By_CURRENCY_ID oParams_Delete_Client_fees_By_CURRENCY_ID = new Params_Delete_Client_fees_By_CURRENCY_ID();
 Params_Delete_Fees_By_CURRENCY_ID oParams_Delete_Fees_By_CURRENCY_ID = new Params_Delete_Fees_By_CURRENCY_ID();
 Params_Delete_Package_By_CURRENCY_ID oParams_Delete_Package_By_CURRENCY_ID = new Params_Delete_Package_By_CURRENCY_ID();
+Params_Delete_Registration_By_CURRENCY_ID oParams_Delete_Registration_By_CURRENCY_ID = new Params_Delete_Registration_By_CURRENCY_ID();
 Params_Delete_Staff_fees_By_CURRENCY_ID oParams_Delete_Staff_fees_By_CURRENCY_ID = new Params_Delete_Staff_fees_By_CURRENCY_ID();
 Params_Delete_Supplier_fees_By_CURRENCY_ID oParams_Delete_Supplier_fees_By_CURRENCY_ID = new Params_Delete_Supplier_fees_By_CURRENCY_ID();
 #endregion
@@ -1115,6 +1301,8 @@ oParams_Delete_Fees_By_CURRENCY_ID.CURRENCY_ID = i_Currency.CURRENCY_ID;
 Delete_Fees_By_CURRENCY_ID(oParams_Delete_Fees_By_CURRENCY_ID);
 oParams_Delete_Package_By_CURRENCY_ID.CURRENCY_ID = i_Currency.CURRENCY_ID;
 Delete_Package_By_CURRENCY_ID(oParams_Delete_Package_By_CURRENCY_ID);
+oParams_Delete_Registration_By_CURRENCY_ID.CURRENCY_ID = i_Currency.CURRENCY_ID;
+Delete_Registration_By_CURRENCY_ID(oParams_Delete_Registration_By_CURRENCY_ID);
 oParams_Delete_Staff_fees_By_CURRENCY_ID.CURRENCY_ID = i_Currency.CURRENCY_ID;
 Delete_Staff_fees_By_CURRENCY_ID(oParams_Delete_Staff_fees_By_CURRENCY_ID);
 oParams_Delete_Supplier_fees_By_CURRENCY_ID.CURRENCY_ID = i_Currency.CURRENCY_ID;
@@ -2040,6 +2228,89 @@ oScope.Complete();
 if (OnPostEvent_General != null){OnPostEvent_General("Edit_Package_WithClient_fees");}
 }
 #endregion
+#region Reset_Registration_By_Package
+public void Reset_Registration_By_Package(Package i_Package, List<Registration> i_Registration_List)
+{
+#region Declaration And Initialization Section.
+Params_Delete_Registration_By_PACKAGE_ID oParams_Delete_Registration_By_PACKAGE_ID = new Params_Delete_Registration_By_PACKAGE_ID();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Reset_Registration_By_Package");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Delete Existing Registration
+//---------------------------------
+oParams_Delete_Registration_By_PACKAGE_ID.PACKAGE_ID = i_Package.PACKAGE_ID;
+Delete_Registration_By_PACKAGE_ID(oParams_Delete_Registration_By_PACKAGE_ID);
+//---------------------------------
+// Edit Registration
+//---------------------------------
+Edit_Package_WithRegistration(i_Package, i_Registration_List);
+//---------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Reset_Registration_By_Package");}
+}
+#endregion
+#region Reset_Registration_By_Package
+public void Reset_Registration_By_Package(Package i_Package, List<Registration> i_Registration_List_To_Delete,List<Registration> i_Registration_List_To_Create)
+{
+#region Declaration And Initialization Section.
+Params_Delete_Registration oParams_Delete_Registration = new Params_Delete_Registration();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Reset_Registration_By_Package");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Delete Specified Items 
+//---------------------------------
+ if (i_Registration_List_To_Delete != null)
+{
+foreach (var oRow in i_Registration_List_To_Delete)
+{
+oParams_Delete_Registration.REGISTRATION_ID = oRow.REGISTRATION_ID;
+Delete_Registration(oParams_Delete_Registration);
+}
+}
+//---------------------------------
+// Edit Registration
+//---------------------------------
+Edit_Package_WithRegistration(i_Package, i_Registration_List_To_Create);
+//---------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Reset_Registration_By_Package");}
+}
+#endregion
+#region Edit_Package_With_Registration(Package i_Package,List<Registration> i_RegistrationList)
+public void Edit_Package_WithRegistration(Package i_Package,List<Registration> i_List_Registration)
+{
+#region Declaration And Initialization Section.
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Package_WithRegistration");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Business Operation.
+//-------------------------------
+Edit_Package(i_Package);
+if (i_List_Registration != null)
+{
+foreach(Registration oRegistration in i_List_Registration)
+{
+oRegistration.PACKAGE_ID = i_Package.PACKAGE_ID;
+Edit_Registration(oRegistration);
+}
+}
+//-------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Package_WithRegistration");}
+}
+#endregion
 #region Reset_Session_By_Package
 public void Reset_Session_By_Package(Package i_Package, List<Session> i_Session_List)
 {
@@ -2123,8 +2394,8 @@ oScope.Complete();
 if (OnPostEvent_General != null){OnPostEvent_General("Edit_Package_WithSession");}
 }
 #endregion
-#region Edit_Package_WithRelatedData(Package i_Package,List<Client_fees> i_List_Client_fees,List<Session> i_List_Session)
-public void Edit_Package_WithRelatedData(Package i_Package,List<Client_fees> i_List_Client_fees,List<Session> i_List_Session)
+#region Edit_Package_WithRelatedData(Package i_Package,List<Client_fees> i_List_Client_fees,List<Registration> i_List_Registration,List<Session> i_List_Session)
+public void Edit_Package_WithRelatedData(Package i_Package,List<Client_fees> i_List_Client_fees,List<Registration> i_List_Registration,List<Session> i_List_Session)
 {
 #region Declaration And Initialization Section.
 #endregion
@@ -2141,6 +2412,14 @@ foreach(Client_fees oClient_fees in i_List_Client_fees)
 {
 oClient_fees.PACKAGE_ID = i_Package.PACKAGE_ID;
 Edit_Client_fees(oClient_fees);
+}
+}
+if (i_List_Registration != null)
+{
+foreach(Registration oRegistration in i_List_Registration)
+{
+oRegistration.PACKAGE_ID = i_Package.PACKAGE_ID;
+Edit_Registration(oRegistration);
 }
 }
 if (i_List_Session != null)
@@ -2164,6 +2443,7 @@ public void Delete_Package_With_Children(Package i_Package)
  #region Declaration And Initialization Section.
 Params_Delete_Package oParams_Delete_Package = new Params_Delete_Package();
 Params_Delete_Client_fees_By_PACKAGE_ID oParams_Delete_Client_fees_By_PACKAGE_ID = new Params_Delete_Client_fees_By_PACKAGE_ID();
+Params_Delete_Registration_By_PACKAGE_ID oParams_Delete_Registration_By_PACKAGE_ID = new Params_Delete_Registration_By_PACKAGE_ID();
 Params_Delete_Session_By_PACKAGE_ID oParams_Delete_Session_By_PACKAGE_ID = new Params_Delete_Session_By_PACKAGE_ID();
 #endregion
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Package_With_Children");}
@@ -2173,6 +2453,8 @@ using (TransactionScope oScope = new TransactionScope())
 //-------------------------
 oParams_Delete_Client_fees_By_PACKAGE_ID.PACKAGE_ID = i_Package.PACKAGE_ID;
 Delete_Client_fees_By_PACKAGE_ID(oParams_Delete_Client_fees_By_PACKAGE_ID);
+oParams_Delete_Registration_By_PACKAGE_ID.PACKAGE_ID = i_Package.PACKAGE_ID;
+Delete_Registration_By_PACKAGE_ID(oParams_Delete_Registration_By_PACKAGE_ID);
 oParams_Delete_Session_By_PACKAGE_ID.PACKAGE_ID = i_Package.PACKAGE_ID;
 Delete_Session_By_PACKAGE_ID(oParams_Delete_Session_By_PACKAGE_ID);
 //-------------------------
@@ -2415,6 +2697,142 @@ oScope.Complete();
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Delete_Person_With_Children");}
+}
+#endregion
+#region Reset_Client_fees_By_Registration
+public void Reset_Client_fees_By_Registration(Registration i_Registration, List<Client_fees> i_Client_fees_List)
+{
+#region Declaration And Initialization Section.
+Params_Delete_Client_fees_By_REGISTRATION_ID oParams_Delete_Client_fees_By_REGISTRATION_ID = new Params_Delete_Client_fees_By_REGISTRATION_ID();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Reset_Client_fees_By_Registration");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Delete Existing Client_fees
+//---------------------------------
+oParams_Delete_Client_fees_By_REGISTRATION_ID.REGISTRATION_ID = i_Registration.REGISTRATION_ID;
+Delete_Client_fees_By_REGISTRATION_ID(oParams_Delete_Client_fees_By_REGISTRATION_ID);
+//---------------------------------
+// Edit Client_fees
+//---------------------------------
+Edit_Registration_WithClient_fees(i_Registration, i_Client_fees_List);
+//---------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Reset_Client_fees_By_Registration");}
+}
+#endregion
+#region Reset_Client_fees_By_Registration
+public void Reset_Client_fees_By_Registration(Registration i_Registration, List<Client_fees> i_Client_fees_List_To_Delete,List<Client_fees> i_Client_fees_List_To_Create)
+{
+#region Declaration And Initialization Section.
+Params_Delete_Client_fees oParams_Delete_Client_fees = new Params_Delete_Client_fees();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Reset_Client_fees_By_Registration");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Delete Specified Items 
+//---------------------------------
+ if (i_Client_fees_List_To_Delete != null)
+{
+foreach (var oRow in i_Client_fees_List_To_Delete)
+{
+oParams_Delete_Client_fees.CLIENT_FEES_ID = oRow.CLIENT_FEES_ID;
+Delete_Client_fees(oParams_Delete_Client_fees);
+}
+}
+//---------------------------------
+// Edit Client_fees
+//---------------------------------
+Edit_Registration_WithClient_fees(i_Registration, i_Client_fees_List_To_Create);
+//---------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Reset_Client_fees_By_Registration");}
+}
+#endregion
+#region Edit_Registration_With_Client_fees(Registration i_Registration,List<Client_fees> i_Client_feesList)
+public void Edit_Registration_WithClient_fees(Registration i_Registration,List<Client_fees> i_List_Client_fees)
+{
+#region Declaration And Initialization Section.
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Registration_WithClient_fees");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Business Operation.
+//-------------------------------
+Edit_Registration(i_Registration);
+if (i_List_Client_fees != null)
+{
+foreach(Client_fees oClient_fees in i_List_Client_fees)
+{
+oClient_fees.REGISTRATION_ID = i_Registration.REGISTRATION_ID;
+Edit_Client_fees(oClient_fees);
+}
+}
+//-------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Registration_WithClient_fees");}
+}
+#endregion
+#region Edit_Registration_WithRelatedData(Registration i_Registration,List<Client_fees> i_List_Client_fees)
+public void Edit_Registration_WithRelatedData(Registration i_Registration,List<Client_fees> i_List_Client_fees)
+{
+#region Declaration And Initialization Section.
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Registration_WithRelatedData");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Business Operation.
+//-------------------------------
+Edit_Registration(i_Registration);
+if (i_List_Client_fees != null)
+{
+foreach(Client_fees oClient_fees in i_List_Client_fees)
+{
+oClient_fees.REGISTRATION_ID = i_Registration.REGISTRATION_ID;
+Edit_Client_fees(oClient_fees);
+}
+}
+//-------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Registration_WithRelatedData");}
+}
+#endregion
+#region Delete_Registration_With_Children(Registration i_Registration)
+public void Delete_Registration_With_Children(Registration i_Registration)
+{
+ #region Declaration And Initialization Section.
+Params_Delete_Registration oParams_Delete_Registration = new Params_Delete_Registration();
+Params_Delete_Client_fees_By_REGISTRATION_ID oParams_Delete_Client_fees_By_REGISTRATION_ID = new Params_Delete_Client_fees_By_REGISTRATION_ID();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Registration_With_Children");}
+ #region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+//-------------------------
+oParams_Delete_Client_fees_By_REGISTRATION_ID.REGISTRATION_ID = i_Registration.REGISTRATION_ID;
+Delete_Client_fees_By_REGISTRATION_ID(oParams_Delete_Client_fees_By_REGISTRATION_ID);
+//-------------------------
+
+//-------------------------
+oParams_Delete_Registration.REGISTRATION_ID = i_Registration.REGISTRATION_ID;
+Delete_Registration(oParams_Delete_Registration);
+//-------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Registration_With_Children");}
 }
 #endregion
 #region Reset_Staff_fees_By_Staff

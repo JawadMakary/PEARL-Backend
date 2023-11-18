@@ -47,7 +47,12 @@ Get_Bloodtype_By_OWNER_ID,
 Get_Supplier_By_OWNER_ID,
 Edit_Client_fees,
 Edit_Supplier_fees,
-Edit_Staff_fees
+Edit_Staff_fees,
+Get_Client_fees_By_CLIENT_ID,
+Get_Staff_fees_By_STAFF_ID,
+Get_Supplier_fees_By_SUPPLIER_ID,
+Get_Staff_By_STAFF_ID,
+Get_Supplier_By_SUPPLIER_ID
 }
 #endregion
 

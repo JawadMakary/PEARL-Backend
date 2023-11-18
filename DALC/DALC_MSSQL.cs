@@ -188,6 +188,18 @@ oTools.CopyPropValues_FromDataRecord(R, o);
 }
 return o;
 }
+public Registration Get_Registration_By_REGISTRATION_ID ( Int32? REGISTRATION_ID)
+{
+Registration o = new Registration();
+dynamic p = new ExpandoObject();
+p.REGISTRATION_ID = REGISTRATION_ID;
+IEnumerable<IDataRecord> Q = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_REGISTRATION_ID", p);
+var R = Q.FirstOrDefault();
+if (R != null){
+oTools.CopyPropValues_FromDataRecord(R, o);
+}
+return o;
+}
 public Session Get_Session_By_SESSION_ID ( Int32? SESSION_ID)
 {
 Session o = new Session();
@@ -323,6 +335,8 @@ o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(R["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(R["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(R["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(R["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(R["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(R["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(R["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(R["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(R["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(R["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(R["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(R["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(R["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(R["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(R["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(R["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(R["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(R["T_PACKAGE_PACKAGE_STARTING_DATE"]);
+o.My_Registration = new Registration();
+o.My_Registration.REGISTRATION_ID = GV<Int32>(R["T_REGISTRATION_REGISTRATION_ID"]);o.My_Registration.CLIENT_ID = GV<Int32>(R["T_REGISTRATION_CLIENT_ID"]);o.My_Registration.REGISTRATION_DATE = GV<String>(R["T_REGISTRATION_REGISTRATION_DATE"]);o.My_Registration.PACKAGE_ID = GV<Int32>(R["T_REGISTRATION_PACKAGE_ID"]);o.My_Registration.REGISTRATION_DISCOUNT = GV<Int32>(R["T_REGISTRATION_REGISTRATION_DISCOUNT"]);o.My_Registration.REGISTRATION_TOTAL_PRICE = GV<Int32>(R["T_REGISTRATION_REGISTRATION_TOTAL_PRICE"]);o.My_Registration.CURRENCY_ID = GV<Int32>(R["T_REGISTRATION_CURRENCY_ID"]);o.My_Registration.REGISTRATION_DESCRIPTION = GV<String>(R["T_REGISTRATION_REGISTRATION_DESCRIPTION"]);o.My_Registration.ENTRY_USER_ID = GV<Int64>(R["T_REGISTRATION_ENTRY_USER_ID"]);o.My_Registration.ENTRY_DATE = GV<String>(R["T_REGISTRATION_ENTRY_DATE"]);o.My_Registration.OWNER_ID = GV<Int32>(R["T_REGISTRATION_OWNER_ID"]);
 }
 return o;
 }
@@ -458,6 +472,24 @@ oTools.CopyPropValues_FromDataRecord(R, o);
 }
 return o;
 }
+public Registration Get_Registration_By_REGISTRATION_ID_Adv ( Int32? REGISTRATION_ID)
+{
+Registration o = new Registration();
+dynamic p = new ExpandoObject();
+p.REGISTRATION_ID = REGISTRATION_ID;
+IEnumerable<IDataRecord> Q = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_REGISTRATION_ID_ADV", p);
+var R = Q.FirstOrDefault();
+if (R != null){
+oTools.CopyPropValues_FromDataRecord(R, o);
+o.My_Client = new Client();
+o.My_Client.CLIENT_ID = GV<Int32>(R["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(R["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(R["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(R["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(R["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(R["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(R["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(R["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(R["T_CLIENT_OWNER_ID"]);
+o.My_Package = new Package();
+o.My_Package.PACKAGE_ID = GV<Int32>(R["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(R["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(R["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(R["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(R["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(R["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(R["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(R["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(R["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(R["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(R["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(R["T_PACKAGE_PACKAGE_STARTING_DATE"]);
+o.My_Currency = new Currency();
+o.My_Currency.CURRENCY_ID = GV<Int32>(R["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(R["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(R["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(R["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(R["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(R["T_CURRENCY_OWNER_ID"]);
+}
+return o;
+}
 public Session Get_Session_By_SESSION_ID_Adv ( Int32? SESSION_ID)
 {
 Session o = new Session();
@@ -470,7 +502,7 @@ oTools.CopyPropValues_FromDataRecord(R, o);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(R["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(R["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(R["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(R["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(R["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(R["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(R["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(R["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(R["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(R["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(R["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(R["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Client_fees = new Client_fees();
-o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(R["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(R["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(R["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(R["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(R["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(R["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(R["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(R["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(R["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);
+o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(R["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(R["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(R["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(R["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(R["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(R["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(R["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(R["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(R["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);o.My_Client_fees.REGISTRATION_ID = GV<Int32>(R["T_CLIENT_FEES_REGISTRATION_ID"]);
 }
 return o;
 }
@@ -756,6 +788,20 @@ oList.Add(o);
 }
 return oList;
 }
+public List<Registration> Get_Registration_By_REGISTRATION_ID_List ( List<Int32?> REGISTRATION_ID_LIST)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.REGISTRATION_ID_LIST = string.Join(",", REGISTRATION_ID_LIST.ToArray());
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_REGISTRATION_ID_LIST", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+return oList;
+}
 public List<Session> Get_Session_By_SESSION_ID_List ( List<Int32?> SESSION_ID_LIST)
 {
 List<Session> oList = new List<Session>();
@@ -909,6 +955,8 @@ o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
+o.My_Registration = new Registration();
+o.My_Registration.REGISTRATION_ID = GV<Int32>(X["T_REGISTRATION_REGISTRATION_ID"]);o.My_Registration.CLIENT_ID = GV<Int32>(X["T_REGISTRATION_CLIENT_ID"]);o.My_Registration.REGISTRATION_DATE = GV<String>(X["T_REGISTRATION_REGISTRATION_DATE"]);o.My_Registration.PACKAGE_ID = GV<Int32>(X["T_REGISTRATION_PACKAGE_ID"]);o.My_Registration.REGISTRATION_DISCOUNT = GV<Int32>(X["T_REGISTRATION_REGISTRATION_DISCOUNT"]);o.My_Registration.REGISTRATION_TOTAL_PRICE = GV<Int32>(X["T_REGISTRATION_REGISTRATION_TOTAL_PRICE"]);o.My_Registration.CURRENCY_ID = GV<Int32>(X["T_REGISTRATION_CURRENCY_ID"]);o.My_Registration.REGISTRATION_DESCRIPTION = GV<String>(X["T_REGISTRATION_REGISTRATION_DESCRIPTION"]);o.My_Registration.ENTRY_USER_ID = GV<Int64>(X["T_REGISTRATION_ENTRY_USER_ID"]);o.My_Registration.ENTRY_DATE = GV<String>(X["T_REGISTRATION_ENTRY_DATE"]);o.My_Registration.OWNER_ID = GV<Int32>(X["T_REGISTRATION_OWNER_ID"]);
 oList.Add(o);
 }
 }
@@ -1066,6 +1114,26 @@ oList.Add(o);
 }
 return oList;
 }
+public List<Registration> Get_Registration_By_REGISTRATION_ID_List_Adv ( List<Int32?> REGISTRATION_ID_LIST)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.REGISTRATION_ID_LIST = string.Join(",", REGISTRATION_ID_LIST.ToArray());
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_REGISTRATION_ID_LIST_ADV", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
+oTools.CopyPropValues_FromDataRecord(X, o);
+o.My_Client = new Client();
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Package = new Package();
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
+o.My_Currency = new Currency();
+o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
+oList.Add(o);
+}
+}
+return oList;
+}
 public List<Session> Get_Session_By_SESSION_ID_List_Adv ( List<Int32?> SESSION_ID_LIST)
 {
 List<Session> oList = new List<Session>();
@@ -1078,7 +1146,7 @@ oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Client_fees = new Client_fees();
-o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);
+o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);o.My_Client_fees.REGISTRATION_ID = GV<Int32>(X["T_CLIENT_FEES_REGISTRATION_ID"]);
 oList.Add(o);
 }
 }
@@ -1354,6 +1422,20 @@ List<Client_fees> oList = new List<Client_fees>();
 dynamic p = new ExpandoObject();
 p.PACKAGE_ID = PACKAGE_ID;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_FEES_BY_PACKAGE_ID", p);
+if (R != null) {foreach (var X in R) {
+Client_fees o = new Client_fees();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+return oList;
+}
+public List<Client_fees> Get_Client_fees_By_REGISTRATION_ID ( Int32? REGISTRATION_ID)
+{
+List<Client_fees> oList = new List<Client_fees>();
+dynamic p = new ExpandoObject();
+p.REGISTRATION_ID = REGISTRATION_ID;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_FEES_BY_REGISTRATION_ID", p);
 if (R != null) {foreach (var X in R) {
 Client_fees o = new Client_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
@@ -1650,6 +1732,62 @@ p.OWNER_ID = OWNER_ID;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_PERSON_BY_OWNER_ID", p);
 if (R != null) {foreach (var X in R) {
 Person o = new Person();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+return oList;
+}
+public List<Registration> Get_Registration_By_OWNER_ID ( Int32? OWNER_ID)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.OWNER_ID = OWNER_ID;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_OWNER_ID", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+return oList;
+}
+public List<Registration> Get_Registration_By_CLIENT_ID ( Int32? CLIENT_ID)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.CLIENT_ID = CLIENT_ID;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_CLIENT_ID", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+return oList;
+}
+public List<Registration> Get_Registration_By_PACKAGE_ID ( Int32? PACKAGE_ID)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.PACKAGE_ID = PACKAGE_ID;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_PACKAGE_ID", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+return oList;
+}
+public List<Registration> Get_Registration_By_CURRENCY_ID ( Int32? CURRENCY_ID)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.CURRENCY_ID = CURRENCY_ID;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_CURRENCY_ID", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
 oTools.CopyPropValues_FromDataRecord(X, o);
 oList.Add(o);
 }
@@ -2095,6 +2233,8 @@ o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
+o.My_Registration = new Registration();
+o.My_Registration.REGISTRATION_ID = GV<Int32>(X["T_REGISTRATION_REGISTRATION_ID"]);o.My_Registration.CLIENT_ID = GV<Int32>(X["T_REGISTRATION_CLIENT_ID"]);o.My_Registration.REGISTRATION_DATE = GV<String>(X["T_REGISTRATION_REGISTRATION_DATE"]);o.My_Registration.PACKAGE_ID = GV<Int32>(X["T_REGISTRATION_PACKAGE_ID"]);o.My_Registration.REGISTRATION_DISCOUNT = GV<Int32>(X["T_REGISTRATION_REGISTRATION_DISCOUNT"]);o.My_Registration.REGISTRATION_TOTAL_PRICE = GV<Int32>(X["T_REGISTRATION_REGISTRATION_TOTAL_PRICE"]);o.My_Registration.CURRENCY_ID = GV<Int32>(X["T_REGISTRATION_CURRENCY_ID"]);o.My_Registration.REGISTRATION_DESCRIPTION = GV<String>(X["T_REGISTRATION_REGISTRATION_DESCRIPTION"]);o.My_Registration.ENTRY_USER_ID = GV<Int64>(X["T_REGISTRATION_ENTRY_USER_ID"]);o.My_Registration.ENTRY_DATE = GV<String>(X["T_REGISTRATION_ENTRY_DATE"]);o.My_Registration.OWNER_ID = GV<Int32>(X["T_REGISTRATION_OWNER_ID"]);
 oList.Add(o);
 }
 }
@@ -2115,6 +2255,8 @@ o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
+o.My_Registration = new Registration();
+o.My_Registration.REGISTRATION_ID = GV<Int32>(X["T_REGISTRATION_REGISTRATION_ID"]);o.My_Registration.CLIENT_ID = GV<Int32>(X["T_REGISTRATION_CLIENT_ID"]);o.My_Registration.REGISTRATION_DATE = GV<String>(X["T_REGISTRATION_REGISTRATION_DATE"]);o.My_Registration.PACKAGE_ID = GV<Int32>(X["T_REGISTRATION_PACKAGE_ID"]);o.My_Registration.REGISTRATION_DISCOUNT = GV<Int32>(X["T_REGISTRATION_REGISTRATION_DISCOUNT"]);o.My_Registration.REGISTRATION_TOTAL_PRICE = GV<Int32>(X["T_REGISTRATION_REGISTRATION_TOTAL_PRICE"]);o.My_Registration.CURRENCY_ID = GV<Int32>(X["T_REGISTRATION_CURRENCY_ID"]);o.My_Registration.REGISTRATION_DESCRIPTION = GV<String>(X["T_REGISTRATION_REGISTRATION_DESCRIPTION"]);o.My_Registration.ENTRY_USER_ID = GV<Int64>(X["T_REGISTRATION_ENTRY_USER_ID"]);o.My_Registration.ENTRY_DATE = GV<String>(X["T_REGISTRATION_ENTRY_DATE"]);o.My_Registration.OWNER_ID = GV<Int32>(X["T_REGISTRATION_OWNER_ID"]);
 oList.Add(o);
 }
 }
@@ -2135,6 +2277,8 @@ o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
+o.My_Registration = new Registration();
+o.My_Registration.REGISTRATION_ID = GV<Int32>(X["T_REGISTRATION_REGISTRATION_ID"]);o.My_Registration.CLIENT_ID = GV<Int32>(X["T_REGISTRATION_CLIENT_ID"]);o.My_Registration.REGISTRATION_DATE = GV<String>(X["T_REGISTRATION_REGISTRATION_DATE"]);o.My_Registration.PACKAGE_ID = GV<Int32>(X["T_REGISTRATION_PACKAGE_ID"]);o.My_Registration.REGISTRATION_DISCOUNT = GV<Int32>(X["T_REGISTRATION_REGISTRATION_DISCOUNT"]);o.My_Registration.REGISTRATION_TOTAL_PRICE = GV<Int32>(X["T_REGISTRATION_REGISTRATION_TOTAL_PRICE"]);o.My_Registration.CURRENCY_ID = GV<Int32>(X["T_REGISTRATION_CURRENCY_ID"]);o.My_Registration.REGISTRATION_DESCRIPTION = GV<String>(X["T_REGISTRATION_REGISTRATION_DESCRIPTION"]);o.My_Registration.ENTRY_USER_ID = GV<Int64>(X["T_REGISTRATION_ENTRY_USER_ID"]);o.My_Registration.ENTRY_DATE = GV<String>(X["T_REGISTRATION_ENTRY_DATE"]);o.My_Registration.OWNER_ID = GV<Int32>(X["T_REGISTRATION_OWNER_ID"]);
 oList.Add(o);
 }
 }
@@ -2155,6 +2299,30 @@ o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
+o.My_Registration = new Registration();
+o.My_Registration.REGISTRATION_ID = GV<Int32>(X["T_REGISTRATION_REGISTRATION_ID"]);o.My_Registration.CLIENT_ID = GV<Int32>(X["T_REGISTRATION_CLIENT_ID"]);o.My_Registration.REGISTRATION_DATE = GV<String>(X["T_REGISTRATION_REGISTRATION_DATE"]);o.My_Registration.PACKAGE_ID = GV<Int32>(X["T_REGISTRATION_PACKAGE_ID"]);o.My_Registration.REGISTRATION_DISCOUNT = GV<Int32>(X["T_REGISTRATION_REGISTRATION_DISCOUNT"]);o.My_Registration.REGISTRATION_TOTAL_PRICE = GV<Int32>(X["T_REGISTRATION_REGISTRATION_TOTAL_PRICE"]);o.My_Registration.CURRENCY_ID = GV<Int32>(X["T_REGISTRATION_CURRENCY_ID"]);o.My_Registration.REGISTRATION_DESCRIPTION = GV<String>(X["T_REGISTRATION_REGISTRATION_DESCRIPTION"]);o.My_Registration.ENTRY_USER_ID = GV<Int64>(X["T_REGISTRATION_ENTRY_USER_ID"]);o.My_Registration.ENTRY_DATE = GV<String>(X["T_REGISTRATION_ENTRY_DATE"]);o.My_Registration.OWNER_ID = GV<Int32>(X["T_REGISTRATION_OWNER_ID"]);
+oList.Add(o);
+}
+}
+return oList;
+}
+public List<Client_fees> Get_Client_fees_By_REGISTRATION_ID_Adv ( Int32? REGISTRATION_ID)
+{
+List<Client_fees> oList = new List<Client_fees>();
+dynamic p = new ExpandoObject();
+p.REGISTRATION_ID = REGISTRATION_ID;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_FEES_BY_REGISTRATION_ID_ADV", p);
+if (R != null) {foreach (var X in R) {
+Client_fees o = new Client_fees();
+oTools.CopyPropValues_FromDataRecord(X, o);
+o.My_Client = new Client();
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Currency = new Currency();
+o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
+o.My_Package = new Package();
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
+o.My_Registration = new Registration();
+o.My_Registration.REGISTRATION_ID = GV<Int32>(X["T_REGISTRATION_REGISTRATION_ID"]);o.My_Registration.CLIENT_ID = GV<Int32>(X["T_REGISTRATION_CLIENT_ID"]);o.My_Registration.REGISTRATION_DATE = GV<String>(X["T_REGISTRATION_REGISTRATION_DATE"]);o.My_Registration.PACKAGE_ID = GV<Int32>(X["T_REGISTRATION_PACKAGE_ID"]);o.My_Registration.REGISTRATION_DISCOUNT = GV<Int32>(X["T_REGISTRATION_REGISTRATION_DISCOUNT"]);o.My_Registration.REGISTRATION_TOTAL_PRICE = GV<Int32>(X["T_REGISTRATION_REGISTRATION_TOTAL_PRICE"]);o.My_Registration.CURRENCY_ID = GV<Int32>(X["T_REGISTRATION_CURRENCY_ID"]);o.My_Registration.REGISTRATION_DESCRIPTION = GV<String>(X["T_REGISTRATION_REGISTRATION_DESCRIPTION"]);o.My_Registration.ENTRY_USER_ID = GV<Int64>(X["T_REGISTRATION_ENTRY_USER_ID"]);o.My_Registration.ENTRY_DATE = GV<String>(X["T_REGISTRATION_ENTRY_DATE"]);o.My_Registration.OWNER_ID = GV<Int32>(X["T_REGISTRATION_OWNER_ID"]);
 oList.Add(o);
 }
 }
@@ -2486,6 +2654,86 @@ oList.Add(o);
 }
 return oList;
 }
+public List<Registration> Get_Registration_By_OWNER_ID_Adv ( Int32? OWNER_ID)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.OWNER_ID = OWNER_ID;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_OWNER_ID_ADV", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
+oTools.CopyPropValues_FromDataRecord(X, o);
+o.My_Client = new Client();
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Package = new Package();
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
+o.My_Currency = new Currency();
+o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
+oList.Add(o);
+}
+}
+return oList;
+}
+public List<Registration> Get_Registration_By_CLIENT_ID_Adv ( Int32? CLIENT_ID)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.CLIENT_ID = CLIENT_ID;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_CLIENT_ID_ADV", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
+oTools.CopyPropValues_FromDataRecord(X, o);
+o.My_Client = new Client();
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Package = new Package();
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
+o.My_Currency = new Currency();
+o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
+oList.Add(o);
+}
+}
+return oList;
+}
+public List<Registration> Get_Registration_By_PACKAGE_ID_Adv ( Int32? PACKAGE_ID)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.PACKAGE_ID = PACKAGE_ID;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_PACKAGE_ID_ADV", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
+oTools.CopyPropValues_FromDataRecord(X, o);
+o.My_Client = new Client();
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Package = new Package();
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
+o.My_Currency = new Currency();
+o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
+oList.Add(o);
+}
+}
+return oList;
+}
+public List<Registration> Get_Registration_By_CURRENCY_ID_Adv ( Int32? CURRENCY_ID)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.CURRENCY_ID = CURRENCY_ID;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_CURRENCY_ID_ADV", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
+oTools.CopyPropValues_FromDataRecord(X, o);
+o.My_Client = new Client();
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Package = new Package();
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
+o.My_Currency = new Currency();
+o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
+oList.Add(o);
+}
+}
+return oList;
+}
 public List<Session> Get_Session_By_OWNER_ID_Adv ( Int32? OWNER_ID)
 {
 List<Session> oList = new List<Session>();
@@ -2498,7 +2746,7 @@ oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Client_fees = new Client_fees();
-o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);
+o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);o.My_Client_fees.REGISTRATION_ID = GV<Int32>(X["T_CLIENT_FEES_REGISTRATION_ID"]);
 oList.Add(o);
 }
 }
@@ -2516,7 +2764,7 @@ oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Client_fees = new Client_fees();
-o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);
+o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);o.My_Client_fees.REGISTRATION_ID = GV<Int32>(X["T_CLIENT_FEES_REGISTRATION_ID"]);
 oList.Add(o);
 }
 }
@@ -2534,7 +2782,7 @@ oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Client_fees = new Client_fees();
-o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);
+o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);o.My_Client_fees.REGISTRATION_ID = GV<Int32>(X["T_CLIENT_FEES_REGISTRATION_ID"]);
 oList.Add(o);
 }
 }
@@ -2866,6 +3114,20 @@ oList.Add(o);
 }
 return oList;
 }
+public List<Client_fees> Get_Client_fees_By_REGISTRATION_ID_List ( List<Int32?> REGISTRATION_ID_LIST)
+{
+List<Client_fees> oList = new List<Client_fees>();
+dynamic p = new ExpandoObject();
+p.REGISTRATION_ID_LIST = string.Join(",", REGISTRATION_ID_LIST.ToArray());
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_FEES_BY_REGISTRATION_ID_LIST", p);
+if (R != null) {foreach (var X in R) {
+Client_fees o = new Client_fees();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+return oList;
+}
 public List<Contact> Get_Contact_By_PERSON_ID_List ( List<long?> PERSON_ID_LIST)
 {
 List<Contact> oList = new List<Contact>();
@@ -2944,6 +3206,48 @@ p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray());
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_PACKAGE_BY_CURRENCY_ID_LIST", p);
 if (R != null) {foreach (var X in R) {
 Package o = new Package();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+return oList;
+}
+public List<Registration> Get_Registration_By_CLIENT_ID_List ( List<Int32?> CLIENT_ID_LIST)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.CLIENT_ID_LIST = string.Join(",", CLIENT_ID_LIST.ToArray());
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_CLIENT_ID_LIST", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+return oList;
+}
+public List<Registration> Get_Registration_By_PACKAGE_ID_List ( List<Int32?> PACKAGE_ID_LIST)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.PACKAGE_ID_LIST = string.Join(",", PACKAGE_ID_LIST.ToArray());
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_PACKAGE_ID_LIST", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+return oList;
+}
+public List<Registration> Get_Registration_By_CURRENCY_ID_List ( List<Int32?> CURRENCY_ID_LIST)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray());
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_CURRENCY_ID_LIST", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
 oTools.CopyPropValues_FromDataRecord(X, o);
 oList.Add(o);
 }
@@ -3213,6 +3517,8 @@ o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
+o.My_Registration = new Registration();
+o.My_Registration.REGISTRATION_ID = GV<Int32>(X["T_REGISTRATION_REGISTRATION_ID"]);o.My_Registration.CLIENT_ID = GV<Int32>(X["T_REGISTRATION_CLIENT_ID"]);o.My_Registration.REGISTRATION_DATE = GV<String>(X["T_REGISTRATION_REGISTRATION_DATE"]);o.My_Registration.PACKAGE_ID = GV<Int32>(X["T_REGISTRATION_PACKAGE_ID"]);o.My_Registration.REGISTRATION_DISCOUNT = GV<Int32>(X["T_REGISTRATION_REGISTRATION_DISCOUNT"]);o.My_Registration.REGISTRATION_TOTAL_PRICE = GV<Int32>(X["T_REGISTRATION_REGISTRATION_TOTAL_PRICE"]);o.My_Registration.CURRENCY_ID = GV<Int32>(X["T_REGISTRATION_CURRENCY_ID"]);o.My_Registration.REGISTRATION_DESCRIPTION = GV<String>(X["T_REGISTRATION_REGISTRATION_DESCRIPTION"]);o.My_Registration.ENTRY_USER_ID = GV<Int64>(X["T_REGISTRATION_ENTRY_USER_ID"]);o.My_Registration.ENTRY_DATE = GV<String>(X["T_REGISTRATION_ENTRY_DATE"]);o.My_Registration.OWNER_ID = GV<Int32>(X["T_REGISTRATION_OWNER_ID"]);
 oList.Add(o);
 }
 }
@@ -3233,6 +3539,8 @@ o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
+o.My_Registration = new Registration();
+o.My_Registration.REGISTRATION_ID = GV<Int32>(X["T_REGISTRATION_REGISTRATION_ID"]);o.My_Registration.CLIENT_ID = GV<Int32>(X["T_REGISTRATION_CLIENT_ID"]);o.My_Registration.REGISTRATION_DATE = GV<String>(X["T_REGISTRATION_REGISTRATION_DATE"]);o.My_Registration.PACKAGE_ID = GV<Int32>(X["T_REGISTRATION_PACKAGE_ID"]);o.My_Registration.REGISTRATION_DISCOUNT = GV<Int32>(X["T_REGISTRATION_REGISTRATION_DISCOUNT"]);o.My_Registration.REGISTRATION_TOTAL_PRICE = GV<Int32>(X["T_REGISTRATION_REGISTRATION_TOTAL_PRICE"]);o.My_Registration.CURRENCY_ID = GV<Int32>(X["T_REGISTRATION_CURRENCY_ID"]);o.My_Registration.REGISTRATION_DESCRIPTION = GV<String>(X["T_REGISTRATION_REGISTRATION_DESCRIPTION"]);o.My_Registration.ENTRY_USER_ID = GV<Int64>(X["T_REGISTRATION_ENTRY_USER_ID"]);o.My_Registration.ENTRY_DATE = GV<String>(X["T_REGISTRATION_ENTRY_DATE"]);o.My_Registration.OWNER_ID = GV<Int32>(X["T_REGISTRATION_OWNER_ID"]);
 oList.Add(o);
 }
 }
@@ -3253,6 +3561,30 @@ o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
+o.My_Registration = new Registration();
+o.My_Registration.REGISTRATION_ID = GV<Int32>(X["T_REGISTRATION_REGISTRATION_ID"]);o.My_Registration.CLIENT_ID = GV<Int32>(X["T_REGISTRATION_CLIENT_ID"]);o.My_Registration.REGISTRATION_DATE = GV<String>(X["T_REGISTRATION_REGISTRATION_DATE"]);o.My_Registration.PACKAGE_ID = GV<Int32>(X["T_REGISTRATION_PACKAGE_ID"]);o.My_Registration.REGISTRATION_DISCOUNT = GV<Int32>(X["T_REGISTRATION_REGISTRATION_DISCOUNT"]);o.My_Registration.REGISTRATION_TOTAL_PRICE = GV<Int32>(X["T_REGISTRATION_REGISTRATION_TOTAL_PRICE"]);o.My_Registration.CURRENCY_ID = GV<Int32>(X["T_REGISTRATION_CURRENCY_ID"]);o.My_Registration.REGISTRATION_DESCRIPTION = GV<String>(X["T_REGISTRATION_REGISTRATION_DESCRIPTION"]);o.My_Registration.ENTRY_USER_ID = GV<Int64>(X["T_REGISTRATION_ENTRY_USER_ID"]);o.My_Registration.ENTRY_DATE = GV<String>(X["T_REGISTRATION_ENTRY_DATE"]);o.My_Registration.OWNER_ID = GV<Int32>(X["T_REGISTRATION_OWNER_ID"]);
+oList.Add(o);
+}
+}
+return oList;
+}
+public List<Client_fees> Get_Client_fees_By_REGISTRATION_ID_List_Adv ( List<Int32?> REGISTRATION_ID_LIST)
+{
+List<Client_fees> oList = new List<Client_fees>();
+dynamic p = new ExpandoObject();
+p.REGISTRATION_ID_LIST = string.Join(",", REGISTRATION_ID_LIST.ToArray());
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_FEES_BY_REGISTRATION_ID_LIST_ADV", p);
+if (R != null) {foreach (var X in R) {
+Client_fees o = new Client_fees();
+oTools.CopyPropValues_FromDataRecord(X, o);
+o.My_Client = new Client();
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Currency = new Currency();
+o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
+o.My_Package = new Package();
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
+o.My_Registration = new Registration();
+o.My_Registration.REGISTRATION_ID = GV<Int32>(X["T_REGISTRATION_REGISTRATION_ID"]);o.My_Registration.CLIENT_ID = GV<Int32>(X["T_REGISTRATION_CLIENT_ID"]);o.My_Registration.REGISTRATION_DATE = GV<String>(X["T_REGISTRATION_REGISTRATION_DATE"]);o.My_Registration.PACKAGE_ID = GV<Int32>(X["T_REGISTRATION_PACKAGE_ID"]);o.My_Registration.REGISTRATION_DISCOUNT = GV<Int32>(X["T_REGISTRATION_REGISTRATION_DISCOUNT"]);o.My_Registration.REGISTRATION_TOTAL_PRICE = GV<Int32>(X["T_REGISTRATION_REGISTRATION_TOTAL_PRICE"]);o.My_Registration.CURRENCY_ID = GV<Int32>(X["T_REGISTRATION_CURRENCY_ID"]);o.My_Registration.REGISTRATION_DESCRIPTION = GV<String>(X["T_REGISTRATION_REGISTRATION_DESCRIPTION"]);o.My_Registration.ENTRY_USER_ID = GV<Int64>(X["T_REGISTRATION_ENTRY_USER_ID"]);o.My_Registration.ENTRY_DATE = GV<String>(X["T_REGISTRATION_ENTRY_DATE"]);o.My_Registration.OWNER_ID = GV<Int32>(X["T_REGISTRATION_OWNER_ID"]);
 oList.Add(o);
 }
 }
@@ -3354,6 +3686,66 @@ oList.Add(o);
 }
 return oList;
 }
+public List<Registration> Get_Registration_By_CLIENT_ID_List_Adv ( List<Int32?> CLIENT_ID_LIST)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.CLIENT_ID_LIST = string.Join(",", CLIENT_ID_LIST.ToArray());
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_CLIENT_ID_LIST_ADV", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
+oTools.CopyPropValues_FromDataRecord(X, o);
+o.My_Client = new Client();
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Package = new Package();
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
+o.My_Currency = new Currency();
+o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
+oList.Add(o);
+}
+}
+return oList;
+}
+public List<Registration> Get_Registration_By_PACKAGE_ID_List_Adv ( List<Int32?> PACKAGE_ID_LIST)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.PACKAGE_ID_LIST = string.Join(",", PACKAGE_ID_LIST.ToArray());
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_PACKAGE_ID_LIST_ADV", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
+oTools.CopyPropValues_FromDataRecord(X, o);
+o.My_Client = new Client();
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Package = new Package();
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
+o.My_Currency = new Currency();
+o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
+oList.Add(o);
+}
+}
+return oList;
+}
+public List<Registration> Get_Registration_By_CURRENCY_ID_List_Adv ( List<Int32?> CURRENCY_ID_LIST)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray());
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_CURRENCY_ID_LIST_ADV", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
+oTools.CopyPropValues_FromDataRecord(X, o);
+o.My_Client = new Client();
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Package = new Package();
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
+o.My_Currency = new Currency();
+o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
+oList.Add(o);
+}
+}
+return oList;
+}
 public List<Session> Get_Session_By_PACKAGE_ID_List_Adv ( List<Int32?> PACKAGE_ID_LIST)
 {
 List<Session> oList = new List<Session>();
@@ -3366,7 +3758,7 @@ oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Client_fees = new Client_fees();
-o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);
+o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);o.My_Client_fees.REGISTRATION_ID = GV<Int32>(X["T_CLIENT_FEES_REGISTRATION_ID"]);
 oList.Add(o);
 }
 }
@@ -3384,7 +3776,7 @@ oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Client_fees = new Client_fees();
-o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);
+o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);o.My_Client_fees.REGISTRATION_ID = GV<Int32>(X["T_CLIENT_FEES_REGISTRATION_ID"]);
 oList.Add(o);
 }
 }
@@ -4613,6 +5005,8 @@ o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
+o.My_Registration = new Registration();
+o.My_Registration.REGISTRATION_ID = GV<Int32>(X["T_REGISTRATION_REGISTRATION_ID"]);o.My_Registration.CLIENT_ID = GV<Int32>(X["T_REGISTRATION_CLIENT_ID"]);o.My_Registration.REGISTRATION_DATE = GV<String>(X["T_REGISTRATION_REGISTRATION_DATE"]);o.My_Registration.PACKAGE_ID = GV<Int32>(X["T_REGISTRATION_PACKAGE_ID"]);o.My_Registration.REGISTRATION_DISCOUNT = GV<Int32>(X["T_REGISTRATION_REGISTRATION_DISCOUNT"]);o.My_Registration.REGISTRATION_TOTAL_PRICE = GV<Int32>(X["T_REGISTRATION_REGISTRATION_TOTAL_PRICE"]);o.My_Registration.CURRENCY_ID = GV<Int32>(X["T_REGISTRATION_CURRENCY_ID"]);o.My_Registration.REGISTRATION_DESCRIPTION = GV<String>(X["T_REGISTRATION_REGISTRATION_DESCRIPTION"]);o.My_Registration.ENTRY_USER_ID = GV<Int64>(X["T_REGISTRATION_ENTRY_USER_ID"]);o.My_Registration.ENTRY_DATE = GV<String>(X["T_REGISTRATION_ENTRY_DATE"]);o.My_Registration.OWNER_ID = GV<Int32>(X["T_REGISTRATION_OWNER_ID"]);
 oList.Add(o);
 }
 }
@@ -4634,6 +5028,8 @@ o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
+o.My_Registration = new Registration();
+o.My_Registration.REGISTRATION_ID = GV<Int32>(X["T_REGISTRATION_REGISTRATION_ID"]);o.My_Registration.CLIENT_ID = GV<Int32>(X["T_REGISTRATION_CLIENT_ID"]);o.My_Registration.REGISTRATION_DATE = GV<String>(X["T_REGISTRATION_REGISTRATION_DATE"]);o.My_Registration.PACKAGE_ID = GV<Int32>(X["T_REGISTRATION_PACKAGE_ID"]);o.My_Registration.REGISTRATION_DISCOUNT = GV<Int32>(X["T_REGISTRATION_REGISTRATION_DISCOUNT"]);o.My_Registration.REGISTRATION_TOTAL_PRICE = GV<Int32>(X["T_REGISTRATION_REGISTRATION_TOTAL_PRICE"]);o.My_Registration.CURRENCY_ID = GV<Int32>(X["T_REGISTRATION_CURRENCY_ID"]);o.My_Registration.REGISTRATION_DESCRIPTION = GV<String>(X["T_REGISTRATION_REGISTRATION_DESCRIPTION"]);o.My_Registration.ENTRY_USER_ID = GV<Int64>(X["T_REGISTRATION_ENTRY_USER_ID"]);o.My_Registration.ENTRY_DATE = GV<String>(X["T_REGISTRATION_ENTRY_DATE"]);o.My_Registration.OWNER_ID = GV<Int32>(X["T_REGISTRATION_OWNER_ID"]);
 oList.Add(o);
 }
 }
@@ -5096,7 +5492,7 @@ oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Client_fees = new Client_fees();
-o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);
+o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);o.My_Client_fees.REGISTRATION_ID = GV<Int32>(X["T_CLIENT_FEES_REGISTRATION_ID"]);
 oList.Add(o);
 }
 }
@@ -5115,7 +5511,7 @@ oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Client_fees = new Client_fees();
-o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);
+o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);o.My_Client_fees.REGISTRATION_ID = GV<Int32>(X["T_CLIENT_FEES_REGISTRATION_ID"]);
 oList.Add(o);
 }
 }
@@ -5506,11 +5902,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Client_fees> Get_Client_fees_By_Criteria_InList ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Client_fees> Get_Client_fees_By_Criteria_InList ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, List<Int32?> REGISTRATION_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Client_fees> oList = new List<Client_fees>();
 dynamic p = new ExpandoObject();
-p.CLIENT_FEES_DESCRIPTION = CLIENT_FEES_DESCRIPTION; p.CLIENT_ID_LIST = string.Join(",", CLIENT_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.PACKAGE_ID_LIST = string.Join(",", PACKAGE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.CLIENT_FEES_DESCRIPTION = CLIENT_FEES_DESCRIPTION; p.CLIENT_ID_LIST = string.Join(",", CLIENT_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.PACKAGE_ID_LIST = string.Join(",", PACKAGE_ID_LIST.ToArray()); p.REGISTRATION_ID_LIST = string.Join(",", REGISTRATION_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_FEES_BY_CRITERIA_IN_LIST", p);
 if (R != null) {foreach (var X in R) {
 Client_fees o = new Client_fees();
@@ -5521,11 +5917,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Client_fees> Get_Client_fees_By_Where_InList ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Client_fees> Get_Client_fees_By_Where_InList ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, List<Int32?> REGISTRATION_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Client_fees> oList = new List<Client_fees>();
 dynamic p = new ExpandoObject();
-p.CLIENT_FEES_DESCRIPTION = CLIENT_FEES_DESCRIPTION; p.CLIENT_ID_LIST = string.Join(",", CLIENT_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.PACKAGE_ID_LIST = string.Join(",", PACKAGE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.CLIENT_FEES_DESCRIPTION = CLIENT_FEES_DESCRIPTION; p.CLIENT_ID_LIST = string.Join(",", CLIENT_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.PACKAGE_ID_LIST = string.Join(",", PACKAGE_ID_LIST.ToArray()); p.REGISTRATION_ID_LIST = string.Join(",", REGISTRATION_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_FEES_BY_WHERE_IN_LIST", p);
 if (R != null) {foreach (var X in R) {
 Client_fees o = new Client_fees();
@@ -6160,11 +6556,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Client_fees> Get_Client_fees_By_Criteria_InList_Adv ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Client_fees> Get_Client_fees_By_Criteria_InList_Adv ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, List<Int32?> REGISTRATION_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Client_fees> oList = new List<Client_fees>();
 dynamic p = new ExpandoObject();
-p.CLIENT_FEES_DESCRIPTION = CLIENT_FEES_DESCRIPTION; p.CLIENT_ID_LIST = string.Join(",", CLIENT_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.PACKAGE_ID_LIST = string.Join(",", PACKAGE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.CLIENT_FEES_DESCRIPTION = CLIENT_FEES_DESCRIPTION; p.CLIENT_ID_LIST = string.Join(",", CLIENT_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.PACKAGE_ID_LIST = string.Join(",", PACKAGE_ID_LIST.ToArray()); p.REGISTRATION_ID_LIST = string.Join(",", REGISTRATION_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_FEES_BY_CRITERIA_IN_LIST_ADV", p);
 if (R != null) {foreach (var X in R) {
 Client_fees o = new Client_fees();
@@ -6175,17 +6571,19 @@ o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
+o.My_Registration = new Registration();
+o.My_Registration.REGISTRATION_ID = GV<Int32>(X["T_REGISTRATION_REGISTRATION_ID"]);o.My_Registration.CLIENT_ID = GV<Int32>(X["T_REGISTRATION_CLIENT_ID"]);o.My_Registration.REGISTRATION_DATE = GV<String>(X["T_REGISTRATION_REGISTRATION_DATE"]);o.My_Registration.PACKAGE_ID = GV<Int32>(X["T_REGISTRATION_PACKAGE_ID"]);o.My_Registration.REGISTRATION_DISCOUNT = GV<Int32>(X["T_REGISTRATION_REGISTRATION_DISCOUNT"]);o.My_Registration.REGISTRATION_TOTAL_PRICE = GV<Int32>(X["T_REGISTRATION_REGISTRATION_TOTAL_PRICE"]);o.My_Registration.CURRENCY_ID = GV<Int32>(X["T_REGISTRATION_CURRENCY_ID"]);o.My_Registration.REGISTRATION_DESCRIPTION = GV<String>(X["T_REGISTRATION_REGISTRATION_DESCRIPTION"]);o.My_Registration.ENTRY_USER_ID = GV<Int64>(X["T_REGISTRATION_ENTRY_USER_ID"]);o.My_Registration.ENTRY_DATE = GV<String>(X["T_REGISTRATION_ENTRY_DATE"]);o.My_Registration.OWNER_ID = GV<Int32>(X["T_REGISTRATION_OWNER_ID"]);
 oList.Add(o);
 }
 }
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Client_fees> Get_Client_fees_By_Where_InList_Adv ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Client_fees> Get_Client_fees_By_Where_InList_Adv ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, List<Int32?> REGISTRATION_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Client_fees> oList = new List<Client_fees>();
 dynamic p = new ExpandoObject();
-p.CLIENT_FEES_DESCRIPTION = CLIENT_FEES_DESCRIPTION; p.CLIENT_ID_LIST = string.Join(",", CLIENT_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.PACKAGE_ID_LIST = string.Join(",", PACKAGE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.CLIENT_FEES_DESCRIPTION = CLIENT_FEES_DESCRIPTION; p.CLIENT_ID_LIST = string.Join(",", CLIENT_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.PACKAGE_ID_LIST = string.Join(",", PACKAGE_ID_LIST.ToArray()); p.REGISTRATION_ID_LIST = string.Join(",", REGISTRATION_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_FEES_BY_WHERE_IN_LIST_ADV", p);
 if (R != null) {foreach (var X in R) {
 Client_fees o = new Client_fees();
@@ -6196,6 +6594,8 @@ o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
+o.My_Registration = new Registration();
+o.My_Registration.REGISTRATION_ID = GV<Int32>(X["T_REGISTRATION_REGISTRATION_ID"]);o.My_Registration.CLIENT_ID = GV<Int32>(X["T_REGISTRATION_CLIENT_ID"]);o.My_Registration.REGISTRATION_DATE = GV<String>(X["T_REGISTRATION_REGISTRATION_DATE"]);o.My_Registration.PACKAGE_ID = GV<Int32>(X["T_REGISTRATION_PACKAGE_ID"]);o.My_Registration.REGISTRATION_DISCOUNT = GV<Int32>(X["T_REGISTRATION_REGISTRATION_DISCOUNT"]);o.My_Registration.REGISTRATION_TOTAL_PRICE = GV<Int32>(X["T_REGISTRATION_REGISTRATION_TOTAL_PRICE"]);o.My_Registration.CURRENCY_ID = GV<Int32>(X["T_REGISTRATION_CURRENCY_ID"]);o.My_Registration.REGISTRATION_DESCRIPTION = GV<String>(X["T_REGISTRATION_REGISTRATION_DESCRIPTION"]);o.My_Registration.ENTRY_USER_ID = GV<Int64>(X["T_REGISTRATION_ENTRY_USER_ID"]);o.My_Registration.ENTRY_DATE = GV<String>(X["T_REGISTRATION_ENTRY_DATE"]);o.My_Registration.OWNER_ID = GV<Int32>(X["T_REGISTRATION_OWNER_ID"]);
 oList.Add(o);
 }
 }
@@ -6478,7 +6878,7 @@ oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Client_fees = new Client_fees();
-o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);
+o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);o.My_Client_fees.REGISTRATION_ID = GV<Int32>(X["T_CLIENT_FEES_REGISTRATION_ID"]);
 oList.Add(o);
 }
 }
@@ -6497,7 +6897,7 @@ oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Client_fees = new Client_fees();
-o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);
+o.My_Client_fees.CLIENT_FEES_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_ID"]);o.My_Client_fees.CLIENT_ID = GV<Int32>(X["T_CLIENT_FEES_CLIENT_ID"]);o.My_Client_fees.CLIENT_FEES_DESCRIPTION = GV<String>(X["T_CLIENT_FEES_CLIENT_FEES_DESCRIPTION"]);o.My_Client_fees.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_FEES_ENTRY_USER_ID"]);o.My_Client_fees.ENTRY_DATE = GV<String>(X["T_CLIENT_FEES_ENTRY_DATE"]);o.My_Client_fees.OWNER_ID = GV<Int32>(X["T_CLIENT_FEES_OWNER_ID"]);o.My_Client_fees.CURRENCY_ID = GV<Int32>(X["T_CLIENT_FEES_CURRENCY_ID"]);o.My_Client_fees.PACKAGE_ID = GV<Int32>(X["T_CLIENT_FEES_PACKAGE_ID"]);o.My_Client_fees.CLIENT_FEES_AMOUNT = GV<Int32>(X["T_CLIENT_FEES_CLIENT_FEES_AMOUNT"]);o.My_Client_fees.REGISTRATION_ID = GV<Int32>(X["T_CLIENT_FEES_REGISTRATION_ID"]);
 oList.Add(o);
 }
 }
@@ -6813,6 +7213,11 @@ public void Delete_Person ( long? PERSON_ID)
 var p = new { PERSON_ID = PERSON_ID };
 ExecuteDelete("UPG_DELETE_PERSON", p);
 }
+public void Delete_Registration ( Int32? REGISTRATION_ID)
+{
+var p = new { REGISTRATION_ID = REGISTRATION_ID };
+ExecuteDelete("UPG_DELETE_REGISTRATION", p);
+}
 public void Delete_Session ( Int32? SESSION_ID)
 {
 var p = new { SESSION_ID = SESSION_ID };
@@ -6912,6 +7317,11 @@ public void Delete_Client_fees_By_PACKAGE_ID ( Int32? PACKAGE_ID)
 {
 var p = new { PACKAGE_ID = PACKAGE_ID };
 ExecuteDelete("UPG_DELETE_CLIENT_FEES_BY_PACKAGE_ID", p);
+}
+public void Delete_Client_fees_By_REGISTRATION_ID ( Int32? REGISTRATION_ID)
+{
+var p = new { REGISTRATION_ID = REGISTRATION_ID };
+ExecuteDelete("UPG_DELETE_CLIENT_FEES_BY_REGISTRATION_ID", p);
 }
 public void Delete_Contact_By_PERSON_ID ( long? PERSON_ID)
 {
@@ -7018,6 +7428,26 @@ public void Delete_Person_By_OWNER_ID ( Int32? OWNER_ID)
 var p = new { OWNER_ID = OWNER_ID };
 ExecuteDelete("UPG_DELETE_PERSON_BY_OWNER_ID", p);
 }
+public void Delete_Registration_By_OWNER_ID ( Int32? OWNER_ID)
+{
+var p = new { OWNER_ID = OWNER_ID };
+ExecuteDelete("UPG_DELETE_REGISTRATION_BY_OWNER_ID", p);
+}
+public void Delete_Registration_By_CLIENT_ID ( Int32? CLIENT_ID)
+{
+var p = new { CLIENT_ID = CLIENT_ID };
+ExecuteDelete("UPG_DELETE_REGISTRATION_BY_CLIENT_ID", p);
+}
+public void Delete_Registration_By_PACKAGE_ID ( Int32? PACKAGE_ID)
+{
+var p = new { PACKAGE_ID = PACKAGE_ID };
+ExecuteDelete("UPG_DELETE_REGISTRATION_BY_PACKAGE_ID", p);
+}
+public void Delete_Registration_By_CURRENCY_ID ( Int32? CURRENCY_ID)
+{
+var p = new { CURRENCY_ID = CURRENCY_ID };
+ExecuteDelete("UPG_DELETE_REGISTRATION_BY_CURRENCY_ID", p);
+}
 public void Delete_Session_By_OWNER_ID ( Int32? OWNER_ID)
 {
 var p = new { OWNER_ID = OWNER_ID };
@@ -7114,10 +7544,10 @@ oClient.CLIENT_ID = CLIENT_ID;oClient.CLIENT_NAME = CLIENT_NAME;oClient.CLIENT_P
 ExecuteEdit("UPG_EDIT_CLIENT", oClient, "CLIENT_ID");
 return oClient.CLIENT_ID;
 }
-public Int32? Edit_Client_fees ( Int32? CLIENT_FEES_ID, Int32? CLIENT_ID, string CLIENT_FEES_DESCRIPTION, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, Int32? CURRENCY_ID, Int32? PACKAGE_ID, Int32? CLIENT_FEES_AMOUNT)
+public Int32? Edit_Client_fees ( Int32? CLIENT_FEES_ID, Int32? CLIENT_ID, string CLIENT_FEES_DESCRIPTION, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, Int32? CURRENCY_ID, Int32? PACKAGE_ID, Int32? CLIENT_FEES_AMOUNT, Int32? REGISTRATION_ID)
 {
 Client_fees oClient_fees = new Client_fees();
-oClient_fees.CLIENT_FEES_ID = CLIENT_FEES_ID;oClient_fees.CLIENT_ID = CLIENT_ID;oClient_fees.CLIENT_FEES_DESCRIPTION = CLIENT_FEES_DESCRIPTION;oClient_fees.ENTRY_USER_ID = ENTRY_USER_ID;oClient_fees.ENTRY_DATE = ENTRY_DATE;oClient_fees.OWNER_ID = OWNER_ID;oClient_fees.CURRENCY_ID = CURRENCY_ID;oClient_fees.PACKAGE_ID = PACKAGE_ID;oClient_fees.CLIENT_FEES_AMOUNT = CLIENT_FEES_AMOUNT;
+oClient_fees.CLIENT_FEES_ID = CLIENT_FEES_ID;oClient_fees.CLIENT_ID = CLIENT_ID;oClient_fees.CLIENT_FEES_DESCRIPTION = CLIENT_FEES_DESCRIPTION;oClient_fees.ENTRY_USER_ID = ENTRY_USER_ID;oClient_fees.ENTRY_DATE = ENTRY_DATE;oClient_fees.OWNER_ID = OWNER_ID;oClient_fees.CURRENCY_ID = CURRENCY_ID;oClient_fees.PACKAGE_ID = PACKAGE_ID;oClient_fees.CLIENT_FEES_AMOUNT = CLIENT_FEES_AMOUNT;oClient_fees.REGISTRATION_ID = REGISTRATION_ID;
 ExecuteEdit("UPG_EDIT_CLIENT_FEES", oClient_fees, "CLIENT_FEES_ID");
 return oClient_fees.CLIENT_FEES_ID;
 }
@@ -7197,6 +7627,13 @@ Person oPerson = new Person();
 oPerson.PERSON_ID = PERSON_ID;oPerson.FIRST_NAME = FIRST_NAME;oPerson.LAST_NAME = LAST_NAME;oPerson.FATHER_NAME = FATHER_NAME;oPerson.MOTHER_NAME = MOTHER_NAME;oPerson.TITLE_CODE = TITLE_CODE;oPerson.GENDER_CODE = GENDER_CODE;oPerson.RELIGION_CODE = RELIGION_CODE;oPerson.BIRTH_DATE = BIRTH_DATE;oPerson.IS_BLOCKED = IS_BLOCKED;oPerson.DESCRIPTION = DESCRIPTION;oPerson.OWNER_ID = OWNER_ID;oPerson.ENTRY_USER_ID = ENTRY_USER_ID;oPerson.ENTRY_DATE = ENTRY_DATE;
 ExecuteEdit("UPG_EDIT_PERSON", oPerson, "PERSON_ID");
 return oPerson.PERSON_ID;
+}
+public Int32? Edit_Registration ( Int32? REGISTRATION_ID, Int32? CLIENT_ID, string REGISTRATION_DATE, Int32? PACKAGE_ID, Int32? REGISTRATION_DISCOUNT, Int32? REGISTRATION_TOTAL_PRICE, Int32? CURRENCY_ID, string REGISTRATION_DESCRIPTION, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID)
+{
+Registration oRegistration = new Registration();
+oRegistration.REGISTRATION_ID = REGISTRATION_ID;oRegistration.CLIENT_ID = CLIENT_ID;oRegistration.REGISTRATION_DATE = REGISTRATION_DATE;oRegistration.PACKAGE_ID = PACKAGE_ID;oRegistration.REGISTRATION_DISCOUNT = REGISTRATION_DISCOUNT;oRegistration.REGISTRATION_TOTAL_PRICE = REGISTRATION_TOTAL_PRICE;oRegistration.CURRENCY_ID = CURRENCY_ID;oRegistration.REGISTRATION_DESCRIPTION = REGISTRATION_DESCRIPTION;oRegistration.ENTRY_USER_ID = ENTRY_USER_ID;oRegistration.ENTRY_DATE = ENTRY_DATE;oRegistration.OWNER_ID = OWNER_ID;
+ExecuteEdit("UPG_EDIT_REGISTRATION", oRegistration, "REGISTRATION_ID");
+return oRegistration.REGISTRATION_ID;
 }
 public Int32? Edit_Session ( Int32? SESSION_ID, string SESSION_STARTING_DATE, string SESSION_ENDING_DATE, Int32? SESSION_ATTENDED, Int32? PACKAGE_ID, Int32? CLIENT_FEES_ID, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, string DESCRIPTION)
 {

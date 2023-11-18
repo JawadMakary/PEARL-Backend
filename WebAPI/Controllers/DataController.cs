@@ -592,6 +592,87 @@ return oResult_Edit_Package;
 #endregion
 }
 #endregion
+#region Edit_Registration
+[HttpPost]
+[Route("Edit_Registration")]
+public Result_Edit_Registration Edit_Registration(Registration i_Registration)
+{
+#region Declaration And Initialization Section.
+string i_Ticket = string.Empty;
+Result_Edit_Registration oResult_Edit_Registration = new Result_Edit_Registration();
+#endregion
+#region Body Section.
+try
+{
+
+// Ticket Checking
+//-------------------
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] != null)
+{
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] == "1")
+{
+if
+(
+(
+(HttpContext.Request.Query["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Query["Ticket"].ToString() != "")
+)
+||
+(
+(HttpContext.Request.Headers["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Headers["Ticket"].ToString() != "")
+)
+)
+{
+i_Ticket = string.IsNullOrEmpty(HttpContext.Request.Query["Ticket"])  ? "": HttpContext.Request.Query["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+i_Ticket = HttpContext.Request.Headers["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+throw new Exception("Missing Ticket");
+}
+}
+}
+else
+{
+throw new Exception("Invalid Ticket");
+}
+}
+}
+//-------------------
+
+BLC.BLC oBLC_Default = new BLC.BLC();
+BLCInitializer oBLCInitializer = new BLCInitializer();
+oBLCInitializer.UserID           = Convert.ToInt64(oBLC_Default.ResolveTicket(i_Ticket)["USER_ID"]);
+oBLCInitializer.OwnerID          = Convert.ToInt32(oBLC_Default.ResolveTicket(i_Ticket)["OWNER_ID"]);
+oBLCInitializer.ConnectionString = ConfigurationManager.AppSettings["CONN_STR"];
+oBLCInitializer.Messages_FilePath = ConfigurationManager.AppSettings["BLC_MESSAGES"];
+using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
+{
+oBLC.Monitor_API_Calls();
+oBLC.Edit_Registration(i_Registration);
+oResult_Edit_Registration.My_Registration = i_Registration;
+}
+}
+catch(Exception ex)
+{
+if (ex.GetType().FullName != "BLC.BLCException")
+{
+oResult_Edit_Registration.ExceptionMsg = string.Format("Edit_Registration : {0}", ex.Message);
+}
+else
+{
+oResult_Edit_Registration.ExceptionMsg = ex.Message;
+oResult_Edit_Registration.ExceptionCode = ((BLCException)ex).Code;
+}
+}
+#endregion
+#region Return Section
+return oResult_Edit_Registration;
+#endregion
+}
+#endregion
 #region Edit_Session
 [HttpPost]
 [Route("Edit_Session")]
@@ -1345,11 +1426,7 @@ throw new Exception("Invalid Ticket");
 //-------------------
 
 BLC.BLC oBLC_Default = new BLC.BLC();
-BLCInitializer oBLCInitializer = new BLCInitializer();
-oBLCInitializer.UserID           = Convert.ToInt64(oBLC_Default.ResolveTicket(i_Ticket)["USER_ID"]);
-oBLCInitializer.OwnerID          = Convert.ToInt32(oBLC_Default.ResolveTicket(i_Ticket)["OWNER_ID"]);
-oBLCInitializer.ConnectionString = ConfigurationManager.AppSettings["CONN_STR"];
-oBLCInitializer.Messages_FilePath = ConfigurationManager.AppSettings["BLC_MESSAGES"];
+BLCInitializer oBLCInitializer = oBLC_Default.Prepare_BLCInitializer(i_Ticket,BLC.BLC.Enum_API_Method.Get_Client_fees_By_CLIENT_ID);
 using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
 {
 oBLC.Monitor_API_Calls();
@@ -1929,6 +2006,89 @@ return oResult_Get_Package_By_OWNER_ID_Adv;
 #endregion
 }
 #endregion
+#region Get_Registration_By_OWNER_ID
+[HttpPost]
+[Route("Get_Registration_By_OWNER_ID")]
+public Result_Get_Registration_By_OWNER_ID Get_Registration_By_OWNER_ID(Params_Get_Registration_By_OWNER_ID i_Params_Get_Registration_By_OWNER_ID)
+{
+#region Declaration And Initialization Section.
+List<Registration>  oReturnValue = new List<Registration> ();
+string i_Ticket = string.Empty;
+Result_Get_Registration_By_OWNER_ID oResult_Get_Registration_By_OWNER_ID = new Result_Get_Registration_By_OWNER_ID();
+#endregion
+#region Body Section.
+try
+{
+
+// Ticket Checking
+//-------------------
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] != null)
+{
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] == "1")
+{
+if
+(
+(
+(HttpContext.Request.Query["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Query["Ticket"].ToString() != "")
+)
+||
+(
+(HttpContext.Request.Headers["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Headers["Ticket"].ToString() != "")
+)
+)
+{
+i_Ticket = string.IsNullOrEmpty(HttpContext.Request.Query["Ticket"])  ? "": HttpContext.Request.Query["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+i_Ticket = HttpContext.Request.Headers["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+throw new Exception("Missing Ticket");
+}
+}
+}
+else
+{
+throw new Exception("Invalid Ticket");
+}
+}
+}
+//-------------------
+
+BLC.BLC oBLC_Default = new BLC.BLC();
+BLCInitializer oBLCInitializer = new BLCInitializer();
+oBLCInitializer.UserID           = Convert.ToInt64(oBLC_Default.ResolveTicket(i_Ticket)["USER_ID"]);
+oBLCInitializer.OwnerID          = Convert.ToInt32(oBLC_Default.ResolveTicket(i_Ticket)["OWNER_ID"]);
+oBLCInitializer.ConnectionString = ConfigurationManager.AppSettings["CONN_STR"];
+oBLCInitializer.Messages_FilePath = ConfigurationManager.AppSettings["BLC_MESSAGES"];
+using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
+{
+oBLC.Monitor_API_Calls();
+oReturnValue = oBLC.Get_Registration_By_OWNER_ID(i_Params_Get_Registration_By_OWNER_ID);
+oResult_Get_Registration_By_OWNER_ID.My_Result = oReturnValue;
+oResult_Get_Registration_By_OWNER_ID.My_Params_Get_Registration_By_OWNER_ID = i_Params_Get_Registration_By_OWNER_ID;
+}
+}
+catch(Exception ex)
+{
+if (ex.GetType().FullName != "BLC.BLCException")
+{
+oResult_Get_Registration_By_OWNER_ID.ExceptionMsg = string.Format("Get_Registration_By_OWNER_ID : {0}", ex.Message);
+}
+else
+{
+oResult_Get_Registration_By_OWNER_ID.ExceptionMsg = ex.Message;
+oResult_Get_Registration_By_OWNER_ID.ExceptionCode = ((BLCException)ex).Code;
+}
+}
+#endregion
+#region Return Section
+return oResult_Get_Registration_By_OWNER_ID;
+#endregion
+}
+#endregion
 #region Get_Session_By_OWNER_ID_Adv
 [HttpPost]
 [Route("Get_Session_By_OWNER_ID_Adv")]
@@ -2139,11 +2299,7 @@ throw new Exception("Invalid Ticket");
 //-------------------
 
 BLC.BLC oBLC_Default = new BLC.BLC();
-BLCInitializer oBLCInitializer = new BLCInitializer();
-oBLCInitializer.UserID           = Convert.ToInt64(oBLC_Default.ResolveTicket(i_Ticket)["USER_ID"]);
-oBLCInitializer.OwnerID          = Convert.ToInt32(oBLC_Default.ResolveTicket(i_Ticket)["OWNER_ID"]);
-oBLCInitializer.ConnectionString = ConfigurationManager.AppSettings["CONN_STR"];
-oBLCInitializer.Messages_FilePath = ConfigurationManager.AppSettings["BLC_MESSAGES"];
+BLCInitializer oBLCInitializer = oBLC_Default.Prepare_BLCInitializer(i_Ticket,BLC.BLC.Enum_API_Method.Get_Staff_By_STAFF_ID);
 using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
 {
 oBLC.Monitor_API_Calls();
@@ -2301,11 +2457,7 @@ throw new Exception("Invalid Ticket");
 //-------------------
 
 BLC.BLC oBLC_Default = new BLC.BLC();
-BLCInitializer oBLCInitializer = new BLCInitializer();
-oBLCInitializer.UserID           = Convert.ToInt64(oBLC_Default.ResolveTicket(i_Ticket)["USER_ID"]);
-oBLCInitializer.OwnerID          = Convert.ToInt32(oBLC_Default.ResolveTicket(i_Ticket)["OWNER_ID"]);
-oBLCInitializer.ConnectionString = ConfigurationManager.AppSettings["CONN_STR"];
-oBLCInitializer.Messages_FilePath = ConfigurationManager.AppSettings["BLC_MESSAGES"];
+BLCInitializer oBLCInitializer = oBLC_Default.Prepare_BLCInitializer(i_Ticket,BLC.BLC.Enum_API_Method.Get_Staff_fees_By_STAFF_ID);
 using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
 {
 oBLC.Monitor_API_Calls();
@@ -2463,11 +2615,7 @@ throw new Exception("Invalid Ticket");
 //-------------------
 
 BLC.BLC oBLC_Default = new BLC.BLC();
-BLCInitializer oBLCInitializer = new BLCInitializer();
-oBLCInitializer.UserID           = Convert.ToInt64(oBLC_Default.ResolveTicket(i_Ticket)["USER_ID"]);
-oBLCInitializer.OwnerID          = Convert.ToInt32(oBLC_Default.ResolveTicket(i_Ticket)["OWNER_ID"]);
-oBLCInitializer.ConnectionString = ConfigurationManager.AppSettings["CONN_STR"];
-oBLCInitializer.Messages_FilePath = ConfigurationManager.AppSettings["BLC_MESSAGES"];
+BLCInitializer oBLCInitializer = oBLC_Default.Prepare_BLCInitializer(i_Ticket,BLC.BLC.Enum_API_Method.Get_Supplier_By_SUPPLIER_ID);
 using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
 {
 oBLC.Monitor_API_Calls();
@@ -2625,11 +2773,7 @@ throw new Exception("Invalid Ticket");
 //-------------------
 
 BLC.BLC oBLC_Default = new BLC.BLC();
-BLCInitializer oBLCInitializer = new BLCInitializer();
-oBLCInitializer.UserID           = Convert.ToInt64(oBLC_Default.ResolveTicket(i_Ticket)["USER_ID"]);
-oBLCInitializer.OwnerID          = Convert.ToInt32(oBLC_Default.ResolveTicket(i_Ticket)["OWNER_ID"]);
-oBLCInitializer.ConnectionString = ConfigurationManager.AppSettings["CONN_STR"];
-oBLCInitializer.Messages_FilePath = ConfigurationManager.AppSettings["BLC_MESSAGES"];
+BLCInitializer oBLCInitializer = oBLC_Default.Prepare_BLCInitializer(i_Ticket,BLC.BLC.Enum_API_Method.Get_Supplier_fees_By_SUPPLIER_ID);
 using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
 {
 oBLC.Monitor_API_Calls();
@@ -3207,6 +3351,14 @@ public Package My_Package { get; set; }
 #endregion
 }
 #endregion
+#region Result_Edit_Registration
+public partial class Result_Edit_Registration : Action_Result
+{
+#region Properties.
+public Registration My_Registration { get; set; }
+#endregion
+}
+#endregion
 #region Result_Edit_Session
 public partial class Result_Edit_Session : Action_Result
 {
@@ -3352,6 +3504,15 @@ public partial class Result_Get_Package_By_OWNER_ID_Adv : Action_Result
 #region Properties.
 public List<Package>  My_Result { get; set; }
 public Params_Get_Package_By_OWNER_ID My_Params_Get_Package_By_OWNER_ID { get; set; }
+#endregion
+}
+#endregion
+#region Result_Get_Registration_By_OWNER_ID
+public partial class Result_Get_Registration_By_OWNER_ID : Action_Result
+{
+#region Properties.
+public List<Registration>  My_Result { get; set; }
+public Params_Get_Registration_By_OWNER_ID My_Params_Get_Registration_By_OWNER_ID { get; set; }
 #endregion
 }
 #endregion

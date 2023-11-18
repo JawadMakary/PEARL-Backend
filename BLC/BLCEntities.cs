@@ -156,6 +156,15 @@ public long? PERSON_ID {get;set;}
 #endregion
 }
 #endregion
+#region Params_Get_Registration_By_REGISTRATION_ID
+public partial class Params_Get_Registration_By_REGISTRATION_ID
+{
+#region Properties
+public Int32? REGISTRATION_ID {get;set;}
+
+#endregion
+}
+#endregion
 #region Params_Get_Session_By_SESSION_ID
 public partial class Params_Get_Session_By_SESSION_ID
 {
@@ -345,6 +354,15 @@ public partial class Params_Get_Person_By_PERSON_ID_List_SP
 public string PERSON_ID_LIST {get;set;}
 
 }
+public partial class Params_Get_Registration_By_REGISTRATION_ID_List
+{
+public List<Int32?> REGISTRATION_ID_LIST {get;set;}
+}
+public partial class Params_Get_Registration_By_REGISTRATION_ID_List_SP
+{
+public string REGISTRATION_ID_LIST {get;set;}
+
+}
 public partial class Params_Get_Session_By_SESSION_ID_List
 {
 public List<Int32?> SESSION_ID_LIST {get;set;}
@@ -470,6 +488,11 @@ public partial class Params_Get_Client_fees_By_PACKAGE_ID
 public Int32? PACKAGE_ID {get;set;}
 
 }
+public partial class Params_Get_Client_fees_By_REGISTRATION_ID
+{
+public Int32? REGISTRATION_ID {get;set;}
+
+}
 public partial class Params_Get_Contact_By_PERSON_ID
 {
 public long? PERSON_ID {get;set;}
@@ -578,6 +601,26 @@ public Int32? CURRENCY_ID {get;set;}
 public partial class Params_Get_Person_By_OWNER_ID
 {
 public Int32? OWNER_ID {get;set;}
+
+}
+public partial class Params_Get_Registration_By_OWNER_ID
+{
+public Int32? OWNER_ID {get;set;}
+
+}
+public partial class Params_Get_Registration_By_CLIENT_ID
+{
+public Int32? CLIENT_ID {get;set;}
+
+}
+public partial class Params_Get_Registration_By_PACKAGE_ID
+{
+public Int32? PACKAGE_ID {get;set;}
+
+}
+public partial class Params_Get_Registration_By_CURRENCY_ID
+{
+public Int32? CURRENCY_ID {get;set;}
 
 }
 public partial class Params_Get_Session_By_OWNER_ID
@@ -700,6 +743,11 @@ public partial class Params_Get_Client_fees_By_PACKAGE_ID_List
 public List<Int32?> PACKAGE_ID_LIST {get;set;}
 
 }
+public partial class Params_Get_Client_fees_By_REGISTRATION_ID_List
+{
+public List<Int32?> REGISTRATION_ID_LIST {get;set;}
+
+}
 public partial class Params_Get_Contact_By_PERSON_ID_List
 {
 public List<long?> PERSON_ID_LIST {get;set;}
@@ -726,6 +774,21 @@ public List<long?> LOC_L3_ID_LIST {get;set;}
 
 }
 public partial class Params_Get_Package_By_CURRENCY_ID_List
+{
+public List<Int32?> CURRENCY_ID_LIST {get;set;}
+
+}
+public partial class Params_Get_Registration_By_CLIENT_ID_List
+{
+public List<Int32?> CLIENT_ID_LIST {get;set;}
+
+}
+public partial class Params_Get_Registration_By_PACKAGE_ID_List
+{
+public List<Int32?> PACKAGE_ID_LIST {get;set;}
+
+}
+public partial class Params_Get_Registration_By_CURRENCY_ID_List
 {
 public List<Int32?> CURRENCY_ID_LIST {get;set;}
 
@@ -1710,6 +1773,7 @@ public string CLIENT_FEES_DESCRIPTION {get;set;}
 public List<Int32?> CLIENT_ID_LIST {get;set;}
 public List<Int32?> CURRENCY_ID_LIST {get;set;}
 public List<Int32?> PACKAGE_ID_LIST {get;set;}
+public List<Int32?> REGISTRATION_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -1721,6 +1785,7 @@ public string CLIENT_FEES_DESCRIPTION {get;set;}
 public string CLIENT_ID_LIST {get;set;}
 public string CURRENCY_ID_LIST {get;set;}
 public string PACKAGE_ID_LIST {get;set;}
+public string REGISTRATION_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -1733,6 +1798,7 @@ public string CLIENT_FEES_DESCRIPTION {get;set;}
 public List<Int32?> CLIENT_ID_LIST {get;set;}
 public List<Int32?> CURRENCY_ID_LIST {get;set;}
 public List<Int32?> PACKAGE_ID_LIST {get;set;}
+public List<Int32?> REGISTRATION_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -1744,6 +1810,7 @@ public string CLIENT_FEES_DESCRIPTION {get;set;}
 public string CLIENT_ID_LIST {get;set;}
 public string CURRENCY_ID_LIST {get;set;}
 public string PACKAGE_ID_LIST {get;set;}
+public string REGISTRATION_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -2588,6 +2655,14 @@ public long? PERSON_ID {get;set;}
 #endregion
 }
 #endregion
+#region Params_Delete_Registration
+public partial class Params_Delete_Registration
+{
+#region Properties
+public Int32? REGISTRATION_ID {get;set;}
+#endregion
+}
+#endregion
 #region Params_Delete_Session
 public partial class Params_Delete_Session
 {
@@ -2693,6 +2768,10 @@ public partial class Params_Delete_Client_fees_By_PACKAGE_ID
 {
 public Int32? PACKAGE_ID {get;set;}
 }
+public partial class Params_Delete_Client_fees_By_REGISTRATION_ID
+{
+public Int32? REGISTRATION_ID {get;set;}
+}
 public partial class Params_Delete_Contact_By_PERSON_ID
 {
 public long? PERSON_ID {get;set;}
@@ -2781,6 +2860,22 @@ public Int32? CURRENCY_ID {get;set;}
 public partial class Params_Delete_Person_By_OWNER_ID
 {
 public Int32? OWNER_ID {get;set;}
+}
+public partial class Params_Delete_Registration_By_OWNER_ID
+{
+public Int32? OWNER_ID {get;set;}
+}
+public partial class Params_Delete_Registration_By_CLIENT_ID
+{
+public Int32? CLIENT_ID {get;set;}
+}
+public partial class Params_Delete_Registration_By_PACKAGE_ID
+{
+public Int32? PACKAGE_ID {get;set;}
+}
+public partial class Params_Delete_Registration_By_CURRENCY_ID
+{
+public Int32? CURRENCY_ID {get;set;}
 }
 public partial class Params_Delete_Session_By_OWNER_ID
 {
@@ -2893,6 +2988,7 @@ public Int32? OWNER_ID {get;set;}
 public Int32? CURRENCY_ID {get;set;}
 public Int32? PACKAGE_ID {get;set;}
 public Int32? CLIENT_FEES_AMOUNT {get;set;}
+public Int32? REGISTRATION_ID {get;set;}
 }
 public partial class Contact
 {
@@ -3022,6 +3118,20 @@ public string DESCRIPTION {get;set;}
 public Int32? OWNER_ID {get;set;}
 public long? ENTRY_USER_ID {get;set;}
 public string ENTRY_DATE {get;set;}
+}
+public partial class Registration
+{
+public Int32? REGISTRATION_ID {get;set;}
+public Int32? CLIENT_ID {get;set;}
+public string REGISTRATION_DATE {get;set;}
+public Int32? PACKAGE_ID {get;set;}
+public Int32? REGISTRATION_DISCOUNT {get;set;}
+public Int32? REGISTRATION_TOTAL_PRICE {get;set;}
+public Int32? CURRENCY_ID {get;set;}
+public string REGISTRATION_DESCRIPTION {get;set;}
+public long? ENTRY_USER_ID {get;set;}
+public string ENTRY_DATE {get;set;}
+public Int32? OWNER_ID {get;set;}
 }
 public partial class Session
 {
@@ -3225,6 +3335,15 @@ public partial class Params_Edit_Person_List
 #region Properties
 public List<Person> My_List_To_Edit { get; set; }
 public List<Person> My_List_To_Delete { get; set; }
+#endregion
+}
+#endregion
+#region Params_Edit_Registration_List
+public partial class Params_Edit_Registration_List
+{
+#region Properties
+public List<Registration> My_List_To_Edit { get; set; }
+public List<Registration> My_List_To_Delete { get; set; }
 #endregion
 }
 #endregion

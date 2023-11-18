@@ -89,6 +89,8 @@ oClient_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oClient_fees.My_Currency);
 oClient_fees.My_Package = new Package();
 oTools.CopyPropValues(oDBEntry.My_Package, oClient_fees.My_Package);
+oClient_fees.My_Registration = new Registration();
+oTools.CopyPropValues(oDBEntry.My_Registration, oClient_fees.My_Registration);
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Client_fees_By_CLIENT_FEES_ID_Adv");}
 return oClient_fees;
@@ -234,6 +236,25 @@ oTools.CopyPropValues(oDBEntry, oPerson);
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Person_By_PERSON_ID_Adv");}
 return oPerson;
+}
+public Registration Get_Registration_By_REGISTRATION_ID_Adv(Params_Get_Registration_By_REGISTRATION_ID i_Params_Get_Registration_By_REGISTRATION_ID)
+{
+Registration oRegistration = null;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registration_By_REGISTRATION_ID_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registration_By_REGISTRATION_ID_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registration_By_REGISTRATION_ID));}
+#region Body Section.
+DALC.Registration oDBEntry = _AppContext.Get_Registration_By_REGISTRATION_ID_Adv(i_Params_Get_Registration_By_REGISTRATION_ID.REGISTRATION_ID);
+oRegistration = new Registration();
+oTools.CopyPropValues(oDBEntry, oRegistration);
+oRegistration.My_Client = new Client();
+oTools.CopyPropValues(oDBEntry.My_Client, oRegistration.My_Client);
+oRegistration.My_Package = new Package();
+oTools.CopyPropValues(oDBEntry.My_Package, oRegistration.My_Package);
+oRegistration.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistration.My_Currency);
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registration_By_REGISTRATION_ID_Adv");}
+return oRegistration;
 }
 public Session Get_Session_By_SESSION_ID_Adv(Params_Get_Session_By_SESSION_ID i_Params_Get_Session_By_SESSION_ID)
 {
@@ -428,6 +449,8 @@ oClient_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oClient_fees.My_Currency);
 oClient_fees.My_Package = new Package();
 oTools.CopyPropValues(oDBEntry.My_Package, oClient_fees.My_Package);
+oClient_fees.My_Registration = new Registration();
+oTools.CopyPropValues(oDBEntry.My_Registration, oClient_fees.My_Registration);
 oList.Add(oClient_fees);
 }
 }
@@ -665,6 +688,34 @@ oList.Add(oPerson);
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Person_By_PERSON_ID_List_Adv");}
+return oList;
+}
+public List<Registration> Get_Registration_By_REGISTRATION_ID_List_Adv(Params_Get_Registration_By_REGISTRATION_ID_List i_Params_Get_Registration_By_REGISTRATION_ID_List)
+{
+Registration oRegistration = null;
+List<Registration> oList = new List<Registration>();
+Params_Get_Registration_By_REGISTRATION_ID_List_SP oParams_Get_Registration_By_REGISTRATION_ID_List_SP = new Params_Get_Registration_By_REGISTRATION_ID_List_SP();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registration_By_REGISTRATION_ID_List_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registration_By_REGISTRATION_ID_List_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registration_By_REGISTRATION_ID_List));}
+#region Body Section.
+List<DALC.Registration> oList_DBEntries = _AppContext.Get_Registration_By_REGISTRATION_ID_List_Adv(i_Params_Get_Registration_By_REGISTRATION_ID_List.REGISTRATION_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistration = new Registration();
+oTools.CopyPropValues(oDBEntry, oRegistration);
+oRegistration.My_Client = new Client();
+oTools.CopyPropValues(oDBEntry.My_Client, oRegistration.My_Client);
+oRegistration.My_Package = new Package();
+oTools.CopyPropValues(oDBEntry.My_Package, oRegistration.My_Package);
+oRegistration.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistration.My_Currency);
+oList.Add(oRegistration);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registration_By_REGISTRATION_ID_List_Adv");}
 return oList;
 }
 public List<Session> Get_Session_By_SESSION_ID_List_Adv(Params_Get_Session_By_SESSION_ID_List i_Params_Get_Session_By_SESSION_ID_List)
@@ -1119,6 +1170,8 @@ oClient_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oClient_fees.My_Currency);
 oClient_fees.My_Package = new Package();
 oTools.CopyPropValues(oDBEntry.My_Package, oClient_fees.My_Package);
+oClient_fees.My_Registration = new Registration();
+oTools.CopyPropValues(oDBEntry.My_Registration, oClient_fees.My_Registration);
 oList.Add(oClient_fees);
 }
 }
@@ -1146,6 +1199,8 @@ oClient_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oClient_fees.My_Currency);
 oClient_fees.My_Package = new Package();
 oTools.CopyPropValues(oDBEntry.My_Package, oClient_fees.My_Package);
+oClient_fees.My_Registration = new Registration();
+oTools.CopyPropValues(oDBEntry.My_Registration, oClient_fees.My_Registration);
 oList.Add(oClient_fees);
 }
 }
@@ -1173,6 +1228,8 @@ oClient_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oClient_fees.My_Currency);
 oClient_fees.My_Package = new Package();
 oTools.CopyPropValues(oDBEntry.My_Package, oClient_fees.My_Package);
+oClient_fees.My_Registration = new Registration();
+oTools.CopyPropValues(oDBEntry.My_Registration, oClient_fees.My_Registration);
 oList.Add(oClient_fees);
 }
 }
@@ -1200,11 +1257,42 @@ oClient_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oClient_fees.My_Currency);
 oClient_fees.My_Package = new Package();
 oTools.CopyPropValues(oDBEntry.My_Package, oClient_fees.My_Package);
+oClient_fees.My_Registration = new Registration();
+oTools.CopyPropValues(oDBEntry.My_Registration, oClient_fees.My_Registration);
 oList.Add(oClient_fees);
 }
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Client_fees_By_PACKAGE_ID_Adv");}
+return oList;
+}
+public List<Client_fees> Get_Client_fees_By_REGISTRATION_ID_Adv(Params_Get_Client_fees_By_REGISTRATION_ID i_Params_Get_Client_fees_By_REGISTRATION_ID)
+{
+List<Client_fees> oList = new List<Client_fees>();
+Client_fees oClient_fees = new Client_fees();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Client_fees_By_REGISTRATION_ID_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Client_fees_By_REGISTRATION_ID_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Client_fees_By_REGISTRATION_ID));}
+#region Body Section.
+List<DALC.Client_fees> oList_DBEntries = _AppContext.Get_Client_fees_By_REGISTRATION_ID_Adv(i_Params_Get_Client_fees_By_REGISTRATION_ID.REGISTRATION_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oClient_fees = new Client_fees();
+oTools.CopyPropValues(oDBEntry, oClient_fees);
+oClient_fees.My_Client = new Client();
+oTools.CopyPropValues(oDBEntry.My_Client, oClient_fees.My_Client);
+oClient_fees.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oClient_fees.My_Currency);
+oClient_fees.My_Package = new Package();
+oTools.CopyPropValues(oDBEntry.My_Package, oClient_fees.My_Package);
+oClient_fees.My_Registration = new Registration();
+oTools.CopyPropValues(oDBEntry.My_Registration, oClient_fees.My_Registration);
+oList.Add(oClient_fees);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Client_fees_By_REGISTRATION_ID_Adv");}
 return oList;
 }
 public List<Contact> Get_Contact_By_PERSON_ID_Adv(Params_Get_Contact_By_PERSON_ID i_Params_Get_Contact_By_PERSON_ID)
@@ -1678,6 +1766,114 @@ oList.Add(oPerson);
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Person_By_OWNER_ID_Adv");}
+return oList;
+}
+public List<Registration> Get_Registration_By_OWNER_ID_Adv(Params_Get_Registration_By_OWNER_ID i_Params_Get_Registration_By_OWNER_ID)
+{
+List<Registration> oList = new List<Registration>();
+Registration oRegistration = new Registration();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registration_By_OWNER_ID_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registration_By_OWNER_ID_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registration_By_OWNER_ID));}
+#region Body Section.
+List<DALC.Registration> oList_DBEntries = _AppContext.Get_Registration_By_OWNER_ID_Adv(i_Params_Get_Registration_By_OWNER_ID.OWNER_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistration = new Registration();
+oTools.CopyPropValues(oDBEntry, oRegistration);
+oRegistration.My_Client = new Client();
+oTools.CopyPropValues(oDBEntry.My_Client, oRegistration.My_Client);
+oRegistration.My_Package = new Package();
+oTools.CopyPropValues(oDBEntry.My_Package, oRegistration.My_Package);
+oRegistration.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistration.My_Currency);
+oList.Add(oRegistration);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registration_By_OWNER_ID_Adv");}
+return oList;
+}
+public List<Registration> Get_Registration_By_CLIENT_ID_Adv(Params_Get_Registration_By_CLIENT_ID i_Params_Get_Registration_By_CLIENT_ID)
+{
+List<Registration> oList = new List<Registration>();
+Registration oRegistration = new Registration();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registration_By_CLIENT_ID_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registration_By_CLIENT_ID_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registration_By_CLIENT_ID));}
+#region Body Section.
+List<DALC.Registration> oList_DBEntries = _AppContext.Get_Registration_By_CLIENT_ID_Adv(i_Params_Get_Registration_By_CLIENT_ID.CLIENT_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistration = new Registration();
+oTools.CopyPropValues(oDBEntry, oRegistration);
+oRegistration.My_Client = new Client();
+oTools.CopyPropValues(oDBEntry.My_Client, oRegistration.My_Client);
+oRegistration.My_Package = new Package();
+oTools.CopyPropValues(oDBEntry.My_Package, oRegistration.My_Package);
+oRegistration.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistration.My_Currency);
+oList.Add(oRegistration);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registration_By_CLIENT_ID_Adv");}
+return oList;
+}
+public List<Registration> Get_Registration_By_PACKAGE_ID_Adv(Params_Get_Registration_By_PACKAGE_ID i_Params_Get_Registration_By_PACKAGE_ID)
+{
+List<Registration> oList = new List<Registration>();
+Registration oRegistration = new Registration();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registration_By_PACKAGE_ID_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registration_By_PACKAGE_ID_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registration_By_PACKAGE_ID));}
+#region Body Section.
+List<DALC.Registration> oList_DBEntries = _AppContext.Get_Registration_By_PACKAGE_ID_Adv(i_Params_Get_Registration_By_PACKAGE_ID.PACKAGE_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistration = new Registration();
+oTools.CopyPropValues(oDBEntry, oRegistration);
+oRegistration.My_Client = new Client();
+oTools.CopyPropValues(oDBEntry.My_Client, oRegistration.My_Client);
+oRegistration.My_Package = new Package();
+oTools.CopyPropValues(oDBEntry.My_Package, oRegistration.My_Package);
+oRegistration.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistration.My_Currency);
+oList.Add(oRegistration);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registration_By_PACKAGE_ID_Adv");}
+return oList;
+}
+public List<Registration> Get_Registration_By_CURRENCY_ID_Adv(Params_Get_Registration_By_CURRENCY_ID i_Params_Get_Registration_By_CURRENCY_ID)
+{
+List<Registration> oList = new List<Registration>();
+Registration oRegistration = new Registration();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registration_By_CURRENCY_ID_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registration_By_CURRENCY_ID_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registration_By_CURRENCY_ID));}
+#region Body Section.
+List<DALC.Registration> oList_DBEntries = _AppContext.Get_Registration_By_CURRENCY_ID_Adv(i_Params_Get_Registration_By_CURRENCY_ID.CURRENCY_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistration = new Registration();
+oTools.CopyPropValues(oDBEntry, oRegistration);
+oRegistration.My_Client = new Client();
+oTools.CopyPropValues(oDBEntry.My_Client, oRegistration.My_Client);
+oRegistration.My_Package = new Package();
+oTools.CopyPropValues(oDBEntry.My_Package, oRegistration.My_Package);
+oRegistration.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistration.My_Currency);
+oList.Add(oRegistration);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registration_By_CURRENCY_ID_Adv");}
 return oList;
 }
 public List<Session> Get_Session_By_OWNER_ID_Adv(Params_Get_Session_By_OWNER_ID i_Params_Get_Session_By_OWNER_ID)
@@ -2237,6 +2433,8 @@ oClient_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oClient_fees.My_Currency);
 oClient_fees.My_Package = new Package();
 oTools.CopyPropValues(oDBEntry.My_Package, oClient_fees.My_Package);
+oClient_fees.My_Registration = new Registration();
+oTools.CopyPropValues(oDBEntry.My_Registration, oClient_fees.My_Registration);
 oList.Add(oClient_fees);
 }
 }
@@ -2264,6 +2462,8 @@ oClient_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oClient_fees.My_Currency);
 oClient_fees.My_Package = new Package();
 oTools.CopyPropValues(oDBEntry.My_Package, oClient_fees.My_Package);
+oClient_fees.My_Registration = new Registration();
+oTools.CopyPropValues(oDBEntry.My_Registration, oClient_fees.My_Registration);
 oList.Add(oClient_fees);
 }
 }
@@ -2291,11 +2491,42 @@ oClient_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oClient_fees.My_Currency);
 oClient_fees.My_Package = new Package();
 oTools.CopyPropValues(oDBEntry.My_Package, oClient_fees.My_Package);
+oClient_fees.My_Registration = new Registration();
+oTools.CopyPropValues(oDBEntry.My_Registration, oClient_fees.My_Registration);
 oList.Add(oClient_fees);
 }
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Client_fees_By_PACKAGE_ID_List_Adv");}
+return oList;
+}
+public List<Client_fees> Get_Client_fees_By_REGISTRATION_ID_List_Adv(Params_Get_Client_fees_By_REGISTRATION_ID_List i_Params_Get_Client_fees_By_REGISTRATION_ID_List)
+{
+List<Client_fees> oList = new List<Client_fees>();
+Client_fees oClient_fees = new Client_fees();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Client_fees_By_REGISTRATION_ID_List_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Client_fees_By_REGISTRATION_ID_List_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Client_fees_By_REGISTRATION_ID_List));}
+#region Body Section.
+List<DALC.Client_fees> oList_DBEntries = _AppContext.Get_Client_fees_By_REGISTRATION_ID_List_Adv(i_Params_Get_Client_fees_By_REGISTRATION_ID_List.REGISTRATION_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oClient_fees = new Client_fees();
+oTools.CopyPropValues(oDBEntry, oClient_fees);
+oClient_fees.My_Client = new Client();
+oTools.CopyPropValues(oDBEntry.My_Client, oClient_fees.My_Client);
+oClient_fees.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oClient_fees.My_Currency);
+oClient_fees.My_Package = new Package();
+oTools.CopyPropValues(oDBEntry.My_Package, oClient_fees.My_Package);
+oClient_fees.My_Registration = new Registration();
+oTools.CopyPropValues(oDBEntry.My_Registration, oClient_fees.My_Registration);
+oList.Add(oClient_fees);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Client_fees_By_REGISTRATION_ID_List_Adv");}
 return oList;
 }
 public List<Contact> Get_Contact_By_PERSON_ID_List_Adv(Params_Get_Contact_By_PERSON_ID_List i_Params_Get_Contact_By_PERSON_ID_List)
@@ -2434,6 +2665,87 @@ oList.Add(oPackage);
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Package_By_CURRENCY_ID_List_Adv");}
+return oList;
+}
+public List<Registration> Get_Registration_By_CLIENT_ID_List_Adv(Params_Get_Registration_By_CLIENT_ID_List i_Params_Get_Registration_By_CLIENT_ID_List)
+{
+List<Registration> oList = new List<Registration>();
+Registration oRegistration = new Registration();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registration_By_CLIENT_ID_List_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registration_By_CLIENT_ID_List_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registration_By_CLIENT_ID_List));}
+#region Body Section.
+List<DALC.Registration> oList_DBEntries = _AppContext.Get_Registration_By_CLIENT_ID_List_Adv(i_Params_Get_Registration_By_CLIENT_ID_List.CLIENT_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistration = new Registration();
+oTools.CopyPropValues(oDBEntry, oRegistration);
+oRegistration.My_Client = new Client();
+oTools.CopyPropValues(oDBEntry.My_Client, oRegistration.My_Client);
+oRegistration.My_Package = new Package();
+oTools.CopyPropValues(oDBEntry.My_Package, oRegistration.My_Package);
+oRegistration.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistration.My_Currency);
+oList.Add(oRegistration);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registration_By_CLIENT_ID_List_Adv");}
+return oList;
+}
+public List<Registration> Get_Registration_By_PACKAGE_ID_List_Adv(Params_Get_Registration_By_PACKAGE_ID_List i_Params_Get_Registration_By_PACKAGE_ID_List)
+{
+List<Registration> oList = new List<Registration>();
+Registration oRegistration = new Registration();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registration_By_PACKAGE_ID_List_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registration_By_PACKAGE_ID_List_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registration_By_PACKAGE_ID_List));}
+#region Body Section.
+List<DALC.Registration> oList_DBEntries = _AppContext.Get_Registration_By_PACKAGE_ID_List_Adv(i_Params_Get_Registration_By_PACKAGE_ID_List.PACKAGE_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistration = new Registration();
+oTools.CopyPropValues(oDBEntry, oRegistration);
+oRegistration.My_Client = new Client();
+oTools.CopyPropValues(oDBEntry.My_Client, oRegistration.My_Client);
+oRegistration.My_Package = new Package();
+oTools.CopyPropValues(oDBEntry.My_Package, oRegistration.My_Package);
+oRegistration.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistration.My_Currency);
+oList.Add(oRegistration);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registration_By_PACKAGE_ID_List_Adv");}
+return oList;
+}
+public List<Registration> Get_Registration_By_CURRENCY_ID_List_Adv(Params_Get_Registration_By_CURRENCY_ID_List i_Params_Get_Registration_By_CURRENCY_ID_List)
+{
+List<Registration> oList = new List<Registration>();
+Registration oRegistration = new Registration();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registration_By_CURRENCY_ID_List_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registration_By_CURRENCY_ID_List_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registration_By_CURRENCY_ID_List));}
+#region Body Section.
+List<DALC.Registration> oList_DBEntries = _AppContext.Get_Registration_By_CURRENCY_ID_List_Adv(i_Params_Get_Registration_By_CURRENCY_ID_List.CURRENCY_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistration = new Registration();
+oTools.CopyPropValues(oDBEntry, oRegistration);
+oRegistration.My_Client = new Client();
+oTools.CopyPropValues(oDBEntry.My_Client, oRegistration.My_Client);
+oRegistration.My_Package = new Package();
+oTools.CopyPropValues(oDBEntry.My_Package, oRegistration.My_Package);
+oRegistration.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistration.My_Currency);
+oList.Add(oRegistration);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registration_By_CURRENCY_ID_List_Adv");}
 return oList;
 }
 public List<Session> Get_Session_By_PACKAGE_ID_List_Adv(Params_Get_Session_By_PACKAGE_ID_List i_Params_Get_Session_By_PACKAGE_ID_List)
@@ -2964,6 +3276,8 @@ oClient_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oClient_fees.My_Currency);
 oClient_fees.My_Package = new Package();
 oTools.CopyPropValues(oDBEntry.My_Package, oClient_fees.My_Package);
+oClient_fees.My_Registration = new Registration();
+oTools.CopyPropValues(oDBEntry.My_Registration, oClient_fees.My_Registration);
 oList.Add(oClient_fees);
 }
 }
@@ -2996,6 +3310,8 @@ oClient_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oClient_fees.My_Currency);
 oClient_fees.My_Package = new Package();
 oTools.CopyPropValues(oDBEntry.My_Package, oClient_fees.My_Package);
+oClient_fees.My_Registration = new Registration();
+oTools.CopyPropValues(oDBEntry.My_Registration, oClient_fees.My_Registration);
 oList.Add(oClient_fees);
 }
 }
@@ -4775,6 +5091,7 @@ Params_Get_Client_fees_By_Criteria_InList_SP oParams_Get_Client_fees_By_Criteria
 Params_Get_Client_By_CLIENT_ID oParams_Get_Client_By_CLIENT_ID = new Params_Get_Client_By_CLIENT_ID();
 Params_Get_Currency_By_CURRENCY_ID oParams_Get_Currency_By_CURRENCY_ID = new Params_Get_Currency_By_CURRENCY_ID();
 Params_Get_Package_By_PACKAGE_ID oParams_Get_Package_By_PACKAGE_ID = new Params_Get_Package_By_PACKAGE_ID();
+Params_Get_Registration_By_REGISTRATION_ID oParams_Get_Registration_By_REGISTRATION_ID = new Params_Get_Registration_By_REGISTRATION_ID();
 if (OnPreEvent_General != null){OnPreEvent_General("Get_Client_fees_By_Criteria_InList_Adv");}
 if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Client_fees_By_Criteria_InList_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Client_fees_By_Criteria_InList));}
 #region Body Section.
@@ -4798,10 +5115,15 @@ if ( i_Params_Get_Client_fees_By_Criteria_InList.PACKAGE_ID_LIST == null)
 i_Params_Get_Client_fees_By_Criteria_InList.PACKAGE_ID_LIST = new List<Int32?>();
 }
 oParams_Get_Client_fees_By_Criteria_InList_SP.PACKAGE_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Client_fees_By_Criteria_InList.PACKAGE_ID_LIST);
+if ( i_Params_Get_Client_fees_By_Criteria_InList.REGISTRATION_ID_LIST == null)
+{
+i_Params_Get_Client_fees_By_Criteria_InList.REGISTRATION_ID_LIST = new List<Int32?>();
+}
+oParams_Get_Client_fees_By_Criteria_InList_SP.REGISTRATION_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Client_fees_By_Criteria_InList.REGISTRATION_ID_LIST);
 oParams_Get_Client_fees_By_Criteria_InList_SP.START_ROW = i_Params_Get_Client_fees_By_Criteria_InList.START_ROW;
 oParams_Get_Client_fees_By_Criteria_InList_SP.END_ROW = i_Params_Get_Client_fees_By_Criteria_InList.END_ROW;
 oParams_Get_Client_fees_By_Criteria_InList_SP.TOTAL_COUNT = i_Params_Get_Client_fees_By_Criteria_InList.TOTAL_COUNT;
-List<DALC.Client_fees> oList_DBEntries = _AppContext.Get_Client_fees_By_Criteria_InList_Adv(i_Params_Get_Client_fees_By_Criteria_InList.CLIENT_FEES_DESCRIPTION,i_Params_Get_Client_fees_By_Criteria_InList.CLIENT_ID_LIST,i_Params_Get_Client_fees_By_Criteria_InList.CURRENCY_ID_LIST,i_Params_Get_Client_fees_By_Criteria_InList.PACKAGE_ID_LIST,i_Params_Get_Client_fees_By_Criteria_InList.OWNER_ID,i_Params_Get_Client_fees_By_Criteria_InList.START_ROW,i_Params_Get_Client_fees_By_Criteria_InList.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Client_fees> oList_DBEntries = _AppContext.Get_Client_fees_By_Criteria_InList_Adv(i_Params_Get_Client_fees_By_Criteria_InList.CLIENT_FEES_DESCRIPTION,i_Params_Get_Client_fees_By_Criteria_InList.CLIENT_ID_LIST,i_Params_Get_Client_fees_By_Criteria_InList.CURRENCY_ID_LIST,i_Params_Get_Client_fees_By_Criteria_InList.PACKAGE_ID_LIST,i_Params_Get_Client_fees_By_Criteria_InList.REGISTRATION_ID_LIST,i_Params_Get_Client_fees_By_Criteria_InList.OWNER_ID,i_Params_Get_Client_fees_By_Criteria_InList.START_ROW,i_Params_Get_Client_fees_By_Criteria_InList.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -4814,6 +5136,8 @@ oClient_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oClient_fees.My_Currency);
 oClient_fees.My_Package = new Package();
 oTools.CopyPropValues(oDBEntry.My_Package, oClient_fees.My_Package);
+oClient_fees.My_Registration = new Registration();
+oTools.CopyPropValues(oDBEntry.My_Registration, oClient_fees.My_Registration);
 oList.Add(oClient_fees);
 }
 }
@@ -4832,6 +5156,7 @@ Params_Get_Client_fees_By_Where_InList_SP oParams_Get_Client_fees_By_Where_InLis
 Params_Get_Client_By_CLIENT_ID oParams_Get_Client_By_CLIENT_ID = new Params_Get_Client_By_CLIENT_ID();
 Params_Get_Currency_By_CURRENCY_ID oParams_Get_Currency_By_CURRENCY_ID = new Params_Get_Currency_By_CURRENCY_ID();
 Params_Get_Package_By_PACKAGE_ID oParams_Get_Package_By_PACKAGE_ID = new Params_Get_Package_By_PACKAGE_ID();
+Params_Get_Registration_By_REGISTRATION_ID oParams_Get_Registration_By_REGISTRATION_ID = new Params_Get_Registration_By_REGISTRATION_ID();
 if (OnPreEvent_General != null){OnPreEvent_General("Get_Client_fees_By_Where_InList_Adv");}
 if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Client_fees_By_Where_InList_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Client_fees_By_Where_InList));}
 #region Body Section.
@@ -4855,10 +5180,15 @@ if ( i_Params_Get_Client_fees_By_Where_InList.PACKAGE_ID_LIST == null)
 i_Params_Get_Client_fees_By_Where_InList.PACKAGE_ID_LIST = new List<Int32?>();
 }
 oParams_Get_Client_fees_By_Where_InList_SP.PACKAGE_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Client_fees_By_Where_InList.PACKAGE_ID_LIST);
+if ( i_Params_Get_Client_fees_By_Where_InList.REGISTRATION_ID_LIST == null)
+{
+i_Params_Get_Client_fees_By_Where_InList.REGISTRATION_ID_LIST = new List<Int32?>();
+}
+oParams_Get_Client_fees_By_Where_InList_SP.REGISTRATION_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Client_fees_By_Where_InList.REGISTRATION_ID_LIST);
 oParams_Get_Client_fees_By_Where_InList_SP.START_ROW = i_Params_Get_Client_fees_By_Where_InList.START_ROW;
 oParams_Get_Client_fees_By_Where_InList_SP.END_ROW = i_Params_Get_Client_fees_By_Where_InList.END_ROW;
 oParams_Get_Client_fees_By_Where_InList_SP.TOTAL_COUNT = i_Params_Get_Client_fees_By_Where_InList.TOTAL_COUNT;
-List<DALC.Client_fees> oList_DBEntries = _AppContext.Get_Client_fees_By_Where_InList_Adv(i_Params_Get_Client_fees_By_Where_InList.CLIENT_FEES_DESCRIPTION,i_Params_Get_Client_fees_By_Where_InList.CLIENT_ID_LIST,i_Params_Get_Client_fees_By_Where_InList.CURRENCY_ID_LIST,i_Params_Get_Client_fees_By_Where_InList.PACKAGE_ID_LIST,i_Params_Get_Client_fees_By_Where_InList.OWNER_ID,i_Params_Get_Client_fees_By_Where_InList.START_ROW,i_Params_Get_Client_fees_By_Where_InList.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Client_fees> oList_DBEntries = _AppContext.Get_Client_fees_By_Where_InList_Adv(i_Params_Get_Client_fees_By_Where_InList.CLIENT_FEES_DESCRIPTION,i_Params_Get_Client_fees_By_Where_InList.CLIENT_ID_LIST,i_Params_Get_Client_fees_By_Where_InList.CURRENCY_ID_LIST,i_Params_Get_Client_fees_By_Where_InList.PACKAGE_ID_LIST,i_Params_Get_Client_fees_By_Where_InList.REGISTRATION_ID_LIST,i_Params_Get_Client_fees_By_Where_InList.OWNER_ID,i_Params_Get_Client_fees_By_Where_InList.START_ROW,i_Params_Get_Client_fees_By_Where_InList.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -4871,6 +5201,8 @@ oClient_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oClient_fees.My_Currency);
 oClient_fees.My_Package = new Package();
 oTools.CopyPropValues(oDBEntry.My_Package, oClient_fees.My_Package);
+oClient_fees.My_Registration = new Registration();
+oTools.CopyPropValues(oDBEntry.My_Registration, oClient_fees.My_Registration);
 oList.Add(oClient_fees);
 }
 }

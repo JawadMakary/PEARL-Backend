@@ -60,9 +60,11 @@ public Int32? OWNER_ID {get;set;}
 public Int32? CURRENCY_ID {get;set;}
 public Int32? PACKAGE_ID {get;set;}
 public Int32? CLIENT_FEES_AMOUNT {get;set;}
+public Int32? REGISTRATION_ID {get;set;}
 public Client My_Client {get;set;}
 public Currency My_Currency {get;set;}
 public Package My_Package {get;set;}
+public Registration My_Registration {get;set;}
 }
 public partial class Contact
 {
@@ -199,6 +201,23 @@ public Int32? OWNER_ID {get;set;}
 public long? ENTRY_USER_ID {get;set;}
 public string ENTRY_DATE {get;set;}
 }
+public partial class Registration
+{
+public Int32? REGISTRATION_ID {get;set;}
+public Int32? CLIENT_ID {get;set;}
+public string REGISTRATION_DATE {get;set;}
+public Int32? PACKAGE_ID {get;set;}
+public Int32? REGISTRATION_DISCOUNT {get;set;}
+public Int32? REGISTRATION_TOTAL_PRICE {get;set;}
+public Int32? CURRENCY_ID {get;set;}
+public string REGISTRATION_DESCRIPTION {get;set;}
+public long? ENTRY_USER_ID {get;set;}
+public string ENTRY_DATE {get;set;}
+public Int32? OWNER_ID {get;set;}
+public Client My_Client {get;set;}
+public Package My_Package {get;set;}
+public Currency My_Currency {get;set;}
+}
 public partial class Session
 {
 public Int32? SESSION_ID {get;set;}
@@ -295,6 +314,7 @@ Method_run Get_Method_run_By_METHOD_RUN_ID ( long? METHOD_RUN_ID);
 Owner Get_Owner_By_OWNER_ID ( Int32? OWNER_ID);
 Package Get_Package_By_PACKAGE_ID ( Int32? PACKAGE_ID);
 Person Get_Person_By_PERSON_ID ( long? PERSON_ID);
+Registration Get_Registration_By_REGISTRATION_ID ( Int32? REGISTRATION_ID);
 Session Get_Session_By_SESSION_ID ( Int32? SESSION_ID);
 Staff Get_Staff_By_STAFF_ID ( Int32? STAFF_ID);
 Staff_fees Get_Staff_fees_By_STAFF_FEES_ID ( Int32? STAFF_FEES_ID);
@@ -315,6 +335,7 @@ Loc_l4 Get_Loc_l4_By_LOC_L4_ID_Adv ( long? LOC_L4_ID);
 Method_run Get_Method_run_By_METHOD_RUN_ID_Adv ( long? METHOD_RUN_ID);
 Package Get_Package_By_PACKAGE_ID_Adv ( Int32? PACKAGE_ID);
 Person Get_Person_By_PERSON_ID_Adv ( long? PERSON_ID);
+Registration Get_Registration_By_REGISTRATION_ID_Adv ( Int32? REGISTRATION_ID);
 Session Get_Session_By_SESSION_ID_Adv ( Int32? SESSION_ID);
 Staff Get_Staff_By_STAFF_ID_Adv ( Int32? STAFF_ID);
 Staff_fees Get_Staff_fees_By_STAFF_FEES_ID_Adv ( Int32? STAFF_FEES_ID);
@@ -336,6 +357,7 @@ List<Method_run> Get_Method_run_By_METHOD_RUN_ID_List ( List<long?> METHOD_RUN_I
 List<Owner> Get_Owner_By_OWNER_ID_List ( List<Int32?> OWNER_ID_LIST);
 List<Package> Get_Package_By_PACKAGE_ID_List ( List<Int32?> PACKAGE_ID_LIST);
 List<Person> Get_Person_By_PERSON_ID_List ( List<long?> PERSON_ID_LIST);
+List<Registration> Get_Registration_By_REGISTRATION_ID_List ( List<Int32?> REGISTRATION_ID_LIST);
 List<Session> Get_Session_By_SESSION_ID_List ( List<Int32?> SESSION_ID_LIST);
 List<Staff> Get_Staff_By_STAFF_ID_List ( List<Int32?> STAFF_ID_LIST);
 List<Staff_fees> Get_Staff_fees_By_STAFF_FEES_ID_List ( List<Int32?> STAFF_FEES_ID_LIST);
@@ -356,6 +378,7 @@ List<Loc_l4> Get_Loc_l4_By_LOC_L4_ID_List_Adv ( List<long?> LOC_L4_ID_LIST);
 List<Method_run> Get_Method_run_By_METHOD_RUN_ID_List_Adv ( List<long?> METHOD_RUN_ID_LIST);
 List<Package> Get_Package_By_PACKAGE_ID_List_Adv ( List<Int32?> PACKAGE_ID_LIST);
 List<Person> Get_Person_By_PERSON_ID_List_Adv ( List<long?> PERSON_ID_LIST);
+List<Registration> Get_Registration_By_REGISTRATION_ID_List_Adv ( List<Int32?> REGISTRATION_ID_LIST);
 List<Session> Get_Session_By_SESSION_ID_List_Adv ( List<Int32?> SESSION_ID_LIST);
 List<Staff> Get_Staff_By_STAFF_ID_List_Adv ( List<Int32?> STAFF_ID_LIST);
 List<Staff_fees> Get_Staff_fees_By_STAFF_FEES_ID_List_Adv ( List<Int32?> STAFF_FEES_ID_LIST);
@@ -376,6 +399,7 @@ List<Client_fees> Get_Client_fees_By_OWNER_ID ( Int32? OWNER_ID);
 List<Client_fees> Get_Client_fees_By_CLIENT_ID ( Int32? CLIENT_ID);
 List<Client_fees> Get_Client_fees_By_CURRENCY_ID ( Int32? CURRENCY_ID);
 List<Client_fees> Get_Client_fees_By_PACKAGE_ID ( Int32? PACKAGE_ID);
+List<Client_fees> Get_Client_fees_By_REGISTRATION_ID ( Int32? REGISTRATION_ID);
 List<Contact> Get_Contact_By_PERSON_ID ( long? PERSON_ID);
 List<Contact> Get_Contact_By_PERSON_ID_CONTACT_TYPE_CODE_CONTACT ( long? PERSON_ID, string CONTACT_TYPE_CODE, string CONTACT);
 List<Contact> Get_Contact_By_OWNER_ID ( Int32? OWNER_ID);
@@ -397,6 +421,10 @@ List<Method_run> Get_Method_run_By_OWNER_ID ( Int32? OWNER_ID);
 List<Package> Get_Package_By_OWNER_ID ( Int32? OWNER_ID);
 List<Package> Get_Package_By_CURRENCY_ID ( Int32? CURRENCY_ID);
 List<Person> Get_Person_By_OWNER_ID ( Int32? OWNER_ID);
+List<Registration> Get_Registration_By_OWNER_ID ( Int32? OWNER_ID);
+List<Registration> Get_Registration_By_CLIENT_ID ( Int32? CLIENT_ID);
+List<Registration> Get_Registration_By_PACKAGE_ID ( Int32? PACKAGE_ID);
+List<Registration> Get_Registration_By_CURRENCY_ID ( Int32? CURRENCY_ID);
 List<Session> Get_Session_By_OWNER_ID ( Int32? OWNER_ID);
 List<Session> Get_Session_By_PACKAGE_ID ( Int32? PACKAGE_ID);
 List<Session> Get_Session_By_CLIENT_FEES_ID ( Int32? CLIENT_FEES_ID);
@@ -426,6 +454,7 @@ List<Client_fees> Get_Client_fees_By_OWNER_ID_Adv ( Int32? OWNER_ID);
 List<Client_fees> Get_Client_fees_By_CLIENT_ID_Adv ( Int32? CLIENT_ID);
 List<Client_fees> Get_Client_fees_By_CURRENCY_ID_Adv ( Int32? CURRENCY_ID);
 List<Client_fees> Get_Client_fees_By_PACKAGE_ID_Adv ( Int32? PACKAGE_ID);
+List<Client_fees> Get_Client_fees_By_REGISTRATION_ID_Adv ( Int32? REGISTRATION_ID);
 List<Contact> Get_Contact_By_PERSON_ID_Adv ( long? PERSON_ID);
 List<Contact> Get_Contact_By_PERSON_ID_CONTACT_TYPE_CODE_CONTACT_Adv ( long? PERSON_ID, string CONTACT_TYPE_CODE, string CONTACT);
 List<Contact> Get_Contact_By_OWNER_ID_Adv ( Int32? OWNER_ID);
@@ -447,6 +476,10 @@ List<Method_run> Get_Method_run_By_OWNER_ID_Adv ( Int32? OWNER_ID);
 List<Package> Get_Package_By_OWNER_ID_Adv ( Int32? OWNER_ID);
 List<Package> Get_Package_By_CURRENCY_ID_Adv ( Int32? CURRENCY_ID);
 List<Person> Get_Person_By_OWNER_ID_Adv ( Int32? OWNER_ID);
+List<Registration> Get_Registration_By_OWNER_ID_Adv ( Int32? OWNER_ID);
+List<Registration> Get_Registration_By_CLIENT_ID_Adv ( Int32? CLIENT_ID);
+List<Registration> Get_Registration_By_PACKAGE_ID_Adv ( Int32? PACKAGE_ID);
+List<Registration> Get_Registration_By_CURRENCY_ID_Adv ( Int32? CURRENCY_ID);
 List<Session> Get_Session_By_OWNER_ID_Adv ( Int32? OWNER_ID);
 List<Session> Get_Session_By_PACKAGE_ID_Adv ( Int32? PACKAGE_ID);
 List<Session> Get_Session_By_CLIENT_FEES_ID_Adv ( Int32? CLIENT_FEES_ID);
@@ -471,12 +504,16 @@ List<Client> Get_Client_By_BLOODTYPE_ID_List ( List<Int32?> BLOODTYPE_ID_LIST);
 List<Client_fees> Get_Client_fees_By_CLIENT_ID_List ( List<Int32?> CLIENT_ID_LIST);
 List<Client_fees> Get_Client_fees_By_CURRENCY_ID_List ( List<Int32?> CURRENCY_ID_LIST);
 List<Client_fees> Get_Client_fees_By_PACKAGE_ID_List ( List<Int32?> PACKAGE_ID_LIST);
+List<Client_fees> Get_Client_fees_By_REGISTRATION_ID_List ( List<Int32?> REGISTRATION_ID_LIST);
 List<Contact> Get_Contact_By_PERSON_ID_List ( List<long?> PERSON_ID_LIST);
 List<Fees> Get_Fees_By_CURRENCY_ID_List ( List<Int32?> CURRENCY_ID_LIST);
 List<Loc_l2> Get_Loc_l2_By_LOC_L1_ID_List ( List<long?> LOC_L1_ID_LIST);
 List<Loc_l3> Get_Loc_l3_By_LOC_L2_ID_List ( List<long?> LOC_L2_ID_LIST);
 List<Loc_l4> Get_Loc_l4_By_LOC_L3_ID_List ( List<long?> LOC_L3_ID_LIST);
 List<Package> Get_Package_By_CURRENCY_ID_List ( List<Int32?> CURRENCY_ID_LIST);
+List<Registration> Get_Registration_By_CLIENT_ID_List ( List<Int32?> CLIENT_ID_LIST);
+List<Registration> Get_Registration_By_PACKAGE_ID_List ( List<Int32?> PACKAGE_ID_LIST);
+List<Registration> Get_Registration_By_CURRENCY_ID_List ( List<Int32?> CURRENCY_ID_LIST);
 List<Session> Get_Session_By_PACKAGE_ID_List ( List<Int32?> PACKAGE_ID_LIST);
 List<Session> Get_Session_By_CLIENT_FEES_ID_List ( List<Int32?> CLIENT_FEES_ID_LIST);
 List<Staff> Get_Staff_By_BLOODTYPE_ID_List ( List<Int32?> BLOODTYPE_ID_LIST);
@@ -494,12 +531,16 @@ List<Client> Get_Client_By_BLOODTYPE_ID_List_Adv ( List<Int32?> BLOODTYPE_ID_LIS
 List<Client_fees> Get_Client_fees_By_CLIENT_ID_List_Adv ( List<Int32?> CLIENT_ID_LIST);
 List<Client_fees> Get_Client_fees_By_CURRENCY_ID_List_Adv ( List<Int32?> CURRENCY_ID_LIST);
 List<Client_fees> Get_Client_fees_By_PACKAGE_ID_List_Adv ( List<Int32?> PACKAGE_ID_LIST);
+List<Client_fees> Get_Client_fees_By_REGISTRATION_ID_List_Adv ( List<Int32?> REGISTRATION_ID_LIST);
 List<Contact> Get_Contact_By_PERSON_ID_List_Adv ( List<long?> PERSON_ID_LIST);
 List<Fees> Get_Fees_By_CURRENCY_ID_List_Adv ( List<Int32?> CURRENCY_ID_LIST);
 List<Loc_l2> Get_Loc_l2_By_LOC_L1_ID_List_Adv ( List<long?> LOC_L1_ID_LIST);
 List<Loc_l3> Get_Loc_l3_By_LOC_L2_ID_List_Adv ( List<long?> LOC_L2_ID_LIST);
 List<Loc_l4> Get_Loc_l4_By_LOC_L3_ID_List_Adv ( List<long?> LOC_L3_ID_LIST);
 List<Package> Get_Package_By_CURRENCY_ID_List_Adv ( List<Int32?> CURRENCY_ID_LIST);
+List<Registration> Get_Registration_By_CLIENT_ID_List_Adv ( List<Int32?> CLIENT_ID_LIST);
+List<Registration> Get_Registration_By_PACKAGE_ID_List_Adv ( List<Int32?> PACKAGE_ID_LIST);
+List<Registration> Get_Registration_By_CURRENCY_ID_List_Adv ( List<Int32?> CURRENCY_ID_LIST);
 List<Session> Get_Session_By_PACKAGE_ID_List_Adv ( List<Int32?> PACKAGE_ID_LIST);
 List<Session> Get_Session_By_CLIENT_FEES_ID_List_Adv ( List<Int32?> CLIENT_FEES_ID_LIST);
 List<Staff> Get_Staff_By_BLOODTYPE_ID_List_Adv ( List<Int32?> BLOODTYPE_ID_LIST);
@@ -636,8 +677,8 @@ List<Client> Get_Client_By_Criteria_InList ( string CLIENT_NAME, string CLIENT_P
 List<Client> Get_Client_By_Where_InList ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Client> Get_Client_By_Criteria_InList_V2 ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Client> Get_Client_By_Where_InList_V2 ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Client_fees> Get_Client_fees_By_Criteria_InList ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Client_fees> Get_Client_fees_By_Where_InList ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Client_fees> Get_Client_fees_By_Criteria_InList ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, List<Int32?> REGISTRATION_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Client_fees> Get_Client_fees_By_Where_InList ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, List<Int32?> REGISTRATION_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Contact> Get_Contact_By_Criteria_InList ( string CONTACT_TYPE_CODE, string CONTACT, string DESCRIPTION, List<long?> PERSON_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Contact> Get_Contact_By_Where_InList ( string CONTACT_TYPE_CODE, string CONTACT, string DESCRIPTION, List<long?> PERSON_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Fees> Get_Fees_By_Criteria_InList ( string FEES_DESCRIPTION, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
@@ -678,8 +719,8 @@ List<Client> Get_Client_By_Criteria_InList_Adv ( string CLIENT_NAME, string CLIE
 List<Client> Get_Client_By_Where_InList_Adv ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Client> Get_Client_By_Criteria_InList_Adv_V2 ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Client> Get_Client_By_Where_InList_Adv_V2 ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Client_fees> Get_Client_fees_By_Criteria_InList_Adv ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
-List<Client_fees> Get_Client_fees_By_Where_InList_Adv ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Client_fees> Get_Client_fees_By_Criteria_InList_Adv ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, List<Int32?> REGISTRATION_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Client_fees> Get_Client_fees_By_Where_InList_Adv ( string CLIENT_FEES_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> CURRENCY_ID_LIST, List<Int32?> PACKAGE_ID_LIST, List<Int32?> REGISTRATION_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Contact> Get_Contact_By_Criteria_InList_Adv ( string CONTACT_TYPE_CODE, string CONTACT, string DESCRIPTION, List<long?> PERSON_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Contact> Get_Contact_By_Where_InList_Adv ( string CONTACT_TYPE_CODE, string CONTACT, string DESCRIPTION, List<long?> PERSON_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Fees> Get_Fees_By_Criteria_InList_Adv ( string FEES_DESCRIPTION, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
@@ -727,6 +768,7 @@ void Delete_Method_run ( long? METHOD_RUN_ID);
 void Delete_Owner ( Int32? OWNER_ID);
 void Delete_Package ( Int32? PACKAGE_ID);
 void Delete_Person ( long? PERSON_ID);
+void Delete_Registration ( Int32? REGISTRATION_ID);
 void Delete_Session ( Int32? SESSION_ID);
 void Delete_Staff ( Int32? STAFF_ID);
 void Delete_Staff_fees ( Int32? STAFF_FEES_ID);
@@ -747,6 +789,7 @@ void Delete_Client_fees_By_OWNER_ID ( Int32? OWNER_ID);
 void Delete_Client_fees_By_CLIENT_ID ( Int32? CLIENT_ID);
 void Delete_Client_fees_By_CURRENCY_ID ( Int32? CURRENCY_ID);
 void Delete_Client_fees_By_PACKAGE_ID ( Int32? PACKAGE_ID);
+void Delete_Client_fees_By_REGISTRATION_ID ( Int32? REGISTRATION_ID);
 void Delete_Contact_By_PERSON_ID ( long? PERSON_ID);
 void Delete_Contact_By_PERSON_ID_CONTACT_TYPE_CODE_CONTACT ( long? PERSON_ID, string CONTACT_TYPE_CODE, string CONTACT);
 void Delete_Contact_By_OWNER_ID ( Int32? OWNER_ID);
@@ -768,6 +811,10 @@ void Delete_Method_run_By_OWNER_ID ( Int32? OWNER_ID);
 void Delete_Package_By_OWNER_ID ( Int32? OWNER_ID);
 void Delete_Package_By_CURRENCY_ID ( Int32? CURRENCY_ID);
 void Delete_Person_By_OWNER_ID ( Int32? OWNER_ID);
+void Delete_Registration_By_OWNER_ID ( Int32? OWNER_ID);
+void Delete_Registration_By_CLIENT_ID ( Int32? CLIENT_ID);
+void Delete_Registration_By_PACKAGE_ID ( Int32? PACKAGE_ID);
+void Delete_Registration_By_CURRENCY_ID ( Int32? CURRENCY_ID);
 void Delete_Session_By_OWNER_ID ( Int32? OWNER_ID);
 void Delete_Session_By_PACKAGE_ID ( Int32? PACKAGE_ID);
 void Delete_Session_By_CLIENT_FEES_ID ( Int32? CLIENT_FEES_ID);
@@ -786,7 +833,7 @@ void Delete_User_By_USERNAME ( string USERNAME);
 long? Edit_Address ( long? ADDRESS_ID, long? PERSON_ID, string ADDRESS_TYPE_CODE, long? LOC_L1_ID, long? LOC_L2_ID, long? LOC_L3_ID, long? LOC_L4_ID, string STREET, string BUILDING, string FLOOR, string POBOX, string VALID_DATE_START, string VALID_DATE_END, string NOTES, string ENTRY_DATE, long? ENTRY_USER_ID, Int32? OWNER_ID);
 Int32? Edit_Bloodtype ( Int32? BLOODTYPE_ID, string BLOODTYPE_SYMBOL, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID);
 Int32? Edit_Client ( Int32? CLIENT_ID, string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_DOB, Int32? BLOODTYPE_ID, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID);
-Int32? Edit_Client_fees ( Int32? CLIENT_FEES_ID, Int32? CLIENT_ID, string CLIENT_FEES_DESCRIPTION, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, Int32? CURRENCY_ID, Int32? PACKAGE_ID, Int32? CLIENT_FEES_AMOUNT);
+Int32? Edit_Client_fees ( Int32? CLIENT_FEES_ID, Int32? CLIENT_ID, string CLIENT_FEES_DESCRIPTION, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, Int32? CURRENCY_ID, Int32? PACKAGE_ID, Int32? CLIENT_FEES_AMOUNT, Int32? REGISTRATION_ID);
 Int32? Edit_Contact ( Int32? CONTACT_ID, long? PERSON_ID, string CONTACT_TYPE_CODE, string CONTACT, string DESCRIPTION, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID);
 Int32? Edit_Currency ( Int32? CURRENCY_ID, string CURRENCY_TYPE, string CURRENCY_SYMBOL, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID);
 Int32? Edit_Fees ( Int32? FEES_ID, string FEES_DESCRIPTION, Int32? FEES_AMOUNT, Int32? CURRENCY_ID, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, string FEES_ORIGIN_DATE);
@@ -798,6 +845,7 @@ long? Edit_Method_run ( long? METHOD_RUN_ID, string METHOD_NAME, string RUN_DATE
 Int32? Edit_Owner ( Int32? OWNER_ID, string CODE, string MAINTENANCE_DUE_DATE, string DESCRIPTION, string ENTRY_DATE);
 Int32? Edit_Package ( Int32? PACKAGE_ID, string PACKAGE_NAME, Int32? PACKAGE_PRICE, Int32? CURRENCY_ID, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, Int32? PACKAGE_SESSIONS_NB, string PACKAGE_TYPE, string PACKAGE_ENDING_DATE, string PACKAGE_TIMELINE, string PACKAGE_STARTING_DATE);
 long? Edit_Person ( long? PERSON_ID, string FIRST_NAME, string LAST_NAME, string FATHER_NAME, string MOTHER_NAME, string TITLE_CODE, string GENDER_CODE, string RELIGION_CODE, string BIRTH_DATE, bool? IS_BLOCKED, string DESCRIPTION, Int32? OWNER_ID, long? ENTRY_USER_ID, string ENTRY_DATE);
+Int32? Edit_Registration ( Int32? REGISTRATION_ID, Int32? CLIENT_ID, string REGISTRATION_DATE, Int32? PACKAGE_ID, Int32? REGISTRATION_DISCOUNT, Int32? REGISTRATION_TOTAL_PRICE, Int32? CURRENCY_ID, string REGISTRATION_DESCRIPTION, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID);
 Int32? Edit_Session ( Int32? SESSION_ID, string SESSION_STARTING_DATE, string SESSION_ENDING_DATE, Int32? SESSION_ATTENDED, Int32? PACKAGE_ID, Int32? CLIENT_FEES_ID, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, string DESCRIPTION);
 Int32? Edit_Staff ( Int32? STAFF_ID, string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_DOB, Int32? BLOODTYPE_ID, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID);
 Int32? Edit_Staff_fees ( Int32? STAFF_FEES_ID, Int32? STAFF_ID, string STAFF_FEES_DESCRIPTION, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, Int32? CURRENCY_ID, Int32? STAFF_FEES_AMOUNT);

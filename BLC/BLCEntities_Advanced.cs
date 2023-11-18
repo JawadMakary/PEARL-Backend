@@ -55,6 +55,7 @@ public partial class Client_fees
 public Client My_Client {get;set;}
 public Currency My_Currency {get;set;}
 public Package My_Package {get;set;}
+public Registration My_Registration {get;set;}
 #endregion
 }
 #endregion
@@ -138,6 +139,16 @@ public Currency My_Currency {get;set;}
 public partial class Person
 {
 #region Advanced Properties
+#endregion
+}
+#endregion
+#region Registration
+public partial class Registration
+{
+#region Advanced Properties
+public Client My_Client {get;set;}
+public Package My_Package {get;set;}
+public Currency My_Currency {get;set;}
 #endregion
 }
 #endregion
