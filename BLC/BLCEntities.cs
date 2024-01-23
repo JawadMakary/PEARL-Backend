@@ -1329,6 +1329,44 @@ public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
 }
+public partial class Params_Get_Registration_By_Criteria
+{
+
+public Int32? OWNER_ID {get;set;}
+public string REGISTRATION_DESCRIPTION {get;set;}
+public long? START_ROW {get;set;}
+public long? END_ROW {get;set;}
+public long? TOTAL_COUNT {get;set;}
+}
+public partial class Params_Get_Registration_By_Where
+{
+
+public Int32? OWNER_ID {get;set;}
+public string REGISTRATION_DESCRIPTION {get;set;}
+public long? START_ROW {get;set;}
+public long? END_ROW {get;set;}
+public long? TOTAL_COUNT {get;set;}
+}
+public partial class Params_Get_Registration_By_Criteria_V2
+{
+
+public Int32? OWNER_ID {get;set;}
+public string REGISTRATION_DATE {get;set;}
+public string REGISTRATION_DESCRIPTION {get;set;}
+public long? START_ROW {get;set;}
+public long? END_ROW {get;set;}
+public long? TOTAL_COUNT {get;set;}
+}
+public partial class Params_Get_Registration_By_Where_V2
+{
+
+public Int32? OWNER_ID {get;set;}
+public string REGISTRATION_DATE {get;set;}
+public string REGISTRATION_DESCRIPTION {get;set;}
+public long? START_ROW {get;set;}
+public long? END_ROW {get;set;}
+public long? TOTAL_COUNT {get;set;}
+}
 public partial class Params_Get_Session_By_Criteria
 {
 
@@ -2162,6 +2200,102 @@ public string PACKAGE_TYPE {get;set;}
 public string PACKAGE_ENDING_DATE {get;set;}
 public string PACKAGE_TIMELINE {get;set;}
 public string PACKAGE_STARTING_DATE {get;set;}
+public string CURRENCY_ID_LIST {get;set;}
+public long? START_ROW {get;set;}
+public long? END_ROW {get;set;}
+public long? TOTAL_COUNT {get;set;}
+}
+public partial class Params_Get_Registration_By_Criteria_InList
+{
+
+public Int32? OWNER_ID {get;set;}
+public string REGISTRATION_DESCRIPTION {get;set;}
+public List<Int32?> CLIENT_ID_LIST {get;set;}
+public List<Int32?> PACKAGE_ID_LIST {get;set;}
+public List<Int32?> CURRENCY_ID_LIST {get;set;}
+public long? START_ROW {get;set;}
+public long? END_ROW {get;set;}
+public long? TOTAL_COUNT {get;set;}
+}
+public partial class Params_Get_Registration_By_Criteria_InList_SP
+{
+public Int32? OWNER_ID {get;set;}
+public string REGISTRATION_DESCRIPTION {get;set;}
+public string CLIENT_ID_LIST {get;set;}
+public string PACKAGE_ID_LIST {get;set;}
+public string CURRENCY_ID_LIST {get;set;}
+public long? START_ROW {get;set;}
+public long? END_ROW {get;set;}
+public long? TOTAL_COUNT {get;set;}
+}
+public partial class Params_Get_Registration_By_Where_InList
+{
+
+public Int32? OWNER_ID {get;set;}
+public string REGISTRATION_DESCRIPTION {get;set;}
+public List<Int32?> CLIENT_ID_LIST {get;set;}
+public List<Int32?> PACKAGE_ID_LIST {get;set;}
+public List<Int32?> CURRENCY_ID_LIST {get;set;}
+public long? START_ROW {get;set;}
+public long? END_ROW {get;set;}
+public long? TOTAL_COUNT {get;set;}
+}
+public partial class Params_Get_Registration_By_Where_InList_SP
+{
+public Int32? OWNER_ID {get;set;}
+public string REGISTRATION_DESCRIPTION {get;set;}
+public string CLIENT_ID_LIST {get;set;}
+public string PACKAGE_ID_LIST {get;set;}
+public string CURRENCY_ID_LIST {get;set;}
+public long? START_ROW {get;set;}
+public long? END_ROW {get;set;}
+public long? TOTAL_COUNT {get;set;}
+}
+public partial class Params_Get_Registration_By_Criteria_InList_V2
+{
+
+public Int32? OWNER_ID {get;set;}
+public string REGISTRATION_DATE {get;set;}
+public string REGISTRATION_DESCRIPTION {get;set;}
+public List<Int32?> CLIENT_ID_LIST {get;set;}
+public List<Int32?> PACKAGE_ID_LIST {get;set;}
+public List<Int32?> CURRENCY_ID_LIST {get;set;}
+public long? START_ROW {get;set;}
+public long? END_ROW {get;set;}
+public long? TOTAL_COUNT {get;set;}
+}
+public partial class Params_Get_Registration_By_Criteria_InList_SP_V2
+{
+public Int32? OWNER_ID {get;set;}
+public string REGISTRATION_DATE {get;set;}
+public string REGISTRATION_DESCRIPTION {get;set;}
+public string CLIENT_ID_LIST {get;set;}
+public string PACKAGE_ID_LIST {get;set;}
+public string CURRENCY_ID_LIST {get;set;}
+public long? START_ROW {get;set;}
+public long? END_ROW {get;set;}
+public long? TOTAL_COUNT {get;set;}
+}
+public partial class Params_Get_Registration_By_Where_InList_V2
+{
+
+public Int32? OWNER_ID {get;set;}
+public string REGISTRATION_DATE {get;set;}
+public string REGISTRATION_DESCRIPTION {get;set;}
+public List<Int32?> CLIENT_ID_LIST {get;set;}
+public List<Int32?> PACKAGE_ID_LIST {get;set;}
+public List<Int32?> CURRENCY_ID_LIST {get;set;}
+public long? START_ROW {get;set;}
+public long? END_ROW {get;set;}
+public long? TOTAL_COUNT {get;set;}
+}
+public partial class Params_Get_Registration_By_Where_InList_SP_V2
+{
+public Int32? OWNER_ID {get;set;}
+public string REGISTRATION_DATE {get;set;}
+public string REGISTRATION_DESCRIPTION {get;set;}
+public string CLIENT_ID_LIST {get;set;}
+public string PACKAGE_ID_LIST {get;set;}
 public string CURRENCY_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}

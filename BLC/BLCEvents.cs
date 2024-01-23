@@ -52,7 +52,10 @@ Get_Client_fees_By_CLIENT_ID,
 Get_Staff_fees_By_STAFF_ID,
 Get_Supplier_fees_By_SUPPLIER_ID,
 Get_Staff_By_STAFF_ID,
-Get_Supplier_By_SUPPLIER_ID
+Get_Supplier_By_SUPPLIER_ID,
+Edit_Registration,
+Get_Registration_By_OWNER_ID,
+Get_Registration_By_REGISTRATION_ID
 }
 #endregion
 

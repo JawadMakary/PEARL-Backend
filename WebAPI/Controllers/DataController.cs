@@ -128,6 +128,89 @@ return oResult_CalculateStaffBalance;
 #endregion
 }
 #endregion
+#region CalculateSupplierBalance
+[HttpPost]
+[Route("CalculateSupplierBalance")]
+public Result_CalculateSupplierBalance CalculateSupplierBalance(Params_CalculateSupplierBalance i_Params_CalculateSupplierBalance)
+{
+#region Declaration And Initialization Section.
+Int32 oReturnValue = 0;
+string i_Ticket = string.Empty;
+Result_CalculateSupplierBalance oResult_CalculateSupplierBalance = new Result_CalculateSupplierBalance();
+#endregion
+#region Body Section.
+try
+{
+
+// Ticket Checking
+//-------------------
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] != null)
+{
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] == "1")
+{
+if
+(
+(
+(HttpContext.Request.Query["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Query["Ticket"].ToString() != "")
+)
+||
+(
+(HttpContext.Request.Headers["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Headers["Ticket"].ToString() != "")
+)
+)
+{
+i_Ticket = string.IsNullOrEmpty(HttpContext.Request.Query["Ticket"])  ? "": HttpContext.Request.Query["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+i_Ticket = HttpContext.Request.Headers["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+throw new Exception("Missing Ticket");
+}
+}
+}
+else
+{
+throw new Exception("Invalid Ticket");
+}
+}
+}
+//-------------------
+
+BLC.BLC oBLC_Default = new BLC.BLC();
+BLCInitializer oBLCInitializer = new BLCInitializer();
+oBLCInitializer.UserID           = Convert.ToInt64(oBLC_Default.ResolveTicket(i_Ticket)["USER_ID"]);
+oBLCInitializer.OwnerID          = Convert.ToInt32(oBLC_Default.ResolveTicket(i_Ticket)["OWNER_ID"]);
+oBLCInitializer.ConnectionString = ConfigurationManager.AppSettings["CONN_STR"];
+oBLCInitializer.Messages_FilePath = ConfigurationManager.AppSettings["BLC_MESSAGES"];
+using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
+{
+oBLC.Monitor_API_Calls();
+oReturnValue = oBLC.CalculateSupplierBalance(i_Params_CalculateSupplierBalance);
+oResult_CalculateSupplierBalance.My_Result = oReturnValue;
+oResult_CalculateSupplierBalance.My_Params_CalculateSupplierBalance = i_Params_CalculateSupplierBalance;
+}
+}
+catch(Exception ex)
+{
+if (ex.GetType().FullName != "BLC.BLCException")
+{
+oResult_CalculateSupplierBalance.ExceptionMsg = string.Format("CalculateSupplierBalance : {0}", ex.Message);
+}
+else
+{
+oResult_CalculateSupplierBalance.ExceptionMsg = ex.Message;
+oResult_CalculateSupplierBalance.ExceptionCode = ((BLCException)ex).Code;
+}
+}
+#endregion
+#region Return Section
+return oResult_CalculateSupplierBalance;
+#endregion
+}
+#endregion
 #region CheckClientPaymentStatus
 [HttpPost]
 [Route("CheckClientPaymentStatus")]
@@ -643,11 +726,7 @@ throw new Exception("Invalid Ticket");
 //-------------------
 
 BLC.BLC oBLC_Default = new BLC.BLC();
-BLCInitializer oBLCInitializer = new BLCInitializer();
-oBLCInitializer.UserID           = Convert.ToInt64(oBLC_Default.ResolveTicket(i_Ticket)["USER_ID"]);
-oBLCInitializer.OwnerID          = Convert.ToInt32(oBLC_Default.ResolveTicket(i_Ticket)["OWNER_ID"]);
-oBLCInitializer.ConnectionString = ConfigurationManager.AppSettings["CONN_STR"];
-oBLCInitializer.Messages_FilePath = ConfigurationManager.AppSettings["BLC_MESSAGES"];
+BLCInitializer oBLCInitializer = oBLC_Default.Prepare_BLCInitializer(i_Ticket,BLC.BLC.Enum_API_Method.Edit_Registration);
 using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
 {
 oBLC.Monitor_API_Calls();
@@ -2058,11 +2137,7 @@ throw new Exception("Invalid Ticket");
 //-------------------
 
 BLC.BLC oBLC_Default = new BLC.BLC();
-BLCInitializer oBLCInitializer = new BLCInitializer();
-oBLCInitializer.UserID           = Convert.ToInt64(oBLC_Default.ResolveTicket(i_Ticket)["USER_ID"]);
-oBLCInitializer.OwnerID          = Convert.ToInt32(oBLC_Default.ResolveTicket(i_Ticket)["OWNER_ID"]);
-oBLCInitializer.ConnectionString = ConfigurationManager.AppSettings["CONN_STR"];
-oBLCInitializer.Messages_FilePath = ConfigurationManager.AppSettings["BLC_MESSAGES"];
+BLCInitializer oBLCInitializer = oBLC_Default.Prepare_BLCInitializer(i_Ticket,BLC.BLC.Enum_API_Method.Get_Registration_By_OWNER_ID);
 using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
 {
 oBLC.Monitor_API_Calls();
@@ -2086,6 +2161,85 @@ oResult_Get_Registration_By_OWNER_ID.ExceptionCode = ((BLCException)ex).Code;
 #endregion
 #region Return Section
 return oResult_Get_Registration_By_OWNER_ID;
+#endregion
+}
+#endregion
+#region Get_Registration_By_REGISTRATION_ID
+[HttpPost]
+[Route("Get_Registration_By_REGISTRATION_ID")]
+public Result_Get_Registration_By_REGISTRATION_ID Get_Registration_By_REGISTRATION_ID(Params_Get_Registration_By_REGISTRATION_ID i_Params_Get_Registration_By_REGISTRATION_ID)
+{
+#region Declaration And Initialization Section.
+Registration oReturnValue = new Registration();
+string i_Ticket = string.Empty;
+Result_Get_Registration_By_REGISTRATION_ID oResult_Get_Registration_By_REGISTRATION_ID = new Result_Get_Registration_By_REGISTRATION_ID();
+#endregion
+#region Body Section.
+try
+{
+
+// Ticket Checking
+//-------------------
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] != null)
+{
+if (ConfigurationManager.AppSettings["ENABLE_TICKET"] == "1")
+{
+if
+(
+(
+(HttpContext.Request.Query["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Query["Ticket"].ToString() != "")
+)
+||
+(
+(HttpContext.Request.Headers["Ticket"].FirstOrDefault() != null) &&
+(HttpContext.Request.Headers["Ticket"].ToString() != "")
+)
+)
+{
+i_Ticket = string.IsNullOrEmpty(HttpContext.Request.Query["Ticket"])  ? "": HttpContext.Request.Query["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+i_Ticket = HttpContext.Request.Headers["Ticket"].ToString();
+if (string.IsNullOrEmpty(i_Ticket))
+{
+throw new Exception("Missing Ticket");
+}
+}
+}
+else
+{
+throw new Exception("Invalid Ticket");
+}
+}
+}
+//-------------------
+
+BLC.BLC oBLC_Default = new BLC.BLC();
+BLCInitializer oBLCInitializer = oBLC_Default.Prepare_BLCInitializer(i_Ticket,BLC.BLC.Enum_API_Method.Get_Registration_By_REGISTRATION_ID);
+using (BLC.BLC oBLC = new BLC.BLC(oBLCInitializer))
+{
+oBLC.Monitor_API_Calls();
+oReturnValue = oBLC.Get_Registration_By_REGISTRATION_ID(i_Params_Get_Registration_By_REGISTRATION_ID);
+oResult_Get_Registration_By_REGISTRATION_ID.My_Result = oReturnValue;
+oResult_Get_Registration_By_REGISTRATION_ID.My_Params_Get_Registration_By_REGISTRATION_ID = i_Params_Get_Registration_By_REGISTRATION_ID;
+}
+}
+catch(Exception ex)
+{
+if (ex.GetType().FullName != "BLC.BLCException")
+{
+oResult_Get_Registration_By_REGISTRATION_ID.ExceptionMsg = string.Format("Get_Registration_By_REGISTRATION_ID : {0}", ex.Message);
+}
+else
+{
+oResult_Get_Registration_By_REGISTRATION_ID.ExceptionMsg = ex.Message;
+oResult_Get_Registration_By_REGISTRATION_ID.ExceptionCode = ((BLCException)ex).Code;
+}
+}
+#endregion
+#region Return Section
+return oResult_Get_Registration_By_REGISTRATION_ID;
 #endregion
 }
 #endregion
@@ -3302,6 +3456,15 @@ public Params_CalculateStaffBalance My_Params_CalculateStaffBalance { get; set; 
 #endregion
 }
 #endregion
+#region Result_CalculateSupplierBalance
+public partial class Result_CalculateSupplierBalance : Action_Result
+{
+#region Properties.
+public Int32 My_Result { get; set; }
+public Params_CalculateSupplierBalance My_Params_CalculateSupplierBalance { get; set; }
+#endregion
+}
+#endregion
 #region Result_CheckClientPaymentStatus
 public partial class Result_CheckClientPaymentStatus : Action_Result
 {
@@ -3513,6 +3676,15 @@ public partial class Result_Get_Registration_By_OWNER_ID : Action_Result
 #region Properties.
 public List<Registration>  My_Result { get; set; }
 public Params_Get_Registration_By_OWNER_ID My_Params_Get_Registration_By_OWNER_ID { get; set; }
+#endregion
+}
+#endregion
+#region Result_Get_Registration_By_REGISTRATION_ID
+public partial class Result_Get_Registration_By_REGISTRATION_ID : Action_Result
+{
+#region Properties.
+public Registration My_Result { get; set; }
+public Params_Get_Registration_By_REGISTRATION_ID My_Params_Get_Registration_By_REGISTRATION_ID { get; set; }
 #endregion
 }
 #endregion

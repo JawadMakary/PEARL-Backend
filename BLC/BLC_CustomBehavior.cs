@@ -447,6 +447,23 @@ namespace BLC
 
 
         #endregion
+        public int CalculateSupplierBalance(Params_CalculateSupplierBalance i_Params_CalculateSupplierBalance)
+        {
+            int? supplierBalance = 0;
+
+            _AppContext.CalculateSupplierBalance(
+                i_Params_CalculateSupplierBalance.SupplierID,
+                ref supplierBalance,
+                i_Params_CalculateSupplierBalance.OwnerID,
+                i_Params_CalculateSupplierBalance.CurrencyID
+            );
+
+            if (supplierBalance == null)
+                throw new ArgumentOutOfRangeException("Parameter index is out of range.");
+
+            return supplierBalance ?? 0;
+        }
+
 
         #region CalculateStaffBalance
         public int CalculateStaffBalance(Params_CalculateStaffBalance i_Params_CalculateStaffBalance)
@@ -642,8 +659,13 @@ namespace BLC
 
         #endregion
     }
-
-    public partial class Params_CheckClientPaymentStatus
+    public partial class Params_CalculateSupplierBalance
+    {
+        public long OwnerID { get; set; }
+        public int SupplierID { get; set; }
+        public int CurrencyID { get; set; }
+    }
+        public partial class Params_CheckClientPaymentStatus
     {
         public long? OwnerID { get; set; }
         public Int32? ClientID { get; set; }

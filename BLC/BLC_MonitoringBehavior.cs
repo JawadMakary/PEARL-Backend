@@ -39,6 +39,7 @@ public Stopwatch _Execution_Time_Get_Loc_l4_By_LOC_L4_ID_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Method_run_By_METHOD_RUN_ID_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Package_By_PACKAGE_ID_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Person_By_PERSON_ID_Adv {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_REGISTRATION_ID_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Session_By_SESSION_ID_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Staff_By_STAFF_ID_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Staff_fees_By_STAFF_FEES_ID_Adv {get;set;}
@@ -59,6 +60,7 @@ public Stopwatch _Execution_Time_Get_Loc_l4_By_LOC_L4_ID_List_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Method_run_By_METHOD_RUN_ID_List_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Package_By_PACKAGE_ID_List_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Person_By_PERSON_ID_List_Adv {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_REGISTRATION_ID_List_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Session_By_SESSION_ID_List_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Staff_By_STAFF_ID_List_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Staff_fees_By_STAFF_FEES_ID_List_Adv {get;set;}
@@ -79,6 +81,7 @@ public Stopwatch _Execution_Time_Get_Client_fees_By_OWNER_ID_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Client_fees_By_CLIENT_ID_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Client_fees_By_CURRENCY_ID_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Client_fees_By_PACKAGE_ID_Adv {get;set;}
+public Stopwatch _Execution_Time_Get_Client_fees_By_REGISTRATION_ID_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Contact_By_PERSON_ID_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Contact_By_PERSON_ID_CONTACT_TYPE_CODE_CONTACT_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Contact_By_OWNER_ID_Adv {get;set;}
@@ -100,6 +103,10 @@ public Stopwatch _Execution_Time_Get_Method_run_By_OWNER_ID_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Package_By_OWNER_ID_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Package_By_CURRENCY_ID_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Person_By_OWNER_ID_Adv {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_OWNER_ID_Adv {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_CLIENT_ID_Adv {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_PACKAGE_ID_Adv {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_CURRENCY_ID_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Session_By_OWNER_ID_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Session_By_PACKAGE_ID_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Session_By_CLIENT_FEES_ID_Adv {get;set;}
@@ -124,12 +131,16 @@ public Stopwatch _Execution_Time_Get_Client_By_BLOODTYPE_ID_List_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Client_fees_By_CLIENT_ID_List_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Client_fees_By_CURRENCY_ID_List_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Client_fees_By_PACKAGE_ID_List_Adv {get;set;}
+public Stopwatch _Execution_Time_Get_Client_fees_By_REGISTRATION_ID_List_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Contact_By_PERSON_ID_List_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Fees_By_CURRENCY_ID_List_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Loc_l2_By_LOC_L1_ID_List_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Loc_l3_By_LOC_L2_ID_List_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Loc_l4_By_LOC_L3_ID_List_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Package_By_CURRENCY_ID_List_Adv {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_CLIENT_ID_List_Adv {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_PACKAGE_ID_List_Adv {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_CURRENCY_ID_List_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Session_By_PACKAGE_ID_List_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Session_By_CLIENT_FEES_ID_List_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Staff_By_BLOODTYPE_ID_List_Adv {get;set;}
@@ -248,6 +259,8 @@ public Stopwatch _Execution_Time_Edit_Bloodtype_WithRelatedData {get;set;}
 public Stopwatch _Execution_Time_Delete_Bloodtype_With_Children {get;set;}
 public Stopwatch _Execution_Time_Reset_Client_fees_By_Client {get;set;}
 public Stopwatch _Execution_Time_Edit_Client_WithClient_fees {get;set;}
+public Stopwatch _Execution_Time_Reset_Registration_By_Client {get;set;}
+public Stopwatch _Execution_Time_Edit_Client_WithRegistration {get;set;}
 public Stopwatch _Execution_Time_Edit_Client_WithRelatedData {get;set;}
 public Stopwatch _Execution_Time_Delete_Client_With_Children {get;set;}
 public Stopwatch _Execution_Time_Reset_Session_By_Client_fees {get;set;}
@@ -260,6 +273,8 @@ public Stopwatch _Execution_Time_Reset_Fees_By_Currency {get;set;}
 public Stopwatch _Execution_Time_Edit_Currency_WithFees {get;set;}
 public Stopwatch _Execution_Time_Reset_Package_By_Currency {get;set;}
 public Stopwatch _Execution_Time_Edit_Currency_WithPackage {get;set;}
+public Stopwatch _Execution_Time_Reset_Registration_By_Currency {get;set;}
+public Stopwatch _Execution_Time_Edit_Currency_WithRegistration {get;set;}
 public Stopwatch _Execution_Time_Reset_Staff_fees_By_Currency {get;set;}
 public Stopwatch _Execution_Time_Edit_Currency_WithStaff_fees {get;set;}
 public Stopwatch _Execution_Time_Reset_Supplier_fees_By_Currency {get;set;}
@@ -290,6 +305,8 @@ public Stopwatch _Execution_Time_Edit_Loc_l4_WithRelatedData {get;set;}
 public Stopwatch _Execution_Time_Delete_Loc_l4_With_Children {get;set;}
 public Stopwatch _Execution_Time_Reset_Client_fees_By_Package {get;set;}
 public Stopwatch _Execution_Time_Edit_Package_WithClient_fees {get;set;}
+public Stopwatch _Execution_Time_Reset_Registration_By_Package {get;set;}
+public Stopwatch _Execution_Time_Edit_Package_WithRegistration {get;set;}
 public Stopwatch _Execution_Time_Reset_Session_By_Package {get;set;}
 public Stopwatch _Execution_Time_Edit_Package_WithSession {get;set;}
 public Stopwatch _Execution_Time_Edit_Package_WithRelatedData {get;set;}
@@ -300,6 +317,10 @@ public Stopwatch _Execution_Time_Reset_Contact_By_Person {get;set;}
 public Stopwatch _Execution_Time_Edit_Person_WithContact {get;set;}
 public Stopwatch _Execution_Time_Edit_Person_WithRelatedData {get;set;}
 public Stopwatch _Execution_Time_Delete_Person_With_Children {get;set;}
+public Stopwatch _Execution_Time_Reset_Client_fees_By_Registration {get;set;}
+public Stopwatch _Execution_Time_Edit_Registration_WithClient_fees {get;set;}
+public Stopwatch _Execution_Time_Edit_Registration_WithRelatedData {get;set;}
+public Stopwatch _Execution_Time_Delete_Registration_With_Children {get;set;}
 public Stopwatch _Execution_Time_Reset_Staff_fees_By_Staff {get;set;}
 public Stopwatch _Execution_Time_Edit_Staff_WithStaff_fees {get;set;}
 public Stopwatch _Execution_Time_Edit_Staff_WithRelatedData {get;set;}
@@ -368,6 +389,7 @@ public Stopwatch _Execution_Time_Get_Method_run_By_METHOD_RUN_ID {get;set;}
 public Stopwatch _Execution_Time_Get_Owner_By_OWNER_ID {get;set;}
 public Stopwatch _Execution_Time_Get_Package_By_PACKAGE_ID {get;set;}
 public Stopwatch _Execution_Time_Get_Person_By_PERSON_ID {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_REGISTRATION_ID {get;set;}
 public Stopwatch _Execution_Time_Get_Session_By_SESSION_ID {get;set;}
 public Stopwatch _Execution_Time_Get_Staff_By_STAFF_ID {get;set;}
 public Stopwatch _Execution_Time_Get_Staff_fees_By_STAFF_FEES_ID {get;set;}
@@ -389,6 +411,7 @@ public Stopwatch _Execution_Time_Get_Method_run_By_METHOD_RUN_ID_List {get;set;}
 public Stopwatch _Execution_Time_Get_Owner_By_OWNER_ID_List {get;set;}
 public Stopwatch _Execution_Time_Get_Package_By_PACKAGE_ID_List {get;set;}
 public Stopwatch _Execution_Time_Get_Person_By_PERSON_ID_List {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_REGISTRATION_ID_List {get;set;}
 public Stopwatch _Execution_Time_Get_Session_By_SESSION_ID_List {get;set;}
 public Stopwatch _Execution_Time_Get_Staff_By_STAFF_ID_List {get;set;}
 public Stopwatch _Execution_Time_Get_Staff_fees_By_STAFF_FEES_ID_List {get;set;}
@@ -409,6 +432,7 @@ public Stopwatch _Execution_Time_Get_Client_fees_By_OWNER_ID {get;set;}
 public Stopwatch _Execution_Time_Get_Client_fees_By_CLIENT_ID {get;set;}
 public Stopwatch _Execution_Time_Get_Client_fees_By_CURRENCY_ID {get;set;}
 public Stopwatch _Execution_Time_Get_Client_fees_By_PACKAGE_ID {get;set;}
+public Stopwatch _Execution_Time_Get_Client_fees_By_REGISTRATION_ID {get;set;}
 public Stopwatch _Execution_Time_Get_Contact_By_PERSON_ID {get;set;}
 public Stopwatch _Execution_Time_Get_Contact_By_PERSON_ID_CONTACT_TYPE_CODE_CONTACT {get;set;}
 public Stopwatch _Execution_Time_Get_Contact_By_OWNER_ID {get;set;}
@@ -430,6 +454,10 @@ public Stopwatch _Execution_Time_Get_Method_run_By_OWNER_ID {get;set;}
 public Stopwatch _Execution_Time_Get_Package_By_OWNER_ID {get;set;}
 public Stopwatch _Execution_Time_Get_Package_By_CURRENCY_ID {get;set;}
 public Stopwatch _Execution_Time_Get_Person_By_OWNER_ID {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_OWNER_ID {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_CLIENT_ID {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_PACKAGE_ID {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_CURRENCY_ID {get;set;}
 public Stopwatch _Execution_Time_Get_Session_By_OWNER_ID {get;set;}
 public Stopwatch _Execution_Time_Get_Session_By_PACKAGE_ID {get;set;}
 public Stopwatch _Execution_Time_Get_Session_By_CLIENT_FEES_ID {get;set;}
@@ -454,12 +482,16 @@ public Stopwatch _Execution_Time_Get_Client_By_BLOODTYPE_ID_List {get;set;}
 public Stopwatch _Execution_Time_Get_Client_fees_By_CLIENT_ID_List {get;set;}
 public Stopwatch _Execution_Time_Get_Client_fees_By_CURRENCY_ID_List {get;set;}
 public Stopwatch _Execution_Time_Get_Client_fees_By_PACKAGE_ID_List {get;set;}
+public Stopwatch _Execution_Time_Get_Client_fees_By_REGISTRATION_ID_List {get;set;}
 public Stopwatch _Execution_Time_Get_Contact_By_PERSON_ID_List {get;set;}
 public Stopwatch _Execution_Time_Get_Fees_By_CURRENCY_ID_List {get;set;}
 public Stopwatch _Execution_Time_Get_Loc_l2_By_LOC_L1_ID_List {get;set;}
 public Stopwatch _Execution_Time_Get_Loc_l3_By_LOC_L2_ID_List {get;set;}
 public Stopwatch _Execution_Time_Get_Loc_l4_By_LOC_L3_ID_List {get;set;}
 public Stopwatch _Execution_Time_Get_Package_By_CURRENCY_ID_List {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_CLIENT_ID_List {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_PACKAGE_ID_List {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_CURRENCY_ID_List {get;set;}
 public Stopwatch _Execution_Time_Get_Session_By_PACKAGE_ID_List {get;set;}
 public Stopwatch _Execution_Time_Get_Session_By_CLIENT_FEES_ID_List {get;set;}
 public Stopwatch _Execution_Time_Get_Staff_By_BLOODTYPE_ID_List {get;set;}
@@ -587,6 +619,7 @@ public Stopwatch _Execution_Time_Delete_Method_run {get;set;}
 public Stopwatch _Execution_Time_Delete_Owner {get;set;}
 public Stopwatch _Execution_Time_Delete_Package {get;set;}
 public Stopwatch _Execution_Time_Delete_Person {get;set;}
+public Stopwatch _Execution_Time_Delete_Registration {get;set;}
 public Stopwatch _Execution_Time_Delete_Session {get;set;}
 public Stopwatch _Execution_Time_Delete_Staff {get;set;}
 public Stopwatch _Execution_Time_Delete_Staff_fees {get;set;}
@@ -607,6 +640,7 @@ public Stopwatch _Execution_Time_Delete_Client_fees_By_OWNER_ID {get;set;}
 public Stopwatch _Execution_Time_Delete_Client_fees_By_CLIENT_ID {get;set;}
 public Stopwatch _Execution_Time_Delete_Client_fees_By_CURRENCY_ID {get;set;}
 public Stopwatch _Execution_Time_Delete_Client_fees_By_PACKAGE_ID {get;set;}
+public Stopwatch _Execution_Time_Delete_Client_fees_By_REGISTRATION_ID {get;set;}
 public Stopwatch _Execution_Time_Delete_Contact_By_PERSON_ID {get;set;}
 public Stopwatch _Execution_Time_Delete_Contact_By_PERSON_ID_CONTACT_TYPE_CODE_CONTACT {get;set;}
 public Stopwatch _Execution_Time_Delete_Contact_By_OWNER_ID {get;set;}
@@ -628,6 +662,10 @@ public Stopwatch _Execution_Time_Delete_Method_run_By_OWNER_ID {get;set;}
 public Stopwatch _Execution_Time_Delete_Package_By_OWNER_ID {get;set;}
 public Stopwatch _Execution_Time_Delete_Package_By_CURRENCY_ID {get;set;}
 public Stopwatch _Execution_Time_Delete_Person_By_OWNER_ID {get;set;}
+public Stopwatch _Execution_Time_Delete_Registration_By_OWNER_ID {get;set;}
+public Stopwatch _Execution_Time_Delete_Registration_By_CLIENT_ID {get;set;}
+public Stopwatch _Execution_Time_Delete_Registration_By_PACKAGE_ID {get;set;}
+public Stopwatch _Execution_Time_Delete_Registration_By_CURRENCY_ID {get;set;}
 public Stopwatch _Execution_Time_Delete_Session_By_OWNER_ID {get;set;}
 public Stopwatch _Execution_Time_Delete_Session_By_PACKAGE_ID {get;set;}
 public Stopwatch _Execution_Time_Delete_Session_By_CLIENT_FEES_ID {get;set;}
@@ -658,6 +696,7 @@ public Stopwatch _Execution_Time_Edit_Method_run {get;set;}
 public Stopwatch _Execution_Time_Edit_Owner {get;set;}
 public Stopwatch _Execution_Time_Edit_Package {get;set;}
 public Stopwatch _Execution_Time_Edit_Person {get;set;}
+public Stopwatch _Execution_Time_Edit_Registration {get;set;}
 public Stopwatch _Execution_Time_Edit_Session {get;set;}
 public Stopwatch _Execution_Time_Edit_Staff {get;set;}
 public Stopwatch _Execution_Time_Edit_Staff_fees {get;set;}
@@ -679,6 +718,7 @@ public Stopwatch _Execution_Time_Edit_Method_run_List {get;set;}
 public Stopwatch _Execution_Time_Edit_Owner_List {get;set;}
 public Stopwatch _Execution_Time_Edit_Package_List {get;set;}
 public Stopwatch _Execution_Time_Edit_Person_List {get;set;}
+public Stopwatch _Execution_Time_Edit_Registration_List {get;set;}
 public Stopwatch _Execution_Time_Edit_Session_List {get;set;}
 public Stopwatch _Execution_Time_Edit_Staff_List {get;set;}
 public Stopwatch _Execution_Time_Edit_Staff_fees_List {get;set;}

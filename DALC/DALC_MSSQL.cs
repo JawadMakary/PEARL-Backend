@@ -4546,6 +4546,66 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
+public List<Registration> Get_Registration_By_Criteria ( string REGISTRATION_DESCRIPTION, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.REGISTRATION_DESCRIPTION = REGISTRATION_DESCRIPTION; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_CRITERIA", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+TOTAL_COUNT = p.TOTAL_COUNT;
+return oList;
+}
+public List<Registration> Get_Registration_By_Where ( string REGISTRATION_DESCRIPTION, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.REGISTRATION_DESCRIPTION = REGISTRATION_DESCRIPTION; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_WHERE", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+TOTAL_COUNT = p.TOTAL_COUNT;
+return oList;
+}
+public List<Registration> Get_Registration_By_Criteria_V2 ( string REGISTRATION_DATE, string REGISTRATION_DESCRIPTION, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.REGISTRATION_DATE = REGISTRATION_DATE; p.REGISTRATION_DESCRIPTION = REGISTRATION_DESCRIPTION; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_CRITERIA_V2", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+TOTAL_COUNT = p.TOTAL_COUNT;
+return oList;
+}
+public List<Registration> Get_Registration_By_Where_V2 ( string REGISTRATION_DATE, string REGISTRATION_DESCRIPTION, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.REGISTRATION_DATE = REGISTRATION_DATE; p.REGISTRATION_DESCRIPTION = REGISTRATION_DESCRIPTION; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_WHERE_V2", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+TOTAL_COUNT = p.TOTAL_COUNT;
+return oList;
+}
 public List<Session> Get_Session_By_Criteria ( string DESCRIPTION, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Session> oList = new List<Session>();
@@ -5480,6 +5540,78 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
+public List<Registration> Get_Registration_By_Criteria_Adv ( string REGISTRATION_DESCRIPTION, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.REGISTRATION_DESCRIPTION = REGISTRATION_DESCRIPTION; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_CRITERIA_ADV", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
+oTools.CopyPropValues_FromDataRecord(X, o);
+o.My_Client = new Client();
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Package = new Package();
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
+o.My_Currency = new Currency();
+o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
+oList.Add(o);
+}
+}
+TOTAL_COUNT = p.TOTAL_COUNT;
+return oList;
+}
+public List<Registration> Get_Registration_By_Where_Adv ( string REGISTRATION_DESCRIPTION, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.REGISTRATION_DESCRIPTION = REGISTRATION_DESCRIPTION; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_WHERE_ADV", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
+oTools.CopyPropValues_FromDataRecord(X, o);
+o.My_Client = new Client();
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Package = new Package();
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
+o.My_Currency = new Currency();
+o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
+oList.Add(o);
+}
+}
+TOTAL_COUNT = p.TOTAL_COUNT;
+return oList;
+}
+public List<Registration> Get_Registration_By_Criteria_Adv_V2 ( string REGISTRATION_DATE, string REGISTRATION_DESCRIPTION, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.REGISTRATION_DATE = REGISTRATION_DATE; p.REGISTRATION_DESCRIPTION = REGISTRATION_DESCRIPTION; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_CRITERIA_ADV_V2", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+TOTAL_COUNT = p.TOTAL_COUNT;
+return oList;
+}
+public List<Registration> Get_Registration_By_Where_Adv_V2 ( string REGISTRATION_DATE, string REGISTRATION_DESCRIPTION, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.REGISTRATION_DATE = REGISTRATION_DATE; p.REGISTRATION_DESCRIPTION = REGISTRATION_DESCRIPTION; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_WHERE_ADV_V2", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+TOTAL_COUNT = p.TOTAL_COUNT;
+return oList;
+}
 public List<Session> Get_Session_By_Criteria_Adv ( string DESCRIPTION, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Session> oList = new List<Session>();
@@ -6165,6 +6297,66 @@ p.PACKAGE_NAME = PACKAGE_NAME; p.PACKAGE_TYPE = PACKAGE_TYPE; p.PACKAGE_ENDING_D
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_PACKAGE_BY_WHERE_IN_LIST_V2", p);
 if (R != null) {foreach (var X in R) {
 Package o = new Package();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+TOTAL_COUNT = p.TOTAL_COUNT;
+return oList;
+}
+public List<Registration> Get_Registration_By_Criteria_InList ( string REGISTRATION_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> PACKAGE_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.REGISTRATION_DESCRIPTION = REGISTRATION_DESCRIPTION; p.CLIENT_ID_LIST = string.Join(",", CLIENT_ID_LIST.ToArray()); p.PACKAGE_ID_LIST = string.Join(",", PACKAGE_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_CRITERIA_IN_LIST", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+TOTAL_COUNT = p.TOTAL_COUNT;
+return oList;
+}
+public List<Registration> Get_Registration_By_Where_InList ( string REGISTRATION_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> PACKAGE_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.REGISTRATION_DESCRIPTION = REGISTRATION_DESCRIPTION; p.CLIENT_ID_LIST = string.Join(",", CLIENT_ID_LIST.ToArray()); p.PACKAGE_ID_LIST = string.Join(",", PACKAGE_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_WHERE_IN_LIST", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+TOTAL_COUNT = p.TOTAL_COUNT;
+return oList;
+}
+public List<Registration> Get_Registration_By_Criteria_InList_V2 ( string REGISTRATION_DATE, string REGISTRATION_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> PACKAGE_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.REGISTRATION_DATE = REGISTRATION_DATE; p.REGISTRATION_DESCRIPTION = REGISTRATION_DESCRIPTION; p.CLIENT_ID_LIST = string.Join(",", CLIENT_ID_LIST.ToArray()); p.PACKAGE_ID_LIST = string.Join(",", PACKAGE_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_CRITERIA_IN_LIST_V2", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+TOTAL_COUNT = p.TOTAL_COUNT;
+return oList;
+}
+public List<Registration> Get_Registration_By_Where_InList_V2 ( string REGISTRATION_DATE, string REGISTRATION_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> PACKAGE_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.REGISTRATION_DATE = REGISTRATION_DATE; p.REGISTRATION_DESCRIPTION = REGISTRATION_DESCRIPTION; p.CLIENT_ID_LIST = string.Join(",", CLIENT_ID_LIST.ToArray()); p.PACKAGE_ID_LIST = string.Join(",", PACKAGE_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_WHERE_IN_LIST_V2", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
 oTools.CopyPropValues_FromDataRecord(X, o);
 oList.Add(o);
 }
@@ -6859,6 +7051,78 @@ p.PACKAGE_NAME = PACKAGE_NAME; p.PACKAGE_TYPE = PACKAGE_TYPE; p.PACKAGE_ENDING_D
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_PACKAGE_BY_WHERE_IN_LIST_ADV_V2", p);
 if (R != null) {foreach (var X in R) {
 Package o = new Package();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+TOTAL_COUNT = p.TOTAL_COUNT;
+return oList;
+}
+public List<Registration> Get_Registration_By_Criteria_InList_Adv ( string REGISTRATION_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> PACKAGE_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.REGISTRATION_DESCRIPTION = REGISTRATION_DESCRIPTION; p.CLIENT_ID_LIST = string.Join(",", CLIENT_ID_LIST.ToArray()); p.PACKAGE_ID_LIST = string.Join(",", PACKAGE_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_CRITERIA_IN_LIST_ADV", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
+oTools.CopyPropValues_FromDataRecord(X, o);
+o.My_Client = new Client();
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Package = new Package();
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
+o.My_Currency = new Currency();
+o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
+oList.Add(o);
+}
+}
+TOTAL_COUNT = p.TOTAL_COUNT;
+return oList;
+}
+public List<Registration> Get_Registration_By_Where_InList_Adv ( string REGISTRATION_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> PACKAGE_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.REGISTRATION_DESCRIPTION = REGISTRATION_DESCRIPTION; p.CLIENT_ID_LIST = string.Join(",", CLIENT_ID_LIST.ToArray()); p.PACKAGE_ID_LIST = string.Join(",", PACKAGE_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_WHERE_IN_LIST_ADV", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
+oTools.CopyPropValues_FromDataRecord(X, o);
+o.My_Client = new Client();
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Package = new Package();
+o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
+o.My_Currency = new Currency();
+o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
+oList.Add(o);
+}
+}
+TOTAL_COUNT = p.TOTAL_COUNT;
+return oList;
+}
+public List<Registration> Get_Registration_By_Criteria_InList_Adv_V2 ( string REGISTRATION_DATE, string REGISTRATION_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> PACKAGE_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.REGISTRATION_DATE = REGISTRATION_DATE; p.REGISTRATION_DESCRIPTION = REGISTRATION_DESCRIPTION; p.CLIENT_ID_LIST = string.Join(",", CLIENT_ID_LIST.ToArray()); p.PACKAGE_ID_LIST = string.Join(",", PACKAGE_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_CRITERIA_IN_LIST_ADV_V2", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+TOTAL_COUNT = p.TOTAL_COUNT;
+return oList;
+}
+public List<Registration> Get_Registration_By_Where_InList_Adv_V2 ( string REGISTRATION_DATE, string REGISTRATION_DESCRIPTION, List<Int32?> CLIENT_ID_LIST, List<Int32?> PACKAGE_ID_LIST, List<Int32?> CURRENCY_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+{
+List<Registration> oList = new List<Registration>();
+dynamic p = new ExpandoObject();
+p.REGISTRATION_DATE = REGISTRATION_DATE; p.REGISTRATION_DESCRIPTION = REGISTRATION_DESCRIPTION; p.CLIENT_ID_LIST = string.Join(",", CLIENT_ID_LIST.ToArray()); p.PACKAGE_ID_LIST = string.Join(",", PACKAGE_ID_LIST.ToArray()); p.CURRENCY_ID_LIST = string.Join(",", CURRENCY_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_REGISTRATION_BY_WHERE_IN_LIST_ADV_V2", p);
+if (R != null) {foreach (var X in R) {
+Registration o = new Registration();
 oTools.CopyPropValues_FromDataRecord(X, o);
 oList.Add(o);
 }
@@ -7691,6 +7955,20 @@ oList.Add(o);
 BALANCE = p.BALANCE;
 return oList;
 }
+public List<dynamic> CalculateSupplierBalance ( Int32? SUPPLIER_ID,ref  Int32? BALANCE, long? OWNER_ID, Int32? CURRENCY_ID)
+{
+List<dynamic> oList = new List<dynamic>();
+dynamic p = new ExpandoObject();
+p.SUPPLIER_ID = SUPPLIER_ID; p.BALANCE = BALANCE; p.OWNER_ID = OWNER_ID; p.CURRENCY_ID = CURRENCY_ID;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("CalculateSupplierBalance", p);
+if (R != null) {foreach (var X in R) {
+dynamic o = new ExpandoObject();
+oList.Add(o);
+}
+}
+BALANCE = p.BALANCE;
+return oList;
+}
 public List<dynamic> CheckClientPaymentStatus ( Int32? CLIENT_ID,ref  Int32? BALANCE, long? OWNER_ID, Int32? CURRENCY_ID)
 {
 List<dynamic> oList = new List<dynamic>();
@@ -7866,7 +8144,7 @@ p.JSON_CONTENT = JSON_CONTENT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UP_BULK_UPSERT_CLIENT_FEES", p);
 if (R != null) {foreach (var X in R) {
 dynamic o = new ExpandoObject();
-o.CLIENT_FEES_ID = GV<Int32>(X["CLIENT_FEES_ID"]);o.CLIENT_ID = GV<Int32>(X["CLIENT_ID"]);o.CLIENT_FEES_DESCRIPTION = GV<String>(X["CLIENT_FEES_DESCRIPTION"]);o.ENTRY_USER_ID = GV<Int64>(X["ENTRY_USER_ID"]);o.ENTRY_DATE = GV<String>(X["ENTRY_DATE"]);o.OWNER_ID = GV<Int32>(X["OWNER_ID"]);o.CURRENCY_ID = GV<Int32>(X["CURRENCY_ID"]);o.PACKAGE_ID = GV<Int32>(X["PACKAGE_ID"]);o.CLIENT_FEES_AMOUNT = GV<Int32>(X["CLIENT_FEES_AMOUNT"]);
+o.CLIENT_FEES_ID = GV<Int32>(X["CLIENT_FEES_ID"]);o.CLIENT_ID = GV<Int32>(X["CLIENT_ID"]);o.CLIENT_FEES_DESCRIPTION = GV<String>(X["CLIENT_FEES_DESCRIPTION"]);o.ENTRY_USER_ID = GV<Int64>(X["ENTRY_USER_ID"]);o.ENTRY_DATE = GV<String>(X["ENTRY_DATE"]);o.OWNER_ID = GV<Int32>(X["OWNER_ID"]);o.CURRENCY_ID = GV<Int32>(X["CURRENCY_ID"]);o.PACKAGE_ID = GV<Int32>(X["PACKAGE_ID"]);o.CLIENT_FEES_AMOUNT = GV<Int32>(X["CLIENT_FEES_AMOUNT"]);o.REGISTRATION_ID = GV<Int32>(X["REGISTRATION_ID"]);
 oList.Add(o);
 }
 }
@@ -8021,6 +8299,20 @@ IEnumerable<IDataRecord> R = ExecuteSelectQuery("UP_BULK_UPSERT_PERSON", p);
 if (R != null) {foreach (var X in R) {
 dynamic o = new ExpandoObject();
 o.PERSON_ID = GV<Int64>(X["PERSON_ID"]);o.FIRST_NAME = GV<String>(X["FIRST_NAME"]);o.LAST_NAME = GV<String>(X["LAST_NAME"]);o.FATHER_NAME = GV<String>(X["FATHER_NAME"]);o.MOTHER_NAME = GV<String>(X["MOTHER_NAME"]);o.TITLE_CODE = GV<String>(X["TITLE_CODE"]);o.GENDER_CODE = GV<String>(X["GENDER_CODE"]);o.RELIGION_CODE = GV<String>(X["RELIGION_CODE"]);o.BIRTH_DATE = GV<String>(X["BIRTH_DATE"]);o.IS_BLOCKED = GV<Boolean>(X["IS_BLOCKED"]);o.DESCRIPTION = GV<String>(X["DESCRIPTION"]);o.OWNER_ID = GV<Int32>(X["OWNER_ID"]);o.ENTRY_USER_ID = GV<Int64>(X["ENTRY_USER_ID"]);o.ENTRY_DATE = GV<String>(X["ENTRY_DATE"]);
+oList.Add(o);
+}
+}
+return oList;
+}
+public List<dynamic> UP_BULK_UPSERT_REGISTRATION ( string JSON_CONTENT)
+{
+List<dynamic> oList = new List<dynamic>();
+dynamic p = new ExpandoObject();
+p.JSON_CONTENT = JSON_CONTENT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UP_BULK_UPSERT_REGISTRATION", p);
+if (R != null) {foreach (var X in R) {
+dynamic o = new ExpandoObject();
+o.REGISTRATION_ID = GV<Int32>(X["REGISTRATION_ID"]);o.CLIENT_ID = GV<Int32>(X["CLIENT_ID"]);o.REGISTRATION_DATE = GV<String>(X["REGISTRATION_DATE"]);o.PACKAGE_ID = GV<Int32>(X["PACKAGE_ID"]);o.REGISTRATION_DISCOUNT = GV<Int32>(X["REGISTRATION_DISCOUNT"]);o.REGISTRATION_TOTAL_PRICE = GV<Int32>(X["REGISTRATION_TOTAL_PRICE"]);o.CURRENCY_ID = GV<Int32>(X["CURRENCY_ID"]);o.REGISTRATION_DESCRIPTION = GV<String>(X["REGISTRATION_DESCRIPTION"]);o.ENTRY_USER_ID = GV<Int64>(X["ENTRY_USER_ID"]);o.ENTRY_DATE = GV<String>(X["ENTRY_DATE"]);o.OWNER_ID = GV<Int32>(X["OWNER_ID"]);
 oList.Add(o);
 }
 }

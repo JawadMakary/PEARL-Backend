@@ -4080,6 +4080,134 @@ i_Params_Get_Person_By_Where_V2.TOTAL_COUNT = tmp_TOTAL_COUNT;
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Person_By_Where_Adv_V2");}
 return oList;
 }
+public List<Registration> Get_Registration_By_Criteria_Adv(Params_Get_Registration_By_Criteria i_Params_Get_Registration_By_Criteria)
+{
+List<Registration> oList = new List<Registration>();
+long? tmp_TOTAL_COUNT = 0;
+Registration oRegistration = null;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registration_By_Criteria_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registration_By_Criteria_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registration_By_Criteria));}
+#region Body Section.
+if ((i_Params_Get_Registration_By_Criteria.OWNER_ID == null) || (i_Params_Get_Registration_By_Criteria.OWNER_ID == 0)) { i_Params_Get_Registration_By_Criteria.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Registration_By_Criteria.START_ROW == null) { i_Params_Get_Registration_By_Criteria.START_ROW = 0; }
+if ((i_Params_Get_Registration_By_Criteria.END_ROW == null) || (i_Params_Get_Registration_By_Criteria.END_ROW == 0)) { i_Params_Get_Registration_By_Criteria.END_ROW = 1000000; }
+List<DALC.Registration> oList_DBEntries = _AppContext.Get_Registration_By_Criteria_Adv(i_Params_Get_Registration_By_Criteria.REGISTRATION_DESCRIPTION,i_Params_Get_Registration_By_Criteria.OWNER_ID,i_Params_Get_Registration_By_Criteria.START_ROW,i_Params_Get_Registration_By_Criteria.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistration = new Registration();
+oTools.CopyPropValues(oDBEntry, oRegistration);
+oRegistration.My_Client = new Client();
+oTools.CopyPropValues(oDBEntry.My_Client, oRegistration.My_Client);
+oRegistration.My_Package = new Package();
+oTools.CopyPropValues(oDBEntry.My_Package, oRegistration.My_Package);
+oRegistration.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistration.My_Currency);
+oList.Add(oRegistration);
+}
+}
+i_Params_Get_Registration_By_Criteria.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registration_By_Criteria_Adv");}
+return oList;
+}
+public List<Registration> Get_Registration_By_Where_Adv(Params_Get_Registration_By_Where i_Params_Get_Registration_By_Where)
+{
+List<Registration> oList = new List<Registration>();
+long? tmp_TOTAL_COUNT = 0;
+Registration oRegistration = null;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registration_By_Where_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registration_By_Where_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registration_By_Where));}
+#region Body Section.
+if ((i_Params_Get_Registration_By_Where.OWNER_ID == null) || (i_Params_Get_Registration_By_Where.OWNER_ID == 0)) { i_Params_Get_Registration_By_Where.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Registration_By_Where.START_ROW == null) { i_Params_Get_Registration_By_Where.START_ROW = 0; }
+if ((i_Params_Get_Registration_By_Where.END_ROW == null) || (i_Params_Get_Registration_By_Where.END_ROW == 0)) { i_Params_Get_Registration_By_Where.END_ROW = 1000000; }
+List<DALC.Registration> oList_DBEntries = _AppContext.Get_Registration_By_Where_Adv(i_Params_Get_Registration_By_Where.REGISTRATION_DESCRIPTION,i_Params_Get_Registration_By_Where.OWNER_ID,i_Params_Get_Registration_By_Where.START_ROW,i_Params_Get_Registration_By_Where.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistration = new Registration();
+oTools.CopyPropValues(oDBEntry, oRegistration);
+oRegistration.My_Client = new Client();
+oTools.CopyPropValues(oDBEntry.My_Client, oRegistration.My_Client);
+oRegistration.My_Package = new Package();
+oTools.CopyPropValues(oDBEntry.My_Package, oRegistration.My_Package);
+oRegistration.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistration.My_Currency);
+oList.Add(oRegistration);
+}
+}
+i_Params_Get_Registration_By_Where.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registration_By_Where_Adv");}
+return oList;
+}
+public List<Registration> Get_Registration_By_Criteria_Adv_V2(Params_Get_Registration_By_Criteria_V2 i_Params_Get_Registration_By_Criteria_V2)
+{
+List<Registration> oList = new List<Registration>();
+long? tmp_TOTAL_COUNT = 0;
+Registration oRegistration = null;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registration_By_Criteria_Adv_V2");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registration_By_Criteria_Adv_V2",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registration_By_Criteria_V2));}
+#region Body Section.
+if ((i_Params_Get_Registration_By_Criteria_V2.OWNER_ID == null) || (i_Params_Get_Registration_By_Criteria_V2.OWNER_ID == 0)) { i_Params_Get_Registration_By_Criteria_V2.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Registration_By_Criteria_V2.START_ROW == null) { i_Params_Get_Registration_By_Criteria_V2.START_ROW = 0; }
+if ((i_Params_Get_Registration_By_Criteria_V2.END_ROW == null) || (i_Params_Get_Registration_By_Criteria_V2.END_ROW == 0)) { i_Params_Get_Registration_By_Criteria_V2.END_ROW = 1000000; }
+List<DALC.Registration> oList_DBEntries = _AppContext.Get_Registration_By_Criteria_Adv_V2(i_Params_Get_Registration_By_Criteria_V2.REGISTRATION_DATE,i_Params_Get_Registration_By_Criteria_V2.REGISTRATION_DESCRIPTION,i_Params_Get_Registration_By_Criteria_V2.OWNER_ID,i_Params_Get_Registration_By_Criteria_V2.START_ROW,i_Params_Get_Registration_By_Criteria_V2.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistration = new Registration();
+oTools.CopyPropValues(oDBEntry, oRegistration);
+oRegistration.My_Client = new Client();
+oTools.CopyPropValues(oDBEntry.My_Client, oRegistration.My_Client);
+oRegistration.My_Package = new Package();
+oTools.CopyPropValues(oDBEntry.My_Package, oRegistration.My_Package);
+oRegistration.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistration.My_Currency);
+oList.Add(oRegistration);
+}
+}
+i_Params_Get_Registration_By_Criteria_V2.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registration_By_Criteria_Adv_V2");}
+return oList;
+}
+public List<Registration> Get_Registration_By_Where_Adv_V2(Params_Get_Registration_By_Where_V2 i_Params_Get_Registration_By_Where_V2)
+{
+List<Registration> oList = new List<Registration>();
+long? tmp_TOTAL_COUNT = 0;
+Registration oRegistration = null;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registration_By_Where_Adv_V2");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registration_By_Where_Adv_V2",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registration_By_Where_V2));}
+#region Body Section.
+if ((i_Params_Get_Registration_By_Where_V2.OWNER_ID == null) || (i_Params_Get_Registration_By_Where_V2.OWNER_ID == 0)) { i_Params_Get_Registration_By_Where_V2.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Registration_By_Where_V2.START_ROW == null) { i_Params_Get_Registration_By_Where_V2.START_ROW = 0; }
+if ((i_Params_Get_Registration_By_Where_V2.END_ROW == null) || (i_Params_Get_Registration_By_Where_V2.END_ROW == 0)) { i_Params_Get_Registration_By_Where_V2.END_ROW = 1000000; }
+List<DALC.Registration> oList_DBEntries = _AppContext.Get_Registration_By_Where_Adv_V2(i_Params_Get_Registration_By_Where_V2.REGISTRATION_DATE,i_Params_Get_Registration_By_Where_V2.REGISTRATION_DESCRIPTION,i_Params_Get_Registration_By_Where_V2.OWNER_ID,i_Params_Get_Registration_By_Where_V2.START_ROW,i_Params_Get_Registration_By_Where_V2.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistration = new Registration();
+oTools.CopyPropValues(oDBEntry, oRegistration);
+oRegistration.My_Client = new Client();
+oTools.CopyPropValues(oDBEntry.My_Client, oRegistration.My_Client);
+oRegistration.My_Package = new Package();
+oTools.CopyPropValues(oDBEntry.My_Package, oRegistration.My_Package);
+oRegistration.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistration.My_Currency);
+oList.Add(oRegistration);
+}
+}
+i_Params_Get_Registration_By_Where_V2.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registration_By_Where_Adv_V2");}
+return oList;
+}
 public List<Session> Get_Session_By_Criteria_Adv(Params_Get_Session_By_Criteria i_Params_Get_Session_By_Criteria)
 {
 List<Session> oList = new List<Session>();
@@ -5890,6 +6018,236 @@ i_Params_Get_Package_By_Where_InList_V2.TOTAL_COUNT = oParams_Get_Package_By_Whe
 i_Params_Get_Package_By_Where_InList_V2.TOTAL_COUNT = tmp_TOTAL_COUNT;
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Package_By_Where_InList_Adv_V2");}
+return oList;
+}
+public List<Registration> Get_Registration_By_Criteria_InList_Adv(Params_Get_Registration_By_Criteria_InList i_Params_Get_Registration_By_Criteria_InList)
+{
+List<Registration> oList = new List<Registration>();
+Registration oRegistration = new Registration();
+long? tmp_TOTAL_COUNT = 0; 
+Params_Get_Registration_By_Criteria_InList_SP oParams_Get_Registration_By_Criteria_InList_SP = new Params_Get_Registration_By_Criteria_InList_SP();
+Params_Get_Client_By_CLIENT_ID oParams_Get_Client_By_CLIENT_ID = new Params_Get_Client_By_CLIENT_ID();
+Params_Get_Package_By_PACKAGE_ID oParams_Get_Package_By_PACKAGE_ID = new Params_Get_Package_By_PACKAGE_ID();
+Params_Get_Currency_By_CURRENCY_ID oParams_Get_Currency_By_CURRENCY_ID = new Params_Get_Currency_By_CURRENCY_ID();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registration_By_Criteria_InList_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registration_By_Criteria_InList_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registration_By_Criteria_InList));}
+#region Body Section.
+if ((i_Params_Get_Registration_By_Criteria_InList.OWNER_ID == null) || (i_Params_Get_Registration_By_Criteria_InList.OWNER_ID == 0)) { i_Params_Get_Registration_By_Criteria_InList.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Registration_By_Criteria_InList.START_ROW == null) { i_Params_Get_Registration_By_Criteria_InList.START_ROW = 0; }
+if ((i_Params_Get_Registration_By_Criteria_InList.END_ROW == null) || (i_Params_Get_Registration_By_Criteria_InList.END_ROW == 0)) { i_Params_Get_Registration_By_Criteria_InList.END_ROW = 1000000; }
+oParams_Get_Registration_By_Criteria_InList_SP.OWNER_ID = i_Params_Get_Registration_By_Criteria_InList.OWNER_ID;
+oParams_Get_Registration_By_Criteria_InList_SP.REGISTRATION_DESCRIPTION = i_Params_Get_Registration_By_Criteria_InList.REGISTRATION_DESCRIPTION;
+if ( i_Params_Get_Registration_By_Criteria_InList.CLIENT_ID_LIST == null)
+{
+i_Params_Get_Registration_By_Criteria_InList.CLIENT_ID_LIST = new List<Int32?>();
+}
+oParams_Get_Registration_By_Criteria_InList_SP.CLIENT_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Registration_By_Criteria_InList.CLIENT_ID_LIST);
+if ( i_Params_Get_Registration_By_Criteria_InList.PACKAGE_ID_LIST == null)
+{
+i_Params_Get_Registration_By_Criteria_InList.PACKAGE_ID_LIST = new List<Int32?>();
+}
+oParams_Get_Registration_By_Criteria_InList_SP.PACKAGE_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Registration_By_Criteria_InList.PACKAGE_ID_LIST);
+if ( i_Params_Get_Registration_By_Criteria_InList.CURRENCY_ID_LIST == null)
+{
+i_Params_Get_Registration_By_Criteria_InList.CURRENCY_ID_LIST = new List<Int32?>();
+}
+oParams_Get_Registration_By_Criteria_InList_SP.CURRENCY_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Registration_By_Criteria_InList.CURRENCY_ID_LIST);
+oParams_Get_Registration_By_Criteria_InList_SP.START_ROW = i_Params_Get_Registration_By_Criteria_InList.START_ROW;
+oParams_Get_Registration_By_Criteria_InList_SP.END_ROW = i_Params_Get_Registration_By_Criteria_InList.END_ROW;
+oParams_Get_Registration_By_Criteria_InList_SP.TOTAL_COUNT = i_Params_Get_Registration_By_Criteria_InList.TOTAL_COUNT;
+List<DALC.Registration> oList_DBEntries = _AppContext.Get_Registration_By_Criteria_InList_Adv(i_Params_Get_Registration_By_Criteria_InList.REGISTRATION_DESCRIPTION,i_Params_Get_Registration_By_Criteria_InList.CLIENT_ID_LIST,i_Params_Get_Registration_By_Criteria_InList.PACKAGE_ID_LIST,i_Params_Get_Registration_By_Criteria_InList.CURRENCY_ID_LIST,i_Params_Get_Registration_By_Criteria_InList.OWNER_ID,i_Params_Get_Registration_By_Criteria_InList.START_ROW,i_Params_Get_Registration_By_Criteria_InList.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistration = new Registration();
+oTools.CopyPropValues(oDBEntry, oRegistration);
+oRegistration.My_Client = new Client();
+oTools.CopyPropValues(oDBEntry.My_Client, oRegistration.My_Client);
+oRegistration.My_Package = new Package();
+oTools.CopyPropValues(oDBEntry.My_Package, oRegistration.My_Package);
+oRegistration.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistration.My_Currency);
+oList.Add(oRegistration);
+}
+}
+i_Params_Get_Registration_By_Criteria_InList.TOTAL_COUNT = oParams_Get_Registration_By_Criteria_InList_SP.TOTAL_COUNT;
+i_Params_Get_Registration_By_Criteria_InList.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registration_By_Criteria_InList_Adv");}
+return oList;
+}
+public List<Registration> Get_Registration_By_Where_InList_Adv(Params_Get_Registration_By_Where_InList i_Params_Get_Registration_By_Where_InList)
+{
+List<Registration> oList = new List<Registration>();
+Registration oRegistration = new Registration();
+long? tmp_TOTAL_COUNT = 0; 
+Params_Get_Registration_By_Where_InList_SP oParams_Get_Registration_By_Where_InList_SP = new Params_Get_Registration_By_Where_InList_SP();
+Params_Get_Client_By_CLIENT_ID oParams_Get_Client_By_CLIENT_ID = new Params_Get_Client_By_CLIENT_ID();
+Params_Get_Package_By_PACKAGE_ID oParams_Get_Package_By_PACKAGE_ID = new Params_Get_Package_By_PACKAGE_ID();
+Params_Get_Currency_By_CURRENCY_ID oParams_Get_Currency_By_CURRENCY_ID = new Params_Get_Currency_By_CURRENCY_ID();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registration_By_Where_InList_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registration_By_Where_InList_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registration_By_Where_InList));}
+#region Body Section.
+if ((i_Params_Get_Registration_By_Where_InList.OWNER_ID == null) || (i_Params_Get_Registration_By_Where_InList.OWNER_ID == 0)) { i_Params_Get_Registration_By_Where_InList.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Registration_By_Where_InList.START_ROW == null) { i_Params_Get_Registration_By_Where_InList.START_ROW = 0; }
+if ((i_Params_Get_Registration_By_Where_InList.END_ROW == null) || (i_Params_Get_Registration_By_Where_InList.END_ROW == 0)) { i_Params_Get_Registration_By_Where_InList.END_ROW = 1000000; }
+oParams_Get_Registration_By_Where_InList_SP.OWNER_ID = i_Params_Get_Registration_By_Where_InList.OWNER_ID;
+oParams_Get_Registration_By_Where_InList_SP.REGISTRATION_DESCRIPTION = i_Params_Get_Registration_By_Where_InList.REGISTRATION_DESCRIPTION;
+if ( i_Params_Get_Registration_By_Where_InList.CLIENT_ID_LIST == null)
+{
+i_Params_Get_Registration_By_Where_InList.CLIENT_ID_LIST = new List<Int32?>();
+}
+oParams_Get_Registration_By_Where_InList_SP.CLIENT_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Registration_By_Where_InList.CLIENT_ID_LIST);
+if ( i_Params_Get_Registration_By_Where_InList.PACKAGE_ID_LIST == null)
+{
+i_Params_Get_Registration_By_Where_InList.PACKAGE_ID_LIST = new List<Int32?>();
+}
+oParams_Get_Registration_By_Where_InList_SP.PACKAGE_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Registration_By_Where_InList.PACKAGE_ID_LIST);
+if ( i_Params_Get_Registration_By_Where_InList.CURRENCY_ID_LIST == null)
+{
+i_Params_Get_Registration_By_Where_InList.CURRENCY_ID_LIST = new List<Int32?>();
+}
+oParams_Get_Registration_By_Where_InList_SP.CURRENCY_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Registration_By_Where_InList.CURRENCY_ID_LIST);
+oParams_Get_Registration_By_Where_InList_SP.START_ROW = i_Params_Get_Registration_By_Where_InList.START_ROW;
+oParams_Get_Registration_By_Where_InList_SP.END_ROW = i_Params_Get_Registration_By_Where_InList.END_ROW;
+oParams_Get_Registration_By_Where_InList_SP.TOTAL_COUNT = i_Params_Get_Registration_By_Where_InList.TOTAL_COUNT;
+List<DALC.Registration> oList_DBEntries = _AppContext.Get_Registration_By_Where_InList_Adv(i_Params_Get_Registration_By_Where_InList.REGISTRATION_DESCRIPTION,i_Params_Get_Registration_By_Where_InList.CLIENT_ID_LIST,i_Params_Get_Registration_By_Where_InList.PACKAGE_ID_LIST,i_Params_Get_Registration_By_Where_InList.CURRENCY_ID_LIST,i_Params_Get_Registration_By_Where_InList.OWNER_ID,i_Params_Get_Registration_By_Where_InList.START_ROW,i_Params_Get_Registration_By_Where_InList.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistration = new Registration();
+oTools.CopyPropValues(oDBEntry, oRegistration);
+oRegistration.My_Client = new Client();
+oTools.CopyPropValues(oDBEntry.My_Client, oRegistration.My_Client);
+oRegistration.My_Package = new Package();
+oTools.CopyPropValues(oDBEntry.My_Package, oRegistration.My_Package);
+oRegistration.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistration.My_Currency);
+oList.Add(oRegistration);
+}
+}
+i_Params_Get_Registration_By_Where_InList.TOTAL_COUNT = oParams_Get_Registration_By_Where_InList_SP.TOTAL_COUNT;
+i_Params_Get_Registration_By_Where_InList.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registration_By_Where_InList_Adv");}
+return oList;
+}
+public List<Registration> Get_Registration_By_Criteria_InList_Adv_V2(Params_Get_Registration_By_Criteria_InList_V2 i_Params_Get_Registration_By_Criteria_InList_V2)
+{
+List<Registration> oList = new List<Registration>();
+Registration oRegistration = new Registration();
+long? tmp_TOTAL_COUNT = 0; 
+Params_Get_Registration_By_Criteria_InList_SP_V2 oParams_Get_Registration_By_Criteria_InList_SP_V2 = new Params_Get_Registration_By_Criteria_InList_SP_V2();
+Params_Get_Client_By_CLIENT_ID oParams_Get_Client_By_CLIENT_ID = new Params_Get_Client_By_CLIENT_ID();
+Params_Get_Package_By_PACKAGE_ID oParams_Get_Package_By_PACKAGE_ID = new Params_Get_Package_By_PACKAGE_ID();
+Params_Get_Currency_By_CURRENCY_ID oParams_Get_Currency_By_CURRENCY_ID = new Params_Get_Currency_By_CURRENCY_ID();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registration_By_Criteria_InList_Adv_V2");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registration_By_Criteria_InList_Adv_V2",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registration_By_Criteria_InList_V2));}
+#region Body Section.
+if ((i_Params_Get_Registration_By_Criteria_InList_V2.OWNER_ID == null) || (i_Params_Get_Registration_By_Criteria_InList_V2.OWNER_ID == 0)) { i_Params_Get_Registration_By_Criteria_InList_V2.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Registration_By_Criteria_InList_V2.START_ROW == null) { i_Params_Get_Registration_By_Criteria_InList_V2.START_ROW = 0; }
+if ((i_Params_Get_Registration_By_Criteria_InList_V2.END_ROW == null) || (i_Params_Get_Registration_By_Criteria_InList_V2.END_ROW == 0)) { i_Params_Get_Registration_By_Criteria_InList_V2.END_ROW = 1000000; }
+oParams_Get_Registration_By_Criteria_InList_SP_V2.OWNER_ID = i_Params_Get_Registration_By_Criteria_InList_V2.OWNER_ID;
+oParams_Get_Registration_By_Criteria_InList_SP_V2.REGISTRATION_DATE = i_Params_Get_Registration_By_Criteria_InList_V2.REGISTRATION_DATE;
+oParams_Get_Registration_By_Criteria_InList_SP_V2.REGISTRATION_DESCRIPTION = i_Params_Get_Registration_By_Criteria_InList_V2.REGISTRATION_DESCRIPTION;
+if ( i_Params_Get_Registration_By_Criteria_InList_V2.CLIENT_ID_LIST == null)
+{
+i_Params_Get_Registration_By_Criteria_InList_V2.CLIENT_ID_LIST = new List<Int32?>();
+}
+oParams_Get_Registration_By_Criteria_InList_SP_V2.CLIENT_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Registration_By_Criteria_InList_V2.CLIENT_ID_LIST);
+if ( i_Params_Get_Registration_By_Criteria_InList_V2.PACKAGE_ID_LIST == null)
+{
+i_Params_Get_Registration_By_Criteria_InList_V2.PACKAGE_ID_LIST = new List<Int32?>();
+}
+oParams_Get_Registration_By_Criteria_InList_SP_V2.PACKAGE_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Registration_By_Criteria_InList_V2.PACKAGE_ID_LIST);
+if ( i_Params_Get_Registration_By_Criteria_InList_V2.CURRENCY_ID_LIST == null)
+{
+i_Params_Get_Registration_By_Criteria_InList_V2.CURRENCY_ID_LIST = new List<Int32?>();
+}
+oParams_Get_Registration_By_Criteria_InList_SP_V2.CURRENCY_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Registration_By_Criteria_InList_V2.CURRENCY_ID_LIST);
+oParams_Get_Registration_By_Criteria_InList_SP_V2.START_ROW = i_Params_Get_Registration_By_Criteria_InList_V2.START_ROW;
+oParams_Get_Registration_By_Criteria_InList_SP_V2.END_ROW = i_Params_Get_Registration_By_Criteria_InList_V2.END_ROW;
+oParams_Get_Registration_By_Criteria_InList_SP_V2.TOTAL_COUNT = i_Params_Get_Registration_By_Criteria_InList_V2.TOTAL_COUNT;
+List<DALC.Registration> oList_DBEntries = _AppContext.Get_Registration_By_Criteria_InList_Adv_V2(i_Params_Get_Registration_By_Criteria_InList_V2.REGISTRATION_DATE,i_Params_Get_Registration_By_Criteria_InList_V2.REGISTRATION_DESCRIPTION,i_Params_Get_Registration_By_Criteria_InList_V2.CLIENT_ID_LIST,i_Params_Get_Registration_By_Criteria_InList_V2.PACKAGE_ID_LIST,i_Params_Get_Registration_By_Criteria_InList_V2.CURRENCY_ID_LIST,i_Params_Get_Registration_By_Criteria_InList_V2.OWNER_ID,i_Params_Get_Registration_By_Criteria_InList_V2.START_ROW,i_Params_Get_Registration_By_Criteria_InList_V2.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistration = new Registration();
+oTools.CopyPropValues(oDBEntry, oRegistration);
+oRegistration.My_Client = new Client();
+oTools.CopyPropValues(oDBEntry.My_Client, oRegistration.My_Client);
+oRegistration.My_Package = new Package();
+oTools.CopyPropValues(oDBEntry.My_Package, oRegistration.My_Package);
+oRegistration.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistration.My_Currency);
+oList.Add(oRegistration);
+}
+}
+i_Params_Get_Registration_By_Criteria_InList_V2.TOTAL_COUNT = oParams_Get_Registration_By_Criteria_InList_SP_V2.TOTAL_COUNT;
+i_Params_Get_Registration_By_Criteria_InList_V2.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registration_By_Criteria_InList_Adv_V2");}
+return oList;
+}
+public List<Registration> Get_Registration_By_Where_InList_Adv_V2(Params_Get_Registration_By_Where_InList_V2 i_Params_Get_Registration_By_Where_InList_V2)
+{
+List<Registration> oList = new List<Registration>();
+Registration oRegistration = new Registration();
+long? tmp_TOTAL_COUNT = 0; 
+Params_Get_Registration_By_Where_InList_SP_V2 oParams_Get_Registration_By_Where_InList_SP_V2 = new Params_Get_Registration_By_Where_InList_SP_V2();
+Params_Get_Client_By_CLIENT_ID oParams_Get_Client_By_CLIENT_ID = new Params_Get_Client_By_CLIENT_ID();
+Params_Get_Package_By_PACKAGE_ID oParams_Get_Package_By_PACKAGE_ID = new Params_Get_Package_By_PACKAGE_ID();
+Params_Get_Currency_By_CURRENCY_ID oParams_Get_Currency_By_CURRENCY_ID = new Params_Get_Currency_By_CURRENCY_ID();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registration_By_Where_InList_Adv_V2");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registration_By_Where_InList_Adv_V2",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registration_By_Where_InList_V2));}
+#region Body Section.
+if ((i_Params_Get_Registration_By_Where_InList_V2.OWNER_ID == null) || (i_Params_Get_Registration_By_Where_InList_V2.OWNER_ID == 0)) { i_Params_Get_Registration_By_Where_InList_V2.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Registration_By_Where_InList_V2.START_ROW == null) { i_Params_Get_Registration_By_Where_InList_V2.START_ROW = 0; }
+if ((i_Params_Get_Registration_By_Where_InList_V2.END_ROW == null) || (i_Params_Get_Registration_By_Where_InList_V2.END_ROW == 0)) { i_Params_Get_Registration_By_Where_InList_V2.END_ROW = 1000000; }
+oParams_Get_Registration_By_Where_InList_SP_V2.OWNER_ID = i_Params_Get_Registration_By_Where_InList_V2.OWNER_ID;
+oParams_Get_Registration_By_Where_InList_SP_V2.REGISTRATION_DATE = i_Params_Get_Registration_By_Where_InList_V2.REGISTRATION_DATE;
+oParams_Get_Registration_By_Where_InList_SP_V2.REGISTRATION_DESCRIPTION = i_Params_Get_Registration_By_Where_InList_V2.REGISTRATION_DESCRIPTION;
+if ( i_Params_Get_Registration_By_Where_InList_V2.CLIENT_ID_LIST == null)
+{
+i_Params_Get_Registration_By_Where_InList_V2.CLIENT_ID_LIST = new List<Int32?>();
+}
+oParams_Get_Registration_By_Where_InList_SP_V2.CLIENT_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Registration_By_Where_InList_V2.CLIENT_ID_LIST);
+if ( i_Params_Get_Registration_By_Where_InList_V2.PACKAGE_ID_LIST == null)
+{
+i_Params_Get_Registration_By_Where_InList_V2.PACKAGE_ID_LIST = new List<Int32?>();
+}
+oParams_Get_Registration_By_Where_InList_SP_V2.PACKAGE_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Registration_By_Where_InList_V2.PACKAGE_ID_LIST);
+if ( i_Params_Get_Registration_By_Where_InList_V2.CURRENCY_ID_LIST == null)
+{
+i_Params_Get_Registration_By_Where_InList_V2.CURRENCY_ID_LIST = new List<Int32?>();
+}
+oParams_Get_Registration_By_Where_InList_SP_V2.CURRENCY_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Registration_By_Where_InList_V2.CURRENCY_ID_LIST);
+oParams_Get_Registration_By_Where_InList_SP_V2.START_ROW = i_Params_Get_Registration_By_Where_InList_V2.START_ROW;
+oParams_Get_Registration_By_Where_InList_SP_V2.END_ROW = i_Params_Get_Registration_By_Where_InList_V2.END_ROW;
+oParams_Get_Registration_By_Where_InList_SP_V2.TOTAL_COUNT = i_Params_Get_Registration_By_Where_InList_V2.TOTAL_COUNT;
+List<DALC.Registration> oList_DBEntries = _AppContext.Get_Registration_By_Where_InList_Adv_V2(i_Params_Get_Registration_By_Where_InList_V2.REGISTRATION_DATE,i_Params_Get_Registration_By_Where_InList_V2.REGISTRATION_DESCRIPTION,i_Params_Get_Registration_By_Where_InList_V2.CLIENT_ID_LIST,i_Params_Get_Registration_By_Where_InList_V2.PACKAGE_ID_LIST,i_Params_Get_Registration_By_Where_InList_V2.CURRENCY_ID_LIST,i_Params_Get_Registration_By_Where_InList_V2.OWNER_ID,i_Params_Get_Registration_By_Where_InList_V2.START_ROW,i_Params_Get_Registration_By_Where_InList_V2.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistration = new Registration();
+oTools.CopyPropValues(oDBEntry, oRegistration);
+oRegistration.My_Client = new Client();
+oTools.CopyPropValues(oDBEntry.My_Client, oRegistration.My_Client);
+oRegistration.My_Package = new Package();
+oTools.CopyPropValues(oDBEntry.My_Package, oRegistration.My_Package);
+oRegistration.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistration.My_Currency);
+oList.Add(oRegistration);
+}
+}
+i_Params_Get_Registration_By_Where_InList_V2.TOTAL_COUNT = oParams_Get_Registration_By_Where_InList_SP_V2.TOTAL_COUNT;
+i_Params_Get_Registration_By_Where_InList_V2.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registration_By_Where_InList_Adv_V2");}
 return oList;
 }
 public List<Session> Get_Session_By_Criteria_InList_Adv(Params_Get_Session_By_Criteria_InList i_Params_Get_Session_By_Criteria_InList)
