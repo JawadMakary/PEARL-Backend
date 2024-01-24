@@ -330,7 +330,7 @@ var R = Q.FirstOrDefault();
 if (R != null){
 oTools.CopyPropValues_FromDataRecord(R, o);
 o.My_Client = new Client();
-o.My_Client.CLIENT_ID = GV<Int32>(R["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(R["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(R["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(R["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(R["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(R["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(R["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(R["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(R["T_CLIENT_OWNER_ID"]);
+o.My_Client.CLIENT_ID = GV<Int32>(R["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(R["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(R["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(R["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(R["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(R["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(R["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(R["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(R["T_CLIENT_OWNER_ID"]);o.My_Client.CLIENT_GENDER = GV<String>(R["T_CLIENT_CLIENT_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(R["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(R["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(R["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(R["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(R["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(R["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
@@ -482,7 +482,7 @@ var R = Q.FirstOrDefault();
 if (R != null){
 oTools.CopyPropValues_FromDataRecord(R, o);
 o.My_Client = new Client();
-o.My_Client.CLIENT_ID = GV<Int32>(R["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(R["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(R["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(R["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(R["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(R["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(R["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(R["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(R["T_CLIENT_OWNER_ID"]);
+o.My_Client.CLIENT_ID = GV<Int32>(R["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(R["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(R["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(R["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(R["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(R["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(R["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(R["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(R["T_CLIENT_OWNER_ID"]);o.My_Client.CLIENT_GENDER = GV<String>(R["T_CLIENT_CLIENT_GENDER"]);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(R["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(R["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(R["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(R["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(R["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(R["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(R["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(R["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(R["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(R["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(R["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(R["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Currency = new Currency();
@@ -530,7 +530,7 @@ var R = Q.FirstOrDefault();
 if (R != null){
 oTools.CopyPropValues_FromDataRecord(R, o);
 o.My_Staff = new Staff();
-o.My_Staff.STAFF_ID = GV<Int32>(R["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(R["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(R["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(R["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(R["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(R["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(R["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(R["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(R["T_STAFF_OWNER_ID"]);
+o.My_Staff.STAFF_ID = GV<Int32>(R["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(R["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(R["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(R["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(R["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(R["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(R["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(R["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(R["T_STAFF_OWNER_ID"]);o.My_Staff.STAFF_GENDER = GV<String>(R["T_STAFF_STAFF_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(R["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(R["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(R["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(R["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(R["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(R["T_CURRENCY_OWNER_ID"]);
 }
@@ -560,7 +560,7 @@ var R = Q.FirstOrDefault();
 if (R != null){
 oTools.CopyPropValues_FromDataRecord(R, o);
 o.My_Supplier = new Supplier();
-o.My_Supplier.SUPPLIER_ID = GV<Int32>(R["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(R["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(R["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(R["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(R["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(R["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(R["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(R["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(R["T_SUPPLIER_BLOODTYPE_ID"]);
+o.My_Supplier.SUPPLIER_ID = GV<Int32>(R["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(R["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(R["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(R["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(R["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(R["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(R["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(R["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(R["T_SUPPLIER_BLOODTYPE_ID"]);o.My_Supplier.SUPPLIER_GENDER = GV<String>(R["T_SUPPLIER_SUPPLIER_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(R["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(R["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(R["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(R["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(R["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(R["T_CURRENCY_OWNER_ID"]);
 }
@@ -950,7 +950,7 @@ if (R != null) {foreach (var X in R) {
 Client_fees o = new Client_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
-o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);o.My_Client.CLIENT_GENDER = GV<String>(X["T_CLIENT_CLIENT_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
@@ -1124,7 +1124,7 @@ if (R != null) {foreach (var X in R) {
 Registration o = new Registration();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
-o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);o.My_Client.CLIENT_GENDER = GV<String>(X["T_CLIENT_CLIENT_GENDER"]);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Currency = new Currency();
@@ -1178,7 +1178,7 @@ if (R != null) {foreach (var X in R) {
 Staff_fees o = new Staff_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Staff = new Staff();
-o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);
+o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);o.My_Staff.STAFF_GENDER = GV<String>(X["T_STAFF_STAFF_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -1212,7 +1212,7 @@ if (R != null) {foreach (var X in R) {
 Supplier_fees o = new Supplier_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Supplier = new Supplier();
-o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(X["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(X["T_SUPPLIER_BLOODTYPE_ID"]);
+o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(X["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(X["T_SUPPLIER_BLOODTYPE_ID"]);o.My_Supplier.SUPPLIER_GENDER = GV<String>(X["T_SUPPLIER_SUPPLIER_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -2228,7 +2228,7 @@ if (R != null) {foreach (var X in R) {
 Client_fees o = new Client_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
-o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);o.My_Client.CLIENT_GENDER = GV<String>(X["T_CLIENT_CLIENT_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
@@ -2250,7 +2250,7 @@ if (R != null) {foreach (var X in R) {
 Client_fees o = new Client_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
-o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);o.My_Client.CLIENT_GENDER = GV<String>(X["T_CLIENT_CLIENT_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
@@ -2272,7 +2272,7 @@ if (R != null) {foreach (var X in R) {
 Client_fees o = new Client_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
-o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);o.My_Client.CLIENT_GENDER = GV<String>(X["T_CLIENT_CLIENT_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
@@ -2294,7 +2294,7 @@ if (R != null) {foreach (var X in R) {
 Client_fees o = new Client_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
-o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);o.My_Client.CLIENT_GENDER = GV<String>(X["T_CLIENT_CLIENT_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
@@ -2316,7 +2316,7 @@ if (R != null) {foreach (var X in R) {
 Client_fees o = new Client_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
-o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);o.My_Client.CLIENT_GENDER = GV<String>(X["T_CLIENT_CLIENT_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
@@ -2664,7 +2664,7 @@ if (R != null) {foreach (var X in R) {
 Registration o = new Registration();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
-o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);o.My_Client.CLIENT_GENDER = GV<String>(X["T_CLIENT_CLIENT_GENDER"]);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Currency = new Currency();
@@ -2684,7 +2684,7 @@ if (R != null) {foreach (var X in R) {
 Registration o = new Registration();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
-o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);o.My_Client.CLIENT_GENDER = GV<String>(X["T_CLIENT_CLIENT_GENDER"]);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Currency = new Currency();
@@ -2704,7 +2704,7 @@ if (R != null) {foreach (var X in R) {
 Registration o = new Registration();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
-o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);o.My_Client.CLIENT_GENDER = GV<String>(X["T_CLIENT_CLIENT_GENDER"]);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Currency = new Currency();
@@ -2724,7 +2724,7 @@ if (R != null) {foreach (var X in R) {
 Registration o = new Registration();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
-o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);o.My_Client.CLIENT_GENDER = GV<String>(X["T_CLIENT_CLIENT_GENDER"]);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Currency = new Currency();
@@ -2830,7 +2830,7 @@ if (R != null) {foreach (var X in R) {
 Staff_fees o = new Staff_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Staff = new Staff();
-o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);
+o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);o.My_Staff.STAFF_GENDER = GV<String>(X["T_STAFF_STAFF_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -2848,7 +2848,7 @@ if (R != null) {foreach (var X in R) {
 Staff_fees o = new Staff_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Staff = new Staff();
-o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);
+o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);o.My_Staff.STAFF_GENDER = GV<String>(X["T_STAFF_STAFF_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -2866,7 +2866,7 @@ if (R != null) {foreach (var X in R) {
 Staff_fees o = new Staff_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Staff = new Staff();
-o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);
+o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);o.My_Staff.STAFF_GENDER = GV<String>(X["T_STAFF_STAFF_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -2916,7 +2916,7 @@ if (R != null) {foreach (var X in R) {
 Supplier_fees o = new Supplier_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Supplier = new Supplier();
-o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(X["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(X["T_SUPPLIER_BLOODTYPE_ID"]);
+o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(X["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(X["T_SUPPLIER_BLOODTYPE_ID"]);o.My_Supplier.SUPPLIER_GENDER = GV<String>(X["T_SUPPLIER_SUPPLIER_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -2934,7 +2934,7 @@ if (R != null) {foreach (var X in R) {
 Supplier_fees o = new Supplier_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Supplier = new Supplier();
-o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(X["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(X["T_SUPPLIER_BLOODTYPE_ID"]);
+o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(X["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(X["T_SUPPLIER_BLOODTYPE_ID"]);o.My_Supplier.SUPPLIER_GENDER = GV<String>(X["T_SUPPLIER_SUPPLIER_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -2952,7 +2952,7 @@ if (R != null) {foreach (var X in R) {
 Supplier_fees o = new Supplier_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Supplier = new Supplier();
-o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(X["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(X["T_SUPPLIER_BLOODTYPE_ID"]);
+o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(X["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(X["T_SUPPLIER_BLOODTYPE_ID"]);o.My_Supplier.SUPPLIER_GENDER = GV<String>(X["T_SUPPLIER_SUPPLIER_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -3512,7 +3512,7 @@ if (R != null) {foreach (var X in R) {
 Client_fees o = new Client_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
-o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);o.My_Client.CLIENT_GENDER = GV<String>(X["T_CLIENT_CLIENT_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
@@ -3534,7 +3534,7 @@ if (R != null) {foreach (var X in R) {
 Client_fees o = new Client_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
-o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);o.My_Client.CLIENT_GENDER = GV<String>(X["T_CLIENT_CLIENT_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
@@ -3556,7 +3556,7 @@ if (R != null) {foreach (var X in R) {
 Client_fees o = new Client_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
-o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);o.My_Client.CLIENT_GENDER = GV<String>(X["T_CLIENT_CLIENT_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
@@ -3578,7 +3578,7 @@ if (R != null) {foreach (var X in R) {
 Client_fees o = new Client_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
-o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);o.My_Client.CLIENT_GENDER = GV<String>(X["T_CLIENT_CLIENT_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
@@ -3696,7 +3696,7 @@ if (R != null) {foreach (var X in R) {
 Registration o = new Registration();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
-o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);o.My_Client.CLIENT_GENDER = GV<String>(X["T_CLIENT_CLIENT_GENDER"]);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Currency = new Currency();
@@ -3716,7 +3716,7 @@ if (R != null) {foreach (var X in R) {
 Registration o = new Registration();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
-o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);o.My_Client.CLIENT_GENDER = GV<String>(X["T_CLIENT_CLIENT_GENDER"]);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Currency = new Currency();
@@ -3736,7 +3736,7 @@ if (R != null) {foreach (var X in R) {
 Registration o = new Registration();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
-o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);o.My_Client.CLIENT_GENDER = GV<String>(X["T_CLIENT_CLIENT_GENDER"]);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Currency = new Currency();
@@ -3808,7 +3808,7 @@ if (R != null) {foreach (var X in R) {
 Staff_fees o = new Staff_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Staff = new Staff();
-o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);
+o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);o.My_Staff.STAFF_GENDER = GV<String>(X["T_STAFF_STAFF_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -3826,7 +3826,7 @@ if (R != null) {foreach (var X in R) {
 Staff_fees o = new Staff_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Staff = new Staff();
-o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);
+o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);o.My_Staff.STAFF_GENDER = GV<String>(X["T_STAFF_STAFF_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -3860,7 +3860,7 @@ if (R != null) {foreach (var X in R) {
 Supplier_fees o = new Supplier_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Supplier = new Supplier();
-o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(X["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(X["T_SUPPLIER_BLOODTYPE_ID"]);
+o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(X["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(X["T_SUPPLIER_BLOODTYPE_ID"]);o.My_Supplier.SUPPLIER_GENDER = GV<String>(X["T_SUPPLIER_SUPPLIER_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -3878,7 +3878,7 @@ if (R != null) {foreach (var X in R) {
 Supplier_fees o = new Supplier_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Supplier = new Supplier();
-o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(X["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(X["T_SUPPLIER_BLOODTYPE_ID"]);
+o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(X["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(X["T_SUPPLIER_BLOODTYPE_ID"]);o.My_Supplier.SUPPLIER_GENDER = GV<String>(X["T_SUPPLIER_SUPPLIER_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -3976,11 +3976,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Client> Get_Client_By_Criteria ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Client> Get_Client_By_Criteria ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_GENDER, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Client> oList = new List<Client>();
 dynamic p = new ExpandoObject();
-p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.CLIENT_GENDER = CLIENT_GENDER; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_BY_CRITERIA", p);
 if (R != null) {foreach (var X in R) {
 Client o = new Client();
@@ -3991,11 +3991,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Client> Get_Client_By_Where ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Client> Get_Client_By_Where ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_GENDER, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Client> oList = new List<Client>();
 dynamic p = new ExpandoObject();
-p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.CLIENT_GENDER = CLIENT_GENDER; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_BY_WHERE", p);
 if (R != null) {foreach (var X in R) {
 Client o = new Client();
@@ -4006,11 +4006,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Client> Get_Client_By_Criteria_V2 ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_DOB, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Client> Get_Client_By_Criteria_V2 ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_DOB, string CLIENT_GENDER, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Client> oList = new List<Client>();
 dynamic p = new ExpandoObject();
-p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.CLIENT_DOB = CLIENT_DOB; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.CLIENT_DOB = CLIENT_DOB; p.CLIENT_GENDER = CLIENT_GENDER; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_BY_CRITERIA_V2", p);
 if (R != null) {foreach (var X in R) {
 Client o = new Client();
@@ -4021,11 +4021,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Client> Get_Client_By_Where_V2 ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_DOB, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Client> Get_Client_By_Where_V2 ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_DOB, string CLIENT_GENDER, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Client> oList = new List<Client>();
 dynamic p = new ExpandoObject();
-p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.CLIENT_DOB = CLIENT_DOB; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.CLIENT_DOB = CLIENT_DOB; p.CLIENT_GENDER = CLIENT_GENDER; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_BY_WHERE_V2", p);
 if (R != null) {foreach (var X in R) {
 Client o = new Client();
@@ -4666,11 +4666,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Staff> Get_Staff_By_Criteria ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Staff> Get_Staff_By_Criteria ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_GENDER, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Staff> oList = new List<Staff>();
 dynamic p = new ExpandoObject();
-p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.STAFF_GENDER = STAFF_GENDER; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_STAFF_BY_CRITERIA", p);
 if (R != null) {foreach (var X in R) {
 Staff o = new Staff();
@@ -4681,11 +4681,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Staff> Get_Staff_By_Where ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Staff> Get_Staff_By_Where ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_GENDER, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Staff> oList = new List<Staff>();
 dynamic p = new ExpandoObject();
-p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.STAFF_GENDER = STAFF_GENDER; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_STAFF_BY_WHERE", p);
 if (R != null) {foreach (var X in R) {
 Staff o = new Staff();
@@ -4696,11 +4696,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Staff> Get_Staff_By_Criteria_V2 ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_DOB, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Staff> Get_Staff_By_Criteria_V2 ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_DOB, string STAFF_GENDER, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Staff> oList = new List<Staff>();
 dynamic p = new ExpandoObject();
-p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.STAFF_DOB = STAFF_DOB; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.STAFF_DOB = STAFF_DOB; p.STAFF_GENDER = STAFF_GENDER; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_STAFF_BY_CRITERIA_V2", p);
 if (R != null) {foreach (var X in R) {
 Staff o = new Staff();
@@ -4711,11 +4711,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Staff> Get_Staff_By_Where_V2 ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_DOB, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Staff> Get_Staff_By_Where_V2 ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_DOB, string STAFF_GENDER, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Staff> oList = new List<Staff>();
 dynamic p = new ExpandoObject();
-p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.STAFF_DOB = STAFF_DOB; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.STAFF_DOB = STAFF_DOB; p.STAFF_GENDER = STAFF_GENDER; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_STAFF_BY_WHERE_V2", p);
 if (R != null) {foreach (var X in R) {
 Staff o = new Staff();
@@ -4756,11 +4756,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Supplier> Get_Supplier_By_Criteria ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Supplier> Get_Supplier_By_Criteria ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_GENDER, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Supplier> oList = new List<Supplier>();
 dynamic p = new ExpandoObject();
-p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_GENDER = SUPPLIER_GENDER; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_CRITERIA", p);
 if (R != null) {foreach (var X in R) {
 Supplier o = new Supplier();
@@ -4771,11 +4771,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Supplier> Get_Supplier_By_Where ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Supplier> Get_Supplier_By_Where ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_GENDER, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Supplier> oList = new List<Supplier>();
 dynamic p = new ExpandoObject();
-p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_GENDER = SUPPLIER_GENDER; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_WHERE", p);
 if (R != null) {foreach (var X in R) {
 Supplier o = new Supplier();
@@ -4786,11 +4786,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Supplier> Get_Supplier_By_Criteria_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Supplier> Get_Supplier_By_Criteria_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, string SUPPLIER_GENDER, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Supplier> oList = new List<Supplier>();
 dynamic p = new ExpandoObject();
-p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_DOB = SUPPLIER_DOB; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_DOB = SUPPLIER_DOB; p.SUPPLIER_GENDER = SUPPLIER_GENDER; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_CRITERIA_V2", p);
 if (R != null) {foreach (var X in R) {
 Supplier o = new Supplier();
@@ -4801,11 +4801,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Supplier> Get_Supplier_By_Where_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Supplier> Get_Supplier_By_Where_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, string SUPPLIER_GENDER, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Supplier> oList = new List<Supplier>();
 dynamic p = new ExpandoObject();
-p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_DOB = SUPPLIER_DOB; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_DOB = SUPPLIER_DOB; p.SUPPLIER_GENDER = SUPPLIER_GENDER; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_WHERE_V2", p);
 if (R != null) {foreach (var X in R) {
 Supplier o = new Supplier();
@@ -4986,11 +4986,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Client> Get_Client_By_Criteria_Adv ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Client> Get_Client_By_Criteria_Adv ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_GENDER, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Client> oList = new List<Client>();
 dynamic p = new ExpandoObject();
-p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.CLIENT_GENDER = CLIENT_GENDER; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_BY_CRITERIA_ADV", p);
 if (R != null) {foreach (var X in R) {
 Client o = new Client();
@@ -5003,11 +5003,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Client> Get_Client_By_Where_Adv ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Client> Get_Client_By_Where_Adv ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_GENDER, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Client> oList = new List<Client>();
 dynamic p = new ExpandoObject();
-p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.CLIENT_GENDER = CLIENT_GENDER; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_BY_WHERE_ADV", p);
 if (R != null) {foreach (var X in R) {
 Client o = new Client();
@@ -5020,11 +5020,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Client> Get_Client_By_Criteria_Adv_V2 ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_DOB, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Client> Get_Client_By_Criteria_Adv_V2 ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_DOB, string CLIENT_GENDER, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Client> oList = new List<Client>();
 dynamic p = new ExpandoObject();
-p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.CLIENT_DOB = CLIENT_DOB; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.CLIENT_DOB = CLIENT_DOB; p.CLIENT_GENDER = CLIENT_GENDER; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_BY_CRITERIA_ADV_V2", p);
 if (R != null) {foreach (var X in R) {
 Client o = new Client();
@@ -5035,11 +5035,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Client> Get_Client_By_Where_Adv_V2 ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_DOB, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Client> Get_Client_By_Where_Adv_V2 ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_DOB, string CLIENT_GENDER, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Client> oList = new List<Client>();
 dynamic p = new ExpandoObject();
-p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.CLIENT_DOB = CLIENT_DOB; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.CLIENT_DOB = CLIENT_DOB; p.CLIENT_GENDER = CLIENT_GENDER; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_BY_WHERE_ADV_V2", p);
 if (R != null) {foreach (var X in R) {
 Client o = new Client();
@@ -5060,7 +5060,7 @@ if (R != null) {foreach (var X in R) {
 Client_fees o = new Client_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
-o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);o.My_Client.CLIENT_GENDER = GV<String>(X["T_CLIENT_CLIENT_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
@@ -5083,7 +5083,7 @@ if (R != null) {foreach (var X in R) {
 Client_fees o = new Client_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
-o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);o.My_Client.CLIENT_GENDER = GV<String>(X["T_CLIENT_CLIENT_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
@@ -5550,7 +5550,7 @@ if (R != null) {foreach (var X in R) {
 Registration o = new Registration();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
-o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);o.My_Client.CLIENT_GENDER = GV<String>(X["T_CLIENT_CLIENT_GENDER"]);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Currency = new Currency();
@@ -5571,7 +5571,7 @@ if (R != null) {foreach (var X in R) {
 Registration o = new Registration();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
-o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);o.My_Client.CLIENT_GENDER = GV<String>(X["T_CLIENT_CLIENT_GENDER"]);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Currency = new Currency();
@@ -5680,11 +5680,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Staff> Get_Staff_By_Criteria_Adv ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Staff> Get_Staff_By_Criteria_Adv ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_GENDER, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Staff> oList = new List<Staff>();
 dynamic p = new ExpandoObject();
-p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.STAFF_GENDER = STAFF_GENDER; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_STAFF_BY_CRITERIA_ADV", p);
 if (R != null) {foreach (var X in R) {
 Staff o = new Staff();
@@ -5697,11 +5697,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Staff> Get_Staff_By_Where_Adv ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Staff> Get_Staff_By_Where_Adv ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_GENDER, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Staff> oList = new List<Staff>();
 dynamic p = new ExpandoObject();
-p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.STAFF_GENDER = STAFF_GENDER; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_STAFF_BY_WHERE_ADV", p);
 if (R != null) {foreach (var X in R) {
 Staff o = new Staff();
@@ -5714,11 +5714,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Staff> Get_Staff_By_Criteria_Adv_V2 ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_DOB, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Staff> Get_Staff_By_Criteria_Adv_V2 ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_DOB, string STAFF_GENDER, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Staff> oList = new List<Staff>();
 dynamic p = new ExpandoObject();
-p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.STAFF_DOB = STAFF_DOB; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.STAFF_DOB = STAFF_DOB; p.STAFF_GENDER = STAFF_GENDER; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_STAFF_BY_CRITERIA_ADV_V2", p);
 if (R != null) {foreach (var X in R) {
 Staff o = new Staff();
@@ -5729,11 +5729,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Staff> Get_Staff_By_Where_Adv_V2 ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_DOB, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Staff> Get_Staff_By_Where_Adv_V2 ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_DOB, string STAFF_GENDER, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Staff> oList = new List<Staff>();
 dynamic p = new ExpandoObject();
-p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.STAFF_DOB = STAFF_DOB; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.STAFF_DOB = STAFF_DOB; p.STAFF_GENDER = STAFF_GENDER; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_STAFF_BY_WHERE_ADV_V2", p);
 if (R != null) {foreach (var X in R) {
 Staff o = new Staff();
@@ -5754,7 +5754,7 @@ if (R != null) {foreach (var X in R) {
 Staff_fees o = new Staff_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Staff = new Staff();
-o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);
+o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);o.My_Staff.STAFF_GENDER = GV<String>(X["T_STAFF_STAFF_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -5773,7 +5773,7 @@ if (R != null) {foreach (var X in R) {
 Staff_fees o = new Staff_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Staff = new Staff();
-o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);
+o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);o.My_Staff.STAFF_GENDER = GV<String>(X["T_STAFF_STAFF_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -5782,11 +5782,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Supplier> Get_Supplier_By_Criteria_Adv ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Supplier> Get_Supplier_By_Criteria_Adv ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_GENDER, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Supplier> oList = new List<Supplier>();
 dynamic p = new ExpandoObject();
-p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_GENDER = SUPPLIER_GENDER; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_CRITERIA_ADV", p);
 if (R != null) {foreach (var X in R) {
 Supplier o = new Supplier();
@@ -5799,11 +5799,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Supplier> Get_Supplier_By_Where_Adv ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Supplier> Get_Supplier_By_Where_Adv ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_GENDER, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Supplier> oList = new List<Supplier>();
 dynamic p = new ExpandoObject();
-p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_GENDER = SUPPLIER_GENDER; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_WHERE_ADV", p);
 if (R != null) {foreach (var X in R) {
 Supplier o = new Supplier();
@@ -5816,11 +5816,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Supplier> Get_Supplier_By_Criteria_Adv_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Supplier> Get_Supplier_By_Criteria_Adv_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, string SUPPLIER_GENDER, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Supplier> oList = new List<Supplier>();
 dynamic p = new ExpandoObject();
-p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_DOB = SUPPLIER_DOB; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_DOB = SUPPLIER_DOB; p.SUPPLIER_GENDER = SUPPLIER_GENDER; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_CRITERIA_ADV_V2", p);
 if (R != null) {foreach (var X in R) {
 Supplier o = new Supplier();
@@ -5831,11 +5831,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Supplier> Get_Supplier_By_Where_Adv_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Supplier> Get_Supplier_By_Where_Adv_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, string SUPPLIER_GENDER, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Supplier> oList = new List<Supplier>();
 dynamic p = new ExpandoObject();
-p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_DOB = SUPPLIER_DOB; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_DOB = SUPPLIER_DOB; p.SUPPLIER_GENDER = SUPPLIER_GENDER; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_WHERE_ADV_V2", p);
 if (R != null) {foreach (var X in R) {
 Supplier o = new Supplier();
@@ -5856,7 +5856,7 @@ if (R != null) {foreach (var X in R) {
 Supplier_fees o = new Supplier_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Supplier = new Supplier();
-o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(X["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(X["T_SUPPLIER_BLOODTYPE_ID"]);
+o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(X["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(X["T_SUPPLIER_BLOODTYPE_ID"]);o.My_Supplier.SUPPLIER_GENDER = GV<String>(X["T_SUPPLIER_SUPPLIER_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -5875,7 +5875,7 @@ if (R != null) {foreach (var X in R) {
 Supplier_fees o = new Supplier_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Supplier = new Supplier();
-o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(X["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(X["T_SUPPLIER_BLOODTYPE_ID"]);
+o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(X["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(X["T_SUPPLIER_BLOODTYPE_ID"]);o.My_Supplier.SUPPLIER_GENDER = GV<String>(X["T_SUPPLIER_SUPPLIER_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -5974,11 +5974,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Client> Get_Client_By_Criteria_InList ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Client> Get_Client_By_Criteria_InList ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_GENDER, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Client> oList = new List<Client>();
 dynamic p = new ExpandoObject();
-p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.CLIENT_GENDER = CLIENT_GENDER; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_BY_CRITERIA_IN_LIST", p);
 if (R != null) {foreach (var X in R) {
 Client o = new Client();
@@ -5989,11 +5989,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Client> Get_Client_By_Where_InList ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Client> Get_Client_By_Where_InList ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_GENDER, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Client> oList = new List<Client>();
 dynamic p = new ExpandoObject();
-p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.CLIENT_GENDER = CLIENT_GENDER; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_BY_WHERE_IN_LIST", p);
 if (R != null) {foreach (var X in R) {
 Client o = new Client();
@@ -6004,11 +6004,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Client> Get_Client_By_Criteria_InList_V2 ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Client> Get_Client_By_Criteria_InList_V2 ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_DOB, string CLIENT_GENDER, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Client> oList = new List<Client>();
 dynamic p = new ExpandoObject();
-p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.CLIENT_DOB = CLIENT_DOB; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.CLIENT_DOB = CLIENT_DOB; p.CLIENT_GENDER = CLIENT_GENDER; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_BY_CRITERIA_IN_LIST_V2", p);
 if (R != null) {foreach (var X in R) {
 Client o = new Client();
@@ -6019,11 +6019,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Client> Get_Client_By_Where_InList_V2 ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Client> Get_Client_By_Where_InList_V2 ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_DOB, string CLIENT_GENDER, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Client> oList = new List<Client>();
 dynamic p = new ExpandoObject();
-p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.CLIENT_DOB = CLIENT_DOB; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.CLIENT_DOB = CLIENT_DOB; p.CLIENT_GENDER = CLIENT_GENDER; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_BY_WHERE_IN_LIST_V2", p);
 if (R != null) {foreach (var X in R) {
 Client o = new Client();
@@ -6424,11 +6424,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Staff> Get_Staff_By_Criteria_InList ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Staff> Get_Staff_By_Criteria_InList ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_GENDER, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Staff> oList = new List<Staff>();
 dynamic p = new ExpandoObject();
-p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.STAFF_GENDER = STAFF_GENDER; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_STAFF_BY_CRITERIA_IN_LIST", p);
 if (R != null) {foreach (var X in R) {
 Staff o = new Staff();
@@ -6439,11 +6439,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Staff> Get_Staff_By_Where_InList ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Staff> Get_Staff_By_Where_InList ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_GENDER, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Staff> oList = new List<Staff>();
 dynamic p = new ExpandoObject();
-p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.STAFF_GENDER = STAFF_GENDER; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_STAFF_BY_WHERE_IN_LIST", p);
 if (R != null) {foreach (var X in R) {
 Staff o = new Staff();
@@ -6454,11 +6454,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Staff> Get_Staff_By_Criteria_InList_V2 ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Staff> Get_Staff_By_Criteria_InList_V2 ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_DOB, string STAFF_GENDER, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Staff> oList = new List<Staff>();
 dynamic p = new ExpandoObject();
-p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.STAFF_DOB = STAFF_DOB; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.STAFF_DOB = STAFF_DOB; p.STAFF_GENDER = STAFF_GENDER; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_STAFF_BY_CRITERIA_IN_LIST_V2", p);
 if (R != null) {foreach (var X in R) {
 Staff o = new Staff();
@@ -6469,11 +6469,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Staff> Get_Staff_By_Where_InList_V2 ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Staff> Get_Staff_By_Where_InList_V2 ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_DOB, string STAFF_GENDER, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Staff> oList = new List<Staff>();
 dynamic p = new ExpandoObject();
-p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.STAFF_DOB = STAFF_DOB; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.STAFF_DOB = STAFF_DOB; p.STAFF_GENDER = STAFF_GENDER; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_STAFF_BY_WHERE_IN_LIST_V2", p);
 if (R != null) {foreach (var X in R) {
 Staff o = new Staff();
@@ -6514,11 +6514,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Supplier> Get_Supplier_By_Criteria_InList ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Supplier> Get_Supplier_By_Criteria_InList ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_GENDER, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Supplier> oList = new List<Supplier>();
 dynamic p = new ExpandoObject();
-p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_GENDER = SUPPLIER_GENDER; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_CRITERIA_IN_LIST", p);
 if (R != null) {foreach (var X in R) {
 Supplier o = new Supplier();
@@ -6529,11 +6529,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Supplier> Get_Supplier_By_Where_InList ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Supplier> Get_Supplier_By_Where_InList ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_GENDER, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Supplier> oList = new List<Supplier>();
 dynamic p = new ExpandoObject();
-p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_GENDER = SUPPLIER_GENDER; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_WHERE_IN_LIST", p);
 if (R != null) {foreach (var X in R) {
 Supplier o = new Supplier();
@@ -6544,11 +6544,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Supplier> Get_Supplier_By_Criteria_InList_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Supplier> Get_Supplier_By_Criteria_InList_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, string SUPPLIER_GENDER, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Supplier> oList = new List<Supplier>();
 dynamic p = new ExpandoObject();
-p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_DOB = SUPPLIER_DOB; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_DOB = SUPPLIER_DOB; p.SUPPLIER_GENDER = SUPPLIER_GENDER; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_CRITERIA_IN_LIST_V2", p);
 if (R != null) {foreach (var X in R) {
 Supplier o = new Supplier();
@@ -6559,11 +6559,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Supplier> Get_Supplier_By_Where_InList_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Supplier> Get_Supplier_By_Where_InList_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, string SUPPLIER_GENDER, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Supplier> oList = new List<Supplier>();
 dynamic p = new ExpandoObject();
-p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_DOB = SUPPLIER_DOB; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_DOB = SUPPLIER_DOB; p.SUPPLIER_GENDER = SUPPLIER_GENDER; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_WHERE_IN_LIST_V2", p);
 if (R != null) {foreach (var X in R) {
 Supplier o = new Supplier();
@@ -6684,11 +6684,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Client> Get_Client_By_Criteria_InList_Adv ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Client> Get_Client_By_Criteria_InList_Adv ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_GENDER, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Client> oList = new List<Client>();
 dynamic p = new ExpandoObject();
-p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.CLIENT_GENDER = CLIENT_GENDER; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_BY_CRITERIA_IN_LIST_ADV", p);
 if (R != null) {foreach (var X in R) {
 Client o = new Client();
@@ -6701,11 +6701,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Client> Get_Client_By_Where_InList_Adv ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Client> Get_Client_By_Where_InList_Adv ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_GENDER, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Client> oList = new List<Client>();
 dynamic p = new ExpandoObject();
-p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.CLIENT_GENDER = CLIENT_GENDER; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_BY_WHERE_IN_LIST_ADV", p);
 if (R != null) {foreach (var X in R) {
 Client o = new Client();
@@ -6718,11 +6718,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Client> Get_Client_By_Criteria_InList_Adv_V2 ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Client> Get_Client_By_Criteria_InList_Adv_V2 ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_DOB, string CLIENT_GENDER, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Client> oList = new List<Client>();
 dynamic p = new ExpandoObject();
-p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.CLIENT_DOB = CLIENT_DOB; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.CLIENT_DOB = CLIENT_DOB; p.CLIENT_GENDER = CLIENT_GENDER; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_BY_CRITERIA_IN_LIST_ADV_V2", p);
 if (R != null) {foreach (var X in R) {
 Client o = new Client();
@@ -6733,11 +6733,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Client> Get_Client_By_Where_InList_Adv_V2 ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Client> Get_Client_By_Where_InList_Adv_V2 ( string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_DOB, string CLIENT_GENDER, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Client> oList = new List<Client>();
 dynamic p = new ExpandoObject();
-p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.CLIENT_DOB = CLIENT_DOB; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.CLIENT_NAME = CLIENT_NAME; p.CLIENT_PH_NB = CLIENT_PH_NB; p.CLIENT_MAIL = CLIENT_MAIL; p.CLIENT_DOB = CLIENT_DOB; p.CLIENT_GENDER = CLIENT_GENDER; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_CLIENT_BY_WHERE_IN_LIST_ADV_V2", p);
 if (R != null) {foreach (var X in R) {
 Client o = new Client();
@@ -6758,7 +6758,7 @@ if (R != null) {foreach (var X in R) {
 Client_fees o = new Client_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
-o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);o.My_Client.CLIENT_GENDER = GV<String>(X["T_CLIENT_CLIENT_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
@@ -6781,7 +6781,7 @@ if (R != null) {foreach (var X in R) {
 Client_fees o = new Client_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
-o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);o.My_Client.CLIENT_GENDER = GV<String>(X["T_CLIENT_CLIENT_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 o.My_Package = new Package();
@@ -7068,7 +7068,7 @@ if (R != null) {foreach (var X in R) {
 Registration o = new Registration();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
-o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);o.My_Client.CLIENT_GENDER = GV<String>(X["T_CLIENT_CLIENT_GENDER"]);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Currency = new Currency();
@@ -7089,7 +7089,7 @@ if (R != null) {foreach (var X in R) {
 Registration o = new Registration();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Client = new Client();
-o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);
+o.My_Client.CLIENT_ID = GV<Int32>(X["T_CLIENT_CLIENT_ID"]);o.My_Client.CLIENT_NAME = GV<String>(X["T_CLIENT_CLIENT_NAME"]);o.My_Client.CLIENT_PH_NB = GV<String>(X["T_CLIENT_CLIENT_PH_NB"]);o.My_Client.CLIENT_MAIL = GV<String>(X["T_CLIENT_CLIENT_MAIL"]);o.My_Client.CLIENT_DOB = GV<String>(X["T_CLIENT_CLIENT_DOB"]);o.My_Client.BLOODTYPE_ID = GV<Int32>(X["T_CLIENT_BLOODTYPE_ID"]);o.My_Client.ENTRY_USER_ID = GV<Int64>(X["T_CLIENT_ENTRY_USER_ID"]);o.My_Client.ENTRY_DATE = GV<String>(X["T_CLIENT_ENTRY_DATE"]);o.My_Client.OWNER_ID = GV<Int32>(X["T_CLIENT_OWNER_ID"]);o.My_Client.CLIENT_GENDER = GV<String>(X["T_CLIENT_CLIENT_GENDER"]);
 o.My_Package = new Package();
 o.My_Package.PACKAGE_ID = GV<Int32>(X["T_PACKAGE_PACKAGE_ID"]);o.My_Package.PACKAGE_NAME = GV<String>(X["T_PACKAGE_PACKAGE_NAME"]);o.My_Package.PACKAGE_PRICE = GV<Int32>(X["T_PACKAGE_PACKAGE_PRICE"]);o.My_Package.CURRENCY_ID = GV<Int32>(X["T_PACKAGE_CURRENCY_ID"]);o.My_Package.ENTRY_USER_ID = GV<Int64>(X["T_PACKAGE_ENTRY_USER_ID"]);o.My_Package.ENTRY_DATE = GV<String>(X["T_PACKAGE_ENTRY_DATE"]);o.My_Package.OWNER_ID = GV<Int32>(X["T_PACKAGE_OWNER_ID"]);o.My_Package.PACKAGE_SESSIONS_NB = GV<Int32>(X["T_PACKAGE_PACKAGE_SESSIONS_NB"]);o.My_Package.PACKAGE_TYPE = GV<String>(X["T_PACKAGE_PACKAGE_TYPE"]);o.My_Package.PACKAGE_ENDING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_ENDING_DATE"]);o.My_Package.PACKAGE_TIMELINE = GV<String>(X["T_PACKAGE_PACKAGE_TIMELINE"]);o.My_Package.PACKAGE_STARTING_DATE = GV<String>(X["T_PACKAGE_PACKAGE_STARTING_DATE"]);
 o.My_Currency = new Currency();
@@ -7198,11 +7198,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Staff> Get_Staff_By_Criteria_InList_Adv ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Staff> Get_Staff_By_Criteria_InList_Adv ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_GENDER, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Staff> oList = new List<Staff>();
 dynamic p = new ExpandoObject();
-p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.STAFF_GENDER = STAFF_GENDER; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_STAFF_BY_CRITERIA_IN_LIST_ADV", p);
 if (R != null) {foreach (var X in R) {
 Staff o = new Staff();
@@ -7215,11 +7215,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Staff> Get_Staff_By_Where_InList_Adv ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Staff> Get_Staff_By_Where_InList_Adv ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_GENDER, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Staff> oList = new List<Staff>();
 dynamic p = new ExpandoObject();
-p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.STAFF_GENDER = STAFF_GENDER; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_STAFF_BY_WHERE_IN_LIST_ADV", p);
 if (R != null) {foreach (var X in R) {
 Staff o = new Staff();
@@ -7232,11 +7232,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Staff> Get_Staff_By_Criteria_InList_Adv_V2 ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Staff> Get_Staff_By_Criteria_InList_Adv_V2 ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_DOB, string STAFF_GENDER, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Staff> oList = new List<Staff>();
 dynamic p = new ExpandoObject();
-p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.STAFF_DOB = STAFF_DOB; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.STAFF_DOB = STAFF_DOB; p.STAFF_GENDER = STAFF_GENDER; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_STAFF_BY_CRITERIA_IN_LIST_ADV_V2", p);
 if (R != null) {foreach (var X in R) {
 Staff o = new Staff();
@@ -7247,11 +7247,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Staff> Get_Staff_By_Where_InList_Adv_V2 ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Staff> Get_Staff_By_Where_InList_Adv_V2 ( string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_DOB, string STAFF_GENDER, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Staff> oList = new List<Staff>();
 dynamic p = new ExpandoObject();
-p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.STAFF_DOB = STAFF_DOB; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.STAFF_NAME = STAFF_NAME; p.STAFF_PH_NB = STAFF_PH_NB; p.STAFF_MAIL = STAFF_MAIL; p.STAFF_DOB = STAFF_DOB; p.STAFF_GENDER = STAFF_GENDER; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_STAFF_BY_WHERE_IN_LIST_ADV_V2", p);
 if (R != null) {foreach (var X in R) {
 Staff o = new Staff();
@@ -7272,7 +7272,7 @@ if (R != null) {foreach (var X in R) {
 Staff_fees o = new Staff_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Staff = new Staff();
-o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);
+o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);o.My_Staff.STAFF_GENDER = GV<String>(X["T_STAFF_STAFF_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -7291,7 +7291,7 @@ if (R != null) {foreach (var X in R) {
 Staff_fees o = new Staff_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Staff = new Staff();
-o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);
+o.My_Staff.STAFF_ID = GV<Int32>(X["T_STAFF_STAFF_ID"]);o.My_Staff.STAFF_NAME = GV<String>(X["T_STAFF_STAFF_NAME"]);o.My_Staff.STAFF_PH_NB = GV<String>(X["T_STAFF_STAFF_PH_NB"]);o.My_Staff.STAFF_MAIL = GV<String>(X["T_STAFF_STAFF_MAIL"]);o.My_Staff.STAFF_DOB = GV<String>(X["T_STAFF_STAFF_DOB"]);o.My_Staff.BLOODTYPE_ID = GV<Int32>(X["T_STAFF_BLOODTYPE_ID"]);o.My_Staff.ENTRY_USER_ID = GV<Int64>(X["T_STAFF_ENTRY_USER_ID"]);o.My_Staff.ENTRY_DATE = GV<String>(X["T_STAFF_ENTRY_DATE"]);o.My_Staff.OWNER_ID = GV<Int32>(X["T_STAFF_OWNER_ID"]);o.My_Staff.STAFF_GENDER = GV<String>(X["T_STAFF_STAFF_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -7300,11 +7300,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Supplier> Get_Supplier_By_Criteria_InList_Adv ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Supplier> Get_Supplier_By_Criteria_InList_Adv ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_GENDER, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Supplier> oList = new List<Supplier>();
 dynamic p = new ExpandoObject();
-p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_GENDER = SUPPLIER_GENDER; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_CRITERIA_IN_LIST_ADV", p);
 if (R != null) {foreach (var X in R) {
 Supplier o = new Supplier();
@@ -7317,11 +7317,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Supplier> Get_Supplier_By_Where_InList_Adv ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Supplier> Get_Supplier_By_Where_InList_Adv ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_GENDER, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Supplier> oList = new List<Supplier>();
 dynamic p = new ExpandoObject();
-p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_GENDER = SUPPLIER_GENDER; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_WHERE_IN_LIST_ADV", p);
 if (R != null) {foreach (var X in R) {
 Supplier o = new Supplier();
@@ -7334,11 +7334,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Supplier> Get_Supplier_By_Criteria_InList_Adv_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Supplier> Get_Supplier_By_Criteria_InList_Adv_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, string SUPPLIER_GENDER, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Supplier> oList = new List<Supplier>();
 dynamic p = new ExpandoObject();
-p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_DOB = SUPPLIER_DOB; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_DOB = SUPPLIER_DOB; p.SUPPLIER_GENDER = SUPPLIER_GENDER; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_CRITERIA_IN_LIST_ADV_V2", p);
 if (R != null) {foreach (var X in R) {
 Supplier o = new Supplier();
@@ -7349,11 +7349,11 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
-public List<Supplier> Get_Supplier_By_Where_InList_Adv_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+public List<Supplier> Get_Supplier_By_Where_InList_Adv_V2 ( string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, string SUPPLIER_DOB, string SUPPLIER_GENDER, List<Int32?> BLOODTYPE_ID_LIST, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<Supplier> oList = new List<Supplier>();
 dynamic p = new ExpandoObject();
-p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_DOB = SUPPLIER_DOB; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+p.SUPPLIER_NAME = SUPPLIER_NAME; p.SUPPLIER_PH_NB = SUPPLIER_PH_NB; p.SUPPLIER_MAIL = SUPPLIER_MAIL; p.SUPPLIER_DOB = SUPPLIER_DOB; p.SUPPLIER_GENDER = SUPPLIER_GENDER; p.BLOODTYPE_ID_LIST = string.Join(",", BLOODTYPE_ID_LIST.ToArray()); p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_SUPPLIER_BY_WHERE_IN_LIST_ADV_V2", p);
 if (R != null) {foreach (var X in R) {
 Supplier o = new Supplier();
@@ -7374,7 +7374,7 @@ if (R != null) {foreach (var X in R) {
 Supplier_fees o = new Supplier_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Supplier = new Supplier();
-o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(X["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(X["T_SUPPLIER_BLOODTYPE_ID"]);
+o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(X["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(X["T_SUPPLIER_BLOODTYPE_ID"]);o.My_Supplier.SUPPLIER_GENDER = GV<String>(X["T_SUPPLIER_SUPPLIER_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -7393,7 +7393,7 @@ if (R != null) {foreach (var X in R) {
 Supplier_fees o = new Supplier_fees();
 oTools.CopyPropValues_FromDataRecord(X, o);
 o.My_Supplier = new Supplier();
-o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(X["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(X["T_SUPPLIER_BLOODTYPE_ID"]);
+o.My_Supplier.SUPPLIER_ID = GV<Int32>(X["T_SUPPLIER_SUPPLIER_ID"]);o.My_Supplier.SUPPLIER_NAME = GV<String>(X["T_SUPPLIER_SUPPLIER_NAME"]);o.My_Supplier.SUPPLIER_PH_NB = GV<String>(X["T_SUPPLIER_SUPPLIER_PH_NB"]);o.My_Supplier.SUPPLIER_MAIL = GV<String>(X["T_SUPPLIER_SUPPLIER_MAIL"]);o.My_Supplier.ENTRY_USER_ID = GV<Int64>(X["T_SUPPLIER_ENTRY_USER_ID"]);o.My_Supplier.ENTRY_DATE = GV<String>(X["T_SUPPLIER_ENTRY_DATE"]);o.My_Supplier.OWNER_ID = GV<Int32>(X["T_SUPPLIER_OWNER_ID"]);o.My_Supplier.SUPPLIER_DOB = GV<String>(X["T_SUPPLIER_SUPPLIER_DOB"]);o.My_Supplier.BLOODTYPE_ID = GV<Int32>(X["T_SUPPLIER_BLOODTYPE_ID"]);o.My_Supplier.SUPPLIER_GENDER = GV<String>(X["T_SUPPLIER_SUPPLIER_GENDER"]);
 o.My_Currency = new Currency();
 o.My_Currency.CURRENCY_ID = GV<Int32>(X["T_CURRENCY_CURRENCY_ID"]);o.My_Currency.CURRENCY_TYPE = GV<String>(X["T_CURRENCY_CURRENCY_TYPE"]);o.My_Currency.CURRENCY_SYMBOL = GV<String>(X["T_CURRENCY_CURRENCY_SYMBOL"]);o.My_Currency.ENTRY_USER_ID = GV<Int64>(X["T_CURRENCY_ENTRY_USER_ID"]);o.My_Currency.ENTRY_DATE = GV<String>(X["T_CURRENCY_ENTRY_DATE"]);o.My_Currency.OWNER_ID = GV<Int32>(X["T_CURRENCY_OWNER_ID"]);
 oList.Add(o);
@@ -7801,10 +7801,10 @@ oBloodtype.BLOODTYPE_ID = BLOODTYPE_ID;oBloodtype.BLOODTYPE_SYMBOL = BLOODTYPE_S
 ExecuteEdit("UPG_EDIT_BLOODTYPE", oBloodtype, "BLOODTYPE_ID");
 return oBloodtype.BLOODTYPE_ID;
 }
-public Int32? Edit_Client ( Int32? CLIENT_ID, string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_DOB, Int32? BLOODTYPE_ID, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID)
+public Int32? Edit_Client ( Int32? CLIENT_ID, string CLIENT_NAME, string CLIENT_PH_NB, string CLIENT_MAIL, string CLIENT_DOB, Int32? BLOODTYPE_ID, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, string CLIENT_GENDER)
 {
 Client oClient = new Client();
-oClient.CLIENT_ID = CLIENT_ID;oClient.CLIENT_NAME = CLIENT_NAME;oClient.CLIENT_PH_NB = CLIENT_PH_NB;oClient.CLIENT_MAIL = CLIENT_MAIL;oClient.CLIENT_DOB = CLIENT_DOB;oClient.BLOODTYPE_ID = BLOODTYPE_ID;oClient.ENTRY_USER_ID = ENTRY_USER_ID;oClient.ENTRY_DATE = ENTRY_DATE;oClient.OWNER_ID = OWNER_ID;
+oClient.CLIENT_ID = CLIENT_ID;oClient.CLIENT_NAME = CLIENT_NAME;oClient.CLIENT_PH_NB = CLIENT_PH_NB;oClient.CLIENT_MAIL = CLIENT_MAIL;oClient.CLIENT_DOB = CLIENT_DOB;oClient.BLOODTYPE_ID = BLOODTYPE_ID;oClient.ENTRY_USER_ID = ENTRY_USER_ID;oClient.ENTRY_DATE = ENTRY_DATE;oClient.OWNER_ID = OWNER_ID;oClient.CLIENT_GENDER = CLIENT_GENDER;
 ExecuteEdit("UPG_EDIT_CLIENT", oClient, "CLIENT_ID");
 return oClient.CLIENT_ID;
 }
@@ -7906,10 +7906,10 @@ oSession.SESSION_ID = SESSION_ID;oSession.SESSION_STARTING_DATE = SESSION_STARTI
 ExecuteEdit("UPG_EDIT_SESSION", oSession, "SESSION_ID");
 return oSession.SESSION_ID;
 }
-public Int32? Edit_Staff ( Int32? STAFF_ID, string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_DOB, Int32? BLOODTYPE_ID, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID)
+public Int32? Edit_Staff ( Int32? STAFF_ID, string STAFF_NAME, string STAFF_PH_NB, string STAFF_MAIL, string STAFF_DOB, Int32? BLOODTYPE_ID, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, string STAFF_GENDER)
 {
 Staff oStaff = new Staff();
-oStaff.STAFF_ID = STAFF_ID;oStaff.STAFF_NAME = STAFF_NAME;oStaff.STAFF_PH_NB = STAFF_PH_NB;oStaff.STAFF_MAIL = STAFF_MAIL;oStaff.STAFF_DOB = STAFF_DOB;oStaff.BLOODTYPE_ID = BLOODTYPE_ID;oStaff.ENTRY_USER_ID = ENTRY_USER_ID;oStaff.ENTRY_DATE = ENTRY_DATE;oStaff.OWNER_ID = OWNER_ID;
+oStaff.STAFF_ID = STAFF_ID;oStaff.STAFF_NAME = STAFF_NAME;oStaff.STAFF_PH_NB = STAFF_PH_NB;oStaff.STAFF_MAIL = STAFF_MAIL;oStaff.STAFF_DOB = STAFF_DOB;oStaff.BLOODTYPE_ID = BLOODTYPE_ID;oStaff.ENTRY_USER_ID = ENTRY_USER_ID;oStaff.ENTRY_DATE = ENTRY_DATE;oStaff.OWNER_ID = OWNER_ID;oStaff.STAFF_GENDER = STAFF_GENDER;
 ExecuteEdit("UPG_EDIT_STAFF", oStaff, "STAFF_ID");
 return oStaff.STAFF_ID;
 }
@@ -7920,10 +7920,10 @@ oStaff_fees.STAFF_FEES_ID = STAFF_FEES_ID;oStaff_fees.STAFF_ID = STAFF_ID;oStaff
 ExecuteEdit("UPG_EDIT_STAFF_FEES", oStaff_fees, "STAFF_FEES_ID");
 return oStaff_fees.STAFF_FEES_ID;
 }
-public Int32? Edit_Supplier ( Int32? SUPPLIER_ID, string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, string SUPPLIER_DOB, Int32? BLOODTYPE_ID)
+public Int32? Edit_Supplier ( Int32? SUPPLIER_ID, string SUPPLIER_NAME, string SUPPLIER_PH_NB, string SUPPLIER_MAIL, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID, string SUPPLIER_DOB, Int32? BLOODTYPE_ID, string SUPPLIER_GENDER)
 {
 Supplier oSupplier = new Supplier();
-oSupplier.SUPPLIER_ID = SUPPLIER_ID;oSupplier.SUPPLIER_NAME = SUPPLIER_NAME;oSupplier.SUPPLIER_PH_NB = SUPPLIER_PH_NB;oSupplier.SUPPLIER_MAIL = SUPPLIER_MAIL;oSupplier.ENTRY_USER_ID = ENTRY_USER_ID;oSupplier.ENTRY_DATE = ENTRY_DATE;oSupplier.OWNER_ID = OWNER_ID;oSupplier.SUPPLIER_DOB = SUPPLIER_DOB;oSupplier.BLOODTYPE_ID = BLOODTYPE_ID;
+oSupplier.SUPPLIER_ID = SUPPLIER_ID;oSupplier.SUPPLIER_NAME = SUPPLIER_NAME;oSupplier.SUPPLIER_PH_NB = SUPPLIER_PH_NB;oSupplier.SUPPLIER_MAIL = SUPPLIER_MAIL;oSupplier.ENTRY_USER_ID = ENTRY_USER_ID;oSupplier.ENTRY_DATE = ENTRY_DATE;oSupplier.OWNER_ID = OWNER_ID;oSupplier.SUPPLIER_DOB = SUPPLIER_DOB;oSupplier.BLOODTYPE_ID = BLOODTYPE_ID;oSupplier.SUPPLIER_GENDER = SUPPLIER_GENDER;
 ExecuteEdit("UPG_EDIT_SUPPLIER", oSupplier, "SUPPLIER_ID");
 return oSupplier.SUPPLIER_ID;
 }

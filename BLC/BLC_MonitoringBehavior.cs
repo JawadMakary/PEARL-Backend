@@ -189,6 +189,10 @@ public Stopwatch _Execution_Time_Get_Person_By_Criteria_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Person_By_Where_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Person_By_Criteria_Adv_V2 {get;set;}
 public Stopwatch _Execution_Time_Get_Person_By_Where_Adv_V2 {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_Criteria_Adv {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_Where_Adv {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_Criteria_Adv_V2 {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_Where_Adv_V2 {get;set;}
 public Stopwatch _Execution_Time_Get_Session_By_Criteria_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Session_By_Where_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Session_By_Criteria_Adv_V2 {get;set;}
@@ -233,6 +237,10 @@ public Stopwatch _Execution_Time_Get_Package_By_Criteria_InList_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Package_By_Where_InList_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Package_By_Criteria_InList_Adv_V2 {get;set;}
 public Stopwatch _Execution_Time_Get_Package_By_Where_InList_Adv_V2 {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_Criteria_InList_Adv {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_Where_InList_Adv {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_Criteria_InList_Adv_V2 {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_Where_InList_Adv_V2 {get;set;}
 public Stopwatch _Execution_Time_Get_Session_By_Criteria_InList_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Session_By_Where_InList_Adv {get;set;}
 public Stopwatch _Execution_Time_Get_Session_By_Criteria_InList_Adv_V2 {get;set;}
@@ -348,6 +356,7 @@ public Stopwatch _Execution_Time_Sales_Sum {get;set;}
 public Stopwatch _Execution_Time_Expenses_Sum {get;set;}
 public Stopwatch _Execution_Time_GetGrandProfit {get;set;}
 public Stopwatch _Execution_Time_CheckClientPaymentStatus {get;set;}
+public Stopwatch _Execution_Time_CalculateSupplierBalance {get;set;}
 public Stopwatch _Execution_Time_CalculateStaffBalance {get;set;}
 public Stopwatch _Execution_Time_UP_CHECK_USER_EXISTENCE {get;set;}
 public Stopwatch _Execution_Time_UpdatePassword {get;set;}
@@ -544,6 +553,10 @@ public Stopwatch _Execution_Time_Get_Person_By_Criteria {get;set;}
 public Stopwatch _Execution_Time_Get_Person_By_Where {get;set;}
 public Stopwatch _Execution_Time_Get_Person_By_Criteria_V2 {get;set;}
 public Stopwatch _Execution_Time_Get_Person_By_Where_V2 {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_Criteria {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_Where {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_Criteria_V2 {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_Where_V2 {get;set;}
 public Stopwatch _Execution_Time_Get_Session_By_Criteria {get;set;}
 public Stopwatch _Execution_Time_Get_Session_By_Where {get;set;}
 public Stopwatch _Execution_Time_Get_Session_By_Criteria_V2 {get;set;}
@@ -588,6 +601,10 @@ public Stopwatch _Execution_Time_Get_Package_By_Criteria_InList {get;set;}
 public Stopwatch _Execution_Time_Get_Package_By_Where_InList {get;set;}
 public Stopwatch _Execution_Time_Get_Package_By_Criteria_InList_V2 {get;set;}
 public Stopwatch _Execution_Time_Get_Package_By_Where_InList_V2 {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_Criteria_InList {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_Where_InList {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_Criteria_InList_V2 {get;set;}
+public Stopwatch _Execution_Time_Get_Registration_By_Where_InList_V2 {get;set;}
 public Stopwatch _Execution_Time_Get_Session_By_Criteria_InList {get;set;}
 public Stopwatch _Execution_Time_Get_Session_By_Where_InList {get;set;}
 public Stopwatch _Execution_Time_Get_Session_By_Criteria_InList_V2 {get;set;}

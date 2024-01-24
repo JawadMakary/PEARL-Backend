@@ -914,6 +914,7 @@ public Int32? OWNER_ID {get;set;}
 public string CLIENT_NAME {get;set;}
 public string CLIENT_PH_NB {get;set;}
 public string CLIENT_MAIL {get;set;}
+public string CLIENT_GENDER {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -925,6 +926,7 @@ public Int32? OWNER_ID {get;set;}
 public string CLIENT_NAME {get;set;}
 public string CLIENT_PH_NB {get;set;}
 public string CLIENT_MAIL {get;set;}
+public string CLIENT_GENDER {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -937,6 +939,7 @@ public string CLIENT_NAME {get;set;}
 public string CLIENT_PH_NB {get;set;}
 public string CLIENT_MAIL {get;set;}
 public string CLIENT_DOB {get;set;}
+public string CLIENT_GENDER {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -949,6 +952,7 @@ public string CLIENT_NAME {get;set;}
 public string CLIENT_PH_NB {get;set;}
 public string CLIENT_MAIL {get;set;}
 public string CLIENT_DOB {get;set;}
+public string CLIENT_GENDER {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -1414,6 +1418,7 @@ public Int32? OWNER_ID {get;set;}
 public string STAFF_NAME {get;set;}
 public string STAFF_PH_NB {get;set;}
 public string STAFF_MAIL {get;set;}
+public string STAFF_GENDER {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -1425,6 +1430,7 @@ public Int32? OWNER_ID {get;set;}
 public string STAFF_NAME {get;set;}
 public string STAFF_PH_NB {get;set;}
 public string STAFF_MAIL {get;set;}
+public string STAFF_GENDER {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -1437,6 +1443,7 @@ public string STAFF_NAME {get;set;}
 public string STAFF_PH_NB {get;set;}
 public string STAFF_MAIL {get;set;}
 public string STAFF_DOB {get;set;}
+public string STAFF_GENDER {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -1449,6 +1456,7 @@ public string STAFF_NAME {get;set;}
 public string STAFF_PH_NB {get;set;}
 public string STAFF_MAIL {get;set;}
 public string STAFF_DOB {get;set;}
+public string STAFF_GENDER {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -1478,6 +1486,7 @@ public Int32? OWNER_ID {get;set;}
 public string SUPPLIER_NAME {get;set;}
 public string SUPPLIER_PH_NB {get;set;}
 public string SUPPLIER_MAIL {get;set;}
+public string SUPPLIER_GENDER {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -1489,6 +1498,7 @@ public Int32? OWNER_ID {get;set;}
 public string SUPPLIER_NAME {get;set;}
 public string SUPPLIER_PH_NB {get;set;}
 public string SUPPLIER_MAIL {get;set;}
+public string SUPPLIER_GENDER {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -1501,6 +1511,7 @@ public string SUPPLIER_NAME {get;set;}
 public string SUPPLIER_PH_NB {get;set;}
 public string SUPPLIER_MAIL {get;set;}
 public string SUPPLIER_DOB {get;set;}
+public string SUPPLIER_GENDER {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -1513,6 +1524,7 @@ public string SUPPLIER_NAME {get;set;}
 public string SUPPLIER_PH_NB {get;set;}
 public string SUPPLIER_MAIL {get;set;}
 public string SUPPLIER_DOB {get;set;}
+public string SUPPLIER_GENDER {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -1714,6 +1726,7 @@ public Int32? OWNER_ID {get;set;}
 public string CLIENT_NAME {get;set;}
 public string CLIENT_PH_NB {get;set;}
 public string CLIENT_MAIL {get;set;}
+public string CLIENT_GENDER {get;set;}
 public List<Int32?> BLOODTYPE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -1725,6 +1738,7 @@ public Int32? OWNER_ID {get;set;}
 public string CLIENT_NAME {get;set;}
 public string CLIENT_PH_NB {get;set;}
 public string CLIENT_MAIL {get;set;}
+public string CLIENT_GENDER {get;set;}
 public string BLOODTYPE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -1737,6 +1751,7 @@ public Int32? OWNER_ID {get;set;}
 public string CLIENT_NAME {get;set;}
 public string CLIENT_PH_NB {get;set;}
 public string CLIENT_MAIL {get;set;}
+public string CLIENT_GENDER {get;set;}
 public List<Int32?> BLOODTYPE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -1748,6 +1763,7 @@ public Int32? OWNER_ID {get;set;}
 public string CLIENT_NAME {get;set;}
 public string CLIENT_PH_NB {get;set;}
 public string CLIENT_MAIL {get;set;}
+public string CLIENT_GENDER {get;set;}
 public string BLOODTYPE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -1761,6 +1777,7 @@ public string CLIENT_NAME {get;set;}
 public string CLIENT_PH_NB {get;set;}
 public string CLIENT_MAIL {get;set;}
 public string CLIENT_DOB {get;set;}
+public string CLIENT_GENDER {get;set;}
 public List<Int32?> BLOODTYPE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -1773,6 +1790,7 @@ public string CLIENT_NAME {get;set;}
 public string CLIENT_PH_NB {get;set;}
 public string CLIENT_MAIL {get;set;}
 public string CLIENT_DOB {get;set;}
+public string CLIENT_GENDER {get;set;}
 public string BLOODTYPE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -1786,6 +1804,7 @@ public string CLIENT_NAME {get;set;}
 public string CLIENT_PH_NB {get;set;}
 public string CLIENT_MAIL {get;set;}
 public string CLIENT_DOB {get;set;}
+public string CLIENT_GENDER {get;set;}
 public List<Int32?> BLOODTYPE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -1798,6 +1817,7 @@ public string CLIENT_NAME {get;set;}
 public string CLIENT_PH_NB {get;set;}
 public string CLIENT_MAIL {get;set;}
 public string CLIENT_DOB {get;set;}
+public string CLIENT_GENDER {get;set;}
 public string BLOODTYPE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2400,6 +2420,7 @@ public Int32? OWNER_ID {get;set;}
 public string STAFF_NAME {get;set;}
 public string STAFF_PH_NB {get;set;}
 public string STAFF_MAIL {get;set;}
+public string STAFF_GENDER {get;set;}
 public List<Int32?> BLOODTYPE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2411,6 +2432,7 @@ public Int32? OWNER_ID {get;set;}
 public string STAFF_NAME {get;set;}
 public string STAFF_PH_NB {get;set;}
 public string STAFF_MAIL {get;set;}
+public string STAFF_GENDER {get;set;}
 public string BLOODTYPE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2423,6 +2445,7 @@ public Int32? OWNER_ID {get;set;}
 public string STAFF_NAME {get;set;}
 public string STAFF_PH_NB {get;set;}
 public string STAFF_MAIL {get;set;}
+public string STAFF_GENDER {get;set;}
 public List<Int32?> BLOODTYPE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2434,6 +2457,7 @@ public Int32? OWNER_ID {get;set;}
 public string STAFF_NAME {get;set;}
 public string STAFF_PH_NB {get;set;}
 public string STAFF_MAIL {get;set;}
+public string STAFF_GENDER {get;set;}
 public string BLOODTYPE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2447,6 +2471,7 @@ public string STAFF_NAME {get;set;}
 public string STAFF_PH_NB {get;set;}
 public string STAFF_MAIL {get;set;}
 public string STAFF_DOB {get;set;}
+public string STAFF_GENDER {get;set;}
 public List<Int32?> BLOODTYPE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2459,6 +2484,7 @@ public string STAFF_NAME {get;set;}
 public string STAFF_PH_NB {get;set;}
 public string STAFF_MAIL {get;set;}
 public string STAFF_DOB {get;set;}
+public string STAFF_GENDER {get;set;}
 public string BLOODTYPE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2472,6 +2498,7 @@ public string STAFF_NAME {get;set;}
 public string STAFF_PH_NB {get;set;}
 public string STAFF_MAIL {get;set;}
 public string STAFF_DOB {get;set;}
+public string STAFF_GENDER {get;set;}
 public List<Int32?> BLOODTYPE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2484,6 +2511,7 @@ public string STAFF_NAME {get;set;}
 public string STAFF_PH_NB {get;set;}
 public string STAFF_MAIL {get;set;}
 public string STAFF_DOB {get;set;}
+public string STAFF_GENDER {get;set;}
 public string BLOODTYPE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2538,6 +2566,7 @@ public Int32? OWNER_ID {get;set;}
 public string SUPPLIER_NAME {get;set;}
 public string SUPPLIER_PH_NB {get;set;}
 public string SUPPLIER_MAIL {get;set;}
+public string SUPPLIER_GENDER {get;set;}
 public List<Int32?> BLOODTYPE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2549,6 +2578,7 @@ public Int32? OWNER_ID {get;set;}
 public string SUPPLIER_NAME {get;set;}
 public string SUPPLIER_PH_NB {get;set;}
 public string SUPPLIER_MAIL {get;set;}
+public string SUPPLIER_GENDER {get;set;}
 public string BLOODTYPE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2561,6 +2591,7 @@ public Int32? OWNER_ID {get;set;}
 public string SUPPLIER_NAME {get;set;}
 public string SUPPLIER_PH_NB {get;set;}
 public string SUPPLIER_MAIL {get;set;}
+public string SUPPLIER_GENDER {get;set;}
 public List<Int32?> BLOODTYPE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2572,6 +2603,7 @@ public Int32? OWNER_ID {get;set;}
 public string SUPPLIER_NAME {get;set;}
 public string SUPPLIER_PH_NB {get;set;}
 public string SUPPLIER_MAIL {get;set;}
+public string SUPPLIER_GENDER {get;set;}
 public string BLOODTYPE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2585,6 +2617,7 @@ public string SUPPLIER_NAME {get;set;}
 public string SUPPLIER_PH_NB {get;set;}
 public string SUPPLIER_MAIL {get;set;}
 public string SUPPLIER_DOB {get;set;}
+public string SUPPLIER_GENDER {get;set;}
 public List<Int32?> BLOODTYPE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2597,6 +2630,7 @@ public string SUPPLIER_NAME {get;set;}
 public string SUPPLIER_PH_NB {get;set;}
 public string SUPPLIER_MAIL {get;set;}
 public string SUPPLIER_DOB {get;set;}
+public string SUPPLIER_GENDER {get;set;}
 public string BLOODTYPE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2610,6 +2644,7 @@ public string SUPPLIER_NAME {get;set;}
 public string SUPPLIER_PH_NB {get;set;}
 public string SUPPLIER_MAIL {get;set;}
 public string SUPPLIER_DOB {get;set;}
+public string SUPPLIER_GENDER {get;set;}
 public List<Int32?> BLOODTYPE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -2622,6 +2657,7 @@ public string SUPPLIER_NAME {get;set;}
 public string SUPPLIER_PH_NB {get;set;}
 public string SUPPLIER_MAIL {get;set;}
 public string SUPPLIER_DOB {get;set;}
+public string SUPPLIER_GENDER {get;set;}
 public string BLOODTYPE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
@@ -3110,6 +3146,7 @@ public Int32? BLOODTYPE_ID {get;set;}
 public long? ENTRY_USER_ID {get;set;}
 public string ENTRY_DATE {get;set;}
 public Int32? OWNER_ID {get;set;}
+public string CLIENT_GENDER {get;set;}
 }
 public partial class Client_fees
 {
@@ -3291,6 +3328,7 @@ public Int32? BLOODTYPE_ID {get;set;}
 public long? ENTRY_USER_ID {get;set;}
 public string ENTRY_DATE {get;set;}
 public Int32? OWNER_ID {get;set;}
+public string STAFF_GENDER {get;set;}
 }
 public partial class Staff_fees
 {
@@ -3314,6 +3352,7 @@ public string ENTRY_DATE {get;set;}
 public Int32? OWNER_ID {get;set;}
 public string SUPPLIER_DOB {get;set;}
 public Int32? BLOODTYPE_ID {get;set;}
+public string SUPPLIER_GENDER {get;set;}
 }
 public partial class Supplier_fees
 {

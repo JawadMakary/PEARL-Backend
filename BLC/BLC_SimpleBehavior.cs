@@ -2754,7 +2754,7 @@ if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Client_By_Criter
 if ((i_Params_Get_Client_By_Criteria.OWNER_ID == null) || (i_Params_Get_Client_By_Criteria.OWNER_ID == 0)) { i_Params_Get_Client_By_Criteria.OWNER_ID = this.OwnerID; }
 if (i_Params_Get_Client_By_Criteria.START_ROW == null) { i_Params_Get_Client_By_Criteria.START_ROW = 0; }
 if ((i_Params_Get_Client_By_Criteria.END_ROW == null) || (i_Params_Get_Client_By_Criteria.END_ROW == 0)) { i_Params_Get_Client_By_Criteria.END_ROW = 1000000; }
-List<DALC.Client> oList_DBEntries = _AppContext.Get_Client_By_Criteria(i_Params_Get_Client_By_Criteria.CLIENT_NAME,i_Params_Get_Client_By_Criteria.CLIENT_PH_NB,i_Params_Get_Client_By_Criteria.CLIENT_MAIL,i_Params_Get_Client_By_Criteria.OWNER_ID,i_Params_Get_Client_By_Criteria.START_ROW,i_Params_Get_Client_By_Criteria.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Client> oList_DBEntries = _AppContext.Get_Client_By_Criteria(i_Params_Get_Client_By_Criteria.CLIENT_NAME,i_Params_Get_Client_By_Criteria.CLIENT_PH_NB,i_Params_Get_Client_By_Criteria.CLIENT_MAIL,i_Params_Get_Client_By_Criteria.CLIENT_GENDER,i_Params_Get_Client_By_Criteria.OWNER_ID,i_Params_Get_Client_By_Criteria.START_ROW,i_Params_Get_Client_By_Criteria.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -2780,7 +2780,7 @@ if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Client_By_Where"
 if ((i_Params_Get_Client_By_Where.OWNER_ID == null) || (i_Params_Get_Client_By_Where.OWNER_ID == 0)) { i_Params_Get_Client_By_Where.OWNER_ID = this.OwnerID; }
 if (i_Params_Get_Client_By_Where.START_ROW == null) { i_Params_Get_Client_By_Where.START_ROW = 0; }
 if ((i_Params_Get_Client_By_Where.END_ROW == null) || (i_Params_Get_Client_By_Where.END_ROW == 0)) { i_Params_Get_Client_By_Where.END_ROW = 1000000; }
-List<DALC.Client> oList_DBEntries = _AppContext.Get_Client_By_Where(i_Params_Get_Client_By_Where.CLIENT_NAME,i_Params_Get_Client_By_Where.CLIENT_PH_NB,i_Params_Get_Client_By_Where.CLIENT_MAIL,i_Params_Get_Client_By_Where.OWNER_ID,i_Params_Get_Client_By_Where.START_ROW,i_Params_Get_Client_By_Where.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Client> oList_DBEntries = _AppContext.Get_Client_By_Where(i_Params_Get_Client_By_Where.CLIENT_NAME,i_Params_Get_Client_By_Where.CLIENT_PH_NB,i_Params_Get_Client_By_Where.CLIENT_MAIL,i_Params_Get_Client_By_Where.CLIENT_GENDER,i_Params_Get_Client_By_Where.OWNER_ID,i_Params_Get_Client_By_Where.START_ROW,i_Params_Get_Client_By_Where.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -2806,7 +2806,7 @@ if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Client_By_Criter
 if ((i_Params_Get_Client_By_Criteria_V2.OWNER_ID == null) || (i_Params_Get_Client_By_Criteria_V2.OWNER_ID == 0)) { i_Params_Get_Client_By_Criteria_V2.OWNER_ID = this.OwnerID; }
 if (i_Params_Get_Client_By_Criteria_V2.START_ROW == null) { i_Params_Get_Client_By_Criteria_V2.START_ROW = 0; }
 if ((i_Params_Get_Client_By_Criteria_V2.END_ROW == null) || (i_Params_Get_Client_By_Criteria_V2.END_ROW == 0)) { i_Params_Get_Client_By_Criteria_V2.END_ROW = 1000000; }
-List<DALC.Client> oList_DBEntries = _AppContext.Get_Client_By_Criteria_V2(i_Params_Get_Client_By_Criteria_V2.CLIENT_NAME,i_Params_Get_Client_By_Criteria_V2.CLIENT_PH_NB,i_Params_Get_Client_By_Criteria_V2.CLIENT_MAIL,i_Params_Get_Client_By_Criteria_V2.CLIENT_DOB,i_Params_Get_Client_By_Criteria_V2.OWNER_ID,i_Params_Get_Client_By_Criteria_V2.START_ROW,i_Params_Get_Client_By_Criteria_V2.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Client> oList_DBEntries = _AppContext.Get_Client_By_Criteria_V2(i_Params_Get_Client_By_Criteria_V2.CLIENT_NAME,i_Params_Get_Client_By_Criteria_V2.CLIENT_PH_NB,i_Params_Get_Client_By_Criteria_V2.CLIENT_MAIL,i_Params_Get_Client_By_Criteria_V2.CLIENT_DOB,i_Params_Get_Client_By_Criteria_V2.CLIENT_GENDER,i_Params_Get_Client_By_Criteria_V2.OWNER_ID,i_Params_Get_Client_By_Criteria_V2.START_ROW,i_Params_Get_Client_By_Criteria_V2.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -2832,7 +2832,7 @@ if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Client_By_Where_
 if ((i_Params_Get_Client_By_Where_V2.OWNER_ID == null) || (i_Params_Get_Client_By_Where_V2.OWNER_ID == 0)) { i_Params_Get_Client_By_Where_V2.OWNER_ID = this.OwnerID; }
 if (i_Params_Get_Client_By_Where_V2.START_ROW == null) { i_Params_Get_Client_By_Where_V2.START_ROW = 0; }
 if ((i_Params_Get_Client_By_Where_V2.END_ROW == null) || (i_Params_Get_Client_By_Where_V2.END_ROW == 0)) { i_Params_Get_Client_By_Where_V2.END_ROW = 1000000; }
-List<DALC.Client> oList_DBEntries = _AppContext.Get_Client_By_Where_V2(i_Params_Get_Client_By_Where_V2.CLIENT_NAME,i_Params_Get_Client_By_Where_V2.CLIENT_PH_NB,i_Params_Get_Client_By_Where_V2.CLIENT_MAIL,i_Params_Get_Client_By_Where_V2.CLIENT_DOB,i_Params_Get_Client_By_Where_V2.OWNER_ID,i_Params_Get_Client_By_Where_V2.START_ROW,i_Params_Get_Client_By_Where_V2.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Client> oList_DBEntries = _AppContext.Get_Client_By_Where_V2(i_Params_Get_Client_By_Where_V2.CLIENT_NAME,i_Params_Get_Client_By_Where_V2.CLIENT_PH_NB,i_Params_Get_Client_By_Where_V2.CLIENT_MAIL,i_Params_Get_Client_By_Where_V2.CLIENT_DOB,i_Params_Get_Client_By_Where_V2.CLIENT_GENDER,i_Params_Get_Client_By_Where_V2.OWNER_ID,i_Params_Get_Client_By_Where_V2.START_ROW,i_Params_Get_Client_By_Where_V2.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -3950,7 +3950,7 @@ if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Staff_By_Criteri
 if ((i_Params_Get_Staff_By_Criteria.OWNER_ID == null) || (i_Params_Get_Staff_By_Criteria.OWNER_ID == 0)) { i_Params_Get_Staff_By_Criteria.OWNER_ID = this.OwnerID; }
 if (i_Params_Get_Staff_By_Criteria.START_ROW == null) { i_Params_Get_Staff_By_Criteria.START_ROW = 0; }
 if ((i_Params_Get_Staff_By_Criteria.END_ROW == null) || (i_Params_Get_Staff_By_Criteria.END_ROW == 0)) { i_Params_Get_Staff_By_Criteria.END_ROW = 1000000; }
-List<DALC.Staff> oList_DBEntries = _AppContext.Get_Staff_By_Criteria(i_Params_Get_Staff_By_Criteria.STAFF_NAME,i_Params_Get_Staff_By_Criteria.STAFF_PH_NB,i_Params_Get_Staff_By_Criteria.STAFF_MAIL,i_Params_Get_Staff_By_Criteria.OWNER_ID,i_Params_Get_Staff_By_Criteria.START_ROW,i_Params_Get_Staff_By_Criteria.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Staff> oList_DBEntries = _AppContext.Get_Staff_By_Criteria(i_Params_Get_Staff_By_Criteria.STAFF_NAME,i_Params_Get_Staff_By_Criteria.STAFF_PH_NB,i_Params_Get_Staff_By_Criteria.STAFF_MAIL,i_Params_Get_Staff_By_Criteria.STAFF_GENDER,i_Params_Get_Staff_By_Criteria.OWNER_ID,i_Params_Get_Staff_By_Criteria.START_ROW,i_Params_Get_Staff_By_Criteria.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -3976,7 +3976,7 @@ if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Staff_By_Where",
 if ((i_Params_Get_Staff_By_Where.OWNER_ID == null) || (i_Params_Get_Staff_By_Where.OWNER_ID == 0)) { i_Params_Get_Staff_By_Where.OWNER_ID = this.OwnerID; }
 if (i_Params_Get_Staff_By_Where.START_ROW == null) { i_Params_Get_Staff_By_Where.START_ROW = 0; }
 if ((i_Params_Get_Staff_By_Where.END_ROW == null) || (i_Params_Get_Staff_By_Where.END_ROW == 0)) { i_Params_Get_Staff_By_Where.END_ROW = 1000000; }
-List<DALC.Staff> oList_DBEntries = _AppContext.Get_Staff_By_Where(i_Params_Get_Staff_By_Where.STAFF_NAME,i_Params_Get_Staff_By_Where.STAFF_PH_NB,i_Params_Get_Staff_By_Where.STAFF_MAIL,i_Params_Get_Staff_By_Where.OWNER_ID,i_Params_Get_Staff_By_Where.START_ROW,i_Params_Get_Staff_By_Where.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Staff> oList_DBEntries = _AppContext.Get_Staff_By_Where(i_Params_Get_Staff_By_Where.STAFF_NAME,i_Params_Get_Staff_By_Where.STAFF_PH_NB,i_Params_Get_Staff_By_Where.STAFF_MAIL,i_Params_Get_Staff_By_Where.STAFF_GENDER,i_Params_Get_Staff_By_Where.OWNER_ID,i_Params_Get_Staff_By_Where.START_ROW,i_Params_Get_Staff_By_Where.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -4002,7 +4002,7 @@ if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Staff_By_Criteri
 if ((i_Params_Get_Staff_By_Criteria_V2.OWNER_ID == null) || (i_Params_Get_Staff_By_Criteria_V2.OWNER_ID == 0)) { i_Params_Get_Staff_By_Criteria_V2.OWNER_ID = this.OwnerID; }
 if (i_Params_Get_Staff_By_Criteria_V2.START_ROW == null) { i_Params_Get_Staff_By_Criteria_V2.START_ROW = 0; }
 if ((i_Params_Get_Staff_By_Criteria_V2.END_ROW == null) || (i_Params_Get_Staff_By_Criteria_V2.END_ROW == 0)) { i_Params_Get_Staff_By_Criteria_V2.END_ROW = 1000000; }
-List<DALC.Staff> oList_DBEntries = _AppContext.Get_Staff_By_Criteria_V2(i_Params_Get_Staff_By_Criteria_V2.STAFF_NAME,i_Params_Get_Staff_By_Criteria_V2.STAFF_PH_NB,i_Params_Get_Staff_By_Criteria_V2.STAFF_MAIL,i_Params_Get_Staff_By_Criteria_V2.STAFF_DOB,i_Params_Get_Staff_By_Criteria_V2.OWNER_ID,i_Params_Get_Staff_By_Criteria_V2.START_ROW,i_Params_Get_Staff_By_Criteria_V2.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Staff> oList_DBEntries = _AppContext.Get_Staff_By_Criteria_V2(i_Params_Get_Staff_By_Criteria_V2.STAFF_NAME,i_Params_Get_Staff_By_Criteria_V2.STAFF_PH_NB,i_Params_Get_Staff_By_Criteria_V2.STAFF_MAIL,i_Params_Get_Staff_By_Criteria_V2.STAFF_DOB,i_Params_Get_Staff_By_Criteria_V2.STAFF_GENDER,i_Params_Get_Staff_By_Criteria_V2.OWNER_ID,i_Params_Get_Staff_By_Criteria_V2.START_ROW,i_Params_Get_Staff_By_Criteria_V2.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -4028,7 +4028,7 @@ if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Staff_By_Where_V
 if ((i_Params_Get_Staff_By_Where_V2.OWNER_ID == null) || (i_Params_Get_Staff_By_Where_V2.OWNER_ID == 0)) { i_Params_Get_Staff_By_Where_V2.OWNER_ID = this.OwnerID; }
 if (i_Params_Get_Staff_By_Where_V2.START_ROW == null) { i_Params_Get_Staff_By_Where_V2.START_ROW = 0; }
 if ((i_Params_Get_Staff_By_Where_V2.END_ROW == null) || (i_Params_Get_Staff_By_Where_V2.END_ROW == 0)) { i_Params_Get_Staff_By_Where_V2.END_ROW = 1000000; }
-List<DALC.Staff> oList_DBEntries = _AppContext.Get_Staff_By_Where_V2(i_Params_Get_Staff_By_Where_V2.STAFF_NAME,i_Params_Get_Staff_By_Where_V2.STAFF_PH_NB,i_Params_Get_Staff_By_Where_V2.STAFF_MAIL,i_Params_Get_Staff_By_Where_V2.STAFF_DOB,i_Params_Get_Staff_By_Where_V2.OWNER_ID,i_Params_Get_Staff_By_Where_V2.START_ROW,i_Params_Get_Staff_By_Where_V2.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Staff> oList_DBEntries = _AppContext.Get_Staff_By_Where_V2(i_Params_Get_Staff_By_Where_V2.STAFF_NAME,i_Params_Get_Staff_By_Where_V2.STAFF_PH_NB,i_Params_Get_Staff_By_Where_V2.STAFF_MAIL,i_Params_Get_Staff_By_Where_V2.STAFF_DOB,i_Params_Get_Staff_By_Where_V2.STAFF_GENDER,i_Params_Get_Staff_By_Where_V2.OWNER_ID,i_Params_Get_Staff_By_Where_V2.START_ROW,i_Params_Get_Staff_By_Where_V2.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -4106,7 +4106,7 @@ if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Supplier_By_Crit
 if ((i_Params_Get_Supplier_By_Criteria.OWNER_ID == null) || (i_Params_Get_Supplier_By_Criteria.OWNER_ID == 0)) { i_Params_Get_Supplier_By_Criteria.OWNER_ID = this.OwnerID; }
 if (i_Params_Get_Supplier_By_Criteria.START_ROW == null) { i_Params_Get_Supplier_By_Criteria.START_ROW = 0; }
 if ((i_Params_Get_Supplier_By_Criteria.END_ROW == null) || (i_Params_Get_Supplier_By_Criteria.END_ROW == 0)) { i_Params_Get_Supplier_By_Criteria.END_ROW = 1000000; }
-List<DALC.Supplier> oList_DBEntries = _AppContext.Get_Supplier_By_Criteria(i_Params_Get_Supplier_By_Criteria.SUPPLIER_NAME,i_Params_Get_Supplier_By_Criteria.SUPPLIER_PH_NB,i_Params_Get_Supplier_By_Criteria.SUPPLIER_MAIL,i_Params_Get_Supplier_By_Criteria.OWNER_ID,i_Params_Get_Supplier_By_Criteria.START_ROW,i_Params_Get_Supplier_By_Criteria.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Supplier> oList_DBEntries = _AppContext.Get_Supplier_By_Criteria(i_Params_Get_Supplier_By_Criteria.SUPPLIER_NAME,i_Params_Get_Supplier_By_Criteria.SUPPLIER_PH_NB,i_Params_Get_Supplier_By_Criteria.SUPPLIER_MAIL,i_Params_Get_Supplier_By_Criteria.SUPPLIER_GENDER,i_Params_Get_Supplier_By_Criteria.OWNER_ID,i_Params_Get_Supplier_By_Criteria.START_ROW,i_Params_Get_Supplier_By_Criteria.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -4132,7 +4132,7 @@ if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Supplier_By_Wher
 if ((i_Params_Get_Supplier_By_Where.OWNER_ID == null) || (i_Params_Get_Supplier_By_Where.OWNER_ID == 0)) { i_Params_Get_Supplier_By_Where.OWNER_ID = this.OwnerID; }
 if (i_Params_Get_Supplier_By_Where.START_ROW == null) { i_Params_Get_Supplier_By_Where.START_ROW = 0; }
 if ((i_Params_Get_Supplier_By_Where.END_ROW == null) || (i_Params_Get_Supplier_By_Where.END_ROW == 0)) { i_Params_Get_Supplier_By_Where.END_ROW = 1000000; }
-List<DALC.Supplier> oList_DBEntries = _AppContext.Get_Supplier_By_Where(i_Params_Get_Supplier_By_Where.SUPPLIER_NAME,i_Params_Get_Supplier_By_Where.SUPPLIER_PH_NB,i_Params_Get_Supplier_By_Where.SUPPLIER_MAIL,i_Params_Get_Supplier_By_Where.OWNER_ID,i_Params_Get_Supplier_By_Where.START_ROW,i_Params_Get_Supplier_By_Where.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Supplier> oList_DBEntries = _AppContext.Get_Supplier_By_Where(i_Params_Get_Supplier_By_Where.SUPPLIER_NAME,i_Params_Get_Supplier_By_Where.SUPPLIER_PH_NB,i_Params_Get_Supplier_By_Where.SUPPLIER_MAIL,i_Params_Get_Supplier_By_Where.SUPPLIER_GENDER,i_Params_Get_Supplier_By_Where.OWNER_ID,i_Params_Get_Supplier_By_Where.START_ROW,i_Params_Get_Supplier_By_Where.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -4158,7 +4158,7 @@ if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Supplier_By_Crit
 if ((i_Params_Get_Supplier_By_Criteria_V2.OWNER_ID == null) || (i_Params_Get_Supplier_By_Criteria_V2.OWNER_ID == 0)) { i_Params_Get_Supplier_By_Criteria_V2.OWNER_ID = this.OwnerID; }
 if (i_Params_Get_Supplier_By_Criteria_V2.START_ROW == null) { i_Params_Get_Supplier_By_Criteria_V2.START_ROW = 0; }
 if ((i_Params_Get_Supplier_By_Criteria_V2.END_ROW == null) || (i_Params_Get_Supplier_By_Criteria_V2.END_ROW == 0)) { i_Params_Get_Supplier_By_Criteria_V2.END_ROW = 1000000; }
-List<DALC.Supplier> oList_DBEntries = _AppContext.Get_Supplier_By_Criteria_V2(i_Params_Get_Supplier_By_Criteria_V2.SUPPLIER_NAME,i_Params_Get_Supplier_By_Criteria_V2.SUPPLIER_PH_NB,i_Params_Get_Supplier_By_Criteria_V2.SUPPLIER_MAIL,i_Params_Get_Supplier_By_Criteria_V2.SUPPLIER_DOB,i_Params_Get_Supplier_By_Criteria_V2.OWNER_ID,i_Params_Get_Supplier_By_Criteria_V2.START_ROW,i_Params_Get_Supplier_By_Criteria_V2.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Supplier> oList_DBEntries = _AppContext.Get_Supplier_By_Criteria_V2(i_Params_Get_Supplier_By_Criteria_V2.SUPPLIER_NAME,i_Params_Get_Supplier_By_Criteria_V2.SUPPLIER_PH_NB,i_Params_Get_Supplier_By_Criteria_V2.SUPPLIER_MAIL,i_Params_Get_Supplier_By_Criteria_V2.SUPPLIER_DOB,i_Params_Get_Supplier_By_Criteria_V2.SUPPLIER_GENDER,i_Params_Get_Supplier_By_Criteria_V2.OWNER_ID,i_Params_Get_Supplier_By_Criteria_V2.START_ROW,i_Params_Get_Supplier_By_Criteria_V2.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -4184,7 +4184,7 @@ if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Supplier_By_Wher
 if ((i_Params_Get_Supplier_By_Where_V2.OWNER_ID == null) || (i_Params_Get_Supplier_By_Where_V2.OWNER_ID == 0)) { i_Params_Get_Supplier_By_Where_V2.OWNER_ID = this.OwnerID; }
 if (i_Params_Get_Supplier_By_Where_V2.START_ROW == null) { i_Params_Get_Supplier_By_Where_V2.START_ROW = 0; }
 if ((i_Params_Get_Supplier_By_Where_V2.END_ROW == null) || (i_Params_Get_Supplier_By_Where_V2.END_ROW == 0)) { i_Params_Get_Supplier_By_Where_V2.END_ROW = 1000000; }
-List<DALC.Supplier> oList_DBEntries = _AppContext.Get_Supplier_By_Where_V2(i_Params_Get_Supplier_By_Where_V2.SUPPLIER_NAME,i_Params_Get_Supplier_By_Where_V2.SUPPLIER_PH_NB,i_Params_Get_Supplier_By_Where_V2.SUPPLIER_MAIL,i_Params_Get_Supplier_By_Where_V2.SUPPLIER_DOB,i_Params_Get_Supplier_By_Where_V2.OWNER_ID,i_Params_Get_Supplier_By_Where_V2.START_ROW,i_Params_Get_Supplier_By_Where_V2.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Supplier> oList_DBEntries = _AppContext.Get_Supplier_By_Where_V2(i_Params_Get_Supplier_By_Where_V2.SUPPLIER_NAME,i_Params_Get_Supplier_By_Where_V2.SUPPLIER_PH_NB,i_Params_Get_Supplier_By_Where_V2.SUPPLIER_MAIL,i_Params_Get_Supplier_By_Where_V2.SUPPLIER_DOB,i_Params_Get_Supplier_By_Where_V2.SUPPLIER_GENDER,i_Params_Get_Supplier_By_Where_V2.OWNER_ID,i_Params_Get_Supplier_By_Where_V2.START_ROW,i_Params_Get_Supplier_By_Where_V2.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -4571,6 +4571,7 @@ oParams_Get_Client_By_Criteria_InList_SP.OWNER_ID = i_Params_Get_Client_By_Crite
 oParams_Get_Client_By_Criteria_InList_SP.CLIENT_NAME = i_Params_Get_Client_By_Criteria_InList.CLIENT_NAME;
 oParams_Get_Client_By_Criteria_InList_SP.CLIENT_PH_NB = i_Params_Get_Client_By_Criteria_InList.CLIENT_PH_NB;
 oParams_Get_Client_By_Criteria_InList_SP.CLIENT_MAIL = i_Params_Get_Client_By_Criteria_InList.CLIENT_MAIL;
+oParams_Get_Client_By_Criteria_InList_SP.CLIENT_GENDER = i_Params_Get_Client_By_Criteria_InList.CLIENT_GENDER;
 if ( i_Params_Get_Client_By_Criteria_InList.BLOODTYPE_ID_LIST == null)
 {
 i_Params_Get_Client_By_Criteria_InList.BLOODTYPE_ID_LIST = new List<Int32?>();
@@ -4579,7 +4580,7 @@ oParams_Get_Client_By_Criteria_InList_SP.BLOODTYPE_ID_LIST = oTools.Convert_List
 oParams_Get_Client_By_Criteria_InList_SP.START_ROW = i_Params_Get_Client_By_Criteria_InList.START_ROW;
 oParams_Get_Client_By_Criteria_InList_SP.END_ROW = i_Params_Get_Client_By_Criteria_InList.END_ROW;
 oParams_Get_Client_By_Criteria_InList_SP.TOTAL_COUNT = i_Params_Get_Client_By_Criteria_InList.TOTAL_COUNT;
-List<DALC.Client> oList_DBEntries = _AppContext.Get_Client_By_Criteria_InList(i_Params_Get_Client_By_Criteria_InList.CLIENT_NAME,i_Params_Get_Client_By_Criteria_InList.CLIENT_PH_NB,i_Params_Get_Client_By_Criteria_InList.CLIENT_MAIL,i_Params_Get_Client_By_Criteria_InList.BLOODTYPE_ID_LIST,i_Params_Get_Client_By_Criteria_InList.OWNER_ID,i_Params_Get_Client_By_Criteria_InList.START_ROW,i_Params_Get_Client_By_Criteria_InList.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Client> oList_DBEntries = _AppContext.Get_Client_By_Criteria_InList(i_Params_Get_Client_By_Criteria_InList.CLIENT_NAME,i_Params_Get_Client_By_Criteria_InList.CLIENT_PH_NB,i_Params_Get_Client_By_Criteria_InList.CLIENT_MAIL,i_Params_Get_Client_By_Criteria_InList.CLIENT_GENDER,i_Params_Get_Client_By_Criteria_InList.BLOODTYPE_ID_LIST,i_Params_Get_Client_By_Criteria_InList.OWNER_ID,i_Params_Get_Client_By_Criteria_InList.START_ROW,i_Params_Get_Client_By_Criteria_InList.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -4611,6 +4612,7 @@ oParams_Get_Client_By_Where_InList_SP.OWNER_ID = i_Params_Get_Client_By_Where_In
 oParams_Get_Client_By_Where_InList_SP.CLIENT_NAME = i_Params_Get_Client_By_Where_InList.CLIENT_NAME;
 oParams_Get_Client_By_Where_InList_SP.CLIENT_PH_NB = i_Params_Get_Client_By_Where_InList.CLIENT_PH_NB;
 oParams_Get_Client_By_Where_InList_SP.CLIENT_MAIL = i_Params_Get_Client_By_Where_InList.CLIENT_MAIL;
+oParams_Get_Client_By_Where_InList_SP.CLIENT_GENDER = i_Params_Get_Client_By_Where_InList.CLIENT_GENDER;
 if ( i_Params_Get_Client_By_Where_InList.BLOODTYPE_ID_LIST == null)
 {
 i_Params_Get_Client_By_Where_InList.BLOODTYPE_ID_LIST = new List<Int32?>();
@@ -4619,7 +4621,7 @@ oParams_Get_Client_By_Where_InList_SP.BLOODTYPE_ID_LIST = oTools.Convert_List_To
 oParams_Get_Client_By_Where_InList_SP.START_ROW = i_Params_Get_Client_By_Where_InList.START_ROW;
 oParams_Get_Client_By_Where_InList_SP.END_ROW = i_Params_Get_Client_By_Where_InList.END_ROW;
 oParams_Get_Client_By_Where_InList_SP.TOTAL_COUNT = i_Params_Get_Client_By_Where_InList.TOTAL_COUNT;
-List<DALC.Client> oList_DBEntries = _AppContext.Get_Client_By_Where_InList(i_Params_Get_Client_By_Where_InList.CLIENT_NAME,i_Params_Get_Client_By_Where_InList.CLIENT_PH_NB,i_Params_Get_Client_By_Where_InList.CLIENT_MAIL,i_Params_Get_Client_By_Where_InList.BLOODTYPE_ID_LIST,i_Params_Get_Client_By_Where_InList.OWNER_ID,i_Params_Get_Client_By_Where_InList.START_ROW,i_Params_Get_Client_By_Where_InList.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Client> oList_DBEntries = _AppContext.Get_Client_By_Where_InList(i_Params_Get_Client_By_Where_InList.CLIENT_NAME,i_Params_Get_Client_By_Where_InList.CLIENT_PH_NB,i_Params_Get_Client_By_Where_InList.CLIENT_MAIL,i_Params_Get_Client_By_Where_InList.CLIENT_GENDER,i_Params_Get_Client_By_Where_InList.BLOODTYPE_ID_LIST,i_Params_Get_Client_By_Where_InList.OWNER_ID,i_Params_Get_Client_By_Where_InList.START_ROW,i_Params_Get_Client_By_Where_InList.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -4652,6 +4654,7 @@ oParams_Get_Client_By_Criteria_InList_SP_V2.CLIENT_NAME = i_Params_Get_Client_By
 oParams_Get_Client_By_Criteria_InList_SP_V2.CLIENT_PH_NB = i_Params_Get_Client_By_Criteria_InList_V2.CLIENT_PH_NB;
 oParams_Get_Client_By_Criteria_InList_SP_V2.CLIENT_MAIL = i_Params_Get_Client_By_Criteria_InList_V2.CLIENT_MAIL;
 oParams_Get_Client_By_Criteria_InList_SP_V2.CLIENT_DOB = i_Params_Get_Client_By_Criteria_InList_V2.CLIENT_DOB;
+oParams_Get_Client_By_Criteria_InList_SP_V2.CLIENT_GENDER = i_Params_Get_Client_By_Criteria_InList_V2.CLIENT_GENDER;
 if ( i_Params_Get_Client_By_Criteria_InList_V2.BLOODTYPE_ID_LIST == null)
 {
 i_Params_Get_Client_By_Criteria_InList_V2.BLOODTYPE_ID_LIST = new List<Int32?>();
@@ -4660,7 +4663,7 @@ oParams_Get_Client_By_Criteria_InList_SP_V2.BLOODTYPE_ID_LIST = oTools.Convert_L
 oParams_Get_Client_By_Criteria_InList_SP_V2.START_ROW = i_Params_Get_Client_By_Criteria_InList_V2.START_ROW;
 oParams_Get_Client_By_Criteria_InList_SP_V2.END_ROW = i_Params_Get_Client_By_Criteria_InList_V2.END_ROW;
 oParams_Get_Client_By_Criteria_InList_SP_V2.TOTAL_COUNT = i_Params_Get_Client_By_Criteria_InList_V2.TOTAL_COUNT;
-List<DALC.Client> oList_DBEntries = _AppContext.Get_Client_By_Criteria_InList_V2(i_Params_Get_Client_By_Criteria_InList_V2.CLIENT_NAME,i_Params_Get_Client_By_Criteria_InList_V2.CLIENT_PH_NB,i_Params_Get_Client_By_Criteria_InList_V2.CLIENT_MAIL,i_Params_Get_Client_By_Criteria_InList_V2.CLIENT_DOB,i_Params_Get_Client_By_Criteria_InList_V2.BLOODTYPE_ID_LIST,i_Params_Get_Client_By_Criteria_InList_V2.OWNER_ID,i_Params_Get_Client_By_Criteria_InList_V2.START_ROW,i_Params_Get_Client_By_Criteria_InList_V2.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Client> oList_DBEntries = _AppContext.Get_Client_By_Criteria_InList_V2(i_Params_Get_Client_By_Criteria_InList_V2.CLIENT_NAME,i_Params_Get_Client_By_Criteria_InList_V2.CLIENT_PH_NB,i_Params_Get_Client_By_Criteria_InList_V2.CLIENT_MAIL,i_Params_Get_Client_By_Criteria_InList_V2.CLIENT_DOB,i_Params_Get_Client_By_Criteria_InList_V2.CLIENT_GENDER,i_Params_Get_Client_By_Criteria_InList_V2.BLOODTYPE_ID_LIST,i_Params_Get_Client_By_Criteria_InList_V2.OWNER_ID,i_Params_Get_Client_By_Criteria_InList_V2.START_ROW,i_Params_Get_Client_By_Criteria_InList_V2.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -4693,6 +4696,7 @@ oParams_Get_Client_By_Where_InList_SP_V2.CLIENT_NAME = i_Params_Get_Client_By_Wh
 oParams_Get_Client_By_Where_InList_SP_V2.CLIENT_PH_NB = i_Params_Get_Client_By_Where_InList_V2.CLIENT_PH_NB;
 oParams_Get_Client_By_Where_InList_SP_V2.CLIENT_MAIL = i_Params_Get_Client_By_Where_InList_V2.CLIENT_MAIL;
 oParams_Get_Client_By_Where_InList_SP_V2.CLIENT_DOB = i_Params_Get_Client_By_Where_InList_V2.CLIENT_DOB;
+oParams_Get_Client_By_Where_InList_SP_V2.CLIENT_GENDER = i_Params_Get_Client_By_Where_InList_V2.CLIENT_GENDER;
 if ( i_Params_Get_Client_By_Where_InList_V2.BLOODTYPE_ID_LIST == null)
 {
 i_Params_Get_Client_By_Where_InList_V2.BLOODTYPE_ID_LIST = new List<Int32?>();
@@ -4701,7 +4705,7 @@ oParams_Get_Client_By_Where_InList_SP_V2.BLOODTYPE_ID_LIST = oTools.Convert_List
 oParams_Get_Client_By_Where_InList_SP_V2.START_ROW = i_Params_Get_Client_By_Where_InList_V2.START_ROW;
 oParams_Get_Client_By_Where_InList_SP_V2.END_ROW = i_Params_Get_Client_By_Where_InList_V2.END_ROW;
 oParams_Get_Client_By_Where_InList_SP_V2.TOTAL_COUNT = i_Params_Get_Client_By_Where_InList_V2.TOTAL_COUNT;
-List<DALC.Client> oList_DBEntries = _AppContext.Get_Client_By_Where_InList_V2(i_Params_Get_Client_By_Where_InList_V2.CLIENT_NAME,i_Params_Get_Client_By_Where_InList_V2.CLIENT_PH_NB,i_Params_Get_Client_By_Where_InList_V2.CLIENT_MAIL,i_Params_Get_Client_By_Where_InList_V2.CLIENT_DOB,i_Params_Get_Client_By_Where_InList_V2.BLOODTYPE_ID_LIST,i_Params_Get_Client_By_Where_InList_V2.OWNER_ID,i_Params_Get_Client_By_Where_InList_V2.START_ROW,i_Params_Get_Client_By_Where_InList_V2.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Client> oList_DBEntries = _AppContext.Get_Client_By_Where_InList_V2(i_Params_Get_Client_By_Where_InList_V2.CLIENT_NAME,i_Params_Get_Client_By_Where_InList_V2.CLIENT_PH_NB,i_Params_Get_Client_By_Where_InList_V2.CLIENT_MAIL,i_Params_Get_Client_By_Where_InList_V2.CLIENT_DOB,i_Params_Get_Client_By_Where_InList_V2.CLIENT_GENDER,i_Params_Get_Client_By_Where_InList_V2.BLOODTYPE_ID_LIST,i_Params_Get_Client_By_Where_InList_V2.OWNER_ID,i_Params_Get_Client_By_Where_InList_V2.START_ROW,i_Params_Get_Client_By_Where_InList_V2.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -5841,6 +5845,7 @@ oParams_Get_Staff_By_Criteria_InList_SP.OWNER_ID = i_Params_Get_Staff_By_Criteri
 oParams_Get_Staff_By_Criteria_InList_SP.STAFF_NAME = i_Params_Get_Staff_By_Criteria_InList.STAFF_NAME;
 oParams_Get_Staff_By_Criteria_InList_SP.STAFF_PH_NB = i_Params_Get_Staff_By_Criteria_InList.STAFF_PH_NB;
 oParams_Get_Staff_By_Criteria_InList_SP.STAFF_MAIL = i_Params_Get_Staff_By_Criteria_InList.STAFF_MAIL;
+oParams_Get_Staff_By_Criteria_InList_SP.STAFF_GENDER = i_Params_Get_Staff_By_Criteria_InList.STAFF_GENDER;
 if ( i_Params_Get_Staff_By_Criteria_InList.BLOODTYPE_ID_LIST == null)
 {
 i_Params_Get_Staff_By_Criteria_InList.BLOODTYPE_ID_LIST = new List<Int32?>();
@@ -5849,7 +5854,7 @@ oParams_Get_Staff_By_Criteria_InList_SP.BLOODTYPE_ID_LIST = oTools.Convert_List_
 oParams_Get_Staff_By_Criteria_InList_SP.START_ROW = i_Params_Get_Staff_By_Criteria_InList.START_ROW;
 oParams_Get_Staff_By_Criteria_InList_SP.END_ROW = i_Params_Get_Staff_By_Criteria_InList.END_ROW;
 oParams_Get_Staff_By_Criteria_InList_SP.TOTAL_COUNT = i_Params_Get_Staff_By_Criteria_InList.TOTAL_COUNT;
-List<DALC.Staff> oList_DBEntries = _AppContext.Get_Staff_By_Criteria_InList(i_Params_Get_Staff_By_Criteria_InList.STAFF_NAME,i_Params_Get_Staff_By_Criteria_InList.STAFF_PH_NB,i_Params_Get_Staff_By_Criteria_InList.STAFF_MAIL,i_Params_Get_Staff_By_Criteria_InList.BLOODTYPE_ID_LIST,i_Params_Get_Staff_By_Criteria_InList.OWNER_ID,i_Params_Get_Staff_By_Criteria_InList.START_ROW,i_Params_Get_Staff_By_Criteria_InList.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Staff> oList_DBEntries = _AppContext.Get_Staff_By_Criteria_InList(i_Params_Get_Staff_By_Criteria_InList.STAFF_NAME,i_Params_Get_Staff_By_Criteria_InList.STAFF_PH_NB,i_Params_Get_Staff_By_Criteria_InList.STAFF_MAIL,i_Params_Get_Staff_By_Criteria_InList.STAFF_GENDER,i_Params_Get_Staff_By_Criteria_InList.BLOODTYPE_ID_LIST,i_Params_Get_Staff_By_Criteria_InList.OWNER_ID,i_Params_Get_Staff_By_Criteria_InList.START_ROW,i_Params_Get_Staff_By_Criteria_InList.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -5881,6 +5886,7 @@ oParams_Get_Staff_By_Where_InList_SP.OWNER_ID = i_Params_Get_Staff_By_Where_InLi
 oParams_Get_Staff_By_Where_InList_SP.STAFF_NAME = i_Params_Get_Staff_By_Where_InList.STAFF_NAME;
 oParams_Get_Staff_By_Where_InList_SP.STAFF_PH_NB = i_Params_Get_Staff_By_Where_InList.STAFF_PH_NB;
 oParams_Get_Staff_By_Where_InList_SP.STAFF_MAIL = i_Params_Get_Staff_By_Where_InList.STAFF_MAIL;
+oParams_Get_Staff_By_Where_InList_SP.STAFF_GENDER = i_Params_Get_Staff_By_Where_InList.STAFF_GENDER;
 if ( i_Params_Get_Staff_By_Where_InList.BLOODTYPE_ID_LIST == null)
 {
 i_Params_Get_Staff_By_Where_InList.BLOODTYPE_ID_LIST = new List<Int32?>();
@@ -5889,7 +5895,7 @@ oParams_Get_Staff_By_Where_InList_SP.BLOODTYPE_ID_LIST = oTools.Convert_List_To_
 oParams_Get_Staff_By_Where_InList_SP.START_ROW = i_Params_Get_Staff_By_Where_InList.START_ROW;
 oParams_Get_Staff_By_Where_InList_SP.END_ROW = i_Params_Get_Staff_By_Where_InList.END_ROW;
 oParams_Get_Staff_By_Where_InList_SP.TOTAL_COUNT = i_Params_Get_Staff_By_Where_InList.TOTAL_COUNT;
-List<DALC.Staff> oList_DBEntries = _AppContext.Get_Staff_By_Where_InList(i_Params_Get_Staff_By_Where_InList.STAFF_NAME,i_Params_Get_Staff_By_Where_InList.STAFF_PH_NB,i_Params_Get_Staff_By_Where_InList.STAFF_MAIL,i_Params_Get_Staff_By_Where_InList.BLOODTYPE_ID_LIST,i_Params_Get_Staff_By_Where_InList.OWNER_ID,i_Params_Get_Staff_By_Where_InList.START_ROW,i_Params_Get_Staff_By_Where_InList.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Staff> oList_DBEntries = _AppContext.Get_Staff_By_Where_InList(i_Params_Get_Staff_By_Where_InList.STAFF_NAME,i_Params_Get_Staff_By_Where_InList.STAFF_PH_NB,i_Params_Get_Staff_By_Where_InList.STAFF_MAIL,i_Params_Get_Staff_By_Where_InList.STAFF_GENDER,i_Params_Get_Staff_By_Where_InList.BLOODTYPE_ID_LIST,i_Params_Get_Staff_By_Where_InList.OWNER_ID,i_Params_Get_Staff_By_Where_InList.START_ROW,i_Params_Get_Staff_By_Where_InList.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -5922,6 +5928,7 @@ oParams_Get_Staff_By_Criteria_InList_SP_V2.STAFF_NAME = i_Params_Get_Staff_By_Cr
 oParams_Get_Staff_By_Criteria_InList_SP_V2.STAFF_PH_NB = i_Params_Get_Staff_By_Criteria_InList_V2.STAFF_PH_NB;
 oParams_Get_Staff_By_Criteria_InList_SP_V2.STAFF_MAIL = i_Params_Get_Staff_By_Criteria_InList_V2.STAFF_MAIL;
 oParams_Get_Staff_By_Criteria_InList_SP_V2.STAFF_DOB = i_Params_Get_Staff_By_Criteria_InList_V2.STAFF_DOB;
+oParams_Get_Staff_By_Criteria_InList_SP_V2.STAFF_GENDER = i_Params_Get_Staff_By_Criteria_InList_V2.STAFF_GENDER;
 if ( i_Params_Get_Staff_By_Criteria_InList_V2.BLOODTYPE_ID_LIST == null)
 {
 i_Params_Get_Staff_By_Criteria_InList_V2.BLOODTYPE_ID_LIST = new List<Int32?>();
@@ -5930,7 +5937,7 @@ oParams_Get_Staff_By_Criteria_InList_SP_V2.BLOODTYPE_ID_LIST = oTools.Convert_Li
 oParams_Get_Staff_By_Criteria_InList_SP_V2.START_ROW = i_Params_Get_Staff_By_Criteria_InList_V2.START_ROW;
 oParams_Get_Staff_By_Criteria_InList_SP_V2.END_ROW = i_Params_Get_Staff_By_Criteria_InList_V2.END_ROW;
 oParams_Get_Staff_By_Criteria_InList_SP_V2.TOTAL_COUNT = i_Params_Get_Staff_By_Criteria_InList_V2.TOTAL_COUNT;
-List<DALC.Staff> oList_DBEntries = _AppContext.Get_Staff_By_Criteria_InList_V2(i_Params_Get_Staff_By_Criteria_InList_V2.STAFF_NAME,i_Params_Get_Staff_By_Criteria_InList_V2.STAFF_PH_NB,i_Params_Get_Staff_By_Criteria_InList_V2.STAFF_MAIL,i_Params_Get_Staff_By_Criteria_InList_V2.STAFF_DOB,i_Params_Get_Staff_By_Criteria_InList_V2.BLOODTYPE_ID_LIST,i_Params_Get_Staff_By_Criteria_InList_V2.OWNER_ID,i_Params_Get_Staff_By_Criteria_InList_V2.START_ROW,i_Params_Get_Staff_By_Criteria_InList_V2.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Staff> oList_DBEntries = _AppContext.Get_Staff_By_Criteria_InList_V2(i_Params_Get_Staff_By_Criteria_InList_V2.STAFF_NAME,i_Params_Get_Staff_By_Criteria_InList_V2.STAFF_PH_NB,i_Params_Get_Staff_By_Criteria_InList_V2.STAFF_MAIL,i_Params_Get_Staff_By_Criteria_InList_V2.STAFF_DOB,i_Params_Get_Staff_By_Criteria_InList_V2.STAFF_GENDER,i_Params_Get_Staff_By_Criteria_InList_V2.BLOODTYPE_ID_LIST,i_Params_Get_Staff_By_Criteria_InList_V2.OWNER_ID,i_Params_Get_Staff_By_Criteria_InList_V2.START_ROW,i_Params_Get_Staff_By_Criteria_InList_V2.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -5963,6 +5970,7 @@ oParams_Get_Staff_By_Where_InList_SP_V2.STAFF_NAME = i_Params_Get_Staff_By_Where
 oParams_Get_Staff_By_Where_InList_SP_V2.STAFF_PH_NB = i_Params_Get_Staff_By_Where_InList_V2.STAFF_PH_NB;
 oParams_Get_Staff_By_Where_InList_SP_V2.STAFF_MAIL = i_Params_Get_Staff_By_Where_InList_V2.STAFF_MAIL;
 oParams_Get_Staff_By_Where_InList_SP_V2.STAFF_DOB = i_Params_Get_Staff_By_Where_InList_V2.STAFF_DOB;
+oParams_Get_Staff_By_Where_InList_SP_V2.STAFF_GENDER = i_Params_Get_Staff_By_Where_InList_V2.STAFF_GENDER;
 if ( i_Params_Get_Staff_By_Where_InList_V2.BLOODTYPE_ID_LIST == null)
 {
 i_Params_Get_Staff_By_Where_InList_V2.BLOODTYPE_ID_LIST = new List<Int32?>();
@@ -5971,7 +5979,7 @@ oParams_Get_Staff_By_Where_InList_SP_V2.BLOODTYPE_ID_LIST = oTools.Convert_List_
 oParams_Get_Staff_By_Where_InList_SP_V2.START_ROW = i_Params_Get_Staff_By_Where_InList_V2.START_ROW;
 oParams_Get_Staff_By_Where_InList_SP_V2.END_ROW = i_Params_Get_Staff_By_Where_InList_V2.END_ROW;
 oParams_Get_Staff_By_Where_InList_SP_V2.TOTAL_COUNT = i_Params_Get_Staff_By_Where_InList_V2.TOTAL_COUNT;
-List<DALC.Staff> oList_DBEntries = _AppContext.Get_Staff_By_Where_InList_V2(i_Params_Get_Staff_By_Where_InList_V2.STAFF_NAME,i_Params_Get_Staff_By_Where_InList_V2.STAFF_PH_NB,i_Params_Get_Staff_By_Where_InList_V2.STAFF_MAIL,i_Params_Get_Staff_By_Where_InList_V2.STAFF_DOB,i_Params_Get_Staff_By_Where_InList_V2.BLOODTYPE_ID_LIST,i_Params_Get_Staff_By_Where_InList_V2.OWNER_ID,i_Params_Get_Staff_By_Where_InList_V2.START_ROW,i_Params_Get_Staff_By_Where_InList_V2.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Staff> oList_DBEntries = _AppContext.Get_Staff_By_Where_InList_V2(i_Params_Get_Staff_By_Where_InList_V2.STAFF_NAME,i_Params_Get_Staff_By_Where_InList_V2.STAFF_PH_NB,i_Params_Get_Staff_By_Where_InList_V2.STAFF_MAIL,i_Params_Get_Staff_By_Where_InList_V2.STAFF_DOB,i_Params_Get_Staff_By_Where_InList_V2.STAFF_GENDER,i_Params_Get_Staff_By_Where_InList_V2.BLOODTYPE_ID_LIST,i_Params_Get_Staff_By_Where_InList_V2.OWNER_ID,i_Params_Get_Staff_By_Where_InList_V2.START_ROW,i_Params_Get_Staff_By_Where_InList_V2.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -6089,6 +6097,7 @@ oParams_Get_Supplier_By_Criteria_InList_SP.OWNER_ID = i_Params_Get_Supplier_By_C
 oParams_Get_Supplier_By_Criteria_InList_SP.SUPPLIER_NAME = i_Params_Get_Supplier_By_Criteria_InList.SUPPLIER_NAME;
 oParams_Get_Supplier_By_Criteria_InList_SP.SUPPLIER_PH_NB = i_Params_Get_Supplier_By_Criteria_InList.SUPPLIER_PH_NB;
 oParams_Get_Supplier_By_Criteria_InList_SP.SUPPLIER_MAIL = i_Params_Get_Supplier_By_Criteria_InList.SUPPLIER_MAIL;
+oParams_Get_Supplier_By_Criteria_InList_SP.SUPPLIER_GENDER = i_Params_Get_Supplier_By_Criteria_InList.SUPPLIER_GENDER;
 if ( i_Params_Get_Supplier_By_Criteria_InList.BLOODTYPE_ID_LIST == null)
 {
 i_Params_Get_Supplier_By_Criteria_InList.BLOODTYPE_ID_LIST = new List<Int32?>();
@@ -6097,7 +6106,7 @@ oParams_Get_Supplier_By_Criteria_InList_SP.BLOODTYPE_ID_LIST = oTools.Convert_Li
 oParams_Get_Supplier_By_Criteria_InList_SP.START_ROW = i_Params_Get_Supplier_By_Criteria_InList.START_ROW;
 oParams_Get_Supplier_By_Criteria_InList_SP.END_ROW = i_Params_Get_Supplier_By_Criteria_InList.END_ROW;
 oParams_Get_Supplier_By_Criteria_InList_SP.TOTAL_COUNT = i_Params_Get_Supplier_By_Criteria_InList.TOTAL_COUNT;
-List<DALC.Supplier> oList_DBEntries = _AppContext.Get_Supplier_By_Criteria_InList(i_Params_Get_Supplier_By_Criteria_InList.SUPPLIER_NAME,i_Params_Get_Supplier_By_Criteria_InList.SUPPLIER_PH_NB,i_Params_Get_Supplier_By_Criteria_InList.SUPPLIER_MAIL,i_Params_Get_Supplier_By_Criteria_InList.BLOODTYPE_ID_LIST,i_Params_Get_Supplier_By_Criteria_InList.OWNER_ID,i_Params_Get_Supplier_By_Criteria_InList.START_ROW,i_Params_Get_Supplier_By_Criteria_InList.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Supplier> oList_DBEntries = _AppContext.Get_Supplier_By_Criteria_InList(i_Params_Get_Supplier_By_Criteria_InList.SUPPLIER_NAME,i_Params_Get_Supplier_By_Criteria_InList.SUPPLIER_PH_NB,i_Params_Get_Supplier_By_Criteria_InList.SUPPLIER_MAIL,i_Params_Get_Supplier_By_Criteria_InList.SUPPLIER_GENDER,i_Params_Get_Supplier_By_Criteria_InList.BLOODTYPE_ID_LIST,i_Params_Get_Supplier_By_Criteria_InList.OWNER_ID,i_Params_Get_Supplier_By_Criteria_InList.START_ROW,i_Params_Get_Supplier_By_Criteria_InList.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -6129,6 +6138,7 @@ oParams_Get_Supplier_By_Where_InList_SP.OWNER_ID = i_Params_Get_Supplier_By_Wher
 oParams_Get_Supplier_By_Where_InList_SP.SUPPLIER_NAME = i_Params_Get_Supplier_By_Where_InList.SUPPLIER_NAME;
 oParams_Get_Supplier_By_Where_InList_SP.SUPPLIER_PH_NB = i_Params_Get_Supplier_By_Where_InList.SUPPLIER_PH_NB;
 oParams_Get_Supplier_By_Where_InList_SP.SUPPLIER_MAIL = i_Params_Get_Supplier_By_Where_InList.SUPPLIER_MAIL;
+oParams_Get_Supplier_By_Where_InList_SP.SUPPLIER_GENDER = i_Params_Get_Supplier_By_Where_InList.SUPPLIER_GENDER;
 if ( i_Params_Get_Supplier_By_Where_InList.BLOODTYPE_ID_LIST == null)
 {
 i_Params_Get_Supplier_By_Where_InList.BLOODTYPE_ID_LIST = new List<Int32?>();
@@ -6137,7 +6147,7 @@ oParams_Get_Supplier_By_Where_InList_SP.BLOODTYPE_ID_LIST = oTools.Convert_List_
 oParams_Get_Supplier_By_Where_InList_SP.START_ROW = i_Params_Get_Supplier_By_Where_InList.START_ROW;
 oParams_Get_Supplier_By_Where_InList_SP.END_ROW = i_Params_Get_Supplier_By_Where_InList.END_ROW;
 oParams_Get_Supplier_By_Where_InList_SP.TOTAL_COUNT = i_Params_Get_Supplier_By_Where_InList.TOTAL_COUNT;
-List<DALC.Supplier> oList_DBEntries = _AppContext.Get_Supplier_By_Where_InList(i_Params_Get_Supplier_By_Where_InList.SUPPLIER_NAME,i_Params_Get_Supplier_By_Where_InList.SUPPLIER_PH_NB,i_Params_Get_Supplier_By_Where_InList.SUPPLIER_MAIL,i_Params_Get_Supplier_By_Where_InList.BLOODTYPE_ID_LIST,i_Params_Get_Supplier_By_Where_InList.OWNER_ID,i_Params_Get_Supplier_By_Where_InList.START_ROW,i_Params_Get_Supplier_By_Where_InList.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Supplier> oList_DBEntries = _AppContext.Get_Supplier_By_Where_InList(i_Params_Get_Supplier_By_Where_InList.SUPPLIER_NAME,i_Params_Get_Supplier_By_Where_InList.SUPPLIER_PH_NB,i_Params_Get_Supplier_By_Where_InList.SUPPLIER_MAIL,i_Params_Get_Supplier_By_Where_InList.SUPPLIER_GENDER,i_Params_Get_Supplier_By_Where_InList.BLOODTYPE_ID_LIST,i_Params_Get_Supplier_By_Where_InList.OWNER_ID,i_Params_Get_Supplier_By_Where_InList.START_ROW,i_Params_Get_Supplier_By_Where_InList.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -6170,6 +6180,7 @@ oParams_Get_Supplier_By_Criteria_InList_SP_V2.SUPPLIER_NAME = i_Params_Get_Suppl
 oParams_Get_Supplier_By_Criteria_InList_SP_V2.SUPPLIER_PH_NB = i_Params_Get_Supplier_By_Criteria_InList_V2.SUPPLIER_PH_NB;
 oParams_Get_Supplier_By_Criteria_InList_SP_V2.SUPPLIER_MAIL = i_Params_Get_Supplier_By_Criteria_InList_V2.SUPPLIER_MAIL;
 oParams_Get_Supplier_By_Criteria_InList_SP_V2.SUPPLIER_DOB = i_Params_Get_Supplier_By_Criteria_InList_V2.SUPPLIER_DOB;
+oParams_Get_Supplier_By_Criteria_InList_SP_V2.SUPPLIER_GENDER = i_Params_Get_Supplier_By_Criteria_InList_V2.SUPPLIER_GENDER;
 if ( i_Params_Get_Supplier_By_Criteria_InList_V2.BLOODTYPE_ID_LIST == null)
 {
 i_Params_Get_Supplier_By_Criteria_InList_V2.BLOODTYPE_ID_LIST = new List<Int32?>();
@@ -6178,7 +6189,7 @@ oParams_Get_Supplier_By_Criteria_InList_SP_V2.BLOODTYPE_ID_LIST = oTools.Convert
 oParams_Get_Supplier_By_Criteria_InList_SP_V2.START_ROW = i_Params_Get_Supplier_By_Criteria_InList_V2.START_ROW;
 oParams_Get_Supplier_By_Criteria_InList_SP_V2.END_ROW = i_Params_Get_Supplier_By_Criteria_InList_V2.END_ROW;
 oParams_Get_Supplier_By_Criteria_InList_SP_V2.TOTAL_COUNT = i_Params_Get_Supplier_By_Criteria_InList_V2.TOTAL_COUNT;
-List<DALC.Supplier> oList_DBEntries = _AppContext.Get_Supplier_By_Criteria_InList_V2(i_Params_Get_Supplier_By_Criteria_InList_V2.SUPPLIER_NAME,i_Params_Get_Supplier_By_Criteria_InList_V2.SUPPLIER_PH_NB,i_Params_Get_Supplier_By_Criteria_InList_V2.SUPPLIER_MAIL,i_Params_Get_Supplier_By_Criteria_InList_V2.SUPPLIER_DOB,i_Params_Get_Supplier_By_Criteria_InList_V2.BLOODTYPE_ID_LIST,i_Params_Get_Supplier_By_Criteria_InList_V2.OWNER_ID,i_Params_Get_Supplier_By_Criteria_InList_V2.START_ROW,i_Params_Get_Supplier_By_Criteria_InList_V2.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Supplier> oList_DBEntries = _AppContext.Get_Supplier_By_Criteria_InList_V2(i_Params_Get_Supplier_By_Criteria_InList_V2.SUPPLIER_NAME,i_Params_Get_Supplier_By_Criteria_InList_V2.SUPPLIER_PH_NB,i_Params_Get_Supplier_By_Criteria_InList_V2.SUPPLIER_MAIL,i_Params_Get_Supplier_By_Criteria_InList_V2.SUPPLIER_DOB,i_Params_Get_Supplier_By_Criteria_InList_V2.SUPPLIER_GENDER,i_Params_Get_Supplier_By_Criteria_InList_V2.BLOODTYPE_ID_LIST,i_Params_Get_Supplier_By_Criteria_InList_V2.OWNER_ID,i_Params_Get_Supplier_By_Criteria_InList_V2.START_ROW,i_Params_Get_Supplier_By_Criteria_InList_V2.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -6211,6 +6222,7 @@ oParams_Get_Supplier_By_Where_InList_SP_V2.SUPPLIER_NAME = i_Params_Get_Supplier
 oParams_Get_Supplier_By_Where_InList_SP_V2.SUPPLIER_PH_NB = i_Params_Get_Supplier_By_Where_InList_V2.SUPPLIER_PH_NB;
 oParams_Get_Supplier_By_Where_InList_SP_V2.SUPPLIER_MAIL = i_Params_Get_Supplier_By_Where_InList_V2.SUPPLIER_MAIL;
 oParams_Get_Supplier_By_Where_InList_SP_V2.SUPPLIER_DOB = i_Params_Get_Supplier_By_Where_InList_V2.SUPPLIER_DOB;
+oParams_Get_Supplier_By_Where_InList_SP_V2.SUPPLIER_GENDER = i_Params_Get_Supplier_By_Where_InList_V2.SUPPLIER_GENDER;
 if ( i_Params_Get_Supplier_By_Where_InList_V2.BLOODTYPE_ID_LIST == null)
 {
 i_Params_Get_Supplier_By_Where_InList_V2.BLOODTYPE_ID_LIST = new List<Int32?>();
@@ -6219,7 +6231,7 @@ oParams_Get_Supplier_By_Where_InList_SP_V2.BLOODTYPE_ID_LIST = oTools.Convert_Li
 oParams_Get_Supplier_By_Where_InList_SP_V2.START_ROW = i_Params_Get_Supplier_By_Where_InList_V2.START_ROW;
 oParams_Get_Supplier_By_Where_InList_SP_V2.END_ROW = i_Params_Get_Supplier_By_Where_InList_V2.END_ROW;
 oParams_Get_Supplier_By_Where_InList_SP_V2.TOTAL_COUNT = i_Params_Get_Supplier_By_Where_InList_V2.TOTAL_COUNT;
-List<DALC.Supplier> oList_DBEntries = _AppContext.Get_Supplier_By_Where_InList_V2(i_Params_Get_Supplier_By_Where_InList_V2.SUPPLIER_NAME,i_Params_Get_Supplier_By_Where_InList_V2.SUPPLIER_PH_NB,i_Params_Get_Supplier_By_Where_InList_V2.SUPPLIER_MAIL,i_Params_Get_Supplier_By_Where_InList_V2.SUPPLIER_DOB,i_Params_Get_Supplier_By_Where_InList_V2.BLOODTYPE_ID_LIST,i_Params_Get_Supplier_By_Where_InList_V2.OWNER_ID,i_Params_Get_Supplier_By_Where_InList_V2.START_ROW,i_Params_Get_Supplier_By_Where_InList_V2.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Supplier> oList_DBEntries = _AppContext.Get_Supplier_By_Where_InList_V2(i_Params_Get_Supplier_By_Where_InList_V2.SUPPLIER_NAME,i_Params_Get_Supplier_By_Where_InList_V2.SUPPLIER_PH_NB,i_Params_Get_Supplier_By_Where_InList_V2.SUPPLIER_MAIL,i_Params_Get_Supplier_By_Where_InList_V2.SUPPLIER_DOB,i_Params_Get_Supplier_By_Where_InList_V2.SUPPLIER_GENDER,i_Params_Get_Supplier_By_Where_InList_V2.BLOODTYPE_ID_LIST,i_Params_Get_Supplier_By_Where_InList_V2.OWNER_ID,i_Params_Get_Supplier_By_Where_InList_V2.START_ROW,i_Params_Get_Supplier_By_Where_InList_V2.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -9441,6 +9453,7 @@ i_Client.CLIENT_ID
 ,i_Client.ENTRY_USER_ID
 ,i_Client.ENTRY_DATE
 ,i_Client.OWNER_ID
+,i_Client.CLIENT_GENDER
 );
 oScope.Complete();
 }
@@ -10020,6 +10033,7 @@ i_Staff.STAFF_ID
 ,i_Staff.ENTRY_USER_ID
 ,i_Staff.ENTRY_DATE
 ,i_Staff.OWNER_ID
+,i_Staff.STAFF_GENDER
 );
 oScope.Complete();
 }
@@ -10095,6 +10109,7 @@ i_Supplier.SUPPLIER_ID
 ,i_Supplier.OWNER_ID
 ,i_Supplier.SUPPLIER_DOB
 ,i_Supplier.BLOODTYPE_ID
+,i_Supplier.SUPPLIER_GENDER
 );
 oScope.Complete();
 }
