@@ -9873,6 +9873,7 @@ i_Package.PACKAGE_ID
 ,i_Package.PACKAGE_ENDING_DATE
 ,i_Package.PACKAGE_TIMELINE
 ,i_Package.PACKAGE_STARTING_DATE
+,i_Package.PACKAGE_NB_OF_MONTH
 );
 oScope.Complete();
 }

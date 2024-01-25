@@ -3272,6 +3272,7 @@ public string PACKAGE_TYPE {get;set;}
 public string PACKAGE_ENDING_DATE {get;set;}
 public string PACKAGE_TIMELINE {get;set;}
 public string PACKAGE_STARTING_DATE {get;set;}
+public Int32? PACKAGE_NB_OF_MONTH {get;set;}
 }
 public partial class Person
 {
