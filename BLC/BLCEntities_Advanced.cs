@@ -142,6 +142,24 @@ public partial class Person
 #endregion
 }
 #endregion
+#region Registered_staff_expense
+public partial class Registered_staff_expense
+{
+#region Advanced Properties
+public Staff My_Staff {get;set;}
+public Currency My_Currency {get;set;}
+#endregion
+}
+#endregion
+#region Registered_supplier_expense
+public partial class Registered_supplier_expense
+{
+#region Advanced Properties
+public Supplier My_Supplier {get;set;}
+public Currency My_Currency {get;set;}
+#endregion
+}
+#endregion
 #region Registration
 public partial class Registration
 {
@@ -175,6 +193,7 @@ public partial class Staff_fees
 #region Advanced Properties
 public Staff My_Staff {get;set;}
 public Currency My_Currency {get;set;}
+public Registered_staff_expense My_Registered_staff_expense {get;set;}
 #endregion
 }
 #endregion
@@ -192,6 +211,7 @@ public partial class Supplier_fees
 #region Advanced Properties
 public Supplier My_Supplier {get;set;}
 public Currency My_Currency {get;set;}
+public Registered_supplier_expense My_Registered_supplier_expense {get;set;}
 #endregion
 }
 #endregion

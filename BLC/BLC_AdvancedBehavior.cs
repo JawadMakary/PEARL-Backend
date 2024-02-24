@@ -237,6 +237,40 @@ oTools.CopyPropValues(oDBEntry, oPerson);
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Person_By_PERSON_ID_Adv");}
 return oPerson;
 }
+public Registered_staff_expense Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID_Adv(Params_Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID i_Params_Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID)
+{
+Registered_staff_expense oRegistered_staff_expense = null;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID));}
+#region Body Section.
+DALC.Registered_staff_expense oDBEntry = _AppContext.Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID_Adv(i_Params_Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID.REGISTERED_STAFF_EXPENSE_ID);
+oRegistered_staff_expense = new Registered_staff_expense();
+oTools.CopyPropValues(oDBEntry, oRegistered_staff_expense);
+oRegistered_staff_expense.My_Staff = new Staff();
+oTools.CopyPropValues(oDBEntry.My_Staff, oRegistered_staff_expense.My_Staff);
+oRegistered_staff_expense.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistered_staff_expense.My_Currency);
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID_Adv");}
+return oRegistered_staff_expense;
+}
+public Registered_supplier_expense Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID_Adv(Params_Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID i_Params_Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID)
+{
+Registered_supplier_expense oRegistered_supplier_expense = null;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID));}
+#region Body Section.
+DALC.Registered_supplier_expense oDBEntry = _AppContext.Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID_Adv(i_Params_Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID.REGISTERED_SUPPLIER_EXPENSE_ID);
+oRegistered_supplier_expense = new Registered_supplier_expense();
+oTools.CopyPropValues(oDBEntry, oRegistered_supplier_expense);
+oRegistered_supplier_expense.My_Supplier = new Supplier();
+oTools.CopyPropValues(oDBEntry.My_Supplier, oRegistered_supplier_expense.My_Supplier);
+oRegistered_supplier_expense.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistered_supplier_expense.My_Currency);
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID_Adv");}
+return oRegistered_supplier_expense;
+}
 public Registration Get_Registration_By_REGISTRATION_ID_Adv(Params_Get_Registration_By_REGISTRATION_ID i_Params_Get_Registration_By_REGISTRATION_ID)
 {
 Registration oRegistration = null;
@@ -301,6 +335,8 @@ oStaff_fees.My_Staff = new Staff();
 oTools.CopyPropValues(oDBEntry.My_Staff, oStaff_fees.My_Staff);
 oStaff_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oStaff_fees.My_Currency);
+oStaff_fees.My_Registered_staff_expense = new Registered_staff_expense();
+oTools.CopyPropValues(oDBEntry.My_Registered_staff_expense, oStaff_fees.My_Registered_staff_expense);
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Staff_fees_By_STAFF_FEES_ID_Adv");}
 return oStaff_fees;
@@ -333,6 +369,8 @@ oSupplier_fees.My_Supplier = new Supplier();
 oTools.CopyPropValues(oDBEntry.My_Supplier, oSupplier_fees.My_Supplier);
 oSupplier_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oSupplier_fees.My_Currency);
+oSupplier_fees.My_Registered_supplier_expense = new Registered_supplier_expense();
+oTools.CopyPropValues(oDBEntry.My_Registered_supplier_expense, oSupplier_fees.My_Registered_supplier_expense);
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Supplier_fees_By_SUPPLIER_FEES_ID_Adv");}
 return oSupplier_fees;
@@ -690,6 +728,58 @@ oList.Add(oPerson);
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Person_By_PERSON_ID_List_Adv");}
 return oList;
 }
+public List<Registered_staff_expense> Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID_List_Adv(Params_Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID_List i_Params_Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID_List)
+{
+Registered_staff_expense oRegistered_staff_expense = null;
+List<Registered_staff_expense> oList = new List<Registered_staff_expense>();
+Params_Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID_List_SP oParams_Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID_List_SP = new Params_Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID_List_SP();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID_List_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID_List_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID_List));}
+#region Body Section.
+List<DALC.Registered_staff_expense> oList_DBEntries = _AppContext.Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID_List_Adv(i_Params_Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID_List.REGISTERED_STAFF_EXPENSE_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistered_staff_expense = new Registered_staff_expense();
+oTools.CopyPropValues(oDBEntry, oRegistered_staff_expense);
+oRegistered_staff_expense.My_Staff = new Staff();
+oTools.CopyPropValues(oDBEntry.My_Staff, oRegistered_staff_expense.My_Staff);
+oRegistered_staff_expense.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistered_staff_expense.My_Currency);
+oList.Add(oRegistered_staff_expense);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID_List_Adv");}
+return oList;
+}
+public List<Registered_supplier_expense> Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID_List_Adv(Params_Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID_List i_Params_Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID_List)
+{
+Registered_supplier_expense oRegistered_supplier_expense = null;
+List<Registered_supplier_expense> oList = new List<Registered_supplier_expense>();
+Params_Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID_List_SP oParams_Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID_List_SP = new Params_Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID_List_SP();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID_List_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID_List_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID_List));}
+#region Body Section.
+List<DALC.Registered_supplier_expense> oList_DBEntries = _AppContext.Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID_List_Adv(i_Params_Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID_List.REGISTERED_SUPPLIER_EXPENSE_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistered_supplier_expense = new Registered_supplier_expense();
+oTools.CopyPropValues(oDBEntry, oRegistered_supplier_expense);
+oRegistered_supplier_expense.My_Supplier = new Supplier();
+oTools.CopyPropValues(oDBEntry.My_Supplier, oRegistered_supplier_expense.My_Supplier);
+oRegistered_supplier_expense.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistered_supplier_expense.My_Currency);
+oList.Add(oRegistered_supplier_expense);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID_List_Adv");}
+return oList;
+}
 public List<Registration> Get_Registration_By_REGISTRATION_ID_List_Adv(Params_Get_Registration_By_REGISTRATION_ID_List i_Params_Get_Registration_By_REGISTRATION_ID_List)
 {
 Registration oRegistration = null;
@@ -787,6 +877,8 @@ oStaff_fees.My_Staff = new Staff();
 oTools.CopyPropValues(oDBEntry.My_Staff, oStaff_fees.My_Staff);
 oStaff_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oStaff_fees.My_Currency);
+oStaff_fees.My_Registered_staff_expense = new Registered_staff_expense();
+oTools.CopyPropValues(oDBEntry.My_Registered_staff_expense, oStaff_fees.My_Registered_staff_expense);
 oList.Add(oStaff_fees);
 }
 }
@@ -837,6 +929,8 @@ oSupplier_fees.My_Supplier = new Supplier();
 oTools.CopyPropValues(oDBEntry.My_Supplier, oSupplier_fees.My_Supplier);
 oSupplier_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oSupplier_fees.My_Currency);
+oSupplier_fees.My_Registered_supplier_expense = new Registered_supplier_expense();
+oTools.CopyPropValues(oDBEntry.My_Registered_supplier_expense, oSupplier_fees.My_Registered_supplier_expense);
 oList.Add(oSupplier_fees);
 }
 }
@@ -1768,6 +1862,156 @@ oList.Add(oPerson);
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Person_By_OWNER_ID_Adv");}
 return oList;
 }
+public List<Registered_staff_expense> Get_Registered_staff_expense_By_STAFF_ID_Adv(Params_Get_Registered_staff_expense_By_STAFF_ID i_Params_Get_Registered_staff_expense_By_STAFF_ID)
+{
+List<Registered_staff_expense> oList = new List<Registered_staff_expense>();
+Registered_staff_expense oRegistered_staff_expense = new Registered_staff_expense();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registered_staff_expense_By_STAFF_ID_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registered_staff_expense_By_STAFF_ID_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registered_staff_expense_By_STAFF_ID));}
+#region Body Section.
+List<DALC.Registered_staff_expense> oList_DBEntries = _AppContext.Get_Registered_staff_expense_By_STAFF_ID_Adv(i_Params_Get_Registered_staff_expense_By_STAFF_ID.STAFF_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistered_staff_expense = new Registered_staff_expense();
+oTools.CopyPropValues(oDBEntry, oRegistered_staff_expense);
+oRegistered_staff_expense.My_Staff = new Staff();
+oTools.CopyPropValues(oDBEntry.My_Staff, oRegistered_staff_expense.My_Staff);
+oRegistered_staff_expense.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistered_staff_expense.My_Currency);
+oList.Add(oRegistered_staff_expense);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registered_staff_expense_By_STAFF_ID_Adv");}
+return oList;
+}
+public List<Registered_staff_expense> Get_Registered_staff_expense_By_CURRENCY_ID_Adv(Params_Get_Registered_staff_expense_By_CURRENCY_ID i_Params_Get_Registered_staff_expense_By_CURRENCY_ID)
+{
+List<Registered_staff_expense> oList = new List<Registered_staff_expense>();
+Registered_staff_expense oRegistered_staff_expense = new Registered_staff_expense();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registered_staff_expense_By_CURRENCY_ID_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registered_staff_expense_By_CURRENCY_ID_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registered_staff_expense_By_CURRENCY_ID));}
+#region Body Section.
+List<DALC.Registered_staff_expense> oList_DBEntries = _AppContext.Get_Registered_staff_expense_By_CURRENCY_ID_Adv(i_Params_Get_Registered_staff_expense_By_CURRENCY_ID.CURRENCY_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistered_staff_expense = new Registered_staff_expense();
+oTools.CopyPropValues(oDBEntry, oRegistered_staff_expense);
+oRegistered_staff_expense.My_Staff = new Staff();
+oTools.CopyPropValues(oDBEntry.My_Staff, oRegistered_staff_expense.My_Staff);
+oRegistered_staff_expense.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistered_staff_expense.My_Currency);
+oList.Add(oRegistered_staff_expense);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registered_staff_expense_By_CURRENCY_ID_Adv");}
+return oList;
+}
+public List<Registered_staff_expense> Get_Registered_staff_expense_By_OWNER_ID_Adv(Params_Get_Registered_staff_expense_By_OWNER_ID i_Params_Get_Registered_staff_expense_By_OWNER_ID)
+{
+List<Registered_staff_expense> oList = new List<Registered_staff_expense>();
+Registered_staff_expense oRegistered_staff_expense = new Registered_staff_expense();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registered_staff_expense_By_OWNER_ID_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registered_staff_expense_By_OWNER_ID_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registered_staff_expense_By_OWNER_ID));}
+#region Body Section.
+List<DALC.Registered_staff_expense> oList_DBEntries = _AppContext.Get_Registered_staff_expense_By_OWNER_ID_Adv(i_Params_Get_Registered_staff_expense_By_OWNER_ID.OWNER_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistered_staff_expense = new Registered_staff_expense();
+oTools.CopyPropValues(oDBEntry, oRegistered_staff_expense);
+oRegistered_staff_expense.My_Staff = new Staff();
+oTools.CopyPropValues(oDBEntry.My_Staff, oRegistered_staff_expense.My_Staff);
+oRegistered_staff_expense.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistered_staff_expense.My_Currency);
+oList.Add(oRegistered_staff_expense);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registered_staff_expense_By_OWNER_ID_Adv");}
+return oList;
+}
+public List<Registered_supplier_expense> Get_Registered_supplier_expense_By_SUPPLIER_ID_Adv(Params_Get_Registered_supplier_expense_By_SUPPLIER_ID i_Params_Get_Registered_supplier_expense_By_SUPPLIER_ID)
+{
+List<Registered_supplier_expense> oList = new List<Registered_supplier_expense>();
+Registered_supplier_expense oRegistered_supplier_expense = new Registered_supplier_expense();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registered_supplier_expense_By_SUPPLIER_ID_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registered_supplier_expense_By_SUPPLIER_ID_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registered_supplier_expense_By_SUPPLIER_ID));}
+#region Body Section.
+List<DALC.Registered_supplier_expense> oList_DBEntries = _AppContext.Get_Registered_supplier_expense_By_SUPPLIER_ID_Adv(i_Params_Get_Registered_supplier_expense_By_SUPPLIER_ID.SUPPLIER_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistered_supplier_expense = new Registered_supplier_expense();
+oTools.CopyPropValues(oDBEntry, oRegistered_supplier_expense);
+oRegistered_supplier_expense.My_Supplier = new Supplier();
+oTools.CopyPropValues(oDBEntry.My_Supplier, oRegistered_supplier_expense.My_Supplier);
+oRegistered_supplier_expense.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistered_supplier_expense.My_Currency);
+oList.Add(oRegistered_supplier_expense);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registered_supplier_expense_By_SUPPLIER_ID_Adv");}
+return oList;
+}
+public List<Registered_supplier_expense> Get_Registered_supplier_expense_By_CURRENCY_ID_Adv(Params_Get_Registered_supplier_expense_By_CURRENCY_ID i_Params_Get_Registered_supplier_expense_By_CURRENCY_ID)
+{
+List<Registered_supplier_expense> oList = new List<Registered_supplier_expense>();
+Registered_supplier_expense oRegistered_supplier_expense = new Registered_supplier_expense();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registered_supplier_expense_By_CURRENCY_ID_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registered_supplier_expense_By_CURRENCY_ID_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registered_supplier_expense_By_CURRENCY_ID));}
+#region Body Section.
+List<DALC.Registered_supplier_expense> oList_DBEntries = _AppContext.Get_Registered_supplier_expense_By_CURRENCY_ID_Adv(i_Params_Get_Registered_supplier_expense_By_CURRENCY_ID.CURRENCY_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistered_supplier_expense = new Registered_supplier_expense();
+oTools.CopyPropValues(oDBEntry, oRegistered_supplier_expense);
+oRegistered_supplier_expense.My_Supplier = new Supplier();
+oTools.CopyPropValues(oDBEntry.My_Supplier, oRegistered_supplier_expense.My_Supplier);
+oRegistered_supplier_expense.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistered_supplier_expense.My_Currency);
+oList.Add(oRegistered_supplier_expense);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registered_supplier_expense_By_CURRENCY_ID_Adv");}
+return oList;
+}
+public List<Registered_supplier_expense> Get_Registered_supplier_expense_By_OWNER_ID_Adv(Params_Get_Registered_supplier_expense_By_OWNER_ID i_Params_Get_Registered_supplier_expense_By_OWNER_ID)
+{
+List<Registered_supplier_expense> oList = new List<Registered_supplier_expense>();
+Registered_supplier_expense oRegistered_supplier_expense = new Registered_supplier_expense();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registered_supplier_expense_By_OWNER_ID_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registered_supplier_expense_By_OWNER_ID_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registered_supplier_expense_By_OWNER_ID));}
+#region Body Section.
+List<DALC.Registered_supplier_expense> oList_DBEntries = _AppContext.Get_Registered_supplier_expense_By_OWNER_ID_Adv(i_Params_Get_Registered_supplier_expense_By_OWNER_ID.OWNER_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistered_supplier_expense = new Registered_supplier_expense();
+oTools.CopyPropValues(oDBEntry, oRegistered_supplier_expense);
+oRegistered_supplier_expense.My_Supplier = new Supplier();
+oTools.CopyPropValues(oDBEntry.My_Supplier, oRegistered_supplier_expense.My_Supplier);
+oRegistered_supplier_expense.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistered_supplier_expense.My_Currency);
+oList.Add(oRegistered_supplier_expense);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registered_supplier_expense_By_OWNER_ID_Adv");}
+return oList;
+}
 public List<Registration> Get_Registration_By_OWNER_ID_Adv(Params_Get_Registration_By_OWNER_ID i_Params_Get_Registration_By_OWNER_ID)
 {
 List<Registration> oList = new List<Registration>();
@@ -2015,6 +2259,8 @@ oStaff_fees.My_Staff = new Staff();
 oTools.CopyPropValues(oDBEntry.My_Staff, oStaff_fees.My_Staff);
 oStaff_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oStaff_fees.My_Currency);
+oStaff_fees.My_Registered_staff_expense = new Registered_staff_expense();
+oTools.CopyPropValues(oDBEntry.My_Registered_staff_expense, oStaff_fees.My_Registered_staff_expense);
 oList.Add(oStaff_fees);
 }
 }
@@ -2040,6 +2286,8 @@ oStaff_fees.My_Staff = new Staff();
 oTools.CopyPropValues(oDBEntry.My_Staff, oStaff_fees.My_Staff);
 oStaff_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oStaff_fees.My_Currency);
+oStaff_fees.My_Registered_staff_expense = new Registered_staff_expense();
+oTools.CopyPropValues(oDBEntry.My_Registered_staff_expense, oStaff_fees.My_Registered_staff_expense);
 oList.Add(oStaff_fees);
 }
 }
@@ -2065,11 +2313,40 @@ oStaff_fees.My_Staff = new Staff();
 oTools.CopyPropValues(oDBEntry.My_Staff, oStaff_fees.My_Staff);
 oStaff_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oStaff_fees.My_Currency);
+oStaff_fees.My_Registered_staff_expense = new Registered_staff_expense();
+oTools.CopyPropValues(oDBEntry.My_Registered_staff_expense, oStaff_fees.My_Registered_staff_expense);
 oList.Add(oStaff_fees);
 }
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Staff_fees_By_CURRENCY_ID_Adv");}
+return oList;
+}
+public List<Staff_fees> Get_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID_Adv(Params_Get_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID i_Params_Get_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID)
+{
+List<Staff_fees> oList = new List<Staff_fees>();
+Staff_fees oStaff_fees = new Staff_fees();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID));}
+#region Body Section.
+List<DALC.Staff_fees> oList_DBEntries = _AppContext.Get_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID_Adv(i_Params_Get_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID.REGISTERED_STAFF_EXPENSE_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oStaff_fees = new Staff_fees();
+oTools.CopyPropValues(oDBEntry, oStaff_fees);
+oStaff_fees.My_Staff = new Staff();
+oTools.CopyPropValues(oDBEntry.My_Staff, oStaff_fees.My_Staff);
+oStaff_fees.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oStaff_fees.My_Currency);
+oStaff_fees.My_Registered_staff_expense = new Registered_staff_expense();
+oTools.CopyPropValues(oDBEntry.My_Registered_staff_expense, oStaff_fees.My_Registered_staff_expense);
+oList.Add(oStaff_fees);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID_Adv");}
 return oList;
 }
 public List<Supplier> Get_Supplier_By_OWNER_ID_Adv(Params_Get_Supplier_By_OWNER_ID i_Params_Get_Supplier_By_OWNER_ID)
@@ -2136,6 +2413,8 @@ oSupplier_fees.My_Supplier = new Supplier();
 oTools.CopyPropValues(oDBEntry.My_Supplier, oSupplier_fees.My_Supplier);
 oSupplier_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oSupplier_fees.My_Currency);
+oSupplier_fees.My_Registered_supplier_expense = new Registered_supplier_expense();
+oTools.CopyPropValues(oDBEntry.My_Registered_supplier_expense, oSupplier_fees.My_Registered_supplier_expense);
 oList.Add(oSupplier_fees);
 }
 }
@@ -2161,6 +2440,8 @@ oSupplier_fees.My_Supplier = new Supplier();
 oTools.CopyPropValues(oDBEntry.My_Supplier, oSupplier_fees.My_Supplier);
 oSupplier_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oSupplier_fees.My_Currency);
+oSupplier_fees.My_Registered_supplier_expense = new Registered_supplier_expense();
+oTools.CopyPropValues(oDBEntry.My_Registered_supplier_expense, oSupplier_fees.My_Registered_supplier_expense);
 oList.Add(oSupplier_fees);
 }
 }
@@ -2186,11 +2467,40 @@ oSupplier_fees.My_Supplier = new Supplier();
 oTools.CopyPropValues(oDBEntry.My_Supplier, oSupplier_fees.My_Supplier);
 oSupplier_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oSupplier_fees.My_Currency);
+oSupplier_fees.My_Registered_supplier_expense = new Registered_supplier_expense();
+oTools.CopyPropValues(oDBEntry.My_Registered_supplier_expense, oSupplier_fees.My_Registered_supplier_expense);
 oList.Add(oSupplier_fees);
 }
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Supplier_fees_By_CURRENCY_ID_Adv");}
+return oList;
+}
+public List<Supplier_fees> Get_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID_Adv(Params_Get_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID i_Params_Get_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID)
+{
+List<Supplier_fees> oList = new List<Supplier_fees>();
+Supplier_fees oSupplier_fees = new Supplier_fees();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID));}
+#region Body Section.
+List<DALC.Supplier_fees> oList_DBEntries = _AppContext.Get_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID_Adv(i_Params_Get_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID.REGISTERED_SUPPLIER_EXPENSE_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oSupplier_fees = new Supplier_fees();
+oTools.CopyPropValues(oDBEntry, oSupplier_fees);
+oSupplier_fees.My_Supplier = new Supplier();
+oTools.CopyPropValues(oDBEntry.My_Supplier, oSupplier_fees.My_Supplier);
+oSupplier_fees.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oSupplier_fees.My_Currency);
+oSupplier_fees.My_Registered_supplier_expense = new Registered_supplier_expense();
+oTools.CopyPropValues(oDBEntry.My_Registered_supplier_expense, oSupplier_fees.My_Registered_supplier_expense);
+oList.Add(oSupplier_fees);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID_Adv");}
 return oList;
 }
 public List<User> Get_User_By_OWNER_ID_Adv(Params_Get_User_By_OWNER_ID i_Params_Get_User_By_OWNER_ID)
@@ -2667,6 +2977,106 @@ oList.Add(oPackage);
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Package_By_CURRENCY_ID_List_Adv");}
 return oList;
 }
+public List<Registered_staff_expense> Get_Registered_staff_expense_By_STAFF_ID_List_Adv(Params_Get_Registered_staff_expense_By_STAFF_ID_List i_Params_Get_Registered_staff_expense_By_STAFF_ID_List)
+{
+List<Registered_staff_expense> oList = new List<Registered_staff_expense>();
+Registered_staff_expense oRegistered_staff_expense = new Registered_staff_expense();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registered_staff_expense_By_STAFF_ID_List_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registered_staff_expense_By_STAFF_ID_List_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registered_staff_expense_By_STAFF_ID_List));}
+#region Body Section.
+List<DALC.Registered_staff_expense> oList_DBEntries = _AppContext.Get_Registered_staff_expense_By_STAFF_ID_List_Adv(i_Params_Get_Registered_staff_expense_By_STAFF_ID_List.STAFF_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistered_staff_expense = new Registered_staff_expense();
+oTools.CopyPropValues(oDBEntry, oRegistered_staff_expense);
+oRegistered_staff_expense.My_Staff = new Staff();
+oTools.CopyPropValues(oDBEntry.My_Staff, oRegistered_staff_expense.My_Staff);
+oRegistered_staff_expense.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistered_staff_expense.My_Currency);
+oList.Add(oRegistered_staff_expense);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registered_staff_expense_By_STAFF_ID_List_Adv");}
+return oList;
+}
+public List<Registered_staff_expense> Get_Registered_staff_expense_By_CURRENCY_ID_List_Adv(Params_Get_Registered_staff_expense_By_CURRENCY_ID_List i_Params_Get_Registered_staff_expense_By_CURRENCY_ID_List)
+{
+List<Registered_staff_expense> oList = new List<Registered_staff_expense>();
+Registered_staff_expense oRegistered_staff_expense = new Registered_staff_expense();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registered_staff_expense_By_CURRENCY_ID_List_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registered_staff_expense_By_CURRENCY_ID_List_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registered_staff_expense_By_CURRENCY_ID_List));}
+#region Body Section.
+List<DALC.Registered_staff_expense> oList_DBEntries = _AppContext.Get_Registered_staff_expense_By_CURRENCY_ID_List_Adv(i_Params_Get_Registered_staff_expense_By_CURRENCY_ID_List.CURRENCY_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistered_staff_expense = new Registered_staff_expense();
+oTools.CopyPropValues(oDBEntry, oRegistered_staff_expense);
+oRegistered_staff_expense.My_Staff = new Staff();
+oTools.CopyPropValues(oDBEntry.My_Staff, oRegistered_staff_expense.My_Staff);
+oRegistered_staff_expense.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistered_staff_expense.My_Currency);
+oList.Add(oRegistered_staff_expense);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registered_staff_expense_By_CURRENCY_ID_List_Adv");}
+return oList;
+}
+public List<Registered_supplier_expense> Get_Registered_supplier_expense_By_SUPPLIER_ID_List_Adv(Params_Get_Registered_supplier_expense_By_SUPPLIER_ID_List i_Params_Get_Registered_supplier_expense_By_SUPPLIER_ID_List)
+{
+List<Registered_supplier_expense> oList = new List<Registered_supplier_expense>();
+Registered_supplier_expense oRegistered_supplier_expense = new Registered_supplier_expense();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registered_supplier_expense_By_SUPPLIER_ID_List_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registered_supplier_expense_By_SUPPLIER_ID_List_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registered_supplier_expense_By_SUPPLIER_ID_List));}
+#region Body Section.
+List<DALC.Registered_supplier_expense> oList_DBEntries = _AppContext.Get_Registered_supplier_expense_By_SUPPLIER_ID_List_Adv(i_Params_Get_Registered_supplier_expense_By_SUPPLIER_ID_List.SUPPLIER_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistered_supplier_expense = new Registered_supplier_expense();
+oTools.CopyPropValues(oDBEntry, oRegistered_supplier_expense);
+oRegistered_supplier_expense.My_Supplier = new Supplier();
+oTools.CopyPropValues(oDBEntry.My_Supplier, oRegistered_supplier_expense.My_Supplier);
+oRegistered_supplier_expense.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistered_supplier_expense.My_Currency);
+oList.Add(oRegistered_supplier_expense);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registered_supplier_expense_By_SUPPLIER_ID_List_Adv");}
+return oList;
+}
+public List<Registered_supplier_expense> Get_Registered_supplier_expense_By_CURRENCY_ID_List_Adv(Params_Get_Registered_supplier_expense_By_CURRENCY_ID_List i_Params_Get_Registered_supplier_expense_By_CURRENCY_ID_List)
+{
+List<Registered_supplier_expense> oList = new List<Registered_supplier_expense>();
+Registered_supplier_expense oRegistered_supplier_expense = new Registered_supplier_expense();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Registered_supplier_expense_By_CURRENCY_ID_List_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Registered_supplier_expense_By_CURRENCY_ID_List_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Registered_supplier_expense_By_CURRENCY_ID_List));}
+#region Body Section.
+List<DALC.Registered_supplier_expense> oList_DBEntries = _AppContext.Get_Registered_supplier_expense_By_CURRENCY_ID_List_Adv(i_Params_Get_Registered_supplier_expense_By_CURRENCY_ID_List.CURRENCY_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oRegistered_supplier_expense = new Registered_supplier_expense();
+oTools.CopyPropValues(oDBEntry, oRegistered_supplier_expense);
+oRegistered_supplier_expense.My_Supplier = new Supplier();
+oTools.CopyPropValues(oDBEntry.My_Supplier, oRegistered_supplier_expense.My_Supplier);
+oRegistered_supplier_expense.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oRegistered_supplier_expense.My_Currency);
+oList.Add(oRegistered_supplier_expense);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Registered_supplier_expense_By_CURRENCY_ID_List_Adv");}
+return oList;
+}
 public List<Registration> Get_Registration_By_CLIENT_ID_List_Adv(Params_Get_Registration_By_CLIENT_ID_List i_Params_Get_Registration_By_CLIENT_ID_List)
 {
 List<Registration> oList = new List<Registration>();
@@ -2839,6 +3249,8 @@ oStaff_fees.My_Staff = new Staff();
 oTools.CopyPropValues(oDBEntry.My_Staff, oStaff_fees.My_Staff);
 oStaff_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oStaff_fees.My_Currency);
+oStaff_fees.My_Registered_staff_expense = new Registered_staff_expense();
+oTools.CopyPropValues(oDBEntry.My_Registered_staff_expense, oStaff_fees.My_Registered_staff_expense);
 oList.Add(oStaff_fees);
 }
 }
@@ -2864,11 +3276,40 @@ oStaff_fees.My_Staff = new Staff();
 oTools.CopyPropValues(oDBEntry.My_Staff, oStaff_fees.My_Staff);
 oStaff_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oStaff_fees.My_Currency);
+oStaff_fees.My_Registered_staff_expense = new Registered_staff_expense();
+oTools.CopyPropValues(oDBEntry.My_Registered_staff_expense, oStaff_fees.My_Registered_staff_expense);
 oList.Add(oStaff_fees);
 }
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Staff_fees_By_CURRENCY_ID_List_Adv");}
+return oList;
+}
+public List<Staff_fees> Get_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID_List_Adv(Params_Get_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID_List i_Params_Get_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID_List)
+{
+List<Staff_fees> oList = new List<Staff_fees>();
+Staff_fees oStaff_fees = new Staff_fees();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID_List_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID_List_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID_List));}
+#region Body Section.
+List<DALC.Staff_fees> oList_DBEntries = _AppContext.Get_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID_List_Adv(i_Params_Get_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID_List.REGISTERED_STAFF_EXPENSE_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oStaff_fees = new Staff_fees();
+oTools.CopyPropValues(oDBEntry, oStaff_fees);
+oStaff_fees.My_Staff = new Staff();
+oTools.CopyPropValues(oDBEntry.My_Staff, oStaff_fees.My_Staff);
+oStaff_fees.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oStaff_fees.My_Currency);
+oStaff_fees.My_Registered_staff_expense = new Registered_staff_expense();
+oTools.CopyPropValues(oDBEntry.My_Registered_staff_expense, oStaff_fees.My_Registered_staff_expense);
+oList.Add(oStaff_fees);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID_List_Adv");}
 return oList;
 }
 public List<Supplier> Get_Supplier_By_BLOODTYPE_ID_List_Adv(Params_Get_Supplier_By_BLOODTYPE_ID_List i_Params_Get_Supplier_By_BLOODTYPE_ID_List)
@@ -2912,6 +3353,8 @@ oSupplier_fees.My_Supplier = new Supplier();
 oTools.CopyPropValues(oDBEntry.My_Supplier, oSupplier_fees.My_Supplier);
 oSupplier_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oSupplier_fees.My_Currency);
+oSupplier_fees.My_Registered_supplier_expense = new Registered_supplier_expense();
+oTools.CopyPropValues(oDBEntry.My_Registered_supplier_expense, oSupplier_fees.My_Registered_supplier_expense);
 oList.Add(oSupplier_fees);
 }
 }
@@ -2937,11 +3380,40 @@ oSupplier_fees.My_Supplier = new Supplier();
 oTools.CopyPropValues(oDBEntry.My_Supplier, oSupplier_fees.My_Supplier);
 oSupplier_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oSupplier_fees.My_Currency);
+oSupplier_fees.My_Registered_supplier_expense = new Registered_supplier_expense();
+oTools.CopyPropValues(oDBEntry.My_Registered_supplier_expense, oSupplier_fees.My_Registered_supplier_expense);
 oList.Add(oSupplier_fees);
 }
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Supplier_fees_By_CURRENCY_ID_List_Adv");}
+return oList;
+}
+public List<Supplier_fees> Get_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID_List_Adv(Params_Get_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID_List i_Params_Get_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID_List)
+{
+List<Supplier_fees> oList = new List<Supplier_fees>();
+Supplier_fees oSupplier_fees = new Supplier_fees();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID_List_Adv");}
+if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID_List_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID_List));}
+#region Body Section.
+List<DALC.Supplier_fees> oList_DBEntries = _AppContext.Get_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID_List_Adv(i_Params_Get_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID_List.REGISTERED_SUPPLIER_EXPENSE_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oSupplier_fees = new Supplier_fees();
+oTools.CopyPropValues(oDBEntry, oSupplier_fees);
+oSupplier_fees.My_Supplier = new Supplier();
+oTools.CopyPropValues(oDBEntry.My_Supplier, oSupplier_fees.My_Supplier);
+oSupplier_fees.My_Currency = new Currency();
+oTools.CopyPropValues(oDBEntry.My_Currency, oSupplier_fees.My_Currency);
+oSupplier_fees.My_Registered_supplier_expense = new Registered_supplier_expense();
+oTools.CopyPropValues(oDBEntry.My_Registered_supplier_expense, oSupplier_fees.My_Registered_supplier_expense);
+oList.Add(oSupplier_fees);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID_List_Adv");}
 return oList;
 }
 public List<Address> Get_Address_By_Criteria_Adv(Params_Get_Address_By_Criteria i_Params_Get_Address_By_Criteria)
@@ -4462,6 +4934,8 @@ oStaff_fees.My_Staff = new Staff();
 oTools.CopyPropValues(oDBEntry.My_Staff, oStaff_fees.My_Staff);
 oStaff_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oStaff_fees.My_Currency);
+oStaff_fees.My_Registered_staff_expense = new Registered_staff_expense();
+oTools.CopyPropValues(oDBEntry.My_Registered_staff_expense, oStaff_fees.My_Registered_staff_expense);
 oList.Add(oStaff_fees);
 }
 }
@@ -4492,6 +4966,8 @@ oStaff_fees.My_Staff = new Staff();
 oTools.CopyPropValues(oDBEntry.My_Staff, oStaff_fees.My_Staff);
 oStaff_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oStaff_fees.My_Currency);
+oStaff_fees.My_Registered_staff_expense = new Registered_staff_expense();
+oTools.CopyPropValues(oDBEntry.My_Registered_staff_expense, oStaff_fees.My_Registered_staff_expense);
 oList.Add(oStaff_fees);
 }
 }
@@ -4634,6 +5110,8 @@ oSupplier_fees.My_Supplier = new Supplier();
 oTools.CopyPropValues(oDBEntry.My_Supplier, oSupplier_fees.My_Supplier);
 oSupplier_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oSupplier_fees.My_Currency);
+oSupplier_fees.My_Registered_supplier_expense = new Registered_supplier_expense();
+oTools.CopyPropValues(oDBEntry.My_Registered_supplier_expense, oSupplier_fees.My_Registered_supplier_expense);
 oList.Add(oSupplier_fees);
 }
 }
@@ -4664,6 +5142,8 @@ oSupplier_fees.My_Supplier = new Supplier();
 oTools.CopyPropValues(oDBEntry.My_Supplier, oSupplier_fees.My_Supplier);
 oSupplier_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oSupplier_fees.My_Currency);
+oSupplier_fees.My_Registered_supplier_expense = new Registered_supplier_expense();
+oTools.CopyPropValues(oDBEntry.My_Registered_supplier_expense, oSupplier_fees.My_Registered_supplier_expense);
 oList.Add(oSupplier_fees);
 }
 }
@@ -6640,6 +7120,7 @@ long? tmp_TOTAL_COUNT = 0;
 Params_Get_Staff_fees_By_Criteria_InList_SP oParams_Get_Staff_fees_By_Criteria_InList_SP = new Params_Get_Staff_fees_By_Criteria_InList_SP();
 Params_Get_Staff_By_STAFF_ID oParams_Get_Staff_By_STAFF_ID = new Params_Get_Staff_By_STAFF_ID();
 Params_Get_Currency_By_CURRENCY_ID oParams_Get_Currency_By_CURRENCY_ID = new Params_Get_Currency_By_CURRENCY_ID();
+Params_Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID oParams_Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID = new Params_Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID();
 if (OnPreEvent_General != null){OnPreEvent_General("Get_Staff_fees_By_Criteria_InList_Adv");}
 if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Staff_fees_By_Criteria_InList_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Staff_fees_By_Criteria_InList));}
 #region Body Section.
@@ -6658,10 +7139,15 @@ if ( i_Params_Get_Staff_fees_By_Criteria_InList.CURRENCY_ID_LIST == null)
 i_Params_Get_Staff_fees_By_Criteria_InList.CURRENCY_ID_LIST = new List<Int32?>();
 }
 oParams_Get_Staff_fees_By_Criteria_InList_SP.CURRENCY_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Staff_fees_By_Criteria_InList.CURRENCY_ID_LIST);
+if ( i_Params_Get_Staff_fees_By_Criteria_InList.REGISTERED_STAFF_EXPENSE_ID_LIST == null)
+{
+i_Params_Get_Staff_fees_By_Criteria_InList.REGISTERED_STAFF_EXPENSE_ID_LIST = new List<Int32?>();
+}
+oParams_Get_Staff_fees_By_Criteria_InList_SP.REGISTERED_STAFF_EXPENSE_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Staff_fees_By_Criteria_InList.REGISTERED_STAFF_EXPENSE_ID_LIST);
 oParams_Get_Staff_fees_By_Criteria_InList_SP.START_ROW = i_Params_Get_Staff_fees_By_Criteria_InList.START_ROW;
 oParams_Get_Staff_fees_By_Criteria_InList_SP.END_ROW = i_Params_Get_Staff_fees_By_Criteria_InList.END_ROW;
 oParams_Get_Staff_fees_By_Criteria_InList_SP.TOTAL_COUNT = i_Params_Get_Staff_fees_By_Criteria_InList.TOTAL_COUNT;
-List<DALC.Staff_fees> oList_DBEntries = _AppContext.Get_Staff_fees_By_Criteria_InList_Adv(i_Params_Get_Staff_fees_By_Criteria_InList.STAFF_FEES_DESCRIPTION,i_Params_Get_Staff_fees_By_Criteria_InList.STAFF_ID_LIST,i_Params_Get_Staff_fees_By_Criteria_InList.CURRENCY_ID_LIST,i_Params_Get_Staff_fees_By_Criteria_InList.OWNER_ID,i_Params_Get_Staff_fees_By_Criteria_InList.START_ROW,i_Params_Get_Staff_fees_By_Criteria_InList.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Staff_fees> oList_DBEntries = _AppContext.Get_Staff_fees_By_Criteria_InList_Adv(i_Params_Get_Staff_fees_By_Criteria_InList.STAFF_FEES_DESCRIPTION,i_Params_Get_Staff_fees_By_Criteria_InList.STAFF_ID_LIST,i_Params_Get_Staff_fees_By_Criteria_InList.CURRENCY_ID_LIST,i_Params_Get_Staff_fees_By_Criteria_InList.REGISTERED_STAFF_EXPENSE_ID_LIST,i_Params_Get_Staff_fees_By_Criteria_InList.OWNER_ID,i_Params_Get_Staff_fees_By_Criteria_InList.START_ROW,i_Params_Get_Staff_fees_By_Criteria_InList.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -6672,6 +7158,8 @@ oStaff_fees.My_Staff = new Staff();
 oTools.CopyPropValues(oDBEntry.My_Staff, oStaff_fees.My_Staff);
 oStaff_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oStaff_fees.My_Currency);
+oStaff_fees.My_Registered_staff_expense = new Registered_staff_expense();
+oTools.CopyPropValues(oDBEntry.My_Registered_staff_expense, oStaff_fees.My_Registered_staff_expense);
 oList.Add(oStaff_fees);
 }
 }
@@ -6689,6 +7177,7 @@ long? tmp_TOTAL_COUNT = 0;
 Params_Get_Staff_fees_By_Where_InList_SP oParams_Get_Staff_fees_By_Where_InList_SP = new Params_Get_Staff_fees_By_Where_InList_SP();
 Params_Get_Staff_By_STAFF_ID oParams_Get_Staff_By_STAFF_ID = new Params_Get_Staff_By_STAFF_ID();
 Params_Get_Currency_By_CURRENCY_ID oParams_Get_Currency_By_CURRENCY_ID = new Params_Get_Currency_By_CURRENCY_ID();
+Params_Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID oParams_Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID = new Params_Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID();
 if (OnPreEvent_General != null){OnPreEvent_General("Get_Staff_fees_By_Where_InList_Adv");}
 if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Staff_fees_By_Where_InList_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Staff_fees_By_Where_InList));}
 #region Body Section.
@@ -6707,10 +7196,15 @@ if ( i_Params_Get_Staff_fees_By_Where_InList.CURRENCY_ID_LIST == null)
 i_Params_Get_Staff_fees_By_Where_InList.CURRENCY_ID_LIST = new List<Int32?>();
 }
 oParams_Get_Staff_fees_By_Where_InList_SP.CURRENCY_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Staff_fees_By_Where_InList.CURRENCY_ID_LIST);
+if ( i_Params_Get_Staff_fees_By_Where_InList.REGISTERED_STAFF_EXPENSE_ID_LIST == null)
+{
+i_Params_Get_Staff_fees_By_Where_InList.REGISTERED_STAFF_EXPENSE_ID_LIST = new List<Int32?>();
+}
+oParams_Get_Staff_fees_By_Where_InList_SP.REGISTERED_STAFF_EXPENSE_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Staff_fees_By_Where_InList.REGISTERED_STAFF_EXPENSE_ID_LIST);
 oParams_Get_Staff_fees_By_Where_InList_SP.START_ROW = i_Params_Get_Staff_fees_By_Where_InList.START_ROW;
 oParams_Get_Staff_fees_By_Where_InList_SP.END_ROW = i_Params_Get_Staff_fees_By_Where_InList.END_ROW;
 oParams_Get_Staff_fees_By_Where_InList_SP.TOTAL_COUNT = i_Params_Get_Staff_fees_By_Where_InList.TOTAL_COUNT;
-List<DALC.Staff_fees> oList_DBEntries = _AppContext.Get_Staff_fees_By_Where_InList_Adv(i_Params_Get_Staff_fees_By_Where_InList.STAFF_FEES_DESCRIPTION,i_Params_Get_Staff_fees_By_Where_InList.STAFF_ID_LIST,i_Params_Get_Staff_fees_By_Where_InList.CURRENCY_ID_LIST,i_Params_Get_Staff_fees_By_Where_InList.OWNER_ID,i_Params_Get_Staff_fees_By_Where_InList.START_ROW,i_Params_Get_Staff_fees_By_Where_InList.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Staff_fees> oList_DBEntries = _AppContext.Get_Staff_fees_By_Where_InList_Adv(i_Params_Get_Staff_fees_By_Where_InList.STAFF_FEES_DESCRIPTION,i_Params_Get_Staff_fees_By_Where_InList.STAFF_ID_LIST,i_Params_Get_Staff_fees_By_Where_InList.CURRENCY_ID_LIST,i_Params_Get_Staff_fees_By_Where_InList.REGISTERED_STAFF_EXPENSE_ID_LIST,i_Params_Get_Staff_fees_By_Where_InList.OWNER_ID,i_Params_Get_Staff_fees_By_Where_InList.START_ROW,i_Params_Get_Staff_fees_By_Where_InList.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -6721,6 +7215,8 @@ oStaff_fees.My_Staff = new Staff();
 oTools.CopyPropValues(oDBEntry.My_Staff, oStaff_fees.My_Staff);
 oStaff_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oStaff_fees.My_Currency);
+oStaff_fees.My_Registered_staff_expense = new Registered_staff_expense();
+oTools.CopyPropValues(oDBEntry.My_Registered_staff_expense, oStaff_fees.My_Registered_staff_expense);
 oList.Add(oStaff_fees);
 }
 }
@@ -6916,6 +7412,7 @@ long? tmp_TOTAL_COUNT = 0;
 Params_Get_Supplier_fees_By_Criteria_InList_SP oParams_Get_Supplier_fees_By_Criteria_InList_SP = new Params_Get_Supplier_fees_By_Criteria_InList_SP();
 Params_Get_Supplier_By_SUPPLIER_ID oParams_Get_Supplier_By_SUPPLIER_ID = new Params_Get_Supplier_By_SUPPLIER_ID();
 Params_Get_Currency_By_CURRENCY_ID oParams_Get_Currency_By_CURRENCY_ID = new Params_Get_Currency_By_CURRENCY_ID();
+Params_Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID oParams_Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID = new Params_Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID();
 if (OnPreEvent_General != null){OnPreEvent_General("Get_Supplier_fees_By_Criteria_InList_Adv");}
 if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Supplier_fees_By_Criteria_InList_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Supplier_fees_By_Criteria_InList));}
 #region Body Section.
@@ -6934,10 +7431,15 @@ if ( i_Params_Get_Supplier_fees_By_Criteria_InList.CURRENCY_ID_LIST == null)
 i_Params_Get_Supplier_fees_By_Criteria_InList.CURRENCY_ID_LIST = new List<Int32?>();
 }
 oParams_Get_Supplier_fees_By_Criteria_InList_SP.CURRENCY_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Supplier_fees_By_Criteria_InList.CURRENCY_ID_LIST);
+if ( i_Params_Get_Supplier_fees_By_Criteria_InList.REGISTERED_SUPPLIER_EXPENSE_ID_LIST == null)
+{
+i_Params_Get_Supplier_fees_By_Criteria_InList.REGISTERED_SUPPLIER_EXPENSE_ID_LIST = new List<Int32?>();
+}
+oParams_Get_Supplier_fees_By_Criteria_InList_SP.REGISTERED_SUPPLIER_EXPENSE_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Supplier_fees_By_Criteria_InList.REGISTERED_SUPPLIER_EXPENSE_ID_LIST);
 oParams_Get_Supplier_fees_By_Criteria_InList_SP.START_ROW = i_Params_Get_Supplier_fees_By_Criteria_InList.START_ROW;
 oParams_Get_Supplier_fees_By_Criteria_InList_SP.END_ROW = i_Params_Get_Supplier_fees_By_Criteria_InList.END_ROW;
 oParams_Get_Supplier_fees_By_Criteria_InList_SP.TOTAL_COUNT = i_Params_Get_Supplier_fees_By_Criteria_InList.TOTAL_COUNT;
-List<DALC.Supplier_fees> oList_DBEntries = _AppContext.Get_Supplier_fees_By_Criteria_InList_Adv(i_Params_Get_Supplier_fees_By_Criteria_InList.SUPPLIER_FEES_DESCRIPTION,i_Params_Get_Supplier_fees_By_Criteria_InList.SUPPLIER_ID_LIST,i_Params_Get_Supplier_fees_By_Criteria_InList.CURRENCY_ID_LIST,i_Params_Get_Supplier_fees_By_Criteria_InList.OWNER_ID,i_Params_Get_Supplier_fees_By_Criteria_InList.START_ROW,i_Params_Get_Supplier_fees_By_Criteria_InList.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Supplier_fees> oList_DBEntries = _AppContext.Get_Supplier_fees_By_Criteria_InList_Adv(i_Params_Get_Supplier_fees_By_Criteria_InList.SUPPLIER_FEES_DESCRIPTION,i_Params_Get_Supplier_fees_By_Criteria_InList.SUPPLIER_ID_LIST,i_Params_Get_Supplier_fees_By_Criteria_InList.CURRENCY_ID_LIST,i_Params_Get_Supplier_fees_By_Criteria_InList.REGISTERED_SUPPLIER_EXPENSE_ID_LIST,i_Params_Get_Supplier_fees_By_Criteria_InList.OWNER_ID,i_Params_Get_Supplier_fees_By_Criteria_InList.START_ROW,i_Params_Get_Supplier_fees_By_Criteria_InList.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -6948,6 +7450,8 @@ oSupplier_fees.My_Supplier = new Supplier();
 oTools.CopyPropValues(oDBEntry.My_Supplier, oSupplier_fees.My_Supplier);
 oSupplier_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oSupplier_fees.My_Currency);
+oSupplier_fees.My_Registered_supplier_expense = new Registered_supplier_expense();
+oTools.CopyPropValues(oDBEntry.My_Registered_supplier_expense, oSupplier_fees.My_Registered_supplier_expense);
 oList.Add(oSupplier_fees);
 }
 }
@@ -6965,6 +7469,7 @@ long? tmp_TOTAL_COUNT = 0;
 Params_Get_Supplier_fees_By_Where_InList_SP oParams_Get_Supplier_fees_By_Where_InList_SP = new Params_Get_Supplier_fees_By_Where_InList_SP();
 Params_Get_Supplier_By_SUPPLIER_ID oParams_Get_Supplier_By_SUPPLIER_ID = new Params_Get_Supplier_By_SUPPLIER_ID();
 Params_Get_Currency_By_CURRENCY_ID oParams_Get_Currency_By_CURRENCY_ID = new Params_Get_Currency_By_CURRENCY_ID();
+Params_Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID oParams_Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID = new Params_Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID();
 if (OnPreEvent_General != null){OnPreEvent_General("Get_Supplier_fees_By_Where_InList_Adv");}
 if (OnPreEvent_General_Adv != null){OnPreEvent_General_Adv("Get_Supplier_fees_By_Where_InList_Adv",Newtonsoft.Json.JsonConvert.SerializeObject(i_Params_Get_Supplier_fees_By_Where_InList));}
 #region Body Section.
@@ -6983,10 +7488,15 @@ if ( i_Params_Get_Supplier_fees_By_Where_InList.CURRENCY_ID_LIST == null)
 i_Params_Get_Supplier_fees_By_Where_InList.CURRENCY_ID_LIST = new List<Int32?>();
 }
 oParams_Get_Supplier_fees_By_Where_InList_SP.CURRENCY_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Supplier_fees_By_Where_InList.CURRENCY_ID_LIST);
+if ( i_Params_Get_Supplier_fees_By_Where_InList.REGISTERED_SUPPLIER_EXPENSE_ID_LIST == null)
+{
+i_Params_Get_Supplier_fees_By_Where_InList.REGISTERED_SUPPLIER_EXPENSE_ID_LIST = new List<Int32?>();
+}
+oParams_Get_Supplier_fees_By_Where_InList_SP.REGISTERED_SUPPLIER_EXPENSE_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Supplier_fees_By_Where_InList.REGISTERED_SUPPLIER_EXPENSE_ID_LIST);
 oParams_Get_Supplier_fees_By_Where_InList_SP.START_ROW = i_Params_Get_Supplier_fees_By_Where_InList.START_ROW;
 oParams_Get_Supplier_fees_By_Where_InList_SP.END_ROW = i_Params_Get_Supplier_fees_By_Where_InList.END_ROW;
 oParams_Get_Supplier_fees_By_Where_InList_SP.TOTAL_COUNT = i_Params_Get_Supplier_fees_By_Where_InList.TOTAL_COUNT;
-List<DALC.Supplier_fees> oList_DBEntries = _AppContext.Get_Supplier_fees_By_Where_InList_Adv(i_Params_Get_Supplier_fees_By_Where_InList.SUPPLIER_FEES_DESCRIPTION,i_Params_Get_Supplier_fees_By_Where_InList.SUPPLIER_ID_LIST,i_Params_Get_Supplier_fees_By_Where_InList.CURRENCY_ID_LIST,i_Params_Get_Supplier_fees_By_Where_InList.OWNER_ID,i_Params_Get_Supplier_fees_By_Where_InList.START_ROW,i_Params_Get_Supplier_fees_By_Where_InList.END_ROW,ref tmp_TOTAL_COUNT);
+List<DALC.Supplier_fees> oList_DBEntries = _AppContext.Get_Supplier_fees_By_Where_InList_Adv(i_Params_Get_Supplier_fees_By_Where_InList.SUPPLIER_FEES_DESCRIPTION,i_Params_Get_Supplier_fees_By_Where_InList.SUPPLIER_ID_LIST,i_Params_Get_Supplier_fees_By_Where_InList.CURRENCY_ID_LIST,i_Params_Get_Supplier_fees_By_Where_InList.REGISTERED_SUPPLIER_EXPENSE_ID_LIST,i_Params_Get_Supplier_fees_By_Where_InList.OWNER_ID,i_Params_Get_Supplier_fees_By_Where_InList.START_ROW,i_Params_Get_Supplier_fees_By_Where_InList.END_ROW,ref tmp_TOTAL_COUNT);
 if (oList_DBEntries != null)
 {
 foreach (var oDBEntry in oList_DBEntries)
@@ -6997,6 +7507,8 @@ oSupplier_fees.My_Supplier = new Supplier();
 oTools.CopyPropValues(oDBEntry.My_Supplier, oSupplier_fees.My_Supplier);
 oSupplier_fees.My_Currency = new Currency();
 oTools.CopyPropValues(oDBEntry.My_Currency, oSupplier_fees.My_Currency);
+oSupplier_fees.My_Registered_supplier_expense = new Registered_supplier_expense();
+oTools.CopyPropValues(oDBEntry.My_Registered_supplier_expense, oSupplier_fees.My_Registered_supplier_expense);
 oList.Add(oSupplier_fees);
 }
 }

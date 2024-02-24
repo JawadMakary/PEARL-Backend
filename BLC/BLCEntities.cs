@@ -156,6 +156,24 @@ public long? PERSON_ID {get;set;}
 #endregion
 }
 #endregion
+#region Params_Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID
+public partial class Params_Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID
+{
+#region Properties
+public Int32? REGISTERED_STAFF_EXPENSE_ID {get;set;}
+
+#endregion
+}
+#endregion
+#region Params_Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID
+public partial class Params_Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID
+{
+#region Properties
+public Int32? REGISTERED_SUPPLIER_EXPENSE_ID {get;set;}
+
+#endregion
+}
+#endregion
 #region Params_Get_Registration_By_REGISTRATION_ID
 public partial class Params_Get_Registration_By_REGISTRATION_ID
 {
@@ -352,6 +370,24 @@ public List<long?> PERSON_ID_LIST {get;set;}
 public partial class Params_Get_Person_By_PERSON_ID_List_SP
 {
 public string PERSON_ID_LIST {get;set;}
+
+}
+public partial class Params_Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID_List
+{
+public List<Int32?> REGISTERED_STAFF_EXPENSE_ID_LIST {get;set;}
+}
+public partial class Params_Get_Registered_staff_expense_By_REGISTERED_STAFF_EXPENSE_ID_List_SP
+{
+public string REGISTERED_STAFF_EXPENSE_ID_LIST {get;set;}
+
+}
+public partial class Params_Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID_List
+{
+public List<Int32?> REGISTERED_SUPPLIER_EXPENSE_ID_LIST {get;set;}
+}
+public partial class Params_Get_Registered_supplier_expense_By_REGISTERED_SUPPLIER_EXPENSE_ID_List_SP
+{
+public string REGISTERED_SUPPLIER_EXPENSE_ID_LIST {get;set;}
 
 }
 public partial class Params_Get_Registration_By_REGISTRATION_ID_List
@@ -603,6 +639,36 @@ public partial class Params_Get_Person_By_OWNER_ID
 public Int32? OWNER_ID {get;set;}
 
 }
+public partial class Params_Get_Registered_staff_expense_By_STAFF_ID
+{
+public Int32? STAFF_ID {get;set;}
+
+}
+public partial class Params_Get_Registered_staff_expense_By_CURRENCY_ID
+{
+public Int32? CURRENCY_ID {get;set;}
+
+}
+public partial class Params_Get_Registered_staff_expense_By_OWNER_ID
+{
+public Int32? OWNER_ID {get;set;}
+
+}
+public partial class Params_Get_Registered_supplier_expense_By_SUPPLIER_ID
+{
+public Int32? SUPPLIER_ID {get;set;}
+
+}
+public partial class Params_Get_Registered_supplier_expense_By_CURRENCY_ID
+{
+public Int32? CURRENCY_ID {get;set;}
+
+}
+public partial class Params_Get_Registered_supplier_expense_By_OWNER_ID
+{
+public Int32? OWNER_ID {get;set;}
+
+}
 public partial class Params_Get_Registration_By_OWNER_ID
 {
 public Int32? OWNER_ID {get;set;}
@@ -663,6 +729,11 @@ public partial class Params_Get_Staff_fees_By_CURRENCY_ID
 public Int32? CURRENCY_ID {get;set;}
 
 }
+public partial class Params_Get_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID
+{
+public Int32? REGISTERED_STAFF_EXPENSE_ID {get;set;}
+
+}
 public partial class Params_Get_Supplier_By_OWNER_ID
 {
 public Int32? OWNER_ID {get;set;}
@@ -686,6 +757,11 @@ public Int32? SUPPLIER_ID {get;set;}
 public partial class Params_Get_Supplier_fees_By_CURRENCY_ID
 {
 public Int32? CURRENCY_ID {get;set;}
+
+}
+public partial class Params_Get_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID
+{
+public Int32? REGISTERED_SUPPLIER_EXPENSE_ID {get;set;}
 
 }
 public partial class Params_Get_User_By_OWNER_ID
@@ -778,6 +854,26 @@ public partial class Params_Get_Package_By_CURRENCY_ID_List
 public List<Int32?> CURRENCY_ID_LIST {get;set;}
 
 }
+public partial class Params_Get_Registered_staff_expense_By_STAFF_ID_List
+{
+public List<Int32?> STAFF_ID_LIST {get;set;}
+
+}
+public partial class Params_Get_Registered_staff_expense_By_CURRENCY_ID_List
+{
+public List<Int32?> CURRENCY_ID_LIST {get;set;}
+
+}
+public partial class Params_Get_Registered_supplier_expense_By_SUPPLIER_ID_List
+{
+public List<Int32?> SUPPLIER_ID_LIST {get;set;}
+
+}
+public partial class Params_Get_Registered_supplier_expense_By_CURRENCY_ID_List
+{
+public List<Int32?> CURRENCY_ID_LIST {get;set;}
+
+}
 public partial class Params_Get_Registration_By_CLIENT_ID_List
 {
 public List<Int32?> CLIENT_ID_LIST {get;set;}
@@ -818,6 +914,11 @@ public partial class Params_Get_Staff_fees_By_CURRENCY_ID_List
 public List<Int32?> CURRENCY_ID_LIST {get;set;}
 
 }
+public partial class Params_Get_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID_List
+{
+public List<Int32?> REGISTERED_STAFF_EXPENSE_ID_LIST {get;set;}
+
+}
 public partial class Params_Get_Supplier_By_BLOODTYPE_ID_List
 {
 public List<Int32?> BLOODTYPE_ID_LIST {get;set;}
@@ -831,6 +932,11 @@ public List<Int32?> SUPPLIER_ID_LIST {get;set;}
 public partial class Params_Get_Supplier_fees_By_CURRENCY_ID_List
 {
 public List<Int32?> CURRENCY_ID_LIST {get;set;}
+
+}
+public partial class Params_Get_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID_List
+{
+public List<Int32?> REGISTERED_SUPPLIER_EXPENSE_ID_LIST {get;set;}
 
 }
 public partial class Params_Get_Address_By_Criteria
@@ -2524,6 +2630,7 @@ public Int32? OWNER_ID {get;set;}
 public string STAFF_FEES_DESCRIPTION {get;set;}
 public List<Int32?> STAFF_ID_LIST {get;set;}
 public List<Int32?> CURRENCY_ID_LIST {get;set;}
+public List<Int32?> REGISTERED_STAFF_EXPENSE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -2534,6 +2641,7 @@ public Int32? OWNER_ID {get;set;}
 public string STAFF_FEES_DESCRIPTION {get;set;}
 public string STAFF_ID_LIST {get;set;}
 public string CURRENCY_ID_LIST {get;set;}
+public string REGISTERED_STAFF_EXPENSE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -2545,6 +2653,7 @@ public Int32? OWNER_ID {get;set;}
 public string STAFF_FEES_DESCRIPTION {get;set;}
 public List<Int32?> STAFF_ID_LIST {get;set;}
 public List<Int32?> CURRENCY_ID_LIST {get;set;}
+public List<Int32?> REGISTERED_STAFF_EXPENSE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -2555,6 +2664,7 @@ public Int32? OWNER_ID {get;set;}
 public string STAFF_FEES_DESCRIPTION {get;set;}
 public string STAFF_ID_LIST {get;set;}
 public string CURRENCY_ID_LIST {get;set;}
+public string REGISTERED_STAFF_EXPENSE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -2670,6 +2780,7 @@ public Int32? OWNER_ID {get;set;}
 public string SUPPLIER_FEES_DESCRIPTION {get;set;}
 public List<Int32?> SUPPLIER_ID_LIST {get;set;}
 public List<Int32?> CURRENCY_ID_LIST {get;set;}
+public List<Int32?> REGISTERED_SUPPLIER_EXPENSE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -2680,6 +2791,7 @@ public Int32? OWNER_ID {get;set;}
 public string SUPPLIER_FEES_DESCRIPTION {get;set;}
 public string SUPPLIER_ID_LIST {get;set;}
 public string CURRENCY_ID_LIST {get;set;}
+public string REGISTERED_SUPPLIER_EXPENSE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -2691,6 +2803,7 @@ public Int32? OWNER_ID {get;set;}
 public string SUPPLIER_FEES_DESCRIPTION {get;set;}
 public List<Int32?> SUPPLIER_ID_LIST {get;set;}
 public List<Int32?> CURRENCY_ID_LIST {get;set;}
+public List<Int32?> REGISTERED_SUPPLIER_EXPENSE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -2701,6 +2814,7 @@ public Int32? OWNER_ID {get;set;}
 public string SUPPLIER_FEES_DESCRIPTION {get;set;}
 public string SUPPLIER_ID_LIST {get;set;}
 public string CURRENCY_ID_LIST {get;set;}
+public string REGISTERED_SUPPLIER_EXPENSE_ID_LIST {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -2822,6 +2936,22 @@ public partial class Params_Delete_Person
 {
 #region Properties
 public long? PERSON_ID {get;set;}
+#endregion
+}
+#endregion
+#region Params_Delete_Registered_staff_expense
+public partial class Params_Delete_Registered_staff_expense
+{
+#region Properties
+public Int32? REGISTERED_STAFF_EXPENSE_ID {get;set;}
+#endregion
+}
+#endregion
+#region Params_Delete_Registered_supplier_expense
+public partial class Params_Delete_Registered_supplier_expense
+{
+#region Properties
+public Int32? REGISTERED_SUPPLIER_EXPENSE_ID {get;set;}
 #endregion
 }
 #endregion
@@ -3031,6 +3161,30 @@ public partial class Params_Delete_Person_By_OWNER_ID
 {
 public Int32? OWNER_ID {get;set;}
 }
+public partial class Params_Delete_Registered_staff_expense_By_STAFF_ID
+{
+public Int32? STAFF_ID {get;set;}
+}
+public partial class Params_Delete_Registered_staff_expense_By_CURRENCY_ID
+{
+public Int32? CURRENCY_ID {get;set;}
+}
+public partial class Params_Delete_Registered_staff_expense_By_OWNER_ID
+{
+public Int32? OWNER_ID {get;set;}
+}
+public partial class Params_Delete_Registered_supplier_expense_By_SUPPLIER_ID
+{
+public Int32? SUPPLIER_ID {get;set;}
+}
+public partial class Params_Delete_Registered_supplier_expense_By_CURRENCY_ID
+{
+public Int32? CURRENCY_ID {get;set;}
+}
+public partial class Params_Delete_Registered_supplier_expense_By_OWNER_ID
+{
+public Int32? OWNER_ID {get;set;}
+}
 public partial class Params_Delete_Registration_By_OWNER_ID
 {
 public Int32? OWNER_ID {get;set;}
@@ -3079,6 +3233,10 @@ public partial class Params_Delete_Staff_fees_By_CURRENCY_ID
 {
 public Int32? CURRENCY_ID {get;set;}
 }
+public partial class Params_Delete_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID
+{
+public Int32? REGISTERED_STAFF_EXPENSE_ID {get;set;}
+}
 public partial class Params_Delete_Supplier_By_OWNER_ID
 {
 public Int32? OWNER_ID {get;set;}
@@ -3098,6 +3256,10 @@ public Int32? SUPPLIER_ID {get;set;}
 public partial class Params_Delete_Supplier_fees_By_CURRENCY_ID
 {
 public Int32? CURRENCY_ID {get;set;}
+}
+public partial class Params_Delete_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID
+{
+public Int32? REGISTERED_SUPPLIER_EXPENSE_ID {get;set;}
 }
 public partial class Params_Delete_User_By_OWNER_ID
 {
@@ -3291,6 +3453,30 @@ public Int32? OWNER_ID {get;set;}
 public long? ENTRY_USER_ID {get;set;}
 public string ENTRY_DATE {get;set;}
 }
+public partial class Registered_staff_expense
+{
+public Int32? REGISTERED_STAFF_EXPENSE_ID {get;set;}
+public Int32? REGISTERED_STAFF_EXPENSE_DISCOUNT {get;set;}
+public Int32? REGISTERED_STAFF_EXPENSE_TOTAL_AMOUNT {get;set;}
+public string REGISTERED_STAFF_EXPENSE_DESCRIPTION {get;set;}
+public Int32? STAFF_ID {get;set;}
+public Int32? CURRENCY_ID {get;set;}
+public long? ENTRY_USER_ID {get;set;}
+public string ENTRY_DATE {get;set;}
+public Int32? OWNER_ID {get;set;}
+}
+public partial class Registered_supplier_expense
+{
+public Int32? REGISTERED_SUPPLIER_EXPENSE_ID {get;set;}
+public Int32? REGISTERED_SUPPLIER_EXPENSE_DISCOUNT {get;set;}
+public Int32? REGISTERED_SUPPLIER_EXPENSE_TOTAL_AMOUNT {get;set;}
+public string REGISTERED_SUPPLIER_EXPENSE_DESCRIPTION {get;set;}
+public Int32? SUPPLIER_ID {get;set;}
+public Int32? CURRENCY_ID {get;set;}
+public long? ENTRY_USER_ID {get;set;}
+public string ENTRY_DATE {get;set;}
+public Int32? OWNER_ID {get;set;}
+}
 public partial class Registration
 {
 public Int32? REGISTRATION_ID {get;set;}
@@ -3341,6 +3527,7 @@ public string ENTRY_DATE {get;set;}
 public Int32? OWNER_ID {get;set;}
 public Int32? CURRENCY_ID {get;set;}
 public Int32? STAFF_FEES_AMOUNT {get;set;}
+public Int32? REGISTERED_STAFF_EXPENSE_ID {get;set;}
 }
 public partial class Supplier
 {
@@ -3365,6 +3552,7 @@ public string ENTRY_DATE {get;set;}
 public Int32? OWNER_ID {get;set;}
 public Int32? CURRENCY_ID {get;set;}
 public Int32? SUPPLIER_FEES_AMOUNT {get;set;}
+public Int32? REGISTERED_SUPPLIER_EXPENSE_ID {get;set;}
 }
 public partial class User
 {
@@ -3509,6 +3697,24 @@ public partial class Params_Edit_Person_List
 #region Properties
 public List<Person> My_List_To_Edit { get; set; }
 public List<Person> My_List_To_Delete { get; set; }
+#endregion
+}
+#endregion
+#region Params_Edit_Registered_staff_expense_List
+public partial class Params_Edit_Registered_staff_expense_List
+{
+#region Properties
+public List<Registered_staff_expense> My_List_To_Edit { get; set; }
+public List<Registered_staff_expense> My_List_To_Delete { get; set; }
+#endregion
+}
+#endregion
+#region Params_Edit_Registered_supplier_expense_List
+public partial class Params_Edit_Registered_supplier_expense_List
+{
+#region Properties
+public List<Registered_supplier_expense> My_List_To_Edit { get; set; }
+public List<Registered_supplier_expense> My_List_To_Delete { get; set; }
 #endregion
 }
 #endregion

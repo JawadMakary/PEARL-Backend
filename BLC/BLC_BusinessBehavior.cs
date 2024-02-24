@@ -962,6 +962,172 @@ oScope.Complete();
 if (OnPostEvent_General != null){OnPostEvent_General("Edit_Currency_WithPackage");}
 }
 #endregion
+#region Reset_Registered_staff_expense_By_Currency
+public void Reset_Registered_staff_expense_By_Currency(Currency i_Currency, List<Registered_staff_expense> i_Registered_staff_expense_List)
+{
+#region Declaration And Initialization Section.
+Params_Delete_Registered_staff_expense_By_CURRENCY_ID oParams_Delete_Registered_staff_expense_By_CURRENCY_ID = new Params_Delete_Registered_staff_expense_By_CURRENCY_ID();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Reset_Registered_staff_expense_By_Currency");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Delete Existing Registered_staff_expense
+//---------------------------------
+oParams_Delete_Registered_staff_expense_By_CURRENCY_ID.CURRENCY_ID = i_Currency.CURRENCY_ID;
+Delete_Registered_staff_expense_By_CURRENCY_ID(oParams_Delete_Registered_staff_expense_By_CURRENCY_ID);
+//---------------------------------
+// Edit Registered_staff_expense
+//---------------------------------
+Edit_Currency_WithRegistered_staff_expense(i_Currency, i_Registered_staff_expense_List);
+//---------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Reset_Registered_staff_expense_By_Currency");}
+}
+#endregion
+#region Reset_Registered_staff_expense_By_Currency
+public void Reset_Registered_staff_expense_By_Currency(Currency i_Currency, List<Registered_staff_expense> i_Registered_staff_expense_List_To_Delete,List<Registered_staff_expense> i_Registered_staff_expense_List_To_Create)
+{
+#region Declaration And Initialization Section.
+Params_Delete_Registered_staff_expense oParams_Delete_Registered_staff_expense = new Params_Delete_Registered_staff_expense();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Reset_Registered_staff_expense_By_Currency");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Delete Specified Items 
+//---------------------------------
+ if (i_Registered_staff_expense_List_To_Delete != null)
+{
+foreach (var oRow in i_Registered_staff_expense_List_To_Delete)
+{
+oParams_Delete_Registered_staff_expense.REGISTERED_STAFF_EXPENSE_ID = oRow.REGISTERED_STAFF_EXPENSE_ID;
+Delete_Registered_staff_expense(oParams_Delete_Registered_staff_expense);
+}
+}
+//---------------------------------
+// Edit Registered_staff_expense
+//---------------------------------
+Edit_Currency_WithRegistered_staff_expense(i_Currency, i_Registered_staff_expense_List_To_Create);
+//---------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Reset_Registered_staff_expense_By_Currency");}
+}
+#endregion
+#region Edit_Currency_With_Registered_staff_expense(Currency i_Currency,List<Registered_staff_expense> i_Registered_staff_expenseList)
+public void Edit_Currency_WithRegistered_staff_expense(Currency i_Currency,List<Registered_staff_expense> i_List_Registered_staff_expense)
+{
+#region Declaration And Initialization Section.
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Currency_WithRegistered_staff_expense");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Business Operation.
+//-------------------------------
+Edit_Currency(i_Currency);
+if (i_List_Registered_staff_expense != null)
+{
+foreach(Registered_staff_expense oRegistered_staff_expense in i_List_Registered_staff_expense)
+{
+oRegistered_staff_expense.CURRENCY_ID = i_Currency.CURRENCY_ID;
+Edit_Registered_staff_expense(oRegistered_staff_expense);
+}
+}
+//-------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Currency_WithRegistered_staff_expense");}
+}
+#endregion
+#region Reset_Registered_supplier_expense_By_Currency
+public void Reset_Registered_supplier_expense_By_Currency(Currency i_Currency, List<Registered_supplier_expense> i_Registered_supplier_expense_List)
+{
+#region Declaration And Initialization Section.
+Params_Delete_Registered_supplier_expense_By_CURRENCY_ID oParams_Delete_Registered_supplier_expense_By_CURRENCY_ID = new Params_Delete_Registered_supplier_expense_By_CURRENCY_ID();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Reset_Registered_supplier_expense_By_Currency");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Delete Existing Registered_supplier_expense
+//---------------------------------
+oParams_Delete_Registered_supplier_expense_By_CURRENCY_ID.CURRENCY_ID = i_Currency.CURRENCY_ID;
+Delete_Registered_supplier_expense_By_CURRENCY_ID(oParams_Delete_Registered_supplier_expense_By_CURRENCY_ID);
+//---------------------------------
+// Edit Registered_supplier_expense
+//---------------------------------
+Edit_Currency_WithRegistered_supplier_expense(i_Currency, i_Registered_supplier_expense_List);
+//---------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Reset_Registered_supplier_expense_By_Currency");}
+}
+#endregion
+#region Reset_Registered_supplier_expense_By_Currency
+public void Reset_Registered_supplier_expense_By_Currency(Currency i_Currency, List<Registered_supplier_expense> i_Registered_supplier_expense_List_To_Delete,List<Registered_supplier_expense> i_Registered_supplier_expense_List_To_Create)
+{
+#region Declaration And Initialization Section.
+Params_Delete_Registered_supplier_expense oParams_Delete_Registered_supplier_expense = new Params_Delete_Registered_supplier_expense();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Reset_Registered_supplier_expense_By_Currency");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Delete Specified Items 
+//---------------------------------
+ if (i_Registered_supplier_expense_List_To_Delete != null)
+{
+foreach (var oRow in i_Registered_supplier_expense_List_To_Delete)
+{
+oParams_Delete_Registered_supplier_expense.REGISTERED_SUPPLIER_EXPENSE_ID = oRow.REGISTERED_SUPPLIER_EXPENSE_ID;
+Delete_Registered_supplier_expense(oParams_Delete_Registered_supplier_expense);
+}
+}
+//---------------------------------
+// Edit Registered_supplier_expense
+//---------------------------------
+Edit_Currency_WithRegistered_supplier_expense(i_Currency, i_Registered_supplier_expense_List_To_Create);
+//---------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Reset_Registered_supplier_expense_By_Currency");}
+}
+#endregion
+#region Edit_Currency_With_Registered_supplier_expense(Currency i_Currency,List<Registered_supplier_expense> i_Registered_supplier_expenseList)
+public void Edit_Currency_WithRegistered_supplier_expense(Currency i_Currency,List<Registered_supplier_expense> i_List_Registered_supplier_expense)
+{
+#region Declaration And Initialization Section.
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Currency_WithRegistered_supplier_expense");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Business Operation.
+//-------------------------------
+Edit_Currency(i_Currency);
+if (i_List_Registered_supplier_expense != null)
+{
+foreach(Registered_supplier_expense oRegistered_supplier_expense in i_List_Registered_supplier_expense)
+{
+oRegistered_supplier_expense.CURRENCY_ID = i_Currency.CURRENCY_ID;
+Edit_Registered_supplier_expense(oRegistered_supplier_expense);
+}
+}
+//-------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Currency_WithRegistered_supplier_expense");}
+}
+#endregion
 #region Reset_Registration_By_Currency
 public void Reset_Registration_By_Currency(Currency i_Currency, List<Registration> i_Registration_List)
 {
@@ -1211,8 +1377,8 @@ oScope.Complete();
 if (OnPostEvent_General != null){OnPostEvent_General("Edit_Currency_WithSupplier_fees");}
 }
 #endregion
-#region Edit_Currency_WithRelatedData(Currency i_Currency,List<Client_fees> i_List_Client_fees,List<Fees> i_List_Fees,List<Package> i_List_Package,List<Registration> i_List_Registration,List<Staff_fees> i_List_Staff_fees,List<Supplier_fees> i_List_Supplier_fees)
-public void Edit_Currency_WithRelatedData(Currency i_Currency,List<Client_fees> i_List_Client_fees,List<Fees> i_List_Fees,List<Package> i_List_Package,List<Registration> i_List_Registration,List<Staff_fees> i_List_Staff_fees,List<Supplier_fees> i_List_Supplier_fees)
+#region Edit_Currency_WithRelatedData(Currency i_Currency,List<Client_fees> i_List_Client_fees,List<Fees> i_List_Fees,List<Package> i_List_Package,List<Registered_staff_expense> i_List_Registered_staff_expense,List<Registered_supplier_expense> i_List_Registered_supplier_expense,List<Registration> i_List_Registration,List<Staff_fees> i_List_Staff_fees,List<Supplier_fees> i_List_Supplier_fees)
+public void Edit_Currency_WithRelatedData(Currency i_Currency,List<Client_fees> i_List_Client_fees,List<Fees> i_List_Fees,List<Package> i_List_Package,List<Registered_staff_expense> i_List_Registered_staff_expense,List<Registered_supplier_expense> i_List_Registered_supplier_expense,List<Registration> i_List_Registration,List<Staff_fees> i_List_Staff_fees,List<Supplier_fees> i_List_Supplier_fees)
 {
 #region Declaration And Initialization Section.
 #endregion
@@ -1245,6 +1411,22 @@ foreach(Package oPackage in i_List_Package)
 {
 oPackage.CURRENCY_ID = i_Currency.CURRENCY_ID;
 Edit_Package(oPackage);
+}
+}
+if (i_List_Registered_staff_expense != null)
+{
+foreach(Registered_staff_expense oRegistered_staff_expense in i_List_Registered_staff_expense)
+{
+oRegistered_staff_expense.CURRENCY_ID = i_Currency.CURRENCY_ID;
+Edit_Registered_staff_expense(oRegistered_staff_expense);
+}
+}
+if (i_List_Registered_supplier_expense != null)
+{
+foreach(Registered_supplier_expense oRegistered_supplier_expense in i_List_Registered_supplier_expense)
+{
+oRegistered_supplier_expense.CURRENCY_ID = i_Currency.CURRENCY_ID;
+Edit_Registered_supplier_expense(oRegistered_supplier_expense);
 }
 }
 if (i_List_Registration != null)
@@ -1286,6 +1468,8 @@ Params_Delete_Currency oParams_Delete_Currency = new Params_Delete_Currency();
 Params_Delete_Client_fees_By_CURRENCY_ID oParams_Delete_Client_fees_By_CURRENCY_ID = new Params_Delete_Client_fees_By_CURRENCY_ID();
 Params_Delete_Fees_By_CURRENCY_ID oParams_Delete_Fees_By_CURRENCY_ID = new Params_Delete_Fees_By_CURRENCY_ID();
 Params_Delete_Package_By_CURRENCY_ID oParams_Delete_Package_By_CURRENCY_ID = new Params_Delete_Package_By_CURRENCY_ID();
+Params_Delete_Registered_staff_expense_By_CURRENCY_ID oParams_Delete_Registered_staff_expense_By_CURRENCY_ID = new Params_Delete_Registered_staff_expense_By_CURRENCY_ID();
+Params_Delete_Registered_supplier_expense_By_CURRENCY_ID oParams_Delete_Registered_supplier_expense_By_CURRENCY_ID = new Params_Delete_Registered_supplier_expense_By_CURRENCY_ID();
 Params_Delete_Registration_By_CURRENCY_ID oParams_Delete_Registration_By_CURRENCY_ID = new Params_Delete_Registration_By_CURRENCY_ID();
 Params_Delete_Staff_fees_By_CURRENCY_ID oParams_Delete_Staff_fees_By_CURRENCY_ID = new Params_Delete_Staff_fees_By_CURRENCY_ID();
 Params_Delete_Supplier_fees_By_CURRENCY_ID oParams_Delete_Supplier_fees_By_CURRENCY_ID = new Params_Delete_Supplier_fees_By_CURRENCY_ID();
@@ -1301,6 +1485,10 @@ oParams_Delete_Fees_By_CURRENCY_ID.CURRENCY_ID = i_Currency.CURRENCY_ID;
 Delete_Fees_By_CURRENCY_ID(oParams_Delete_Fees_By_CURRENCY_ID);
 oParams_Delete_Package_By_CURRENCY_ID.CURRENCY_ID = i_Currency.CURRENCY_ID;
 Delete_Package_By_CURRENCY_ID(oParams_Delete_Package_By_CURRENCY_ID);
+oParams_Delete_Registered_staff_expense_By_CURRENCY_ID.CURRENCY_ID = i_Currency.CURRENCY_ID;
+Delete_Registered_staff_expense_By_CURRENCY_ID(oParams_Delete_Registered_staff_expense_By_CURRENCY_ID);
+oParams_Delete_Registered_supplier_expense_By_CURRENCY_ID.CURRENCY_ID = i_Currency.CURRENCY_ID;
+Delete_Registered_supplier_expense_By_CURRENCY_ID(oParams_Delete_Registered_supplier_expense_By_CURRENCY_ID);
 oParams_Delete_Registration_By_CURRENCY_ID.CURRENCY_ID = i_Currency.CURRENCY_ID;
 Delete_Registration_By_CURRENCY_ID(oParams_Delete_Registration_By_CURRENCY_ID);
 oParams_Delete_Staff_fees_By_CURRENCY_ID.CURRENCY_ID = i_Currency.CURRENCY_ID;
@@ -2699,6 +2887,278 @@ oScope.Complete();
 if (OnPostEvent_General != null){OnPostEvent_General("Delete_Person_With_Children");}
 }
 #endregion
+#region Reset_Staff_fees_By_Registered_staff_expense
+public void Reset_Staff_fees_By_Registered_staff_expense(Registered_staff_expense i_Registered_staff_expense, List<Staff_fees> i_Staff_fees_List)
+{
+#region Declaration And Initialization Section.
+Params_Delete_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID oParams_Delete_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID = new Params_Delete_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Reset_Staff_fees_By_Registered_staff_expense");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Delete Existing Staff_fees
+//---------------------------------
+oParams_Delete_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID.REGISTERED_STAFF_EXPENSE_ID = i_Registered_staff_expense.REGISTERED_STAFF_EXPENSE_ID;
+Delete_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID(oParams_Delete_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID);
+//---------------------------------
+// Edit Staff_fees
+//---------------------------------
+Edit_Registered_staff_expense_WithStaff_fees(i_Registered_staff_expense, i_Staff_fees_List);
+//---------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Reset_Staff_fees_By_Registered_staff_expense");}
+}
+#endregion
+#region Reset_Staff_fees_By_Registered_staff_expense
+public void Reset_Staff_fees_By_Registered_staff_expense(Registered_staff_expense i_Registered_staff_expense, List<Staff_fees> i_Staff_fees_List_To_Delete,List<Staff_fees> i_Staff_fees_List_To_Create)
+{
+#region Declaration And Initialization Section.
+Params_Delete_Staff_fees oParams_Delete_Staff_fees = new Params_Delete_Staff_fees();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Reset_Staff_fees_By_Registered_staff_expense");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Delete Specified Items 
+//---------------------------------
+ if (i_Staff_fees_List_To_Delete != null)
+{
+foreach (var oRow in i_Staff_fees_List_To_Delete)
+{
+oParams_Delete_Staff_fees.STAFF_FEES_ID = oRow.STAFF_FEES_ID;
+Delete_Staff_fees(oParams_Delete_Staff_fees);
+}
+}
+//---------------------------------
+// Edit Staff_fees
+//---------------------------------
+Edit_Registered_staff_expense_WithStaff_fees(i_Registered_staff_expense, i_Staff_fees_List_To_Create);
+//---------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Reset_Staff_fees_By_Registered_staff_expense");}
+}
+#endregion
+#region Edit_Registered_staff_expense_With_Staff_fees(Registered_staff_expense i_Registered_staff_expense,List<Staff_fees> i_Staff_feesList)
+public void Edit_Registered_staff_expense_WithStaff_fees(Registered_staff_expense i_Registered_staff_expense,List<Staff_fees> i_List_Staff_fees)
+{
+#region Declaration And Initialization Section.
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Registered_staff_expense_WithStaff_fees");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Business Operation.
+//-------------------------------
+Edit_Registered_staff_expense(i_Registered_staff_expense);
+if (i_List_Staff_fees != null)
+{
+foreach(Staff_fees oStaff_fees in i_List_Staff_fees)
+{
+oStaff_fees.REGISTERED_STAFF_EXPENSE_ID = i_Registered_staff_expense.REGISTERED_STAFF_EXPENSE_ID;
+Edit_Staff_fees(oStaff_fees);
+}
+}
+//-------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Registered_staff_expense_WithStaff_fees");}
+}
+#endregion
+#region Edit_Registered_staff_expense_WithRelatedData(Registered_staff_expense i_Registered_staff_expense,List<Staff_fees> i_List_Staff_fees)
+public void Edit_Registered_staff_expense_WithRelatedData(Registered_staff_expense i_Registered_staff_expense,List<Staff_fees> i_List_Staff_fees)
+{
+#region Declaration And Initialization Section.
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Registered_staff_expense_WithRelatedData");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Business Operation.
+//-------------------------------
+Edit_Registered_staff_expense(i_Registered_staff_expense);
+if (i_List_Staff_fees != null)
+{
+foreach(Staff_fees oStaff_fees in i_List_Staff_fees)
+{
+oStaff_fees.REGISTERED_STAFF_EXPENSE_ID = i_Registered_staff_expense.REGISTERED_STAFF_EXPENSE_ID;
+Edit_Staff_fees(oStaff_fees);
+}
+}
+//-------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Registered_staff_expense_WithRelatedData");}
+}
+#endregion
+#region Delete_Registered_staff_expense_With_Children(Registered_staff_expense i_Registered_staff_expense)
+public void Delete_Registered_staff_expense_With_Children(Registered_staff_expense i_Registered_staff_expense)
+{
+ #region Declaration And Initialization Section.
+Params_Delete_Registered_staff_expense oParams_Delete_Registered_staff_expense = new Params_Delete_Registered_staff_expense();
+Params_Delete_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID oParams_Delete_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID = new Params_Delete_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Registered_staff_expense_With_Children");}
+ #region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+//-------------------------
+oParams_Delete_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID.REGISTERED_STAFF_EXPENSE_ID = i_Registered_staff_expense.REGISTERED_STAFF_EXPENSE_ID;
+Delete_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID(oParams_Delete_Staff_fees_By_REGISTERED_STAFF_EXPENSE_ID);
+//-------------------------
+
+//-------------------------
+oParams_Delete_Registered_staff_expense.REGISTERED_STAFF_EXPENSE_ID = i_Registered_staff_expense.REGISTERED_STAFF_EXPENSE_ID;
+Delete_Registered_staff_expense(oParams_Delete_Registered_staff_expense);
+//-------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Registered_staff_expense_With_Children");}
+}
+#endregion
+#region Reset_Supplier_fees_By_Registered_supplier_expense
+public void Reset_Supplier_fees_By_Registered_supplier_expense(Registered_supplier_expense i_Registered_supplier_expense, List<Supplier_fees> i_Supplier_fees_List)
+{
+#region Declaration And Initialization Section.
+Params_Delete_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID oParams_Delete_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID = new Params_Delete_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Reset_Supplier_fees_By_Registered_supplier_expense");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Delete Existing Supplier_fees
+//---------------------------------
+oParams_Delete_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID.REGISTERED_SUPPLIER_EXPENSE_ID = i_Registered_supplier_expense.REGISTERED_SUPPLIER_EXPENSE_ID;
+Delete_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID(oParams_Delete_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID);
+//---------------------------------
+// Edit Supplier_fees
+//---------------------------------
+Edit_Registered_supplier_expense_WithSupplier_fees(i_Registered_supplier_expense, i_Supplier_fees_List);
+//---------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Reset_Supplier_fees_By_Registered_supplier_expense");}
+}
+#endregion
+#region Reset_Supplier_fees_By_Registered_supplier_expense
+public void Reset_Supplier_fees_By_Registered_supplier_expense(Registered_supplier_expense i_Registered_supplier_expense, List<Supplier_fees> i_Supplier_fees_List_To_Delete,List<Supplier_fees> i_Supplier_fees_List_To_Create)
+{
+#region Declaration And Initialization Section.
+Params_Delete_Supplier_fees oParams_Delete_Supplier_fees = new Params_Delete_Supplier_fees();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Reset_Supplier_fees_By_Registered_supplier_expense");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Delete Specified Items 
+//---------------------------------
+ if (i_Supplier_fees_List_To_Delete != null)
+{
+foreach (var oRow in i_Supplier_fees_List_To_Delete)
+{
+oParams_Delete_Supplier_fees.SUPPLIER_FEES_ID = oRow.SUPPLIER_FEES_ID;
+Delete_Supplier_fees(oParams_Delete_Supplier_fees);
+}
+}
+//---------------------------------
+// Edit Supplier_fees
+//---------------------------------
+Edit_Registered_supplier_expense_WithSupplier_fees(i_Registered_supplier_expense, i_Supplier_fees_List_To_Create);
+//---------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Reset_Supplier_fees_By_Registered_supplier_expense");}
+}
+#endregion
+#region Edit_Registered_supplier_expense_With_Supplier_fees(Registered_supplier_expense i_Registered_supplier_expense,List<Supplier_fees> i_Supplier_feesList)
+public void Edit_Registered_supplier_expense_WithSupplier_fees(Registered_supplier_expense i_Registered_supplier_expense,List<Supplier_fees> i_List_Supplier_fees)
+{
+#region Declaration And Initialization Section.
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Registered_supplier_expense_WithSupplier_fees");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Business Operation.
+//-------------------------------
+Edit_Registered_supplier_expense(i_Registered_supplier_expense);
+if (i_List_Supplier_fees != null)
+{
+foreach(Supplier_fees oSupplier_fees in i_List_Supplier_fees)
+{
+oSupplier_fees.REGISTERED_SUPPLIER_EXPENSE_ID = i_Registered_supplier_expense.REGISTERED_SUPPLIER_EXPENSE_ID;
+Edit_Supplier_fees(oSupplier_fees);
+}
+}
+//-------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Registered_supplier_expense_WithSupplier_fees");}
+}
+#endregion
+#region Edit_Registered_supplier_expense_WithRelatedData(Registered_supplier_expense i_Registered_supplier_expense,List<Supplier_fees> i_List_Supplier_fees)
+public void Edit_Registered_supplier_expense_WithRelatedData(Registered_supplier_expense i_Registered_supplier_expense,List<Supplier_fees> i_List_Supplier_fees)
+{
+#region Declaration And Initialization Section.
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Registered_supplier_expense_WithRelatedData");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Business Operation.
+//-------------------------------
+Edit_Registered_supplier_expense(i_Registered_supplier_expense);
+if (i_List_Supplier_fees != null)
+{
+foreach(Supplier_fees oSupplier_fees in i_List_Supplier_fees)
+{
+oSupplier_fees.REGISTERED_SUPPLIER_EXPENSE_ID = i_Registered_supplier_expense.REGISTERED_SUPPLIER_EXPENSE_ID;
+Edit_Supplier_fees(oSupplier_fees);
+}
+}
+//-------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Registered_supplier_expense_WithRelatedData");}
+}
+#endregion
+#region Delete_Registered_supplier_expense_With_Children(Registered_supplier_expense i_Registered_supplier_expense)
+public void Delete_Registered_supplier_expense_With_Children(Registered_supplier_expense i_Registered_supplier_expense)
+{
+ #region Declaration And Initialization Section.
+Params_Delete_Registered_supplier_expense oParams_Delete_Registered_supplier_expense = new Params_Delete_Registered_supplier_expense();
+Params_Delete_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID oParams_Delete_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID = new Params_Delete_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Registered_supplier_expense_With_Children");}
+ #region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+//-------------------------
+oParams_Delete_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID.REGISTERED_SUPPLIER_EXPENSE_ID = i_Registered_supplier_expense.REGISTERED_SUPPLIER_EXPENSE_ID;
+Delete_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID(oParams_Delete_Supplier_fees_By_REGISTERED_SUPPLIER_EXPENSE_ID);
+//-------------------------
+
+//-------------------------
+oParams_Delete_Registered_supplier_expense.REGISTERED_SUPPLIER_EXPENSE_ID = i_Registered_supplier_expense.REGISTERED_SUPPLIER_EXPENSE_ID;
+Delete_Registered_supplier_expense(oParams_Delete_Registered_supplier_expense);
+//-------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Registered_supplier_expense_With_Children");}
+}
+#endregion
 #region Reset_Client_fees_By_Registration
 public void Reset_Client_fees_By_Registration(Registration i_Registration, List<Client_fees> i_Client_fees_List)
 {
@@ -2835,6 +3295,89 @@ oScope.Complete();
 if (OnPostEvent_General != null){OnPostEvent_General("Delete_Registration_With_Children");}
 }
 #endregion
+#region Reset_Registered_staff_expense_By_Staff
+public void Reset_Registered_staff_expense_By_Staff(Staff i_Staff, List<Registered_staff_expense> i_Registered_staff_expense_List)
+{
+#region Declaration And Initialization Section.
+Params_Delete_Registered_staff_expense_By_STAFF_ID oParams_Delete_Registered_staff_expense_By_STAFF_ID = new Params_Delete_Registered_staff_expense_By_STAFF_ID();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Reset_Registered_staff_expense_By_Staff");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Delete Existing Registered_staff_expense
+//---------------------------------
+oParams_Delete_Registered_staff_expense_By_STAFF_ID.STAFF_ID = i_Staff.STAFF_ID;
+Delete_Registered_staff_expense_By_STAFF_ID(oParams_Delete_Registered_staff_expense_By_STAFF_ID);
+//---------------------------------
+// Edit Registered_staff_expense
+//---------------------------------
+Edit_Staff_WithRegistered_staff_expense(i_Staff, i_Registered_staff_expense_List);
+//---------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Reset_Registered_staff_expense_By_Staff");}
+}
+#endregion
+#region Reset_Registered_staff_expense_By_Staff
+public void Reset_Registered_staff_expense_By_Staff(Staff i_Staff, List<Registered_staff_expense> i_Registered_staff_expense_List_To_Delete,List<Registered_staff_expense> i_Registered_staff_expense_List_To_Create)
+{
+#region Declaration And Initialization Section.
+Params_Delete_Registered_staff_expense oParams_Delete_Registered_staff_expense = new Params_Delete_Registered_staff_expense();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Reset_Registered_staff_expense_By_Staff");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Delete Specified Items 
+//---------------------------------
+ if (i_Registered_staff_expense_List_To_Delete != null)
+{
+foreach (var oRow in i_Registered_staff_expense_List_To_Delete)
+{
+oParams_Delete_Registered_staff_expense.REGISTERED_STAFF_EXPENSE_ID = oRow.REGISTERED_STAFF_EXPENSE_ID;
+Delete_Registered_staff_expense(oParams_Delete_Registered_staff_expense);
+}
+}
+//---------------------------------
+// Edit Registered_staff_expense
+//---------------------------------
+Edit_Staff_WithRegistered_staff_expense(i_Staff, i_Registered_staff_expense_List_To_Create);
+//---------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Reset_Registered_staff_expense_By_Staff");}
+}
+#endregion
+#region Edit_Staff_With_Registered_staff_expense(Staff i_Staff,List<Registered_staff_expense> i_Registered_staff_expenseList)
+public void Edit_Staff_WithRegistered_staff_expense(Staff i_Staff,List<Registered_staff_expense> i_List_Registered_staff_expense)
+{
+#region Declaration And Initialization Section.
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Staff_WithRegistered_staff_expense");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Business Operation.
+//-------------------------------
+Edit_Staff(i_Staff);
+if (i_List_Registered_staff_expense != null)
+{
+foreach(Registered_staff_expense oRegistered_staff_expense in i_List_Registered_staff_expense)
+{
+oRegistered_staff_expense.STAFF_ID = i_Staff.STAFF_ID;
+Edit_Registered_staff_expense(oRegistered_staff_expense);
+}
+}
+//-------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Staff_WithRegistered_staff_expense");}
+}
+#endregion
 #region Reset_Staff_fees_By_Staff
 public void Reset_Staff_fees_By_Staff(Staff i_Staff, List<Staff_fees> i_Staff_fees_List)
 {
@@ -2918,8 +3461,8 @@ oScope.Complete();
 if (OnPostEvent_General != null){OnPostEvent_General("Edit_Staff_WithStaff_fees");}
 }
 #endregion
-#region Edit_Staff_WithRelatedData(Staff i_Staff,List<Staff_fees> i_List_Staff_fees)
-public void Edit_Staff_WithRelatedData(Staff i_Staff,List<Staff_fees> i_List_Staff_fees)
+#region Edit_Staff_WithRelatedData(Staff i_Staff,List<Registered_staff_expense> i_List_Registered_staff_expense,List<Staff_fees> i_List_Staff_fees)
+public void Edit_Staff_WithRelatedData(Staff i_Staff,List<Registered_staff_expense> i_List_Registered_staff_expense,List<Staff_fees> i_List_Staff_fees)
 {
 #region Declaration And Initialization Section.
 #endregion
@@ -2930,6 +3473,14 @@ using (TransactionScope oScope = new TransactionScope())
 // Business Operation.
 //-------------------------------
 Edit_Staff(i_Staff);
+if (i_List_Registered_staff_expense != null)
+{
+foreach(Registered_staff_expense oRegistered_staff_expense in i_List_Registered_staff_expense)
+{
+oRegistered_staff_expense.STAFF_ID = i_Staff.STAFF_ID;
+Edit_Registered_staff_expense(oRegistered_staff_expense);
+}
+}
 if (i_List_Staff_fees != null)
 {
 foreach(Staff_fees oStaff_fees in i_List_Staff_fees)
@@ -2950,6 +3501,7 @@ public void Delete_Staff_With_Children(Staff i_Staff)
 {
  #region Declaration And Initialization Section.
 Params_Delete_Staff oParams_Delete_Staff = new Params_Delete_Staff();
+Params_Delete_Registered_staff_expense_By_STAFF_ID oParams_Delete_Registered_staff_expense_By_STAFF_ID = new Params_Delete_Registered_staff_expense_By_STAFF_ID();
 Params_Delete_Staff_fees_By_STAFF_ID oParams_Delete_Staff_fees_By_STAFF_ID = new Params_Delete_Staff_fees_By_STAFF_ID();
 #endregion
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Staff_With_Children");}
@@ -2957,6 +3509,8 @@ if (OnPreEvent_General != null){OnPreEvent_General("Delete_Staff_With_Children")
 using (TransactionScope oScope = new TransactionScope())
 {
 //-------------------------
+oParams_Delete_Registered_staff_expense_By_STAFF_ID.STAFF_ID = i_Staff.STAFF_ID;
+Delete_Registered_staff_expense_By_STAFF_ID(oParams_Delete_Registered_staff_expense_By_STAFF_ID);
 oParams_Delete_Staff_fees_By_STAFF_ID.STAFF_ID = i_Staff.STAFF_ID;
 Delete_Staff_fees_By_STAFF_ID(oParams_Delete_Staff_fees_By_STAFF_ID);
 //-------------------------
@@ -2969,6 +3523,89 @@ oScope.Complete();
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Delete_Staff_With_Children");}
+}
+#endregion
+#region Reset_Registered_supplier_expense_By_Supplier
+public void Reset_Registered_supplier_expense_By_Supplier(Supplier i_Supplier, List<Registered_supplier_expense> i_Registered_supplier_expense_List)
+{
+#region Declaration And Initialization Section.
+Params_Delete_Registered_supplier_expense_By_SUPPLIER_ID oParams_Delete_Registered_supplier_expense_By_SUPPLIER_ID = new Params_Delete_Registered_supplier_expense_By_SUPPLIER_ID();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Reset_Registered_supplier_expense_By_Supplier");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Delete Existing Registered_supplier_expense
+//---------------------------------
+oParams_Delete_Registered_supplier_expense_By_SUPPLIER_ID.SUPPLIER_ID = i_Supplier.SUPPLIER_ID;
+Delete_Registered_supplier_expense_By_SUPPLIER_ID(oParams_Delete_Registered_supplier_expense_By_SUPPLIER_ID);
+//---------------------------------
+// Edit Registered_supplier_expense
+//---------------------------------
+Edit_Supplier_WithRegistered_supplier_expense(i_Supplier, i_Registered_supplier_expense_List);
+//---------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Reset_Registered_supplier_expense_By_Supplier");}
+}
+#endregion
+#region Reset_Registered_supplier_expense_By_Supplier
+public void Reset_Registered_supplier_expense_By_Supplier(Supplier i_Supplier, List<Registered_supplier_expense> i_Registered_supplier_expense_List_To_Delete,List<Registered_supplier_expense> i_Registered_supplier_expense_List_To_Create)
+{
+#region Declaration And Initialization Section.
+Params_Delete_Registered_supplier_expense oParams_Delete_Registered_supplier_expense = new Params_Delete_Registered_supplier_expense();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Reset_Registered_supplier_expense_By_Supplier");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Delete Specified Items 
+//---------------------------------
+ if (i_Registered_supplier_expense_List_To_Delete != null)
+{
+foreach (var oRow in i_Registered_supplier_expense_List_To_Delete)
+{
+oParams_Delete_Registered_supplier_expense.REGISTERED_SUPPLIER_EXPENSE_ID = oRow.REGISTERED_SUPPLIER_EXPENSE_ID;
+Delete_Registered_supplier_expense(oParams_Delete_Registered_supplier_expense);
+}
+}
+//---------------------------------
+// Edit Registered_supplier_expense
+//---------------------------------
+Edit_Supplier_WithRegistered_supplier_expense(i_Supplier, i_Registered_supplier_expense_List_To_Create);
+//---------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Reset_Registered_supplier_expense_By_Supplier");}
+}
+#endregion
+#region Edit_Supplier_With_Registered_supplier_expense(Supplier i_Supplier,List<Registered_supplier_expense> i_Registered_supplier_expenseList)
+public void Edit_Supplier_WithRegistered_supplier_expense(Supplier i_Supplier,List<Registered_supplier_expense> i_List_Registered_supplier_expense)
+{
+#region Declaration And Initialization Section.
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Supplier_WithRegistered_supplier_expense");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Business Operation.
+//-------------------------------
+Edit_Supplier(i_Supplier);
+if (i_List_Registered_supplier_expense != null)
+{
+foreach(Registered_supplier_expense oRegistered_supplier_expense in i_List_Registered_supplier_expense)
+{
+oRegistered_supplier_expense.SUPPLIER_ID = i_Supplier.SUPPLIER_ID;
+Edit_Registered_supplier_expense(oRegistered_supplier_expense);
+}
+}
+//-------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Supplier_WithRegistered_supplier_expense");}
 }
 #endregion
 #region Reset_Supplier_fees_By_Supplier
@@ -3054,8 +3691,8 @@ oScope.Complete();
 if (OnPostEvent_General != null){OnPostEvent_General("Edit_Supplier_WithSupplier_fees");}
 }
 #endregion
-#region Edit_Supplier_WithRelatedData(Supplier i_Supplier,List<Supplier_fees> i_List_Supplier_fees)
-public void Edit_Supplier_WithRelatedData(Supplier i_Supplier,List<Supplier_fees> i_List_Supplier_fees)
+#region Edit_Supplier_WithRelatedData(Supplier i_Supplier,List<Registered_supplier_expense> i_List_Registered_supplier_expense,List<Supplier_fees> i_List_Supplier_fees)
+public void Edit_Supplier_WithRelatedData(Supplier i_Supplier,List<Registered_supplier_expense> i_List_Registered_supplier_expense,List<Supplier_fees> i_List_Supplier_fees)
 {
 #region Declaration And Initialization Section.
 #endregion
@@ -3066,6 +3703,14 @@ using (TransactionScope oScope = new TransactionScope())
 // Business Operation.
 //-------------------------------
 Edit_Supplier(i_Supplier);
+if (i_List_Registered_supplier_expense != null)
+{
+foreach(Registered_supplier_expense oRegistered_supplier_expense in i_List_Registered_supplier_expense)
+{
+oRegistered_supplier_expense.SUPPLIER_ID = i_Supplier.SUPPLIER_ID;
+Edit_Registered_supplier_expense(oRegistered_supplier_expense);
+}
+}
 if (i_List_Supplier_fees != null)
 {
 foreach(Supplier_fees oSupplier_fees in i_List_Supplier_fees)
@@ -3086,6 +3731,7 @@ public void Delete_Supplier_With_Children(Supplier i_Supplier)
 {
  #region Declaration And Initialization Section.
 Params_Delete_Supplier oParams_Delete_Supplier = new Params_Delete_Supplier();
+Params_Delete_Registered_supplier_expense_By_SUPPLIER_ID oParams_Delete_Registered_supplier_expense_By_SUPPLIER_ID = new Params_Delete_Registered_supplier_expense_By_SUPPLIER_ID();
 Params_Delete_Supplier_fees_By_SUPPLIER_ID oParams_Delete_Supplier_fees_By_SUPPLIER_ID = new Params_Delete_Supplier_fees_By_SUPPLIER_ID();
 #endregion
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Supplier_With_Children");}
@@ -3093,6 +3739,8 @@ if (OnPreEvent_General != null){OnPreEvent_General("Delete_Supplier_With_Childre
 using (TransactionScope oScope = new TransactionScope())
 {
 //-------------------------
+oParams_Delete_Registered_supplier_expense_By_SUPPLIER_ID.SUPPLIER_ID = i_Supplier.SUPPLIER_ID;
+Delete_Registered_supplier_expense_By_SUPPLIER_ID(oParams_Delete_Registered_supplier_expense_By_SUPPLIER_ID);
 oParams_Delete_Supplier_fees_By_SUPPLIER_ID.SUPPLIER_ID = i_Supplier.SUPPLIER_ID;
 Delete_Supplier_fees_By_SUPPLIER_ID(oParams_Delete_Supplier_fees_By_SUPPLIER_ID);
 //-------------------------
